@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+using WorkReportWPF.Models;
+using WorkReportWPF.Functions;
+using WorkReportWPF;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Work_Report_1
 {
@@ -48,8 +42,21 @@ namespace Work_Report_1
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
-            //close the App
             Close();
+        }
+
+        private readonly DbSettingsContext _db;
+        public MainWindow(DbSettingsContext context)
+        {
+            _db = context;
+        }
+
+        private void Main_Loaded(object sender, RoutedEventArgs e)
+        {
+            var username = Environment.UserName;
+            bool HasPremisions = LoginFunc.CheckPremisions(username);
+            Console.WriteLine(HasPremisions);
+            var level = WorkReportWPF.Functions.LoginFunc.LoadUserLevelString(username);
         }
     }
 }

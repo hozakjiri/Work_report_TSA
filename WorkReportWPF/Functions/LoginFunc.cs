@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WorkReportWPF.Models;
+using WorkReportWPF.Enums;
 
 namespace WorkReportWPF.Functions
 {
@@ -19,7 +20,7 @@ namespace WorkReportWPF.Functions
                 {
                     Name = (name == string.Empty) ? name : null,
                     UserLogin = (userLogin == string.Empty) ? userLogin : null,
-                    Level = (level >= 0 && level <= 5) ? level : 0,
+                    Level = (level >= 0 && level <= 5) ? (LevelEnum)level : 0,
                     Mail = (mail == string.Empty) ? mail : null
                 };
 
@@ -28,7 +29,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static List<Login> ReadList(List<Login> LoginList )
+        public static List<Login> ReadList(List<Login> LoginList)
         {
             using (DbSettingsContext context = new DbSettingsContext())
             {
@@ -46,6 +47,24 @@ namespace WorkReportWPF.Functions
             }
         }
 
+        public static LevelEnum LoadUserLevel(string UserLogin)
+        {
+            using (DbSettingsContext context = new DbSettingsContext())
+            {
+                LevelEnum newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Level).FirstOrDefault();
+                return LevelEnum.Level1;
+            }
+        }
+
+        public static string LoadUserLevelString(string UserLogin)
+        {
+            using (DbSettingsContext context = new DbSettingsContext())
+            {
+                LevelEnum newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Level).FirstOrDefault();
+                return string.Format(newLogin.ToString());
+            }
+        }
+
         public static bool CheckPremisions(string UserLogin)
         {
             using (DbSettingsContext context = new DbSettingsContext())
@@ -56,6 +75,48 @@ namespace WorkReportWPF.Functions
                 var newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).ToList();
 
                 return newLogin.Count > 0;
+            }
+        }
+
+        public static int IntFromLevel(LevelEnum level)
+        {
+            switch (level)
+            {
+                case LevelEnum.Level1:
+                    return (int)LevelEnum.Level1;
+                case LevelEnum.Level2:
+                    return (int)LevelEnum.Level2;
+                case LevelEnum.Level3:
+                    return (int)LevelEnum.Level3;
+                case LevelEnum.Level4:
+                    return (int)LevelEnum.Level4;
+                case LevelEnum.Level5:
+                    return (int)LevelEnum.Level5;
+                case LevelEnum.Admin:
+                    return (int)LevelEnum.Admin;
+                default:
+                    return -1;
+            }
+        }
+
+        public static string StringFromLevel(LevelEnum level)
+        {
+            switch (level)
+            {
+                case LevelEnum.Level1:
+                    return string.Format(Enums.LevelEnum.Level1.ToString());
+                case LevelEnum.Level2:
+                    return string.Format(Enums.LevelEnum.Level2.ToString());
+                case LevelEnum.Level3:
+                    return string.Format(Enums.LevelEnum.Level3.ToString());
+                case LevelEnum.Level4:
+                    return string.Format(Enums.LevelEnum.Level4.ToString());
+                case LevelEnum.Level5:
+                    return string.Format(Enums.LevelEnum.Level5.ToString());
+                case LevelEnum.Admin:
+                    return string.Format(Enums.LevelEnum.Admin.ToString());
+                default:
+                    return "Invalid";
             }
         }
 
@@ -83,7 +144,7 @@ namespace WorkReportWPF.Functions
 
                     newLogin.Name = (name == string.Empty) ? name : null;
                     newLogin.UserLogin = (userLogin == string.Empty) ? userLogin : null;
-                    newLogin.Level = (level >= 0 && level <= 5) ? level : 0;
+                    newLogin.Level = (level >= 0 && level <= 5) ? (LevelEnum)level : 0;
                     newLogin.Mail = (mail == string.Empty) ? mail : null;
 
                     context.SaveChanges();

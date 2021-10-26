@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WorkReportWPF.Enums;
 
 namespace WorkReportWPF.Models
 {
@@ -16,6 +17,6 @@ namespace WorkReportWPF.Models
 
         public string Mail { get; set; }
 
-        public int Level { get; set; }
+        public LevelEnum Level { get; set; }
     }
 }
