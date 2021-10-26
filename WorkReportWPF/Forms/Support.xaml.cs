@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Work_Report_1
+namespace WorkReportWPF
 {
     /// <summary>
     /// Interakční logika pro Support.xaml

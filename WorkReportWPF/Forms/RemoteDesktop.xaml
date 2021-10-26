@@ -1,4 +1,4 @@
-﻿<Page x:Class="Work_Report_1.RemoteDesktop"
+﻿<Page x:Class="WorkReportWPF.RemoteDesktop"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -47,8 +47,7 @@
                 />
 
         <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,146,268,267" Foreground="White" Background="Transparent" FontStyle="Italic"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,255,268,158" Foreground="White" Background="Transparent" FontStyle="Italic">
-            <ListBox d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,255,268,95" Foreground="White" Background="Transparent" FontStyle="Italic">
         </ListBox>
 
     </Grid>
