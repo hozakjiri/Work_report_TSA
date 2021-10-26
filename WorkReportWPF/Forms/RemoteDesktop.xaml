@@ -9,7 +9,7 @@
       Title="Remote Desktop">
 
     <Grid>
-        <TextBlock Text="Remote Desktop" VerticalAlignment="Top" HorizontalAlignment="Center" RenderTransformOrigin="0.487,0.521" Margin="0,10,0,0" FontSize="36" Foreground="White">
+        <TextBlock Text="Remote Desktop" VerticalAlignment="Top" HorizontalAlignment="Center" RenderTransformOrigin="0.487,0.521" Margin="0,35,0,0" FontSize="36" Foreground="White">
             <TextBlock.Style>
                 <Style/>
             </TextBlock.Style>
@@ -37,18 +37,20 @@
         </TextBlock>
 
         <Button Content="Connect" 
-                Margin="0,384,0,0"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center" FontSize="30" Width="390"
+                Margin="200,349,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" FontSize="30" Width="390"
                 Cursor="Hand"
                 FontWeight="Bold"
                 FontStyle="Italic" Height="57"
+
                 
                 />
 
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,146,268,267" Foreground="White" Background="Transparent" FontStyle="Italic"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,255,268,95" Foreground="White" Background="Transparent" FontStyle="Italic">
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,139,268,274" Foreground="White" Background="Transparent" FontStyle="Italic"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,259,268,160" Foreground="White" Background="Transparent" FontStyle="Italic">
         </ListBox>
+
 
     </Grid>
 </Page>
