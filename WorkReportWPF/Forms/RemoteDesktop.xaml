@@ -15,22 +15,41 @@
             </TextBlock.Style>
         </TextBlock>
 
-        <TextBlock Text="Device name" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="94,146,0,0"  FontSize="22"   Foreground="White">
+        <TextBlock Text="Device name" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Left" 
+                   Margin="94,146,0,0"  
+                   FontSize="18"   
+                   Foreground="White"
+                   FontWeight="Bold">
 
         </TextBlock>
 
 
-        <TextBlock Text="Device IP adress" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="62,259,0,0"  FontSize="22"   Foreground="White">
+        <TextBlock Text="Device IP adress" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Left" 
+                   Margin="62,259,0,0"  
+                   FontSize="18"   
+                   Foreground="White"
+                   FontWeight="Bold">
 
         </TextBlock>
 
         <Button Content="Connect" 
-                Margin="0,409,0,0"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Center" FontSize="18" Width="390"
-                Cursor="Hand"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,146,268,267" Foreground="White" Background="Transparent"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,255,268,158" Foreground="White" Background="Transparent"/>
+                Margin="0,384,0,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" FontSize="30" Width="390"
+                Cursor="Hand"
+                FontWeight="Bold"
+                FontStyle="Italic" Height="57"
+                
+                />
+
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,146,268,267" Foreground="White" Background="Transparent" FontStyle="Italic"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,255,268,158" Foreground="White" Background="Transparent" FontStyle="Italic">
+            <ListBox d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        </ListBox>
 
     </Grid>
 </Page>
