@@ -38,12 +38,20 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static List<Login> LoadUserData(string UserLogin)
+        public static Login LoadUserData(string UserLogin)
         {
             using (DbSettingsContext context = new DbSettingsContext())
             {
-                var newLogin = context.Logins.Where(x => x.UserLogin == UserLogin);
-                return newLogin.ToList();
+                Login newLogin = new Login();
+                if (context != null)
+                {
+                    newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).FirstOrDefault();
+                    return newLogin;
+                }
+                else
+                {
+                    return newLogin;
+                }
             }
         }
 
@@ -129,7 +137,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void Update(string name, string userLogin, int level, string mail, int id)
+        public static void Update(string name, string userLogin, int level, string mail, int? id)
         {
             using (DbSettingsContext context = new DbSettingsContext())
             {
@@ -152,7 +160,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void Delete(int id)
+        public static void Delete(int? id)
         {
             using (DbSettingsContext context = new DbSettingsContext())
             {

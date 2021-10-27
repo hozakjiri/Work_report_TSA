@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Work_Report_1
+namespace WorkReportWPF
 {
     /// <summary>
     /// Interakční logika pro App.xaml

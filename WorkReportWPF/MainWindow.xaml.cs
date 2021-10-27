@@ -45,18 +45,41 @@ namespace Work_Report_1
             Close();
         }
 
-        private readonly DbSettingsContext _db;
+        private readonly DbSettingsContext _dbSettings;
         public MainWindow(DbSettingsContext context)
         {
-            _db = context;
+            _dbSettings = context;
         }
 
-        private void Main_Loaded(object sender, RoutedEventArgs e)
+        private readonly DbDataContext2 _dbData;
+        public MainWindow(DbDataContext2 context)
+        {
+            _dbData = context;
+        }
+
+        public static string UserName, UserLevel, UserMail;
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             var username = Environment.UserName;
             bool HasPremisions = LoginFunc.CheckPremisions(username);
-            Console.WriteLine(HasPremisions);
-            var level = WorkReportWPF.Functions.LoginFunc.LoadUserLevelString(username);
+
+            if (HasPremisions)
+            {
+
+                var user = LoginFunc.LoadUserData(username);
+                UserName = user.Name;
+                UserLevel = user.Level.ToString();
+                UserMail = user.Mail;
+
+                lblUserName.Text = user.Name;
+                lblUserLevel.Text = user.Level.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Nemáš prístup do aplikácie, aplikácia sa vypína!", "WORK REPORT");
+                Close();
+            }
         }
     }
 }

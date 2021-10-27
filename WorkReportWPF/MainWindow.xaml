@@ -15,7 +15,7 @@
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterOwner"
         WindowStyle="None"
-        FontSize="15">
+        FontSize="15" Loaded="MainWindow_Loaded">
     <Grid>
         <materialDesign:Card Margin="10" UniformCornerRadius="15" Background="Transparent">
             <Grid    
@@ -277,11 +277,11 @@
                                     <!--Level-->
                                 </Grid.RowDefinitions>
 
-                                <TextBlock
+                                <TextBlock x:Name="lblUserName"
                                     FontWeight="SemiBold"
                                     Foreground="{StaticResource SecondaryBrush}"
                                     Text="Hozák Jiří"/>
-                                <TextBlock
+                                <TextBlock x:Name="lblUserLevel"
                                     Grid.Row="1"
                                     FontWeight="SemiBold"
                                     Foreground="{StaticResource PrimaryBrush}"
