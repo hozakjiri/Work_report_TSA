@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Work_Report_1"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -18,7 +19,7 @@
         <TextBlock Text="Device name" 
                    VerticalAlignment="Top" 
                    HorizontalAlignment="Left" 
-                   Margin="94,146,0,0"  
+                   Margin="187,146,0,0"  
                    FontSize="18"   
                    Foreground="White"
                    FontWeight="Bold">
@@ -29,27 +30,25 @@
         <TextBlock Text="Device IP adress" 
                    VerticalAlignment="Top" 
                    HorizontalAlignment="Left" 
-                   Margin="62,259,0,0"  
+                   Margin="159,259,0,0"  
                    FontSize="18"   
                    Foreground="White"
                    FontWeight="Bold">
 
         </TextBlock>
 
-        <Button Content="Connect" 
-                Margin="200,349,0,0"
+        <Button Content="Connect"
+                Margin="200,356,0,0"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left" FontSize="30" Width="390"
                 Cursor="Hand"
                 FontWeight="Bold"
                 FontStyle="Italic" Height="57"
-
-                
                 />
 
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,139,268,274" Foreground="White" Background="Transparent" FontStyle="Italic"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,259,268,160" Foreground="White" Background="Transparent" FontStyle="Italic">
-        </ListBox>
+
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="373,146,152,267" Foreground="White" Background="Transparent" FontStyle="Italic"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="373,255,152,164" Foreground="White" FontStyle="Italic" Background="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Disabled" FlowDirection="LeftToRight"/>
 
 
     </Grid>
