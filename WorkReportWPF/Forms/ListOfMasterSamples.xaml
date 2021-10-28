@@ -9,6 +9,9 @@
       Title="ListOfMasterSamples">
 
     <Grid>
-        
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,415" Foreground="white">
+
+        </ListBox>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=10}" Margin="10,35,10,10" Background="Transparent" Foreground="White"/>
     </Grid>
 </Page>

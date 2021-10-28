@@ -9,6 +9,7 @@
       Title="Calendar">
 
     <Grid>
-        
+        <Calendar HorizontalAlignment="Left" Margin="520,35,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>
