@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -170,7 +172,6 @@ namespace WorkReportWPF
                     ConnectButton.IsEnabled = true;
                     ConnectButton.Content = "Connect : " + ChooseHostname;
                 }
-
             }
             else
             {
@@ -182,6 +183,26 @@ namespace WorkReportWPF
 
         private void ConnectButton_Click(object sender, RoutedEventArgs e)
         {
+            HostName = ChooseHostname;
+            PasswordVnc = VncFunc.GetPassword(ChooseHostname);
+            ConnectWithVNC();
+        }
+
+        public string PasswordVnc, HostName;
+        public void ConnectWithVNC()
+        {
+            try
+            {
+                var ProcessProperties = new ProcessStartInfo();
+                ProcessProperties.FileName = @"C:\Program Files\TightVNC" + @"\" + "tvnviewer.exe";
+                ProcessProperties.Arguments = "-host=" + HostName + " -password=" + PasswordVnc;
+                ProcessProperties.WindowStyle = ProcessWindowStyle.Maximized;
+                var myProcess = Process.Start(ProcessProperties);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Objevila se chyba : " + ex.Message, "ERROR");
+            }
 
         }
     }

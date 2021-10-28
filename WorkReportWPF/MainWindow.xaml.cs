@@ -108,7 +108,6 @@ namespace WorkReportWPF
 
             if (HasPremisions)
             {
-
                 var user = LoginFunc.LoadUserData(username);
                 UserName = user.Name;
                 UserLevel = user.Level.ToString();

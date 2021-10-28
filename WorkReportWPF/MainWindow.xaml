@@ -15,7 +15,7 @@
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterOwner"
         WindowStyle="None"
-        FontSize="15" Loaded="MainWindow_Loaded" Icon="/coffee-break.ico">
+        FontSize="15" Loaded="MainWindow_Loaded" Icon="/assets/icon.ico">
     <Grid>
         <materialDesign:Card Margin="10" UniformCornerRadius="15" Background="Transparent">
             <Grid    

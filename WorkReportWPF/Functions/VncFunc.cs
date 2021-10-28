@@ -25,5 +25,24 @@ namespace WorkReportWPF.Functions
             }
 
         }
+
+        public static string GetPassword(string hostname)
+        {
+            string Password = "";
+            using (DbSettingsContext data = new DbSettingsContext())
+            {
+                Password = data.Stations.Where(a => a.HostName.Contains(hostname)).Select(a => a.PasswordVnc).FirstOrDefault();
+            }
+
+            if (!string.IsNullOrEmpty(Password))
+            {
+                return Password;
+            }
+            else
+            {
+                return "";
+            }
+
+        }
     }
 }
