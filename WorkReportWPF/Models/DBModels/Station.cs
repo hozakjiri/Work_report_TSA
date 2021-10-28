@@ -22,6 +22,8 @@ namespace WorkReportWPF.Models
 
         public string Password { get; set; }
 
+        public string PasswordVnc { get; set; }
+
         public StationEnum Type { get; set; }
     }
 }
