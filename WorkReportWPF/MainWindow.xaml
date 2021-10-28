@@ -406,20 +406,20 @@
                         </Button>
 
                         <Button x:Name="Computers_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfComputers" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="DesktopClassic" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="DesktopClassic" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="List of Computers"/>
                         </Button>
 
                         <Button x:Name="Tasks_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfTasks" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Changes"/>
                         </Button>
 
 
                         <Button x:Name="Support_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Support" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="EmoticonAgent" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="EmoticonAgent" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Support"/>
                         </Button>
 
                         <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="Settings" Foreground="#FFC9A3C9" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="Settings" Foreground="#FFC9A3C9" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
                         </Button>
                     </ListView>
 
