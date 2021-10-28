@@ -3,53 +3,37 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Work_Report_1"
+      xmlns:local="clr-namespace:WorkReportWPF"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Remote Desktop">
+      Title="Remote Desktop" Loaded="Page_Loaded">
 
-    <Grid>
-        <TextBlock Text="Remote Desktop" VerticalAlignment="Top" HorizontalAlignment="Center" RenderTransformOrigin="0.487,0.521" Margin="0,35,0,0" FontSize="36" Foreground="White">
+    <Grid Margin="0,0,0,-10">
+        <TextBlock Text="Remote Desktop" VerticalAlignment="Top" HorizontalAlignment="Center" RenderTransformOrigin="0.487,0.521" FontSize="36" Foreground="White" Margin="0,-1,0,0">
             <TextBlock.Style>
                 <Style/>
             </TextBlock.Style>
         </TextBlock>
 
-        <TextBlock Text="Device name" 
+        <TextBlock Text="Device" 
                    VerticalAlignment="Top" 
                    HorizontalAlignment="Left" 
-                   Margin="94,146,0,0"  
+                   Margin="25,44,0,0"  
                    FontSize="18"   
                    Foreground="White"
                    FontWeight="Bold">
 
         </TextBlock>
 
-
-        <TextBlock Text="Device IP adress" 
-                   VerticalAlignment="Top" 
-                   HorizontalAlignment="Left" 
-                   Margin="62,259,0,0"  
-                   FontSize="18"   
-                   Foreground="White"
-                   FontWeight="Bold">
-
-        </TextBlock>
-
-        <Button Content="Connect" 
-                Margin="200,349,0,0"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left" FontSize="30" Width="390"
+        <Button x:Name="ConnectButton" Content="Connect" IsEnabled="false" 
+                Margin="25,0,30,28" FontSize="30"
                 Cursor="Hand"
                 FontWeight="Bold"
-                FontStyle="Italic" Height="57"
+                FontStyle="Italic" RenderTransformOrigin="1.338,4.511" Click="ConnectButton_Click" Height="47" VerticalAlignment="Bottom"
 
                 
                 />
-
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,139,268,274" Foreground="White" Background="Transparent" FontStyle="Italic"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="257,259,268,160" Foreground="White" Background="Transparent" FontStyle="Italic">
-        </ListBox>
+        <TreeView x:Name="stationView" Margin="25,73,30,75" Foreground="Beige" TreeViewItem.Selected="OnItemSelected"/>
 
 
     </Grid>

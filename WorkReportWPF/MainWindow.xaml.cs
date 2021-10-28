@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
-using WorkReportWPF.Models;
-using WorkReportWPF.Functions;
-using WorkReportWPF;
 using System.Windows.Input;
+using WorkReportWPF.Functions;
 
-namespace Work_Report_1
+namespace WorkReportWPF
 {
     /// <summary>
     /// Interakční logika pro MainWindow.xaml
@@ -23,7 +19,7 @@ namespace Work_Report_1
         {
             // To move the window mouse down
             if (e.ChangedButton == MouseButton.Left)
-                DragMove(); 
+                DragMove();
         }
 
         private void minimizeButton_Click(object sender, RoutedEventArgs e)
@@ -45,6 +41,7 @@ namespace Work_Report_1
             Close();
         }
 
+
         private readonly DbSettingsContext _dbSettings;
         public MainWindow(DbSettingsContext context)
         {
@@ -58,6 +55,51 @@ namespace Work_Report_1
         }
 
         public static string UserName, UserLevel, UserMail;
+
+        private void Click_Settings(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new Settings();
+        }
+
+        private void Click_Home(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new MainScreen();
+        }
+
+        private void Click_ListOfComputers(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new ListOfComputers();
+        }
+
+        private void Click_RemoteDesktop(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new RemoteDesktop();
+        }
+
+        private void Click_ListOfModifications(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new LIstOfModifications();
+        }
+
+        private void Click_Calendar(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new WorkReportWPF.Calendar();
+        }
+
+        private void Click_ListOfMasterSamples(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new ListOfMasterSamples();
+        }
+
+        private void Click_ListOfTasks(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new ListOfTasks();
+        }
+
+        private void Click_Support(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new Support();
+        }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -81,5 +123,6 @@ namespace Work_Report_1
                 Close();
             }
         }
+
     }
 }

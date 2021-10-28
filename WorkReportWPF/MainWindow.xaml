@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:Work_Report_1"
-        xmlns:fa="http://schemas.fontawesome.io/icons/" x:Class="Work_Report_1.MainWindow"
+        xmlns:local="clr-namespace:WorkReportWPF"
+        xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="WorkReportWPF.MainWindow"
         mc:Ignorable="d"
         x:Name="mainWindow"
         AllowsTransparency="True"
@@ -333,11 +333,11 @@
                 <!--#region Left Navigation Menu-->
                 <Grid 
                     Background="{StaticResource CanvasBrush}"
-                    Grid.Row="1">
+                    Grid.Row="1" HorizontalAlignment="Left" Width="80">
                     <!--Menu Buttons-->
                     <ListView
                         Background="Transparent"
-                        BorderThickness="0">
+                        BorderThickness="0" Margin="0,0,0,0">
                         <ListView.Resources>
                             <Style TargetType="{x:Type ListBoxItem}">
                                 <Setter Property="Height" Value="80"/>
@@ -378,52 +378,53 @@
                                                         Property="Fill"
                                                         Value="{StaticResource PrimaryBrush}"/>
                                                 </Trigger>
-                                               </ControlTemplate.Triggers>
+                                            </ControlTemplate.Triggers>
                                         </ControlTemplate>
                                     </Setter.Value>
                                 </Setter>
                             </Style>
                         </ListView.Resources>
-                        <ListBoxItem
-                           Content="{StaticResource home_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
 
-                        <ListBoxItem
-                           Content="{StaticResource clipboard_text_search_outline_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
+                        <Button x:Name="Home_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Home" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="home" Foreground="Gainsboro" Height="55" Width="55" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
 
-                        <ListBoxItem
-                           Content="{StaticResource calendar_alert_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
+                        <Button x:Name="Modification_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfModifications" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="Gainsboro" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
 
-                        <ListBoxItem
-                           Content="{StaticResource car_light_alert_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
+                        <Button x:Name="Calendar_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Calendar" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
 
-                        <ListBoxItem
-                           Content="{StaticResource remote_desktop_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
+                        <Button x:Name="MasterSamples_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfMasterSamples" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="CarLightAlert" Foreground="Gainsboro" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
 
-                        <ListBoxItem
-                           Content="{StaticResource desktop_classic_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
+                        <Button x:Name="RemoreDesktop_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_RemoteDesktop" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="RemoteDesktop" Foreground="Gainsboro" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
 
-                        <ListBoxItem
-                           Content="{StaticResource calendar_alert_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
+                        <Button x:Name="Computers_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfComputers" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="DesktopClassic" Foreground="Gainsboro" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
 
-                        <ListBoxItem
-                           Content="{StaticResource face_agent_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
+                        <Button x:Name="Tasks_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfTasks" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
 
-                        <ListBoxItem
-                           Content="{StaticResource setting_icon}"
-                           IsSelected="False" Height="65" Width="65"/>
 
+                        <Button x:Name="Support_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Support" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="EmoticonAgent" Foreground="Gainsboro" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
+
+                        <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="Settings" Foreground="#FFC9A3C9" Height="45" Width="45" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                        </Button>
                     </ListView>
 
-
                 </Grid>
+                <Frame x:Name="MainContent" Content="Frame" Grid.Row="1" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Margin="80,0,0,0"/>
                 <!--#endregion-->
 
             </Grid>
