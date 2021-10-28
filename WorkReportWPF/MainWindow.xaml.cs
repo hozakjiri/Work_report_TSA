@@ -119,7 +119,7 @@ namespace WorkReportWPF
             }
             else
             {
-                MessageBox.Show("Nemáš prístup do aplikácie, aplikácia sa vypína!", "WORK REPORT");
+                MessageBox.Show("You don't have access to the application, the application is shutting down!", "WORK REPORT");
                 Close();
             }
         }
