@@ -10,6 +10,23 @@
       Title="Support">
 
     <Grid>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Margin="182,163,254,85" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" />
+        <Label Content="Comment:" Margin="178,130,530,298" Foreground="white" Background="Transparent" />
+        <Button x:Name="Semd_Email_button" BorderBrush="{x:Null}" Margin="542,383,84,28" Height="60" Width="180" Background="Transparent">
+            <StackPanel Width="138" VerticalAlignment="Top" HorizontalAlignment="Center" Height="48" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="EmailBox" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email"/>
+                <TextBlock x:Name="Send_Email"  Text="Send Email" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Inser_image" BorderBrush="{x:Null}" Margin="337,383,283,7" Height="60" Width="180" Background="Transparent">
+            <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Height="48" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ImageAdd" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Inser Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Insert_Image"  Text="Insert Image" Width="85" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Margin="182,102,254,324" Foreground="WHITE" Background="#FF292626"/>
+        <Label Content="Subjekt:" Margin="178,73,530,355" Foreground="white" Background="Transparent" />
 
     </Grid>
 
