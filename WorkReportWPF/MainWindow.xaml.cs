@@ -48,8 +48,8 @@ namespace WorkReportWPF
             _dbSettings = context;
         }
 
-        private readonly DbDataContext2 _dbData;
-        public MainWindow(DbDataContext2 context)
+        private readonly DbDataContext _dbData;
+        public MainWindow(DbDataContext context)
         {
             _dbData = context;
         }

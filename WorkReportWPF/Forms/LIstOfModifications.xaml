@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WorkReportWPF" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="668" d:DesignWidth="1300"
       Title="LIstOfModifications">
 
     <Grid Margin="0,-0,-0,0" HorizontalAlignment="Stretch">
@@ -15,20 +15,19 @@
             <RowDefinition Height="147*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Background="{StaticResource PrimaryBrush}">
-
             <Button x:Name="Overview_button" BorderBrush="{x:Null}" Height="55" Width="150" Background="Transparent" Click="Click_Overview" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
                 <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="NoteSearch" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
                     <TextBlock x:Name="Overview_Text"  Text="Overview" Width="105" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                 </StackPanel>
             </Button>
-            
-            <Button x:Name="Add_button" BorderBrush="{x:Null}" Height="55" Width="150" Background="Transparent" Click="Click_Add" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
-                <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="NotebookPlus" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                    <TextBlock x:Name="Add_Text"  Text="Add a report" Width="105" VerticalAlignment="Center"  Margin="10,0,0,0"/>
-                </StackPanel>
-            </Button>
+
+        <Button x:Name="Add_button" BorderBrush="{x:Null}" Height="55" Width="150" Background="Transparent" Click="Click_Add" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
+            <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="NotebookPlus" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Add_Text"  Text="Add a report" Width="105" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+            </StackPanel>
+        </Button>
 
             <Button x:Name="Send_button" BorderBrush="{x:Null}" Height="55" Width="150" Background="Transparent" Click="Click_Send" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
                 <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
@@ -36,7 +35,7 @@
                     <TextBlock x:Name="Send_Text"  Text="Send report" Width="105" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                 </StackPanel>
             </Button>
-
+            
         </StackPanel>
         <Frame x:Name="frameModification" Content="Frame" Grid.Row="2" Foreground="#FFDEAEAE"/>
     </Grid>

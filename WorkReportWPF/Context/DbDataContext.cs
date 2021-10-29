@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WorkReportWPF.Models;
+using WorkReportWPF.Models.DBModels;
 
 namespace WorkReportWPF
 {
-    public class DbDataContext2 : DbContext
+    public class DbDataContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source = ./Database/Data.db", default);
         }
-
+        public DbSet<Data> Datas { get; set; }
     }
 }

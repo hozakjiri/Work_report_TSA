@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WorkReportWPF.Models;
+using WorkReportWPF.Models.DBModels;
 
 namespace WorkReportWPF
 {
@@ -12,6 +13,7 @@ namespace WorkReportWPF
 
         public DbSet<Login> Logins { get; set; }
         public DbSet<Station> Stations { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
     }
 }

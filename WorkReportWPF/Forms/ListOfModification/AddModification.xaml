@@ -6,33 +6,51 @@
       xmlns:local="clr-namespace:WorkReportWPF.Forms.ListOfModification"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfModification.AddModification"
       mc:Ignorable="d" 
-      d:DesignHeight="396" d:DesignWidth="800"
-      Title="AddModification">
+      d:DesignHeight="588" d:DesignWidth="1300"
+      Title="AddModification" Loaded="Page_Loaded">
 
-    <Grid>
-        <TextBox x:Name ="Comment_Text" TextWrapping="Wrap" Text="" Margin="16,135,25,66" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" />
-        <Label Content="Comment:" Margin="16,95,0,0" Foreground="white" Background="Transparent" FontSize="22" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
-        <ComboBox x:Name="LineBox" HorizontalAlignment="Left" Margin="16,40,0,0" VerticalAlignment="Top" Width="329" Foreground="#FFEEE0E0" BorderBrush="#89679EE0" Background="#FF292626" FontSize="20"/>
-        <Label Content="Line :" Margin="16,10,0,0" Foreground="white" Background="Transparent" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="582,40,0,0" VerticalAlignment="Top" Width="186" Background="#FF7088F3" Foreground="#FF8290E4" BorderBrush="#892775D3" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long"/>
-        <StackPanel Margin="382,40,0,0" Orientation="Horizontal" Background="#FF292626" HorizontalAlignment="Left" Width="84" Height="40" VerticalAlignment="Top">
+    <Grid Width="1300" Height="588">
+        <TextBox x:Name ="Comment_Text" TextWrapping="Wrap" Text="" Margin="16,135,399,93" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" FontSize="20" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.815"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="3.016"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Comment:" Margin="16,95,0,0" Foreground="white" Background="Transparent" FontSize="20" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
+        <ComboBox x:Name="ProjectBox" HorizontalAlignment="Left" Margin="16,53,0,0" ForceCursor="True" VerticalAlignment="Top" Width="329" Foreground="Black" BorderBrush="#FF292626" FontSize="20" Background="#FF292626"/>
+        <Label Content="Project :" Margin="16,10,0,0" Foreground="white" Background="Transparent" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" FontSize="20" />
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="551,53,0,0" VerticalAlignment="Top" Width="349" Background="#FFCCD3F1" Foreground="#FF8290E4" BorderBrush="#896EA4E6" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long"/>
+        <StackPanel Margin="382,53,0,0" Orientation="Horizontal" Background="#FF292626" HorizontalAlignment="Left" Width="84" Height="40" VerticalAlignment="Top">
             <TextBox x:Name="txtNum" x:FieldModifier="private" Text="5" TextChanged="txtNum_TextChanged" Margin="3,0,0,0" Foreground="White" Background="#FF292626" Width="68" Height="30" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" />
             <StackPanel Orientation="Vertical" Width="12" Height="40">
                 <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="10" Click="cmdUp_Click" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" />
                 <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="10" Click="cmdDown_Click" Height="20" HorizontalAlignment="Right"  VerticalAlignment="Top"/>
             </StackPanel>
         </StackPanel>
-        <Label Content="Minutes :" Margin="375,10,0,0" Foreground="white" Background="Transparent" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
-        <Label Content="Date :" Margin="575,10,0,0" Foreground="white" Background="Transparent" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
+        <Label Content="Minutes :" Margin="375,10,0,0" Foreground="white" Background="Transparent" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165" FontSize="20" />
+        <Label Content="Date :" Margin="551,10,0,0" Foreground="white" Background="Transparent" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" FontSize="20" />
 
 
-        <Button x:Name="Semd_Email_button" BorderBrush="{x:Null}" Margin="0,0,8,3" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152">
-            <StackPanel Width="125" VerticalAlignment="Center" HorizontalAlignment="Left" Height="70" Orientation="Horizontal">
+        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}" Margin="0,0,36,47" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">
+            <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email"  Text="Save" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
+                <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
             </StackPanel>
         </Button>
-
-
+        <Button x:Name="Attachments_button" BorderBrush="{x:Null}" Margin="0,0,201,47" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click">
+            <StackPanel Width="134" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="PhotoAlbum" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
+            </StackPanel>
+        </Button>
+        <StackPanel Background="#FF292626" Margin="912,137,12,179">
+            <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.5,0.5"/>
+        </StackPanel>
+        <Label Content="Image :" Margin="924,89,25,0" Foreground="white" Background="Transparent" FontSize="20" Height="35" VerticalAlignment="Top" />
+        <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="white" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" />
     </Grid>
 </Page>
