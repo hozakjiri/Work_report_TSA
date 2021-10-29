@@ -10,7 +10,7 @@
       Title="Support">
 
     <Grid>
-        <TextBox TextWrapping="Wrap" Text="" Margin="25,175,45,93" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" />
+        <TextBox Name ="Comment_Text" TextWrapping="Wrap" Text="" Margin="25,175,45,93" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" />
         <Label Content="Comment:" Margin="25,120,0,0" Foreground="white" Background="Transparent" FontSize="22" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
         <Button x:Name="Semd_Email_button" BorderBrush="{x:Null}" Margin="0,0,13,10" Height="60" Width="212" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <StackPanel Width="190" VerticalAlignment="Center" HorizontalAlignment="Left" Height="70" Orientation="Horizontal">
@@ -19,13 +19,13 @@
             </StackPanel>
         </Button>
 
-        <Button x:Name="Inser_image" BorderBrush="{x:Null}" Margin="0,0,260,10" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="220">
+        <Button x:Name="Inser_image" BorderBrush="{x:Null}" Margin="0,0,260,10" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="220" Click="Send_Mail">
             <StackPanel Width="212" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ImageAdd" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Inser Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Insert_Image"  Text="Insert Image" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
             </StackPanel>
         </Button>
-        <TextBox TextWrapping="Wrap" Text="" Margin="25,81,0,0" Foreground="WHITE" Background="#FF292626" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="420"/>
+        <TextBox Name="Subject_Text" Text="" Margin="25,81,0,0" Foreground="WHITE" Background="#FF292626" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="420"/>
         <Label Content="Subject:" Margin="25,20,0,0" Foreground="white" Background="Transparent" FontSize="22" HorizontalAlignment="Left" Width="200" Height="40" VerticalAlignment="Top" />
 
     </Grid>
