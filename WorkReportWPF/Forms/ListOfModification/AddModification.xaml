@@ -1,14 +1,38 @@
-﻿<Page x:Class="WorkReportWPF.Forms.ListOfModification.AddModification"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WorkReportWPF.Forms.ListOfModification"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfModification.AddModification"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="396" d:DesignWidth="800"
       Title="AddModification">
 
     <Grid>
-        
+        <TextBox x:Name ="Comment_Text" TextWrapping="Wrap" Text="" Margin="16,135,25,66" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" />
+        <Label Content="Comment:" Margin="16,95,0,0" Foreground="white" Background="Transparent" FontSize="22" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
+        <ComboBox x:Name="LineBox" HorizontalAlignment="Left" Margin="16,40,0,0" VerticalAlignment="Top" Width="329" Foreground="#FFEEE0E0" BorderBrush="#89679EE0" Background="#FF292626" FontSize="20"/>
+        <Label Content="Line :" Margin="16,10,0,0" Foreground="white" Background="Transparent" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="582,40,0,0" VerticalAlignment="Top" Width="186" Background="#FF7088F3" Foreground="#FF8290E4" BorderBrush="#892775D3" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long"/>
+        <StackPanel Margin="382,40,0,0" Orientation="Horizontal" Background="#FF292626" HorizontalAlignment="Left" Width="84" Height="40" VerticalAlignment="Top">
+            <TextBox x:Name="txtNum" x:FieldModifier="private" Text="5" TextChanged="txtNum_TextChanged" Margin="3,0,0,0" Foreground="White" Background="#FF292626" Width="68" Height="30" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" />
+            <StackPanel Orientation="Vertical" Width="12" Height="40">
+                <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="10" Click="cmdUp_Click" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" />
+                <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="10" Click="cmdDown_Click" Height="20" HorizontalAlignment="Right"  VerticalAlignment="Top"/>
+            </StackPanel>
+        </StackPanel>
+        <Label Content="Minutes :" Margin="375,10,0,0" Foreground="white" Background="Transparent" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
+        <Label Content="Date :" Margin="575,10,0,0" Foreground="white" Background="Transparent" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
+
+
+        <Button x:Name="Semd_Email_button" BorderBrush="{x:Null}" Margin="0,0,8,3" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152">
+            <StackPanel Width="125" VerticalAlignment="Center" HorizontalAlignment="Left" Height="70" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ContentSave" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email"  Text="Save" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
+            </StackPanel>
+        </Button>
+
+
     </Grid>
 </Page>
