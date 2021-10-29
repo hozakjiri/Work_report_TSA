@@ -9,7 +9,7 @@
       Title="OverviewModification" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="true"/>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="true" SelectedItem="selectedGrid" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" Background="#FF3C3333" Foreground="#DDF7F2F2" BorderBrush="#1F5D4F4F" />
 
     </Grid>
 </Page>
