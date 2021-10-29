@@ -14,7 +14,7 @@
         <Label Content="Comment:" Margin="178,130,530,298" Foreground="white" Background="Transparent" />
         <Button x:Name="Semd_Email_button" BorderBrush="{x:Null}" Margin="542,383,84,28" Height="60" Width="180" Background="Transparent">
             <StackPanel Width="138" VerticalAlignment="Top" HorizontalAlignment="Center" Height="48" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="EmailBox" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email"/>
+                <materialDesign:PackIcon Kind="EmailBox" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email"  Text="Send Email" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0"/>
             </StackPanel>
         </Button>
