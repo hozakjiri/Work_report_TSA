@@ -21,9 +21,9 @@
             </TextBox.RenderTransform>
         </TextBox>
         <Label Content="Comment:" Margin="16,95,0,0" Foreground="white" Background="Transparent" FontSize="20" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
-        <ComboBox x:Name="ProjectBox" HorizontalAlignment="Left" Margin="16,53,0,0" ForceCursor="True" VerticalAlignment="Top" Width="329" Foreground="Black" BorderBrush="#FF292626" FontSize="20" Background="#FF292626"/>
+        <ComboBox x:Name="ProjectBox" HorizontalAlignment="Left" Margin="16,53,0,0" VerticalAlignment="Top" Width="329" Foreground="Black" BorderBrush="#FF292626" FontSize="20" Background="#FF292626"/>
         <Label Content="Project :" Margin="16,10,0,0" Foreground="white" Background="Transparent" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" FontSize="20" />
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="551,53,0,0" VerticalAlignment="Top" Width="349" Background="#FFCCD3F1" Foreground="#FF8290E4" BorderBrush="#896EA4E6" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="551,53,0,0" VerticalAlignment="Top" Width="349" Background="#FFCCD3F1" Foreground="#FF8290E4" BorderBrush="#896EA4E6" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long" Text="select date" Cursor="ArrowCD"/>
         <StackPanel Margin="382,53,0,0" Orientation="Horizontal" Background="#FF292626" HorizontalAlignment="Left" Width="84" Height="40" VerticalAlignment="Top">
             <TextBox x:Name="txtNum" x:FieldModifier="private" Text="5" TextChanged="txtNum_TextChanged" Margin="3,0,0,0" Foreground="White" Background="#FF292626" Width="68" Height="30" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" />
             <StackPanel Orientation="Vertical" Width="12" Height="40">
@@ -37,7 +37,7 @@
 
         <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}" Margin="0,0,36,47" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ContentSave" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="ContentSave" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
             </StackPanel>
         </Button>

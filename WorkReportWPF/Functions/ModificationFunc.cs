@@ -27,6 +27,7 @@ namespace WorkReportWPF.Functions
 
                 List<TableModificationView> modificationData = projectList.Select(x => new TableModificationView()
                 {
+                    ID = x.ID,
                     Username = x.Username,
                     Date = x.Date,
                     Project = x.Project,

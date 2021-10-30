@@ -9,7 +9,14 @@
       Title="OverviewModification" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="true" SelectedItem="selectedGrid" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" Background="#FF3C3333" Foreground="#DDF7F2F2" BorderBrush="#1F5D4F4F" />
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="true" SelectedItem="selectedGrid" Background="#FF3C3333" Foreground="#DDF3F3F3" BorderBrush="#1FB05656" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D" ColumnHeaderStyle="" VerticalGridLinesBrush="#FF515862" RowBackground="#FF7891AE" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False">
+            <DataGrid.RowHeaderTemplate>
+                <DataTemplate/>
+            </DataGrid.RowHeaderTemplate>
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+        </DataGrid>
 
     </Grid>
 </Page>

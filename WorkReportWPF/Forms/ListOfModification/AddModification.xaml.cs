@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -93,13 +94,33 @@ namespace WorkReportWPF.Forms.ListOfModification
         {
             MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
 
+            string name = System.IO.Path.GetFileName(TextPathImage.Text);
+            string fullpath = Directory.GetCurrentDirectory() + "/Image/" + Environment.UserName + DateTime.Now.ToString("yyyyMMddHHmm") + ".jpg";
+
+            if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Image"))
+            {
+                Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Image");
+            }
+
+            try
+            {
+                if (!string.IsNullOrEmpty(TextPathImage.Text))
+                {
+                    File.Copy(TextPathImage.Text, fullpath, true);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
             if (ProjectBox.Text == "" || Comment_Text.Text == "" || txtNum.Text == "" || datePicker.Text == "")
             {
                 MessageBox.Show("Please, fill all data", "Data");
             }
             else if (result == MessageBoxResult.OK)
             {
-                ModificationFunc.SaveModification(ProjectBox.Text, Comment_Text.Text, datePicker.DisplayDate.ToString(), txtNum.Text, TextPathImage.Text, datePicker.DisplayDate.ToString("yyyyMMddHHmm"));
+                ModificationFunc.SaveModification(ProjectBox.Text, Comment_Text.Text, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtNum.Text, fullpath, datePicker.DisplayDate.ToString("yyyyMMddHHmm"));
 
                 MessageBox.Show("Data was added !", "Data");
             }
