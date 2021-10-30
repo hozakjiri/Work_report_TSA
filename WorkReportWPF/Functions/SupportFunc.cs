@@ -14,8 +14,10 @@ namespace WorkReportWPF.Functions
         {
             try
             {
-                var oMail = new MailMessage();
-                oMail.From = new MailAddress("WorkReport_Support@hella.com");
+                MailMessage oMail = new()
+                {
+                    From = new MailAddress("WorkReport_Support@hella.com")
+                };
                 oMail.To.Add(mailTo);
 
                 oMail.Subject = "Support for WorkReport";
@@ -31,7 +33,7 @@ namespace WorkReportWPF.Functions
                     oMail.Attachments.Add(Data);
                 }
 
-                var sb = new StringBuilder();
+                StringBuilder sb = new();
                 sb.AppendLine("-------------------------------------");
                 sb.AppendLine("User Name : " + Environment.UserName);
                 sb.AppendLine("Host Name : " + Environment.MachineName);
@@ -42,7 +44,7 @@ namespace WorkReportWPF.Functions
                 sb.AppendLine("Description :" + description);
                 sb.AppendLine("-------------------------------------");
                 oMail.Body = sb.ToString();
-                var smtp = new SmtpClient("smtphub.dc.hella.com");
+                SmtpClient smtp = new("smtphub.dc.hella.com");
                 smtp.Port = 25;
                 MessageBox.Show("Email send", "Mail");
                 smtp.Send(oMail);
@@ -59,20 +61,11 @@ namespace WorkReportWPF.Functions
 
         public static string GetFileToString()
         {
-            var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = Drive;
-            if (dialog.ShowDialog() == true)
+            OpenFileDialog dialog = new()
             {
-                if (dialog.FileName == "")
-                {
-                    return "";
-                }
-                else
-                {
-                    return dialog.FileName;
-                }
-            }
-            return "";
+                InitialDirectory = Drive
+            };
+            return dialog.ShowDialog() == true ? dialog.FileName == "" ? "" : dialog.FileName : "";
         }
 
     }

@@ -9,8 +9,8 @@ namespace WorkReportWPF.Functions
     {
         public static List<Station> GetAllStations()
         {
-            List<Station> AllStations = new List<Station>();
-            using (DbSettingsContext data = new DbSettingsContext())
+            List<Station> AllStations = new();
+            using (DbSettingsContext data = new())
             {
                 AllStations = data.Stations.ToList();
             }
@@ -29,7 +29,7 @@ namespace WorkReportWPF.Functions
         public static string GetPassword(string hostname)
         {
             string Password = "";
-            using (DbSettingsContext data = new DbSettingsContext())
+            using (DbSettingsContext data = new())
             {
                 Password = data.Stations.Where(a => a.HostName.Contains(hostname)).Select(a => a.PasswordVnc).FirstOrDefault();
             }

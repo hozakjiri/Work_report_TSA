@@ -12,32 +12,28 @@ namespace WorkReportWPF.Functions
 
         public static IEnumerable LoadProjectList()
         {
-            using (DbSettingsContext context = new DbSettingsContext())
-            {
-                var projectList = context.Projects.Select(x => x.Name).ToList();
-                return projectList;
-            }
+            using DbSettingsContext context = new();
+            var projectList = context.Projects.Select(x => x.Name).ToList();
+            return projectList;
         }
 
         public static List<TableModificationView> LoadModificationTable()
         {
-            using (DbDataContext context = new DbDataContext())
+            using DbDataContext context = new();
+            var projectList = context.Datas.OrderByDescending(o => o.ID).ToList();
+
+            List<TableModificationView> modificationData = projectList.Select(x => new TableModificationView()
             {
-                var projectList = context.Datas.OrderByDescending(o => o.ID).ToList();
+                ID = x.ID,
+                Username = x.Username,
+                Date = x.Date,
+                Project = x.Project,
+                Comment = x.Comment,
+                Image = x.Image,
+                Time = x.Time,
+            }).ToList();
 
-                List<TableModificationView> modificationData = projectList.Select(x => new TableModificationView()
-                {
-                    ID = x.ID,
-                    Username = x.Username,
-                    Date = x.Date,
-                    Project = x.Project,
-                    Comment = x.Comment,
-                    Image = x.Image,
-                    Time = x.Time,
-                }).ToList();
-
-                return modificationData;
-            }
+            return modificationData;
         }
 
         public static void SaveModification(string project, string comment, string date, string minutes, string imagepath, string fulltime)
@@ -46,23 +42,21 @@ namespace WorkReportWPF.Functions
 
             try
             {
-                using (DbDataContext context = new DbDataContext())
+                using DbDataContext context = new();
+
+                Data modificationData = new()
                 {
+                    Username = user.Name,
+                    Date = date,
+                    Project = project,
+                    Comment = comment,
+                    ImageStr = imagepath,
+                    Time = minutes,
+                    DateTimeStr = fulltime,
+                };
 
-                    Data modificationData = new Data()
-                    {
-                        Username = user.Name,
-                        Date = date,
-                        Project = project,
-                        Comment = comment,
-                        ImageStr = imagepath,
-                        Time = minutes,
-                        DateTimeStr = fulltime,
-                    };
-
-                    context.Datas.Add(modificationData);
-                    context.SaveChanges();
-                }
+                context.Datas.Add(modificationData);
+                context.SaveChanges();
             }
             catch (Exception ex)
             {

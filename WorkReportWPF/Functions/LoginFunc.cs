@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WorkReportWPF.Models;
 using WorkReportWPF.Enums;
+using WorkReportWPF.Models;
 
 namespace WorkReportWPF.Functions
 {
@@ -13,77 +11,70 @@ namespace WorkReportWPF.Functions
 
         public static void Create(string name, string userLogin, int level, string mail)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
+            using DbSettingsContext context = new();
+
+            Login newLogin = new()
             {
+                Name = (name == string.Empty) ? name : null,
+                UserLogin = (userLogin == string.Empty) ? userLogin : null,
+                Level = (level >= 0 && level <= 5) ? (LevelEnum)level : 0,
+                Mail = (mail == string.Empty) ? mail : null
+            };
 
-                Login newLogin = new Login()
-                {
-                    Name = (name == string.Empty) ? name : null,
-                    UserLogin = (userLogin == string.Empty) ? userLogin : null,
-                    Level = (level >= 0 && level <= 5) ? (LevelEnum)level : 0,
-                    Mail = (mail == string.Empty) ? mail : null
-                };
-
-                context.Logins.Add(new Login() { Name = newLogin.Name, UserLogin = newLogin.UserLogin, Level = newLogin.Level, Mail = newLogin.Mail });
-                context.SaveChanges();
-            }
+            context.Logins.Add(new Login() { Name = newLogin.Name, UserLogin = newLogin.UserLogin, Level = newLogin.Level, Mail = newLogin.Mail });
+            context.SaveChanges();
         }
 
         public static List<Login> ReadList(List<Login> LoginList)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
+            if (LoginList is null)
             {
-                List<Login> TableLogin = context.Logins.ToList();
-                return TableLogin;
+                throw new ArgumentNullException(nameof(LoginList));
             }
+
+            using DbSettingsContext context = new();
+            List<Login> TableLogin = context.Logins.ToList();
+            return TableLogin;
         }
 
         public static Login LoadUserData(string UserLogin)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
+            using DbSettingsContext context = new();
+            Login newLogin = new();
+            if (context != null)
             {
-                Login newLogin = new Login();
-                if (context != null)
-                {
-                    newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).FirstOrDefault();
-                    return newLogin;
-                }
-                else
-                {
-                    return newLogin;
-                }
+                newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).FirstOrDefault();
+                return newLogin;
+            }
+            else
+            {
+                return newLogin;
             }
         }
 
         public static LevelEnum LoadUserLevel(string UserLogin)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
-            {
-                LevelEnum newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Level).FirstOrDefault();
-                return LevelEnum.Level1;
-            }
+            using DbSettingsContext context = new();
+            LevelEnum newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Level).FirstOrDefault();
+            return LevelEnum.Level1;
         }
 
         public static string LoadUserLevelString(string UserLogin)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
-            {
-                LevelEnum newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Level).FirstOrDefault();
-                return string.Format(newLogin.ToString());
-            }
+            using DbSettingsContext context = new();
+            LevelEnum newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Level).FirstOrDefault();
+            return string.Format(newLogin.ToString());
         }
 
         public static bool CheckPremisions(string UserLogin)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
-            {
-                var newLogi = context.Logins.ToList();
-                //Login newLogins = context.Logins.Single(x => x.UserLogin == UserLogin);
+            using DbSettingsContext context = new();
+            var newLogi = context.Logins.ToList();
+            //Login newLogins = context.Logins.Single(x => x.UserLogin == UserLogin);
 
-                var newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).ToList();
+            var newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).ToList();
 
-                return newLogin.Count > 0;
-            }
+            return newLogin.Count > 0;
         }
 
         public static int IntFromLevel(LevelEnum level)
@@ -130,52 +121,46 @@ namespace WorkReportWPF.Functions
 
         public static void Read()
         {
-            using (DbSettingsContext context = new DbSettingsContext())
-            {
-                List<Login> TableLogin = context.Logins.ToList();
-                //ItemLIst.ItemsSource = TableLogin;
-            }
+            using DbSettingsContext context = new();
+            List<Login> TableLogin = context.Logins.ToList();
+            //ItemLIst.ItemsSource = TableLogin;
         }
 
         public static void Update(string name, string userLogin, int level, string mail, int? id)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
+            using DbSettingsContext context = new();
+
+            //UserControl selectedUser = ItemList.SelectedItem as Login;
+
+            //Login newLogin = context.Logins.Find(selectedUser.UserID)
+
+            if (id != null)
             {
+                Login newLogin = context.Logins.Find(id);
 
-                //UserControl selectedUser = ItemList.SelectedItem as Login;
+                newLogin.Name = (name == string.Empty) ? name : null;
+                newLogin.UserLogin = (userLogin == string.Empty) ? userLogin : null;
+                newLogin.Level = (level >= 0 && level <= 5) ? (LevelEnum)level : 0;
+                newLogin.Mail = (mail == string.Empty) ? mail : null;
 
-                //Login newLogin = context.Logins.Find(selectedUser.UserID)
-
-                if (id != null)
-                {
-                    Login newLogin = context.Logins.Find(id);
-
-                    newLogin.Name = (name == string.Empty) ? name : null;
-                    newLogin.UserLogin = (userLogin == string.Empty) ? userLogin : null;
-                    newLogin.Level = (level >= 0 && level <= 5) ? (LevelEnum)level : 0;
-                    newLogin.Mail = (mail == string.Empty) ? mail : null;
-
-                    context.SaveChanges();
-                }
+                context.SaveChanges();
             }
         }
 
         public static void Delete(int? id)
         {
-            using (DbSettingsContext context = new DbSettingsContext())
+            using DbSettingsContext context = new();
+
+            //UserControl selectedUser = ItemList.SelectedItem as Login;
+
+            //Login newLogin = context.Logins.Find(selectedUser.UserID)             
+
+            if (id != null)
             {
-
-                //UserControl selectedUser = ItemList.SelectedItem as Login;
-
-                //Login newLogin = context.Logins.Find(selectedUser.UserID)             
-
-                if (id != null)
-                {
-                    //Login newLogin = context.Logins.Find(id);
-                    Login newLogin = context.Logins.Single(x => x.UserID == id);
-                    context.Remove(newLogin);
-                    context.SaveChanges();
-                }
+                //Login newLogin = context.Logins.Find(id);
+                Login newLogin = context.Logins.Single(x => x.UserID == id);
+                context.Remove(newLogin);
+                context.SaveChanges();
             }
         }
 

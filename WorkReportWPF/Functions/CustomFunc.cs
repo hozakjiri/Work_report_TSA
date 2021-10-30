@@ -11,20 +11,11 @@ namespace WorkReportWPF.Functions
 
         public static string GetFileToString()
         {
-            var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = Drive;
-            if (dialog.ShowDialog() == true)
+            OpenFileDialog dialog = new()
             {
-                if (dialog.FileName == "")
-                {
-                    return "";
-                }
-                else
-                {
-                    return dialog.FileName;
-                }
-            }
-            return "";
+                InitialDirectory = Drive
+            };
+            return dialog.ShowDialog() == true ? dialog.FileName == "" ? "" : dialog.FileName : "";
         }
     }
 }
