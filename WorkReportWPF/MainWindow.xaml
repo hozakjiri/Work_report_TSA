@@ -83,8 +83,8 @@
                     <!--Center rectangle-->
                     <Rectangle
                 Fill="{StaticResource DimBrush}"
-                Margin="0,0,110,60"
-                MouseDown="Polygon_MouseDown" Grid.RowSpan="2"/>
+                Margin="50,0,112,0"
+                MouseDown="Polygon_MouseDown"/>
                     <!--right corner-->
                     <Polygon
                 Fill="{StaticResource DimBrush}"

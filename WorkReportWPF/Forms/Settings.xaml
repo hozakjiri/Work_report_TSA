@@ -5,10 +5,76 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WorkReportWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="668" d:DesignWidth="1300"
+      MinHeight="668" MinWidth="1300"
       Title="Settings">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Settings for application" Grid.ColumnSpan="3" Foreground="White" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Team Members (email information)" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Save" Margin="323,541,10,10" Grid.Row="1"/>
+
+        <Label Content="List od users" Margin="433,0,433,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        <Label Content="List of projekts" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="2"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Refresh" Margin="10,541,323,10" Grid.Row="1"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Delete" Margin="324,541,10,10" Grid.Row="1" Grid.Column="1"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Add" Margin="10,541,324,10" Grid.Row="1" Grid.Column="1"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Delete" Margin="323,541,10,10" Grid.Row="1" Grid.Column="2"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Edit" Margin="216,541,117,10" Grid.Row="1" Grid.Column="2"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Add" Margin="10,541,323,10" Grid.Row="1" Grid.Column="2"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Edit" Margin="117,541,217,10" Grid.Row="1" Grid.Column="1"/>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            Width="100"
+            Content="Refresh" Margin="323,434,10,117" Grid.Row="1" Grid.Column="2"/>
+        <Label Content="Name of projekts" Margin="0,473,0,83" Padding="20,0,0,0" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="2"/>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Grid.Column="2" Margin="10,500,10,54" Grid.Row="1" Foreground="White" Background="Transparent" Padding="10,0,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14" FontStyle="Italic"/>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Grid.Column="1" Margin="10,500,217,54" Grid.Row="1" Foreground="White" Background="Transparent" Padding="10,0,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14" FontStyle="Italic"/>
+        <Label Content="Mail address" Grid.Column="1" Margin="10,466,348,87" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+
+        </Label>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Grid.Column="1" Margin="10,433,275,120" Grid.Row="1" Foreground="White" Background="Transparent" Padding="10,0,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14" FontStyle="Italic"/>
+        <Label Content="Name" Grid.Column="1" Margin="10,399,348,154" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+
+        </Label>
+        <Label Content="Log in" Grid.Column="1" Margin="257,399,101,154" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+
+        </Label>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Grid.Column="1" Margin="257,433,10,120" Grid.Row="1" Foreground="White" Background="Transparent" Padding="10,0,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="14" FontStyle="Italic"/>
+        <Label Content="Rights" Grid.Column="1" Margin="257,466,101,87" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
     </Grid>
 </Page>
