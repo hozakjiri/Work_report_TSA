@@ -288,7 +288,7 @@
                                 <TextBlock x:Name="lblUserLevel"
                                     Grid.Row="1"
                                     FontWeight="SemiBold"
-                                    Foreground="{StaticResource PrimaryBrush}"
+                                    Foreground="#aeea00"
                                     Text="Level 1"/>
                             </Grid>
 
@@ -299,7 +299,7 @@
                                 Margin="0,0,20,0">
                                 <Path
                                 Data="{StaticResource notification_icon}"
-                                Fill="{StaticResource PrimaryBrush}"
+                                Fill="#aeea00"
                                 VerticalAlignment="Bottom"
                                     Stretch="Uniform"
                                     Width="16"/>
