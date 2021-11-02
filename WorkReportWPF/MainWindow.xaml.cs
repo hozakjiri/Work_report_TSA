@@ -113,6 +113,11 @@ namespace WorkReportWPF
                 UserLevel = user.Level.ToString();
                 UserMail = user.Mail;
 
+                if (user.Level == Enums.LevelEnum.Admin)
+                {
+                    Settings_button.Visibility = Visibility.Visible;
+                }
+
                 lblUserName.Text = user.Name;
                 lblUserLevel.Text = user.Level.ToString();
 
