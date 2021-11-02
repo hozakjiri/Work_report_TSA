@@ -109,6 +109,7 @@
         <ComboBox   Grid.Column="1" Margin="237,481,16,52" Grid.Row="1"
                     Style="{StaticResource MaterialDesignOutlinedComboBox}"
                     materialDesign:HintAssist.Hint="Rights"
+                    Foreground="White"
 
                     materialDesign:TextFieldAssist.HasClearButton="True">
             <ComboBox.SelectedItem>
