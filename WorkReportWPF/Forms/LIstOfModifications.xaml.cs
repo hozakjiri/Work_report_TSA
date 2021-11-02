@@ -28,5 +28,10 @@ namespace WorkReportWPF
         {
             frameModification.Content = new SendModification();
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            frameModification.Content = new OverviewModification();
+        }
     }
 }

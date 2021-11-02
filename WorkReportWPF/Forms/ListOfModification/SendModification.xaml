@@ -3,12 +3,18 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WorkReportWPF.Forms.ListOfModification"
+      xmlns:local="clr-namespace:WorkReportWPF.Functions"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="SendModification">
+      Title="SendModification" Background="#FFC37C7C" Foreground="White">
 
     <Grid>
-        
+        <TextBox Name="TextBox"
+                 Margin="10,440,10,0"
+                 VerticalAlignment="Top"
+                 Text="&lt;p&gt;This is a test of HTML &lt;b&gt;Bold&lt;/b&gt; and &lt;i&gt;Italic&lt;/i&gt;&lt;/p&gt;&lt;p&gt; &lt;a href=&quot;http://www.microsoft.com&quot; &gt;The Link&lt;/a&gt;&lt;/p&gt;"
+                 TextWrapping="Wrap" Height="138" />
+        <WebBrowser
+                    local:WebBrowserBehavior.Body="{Binding ElementName=TextBox, Path=Text}" />
     </Grid>
 </Page>

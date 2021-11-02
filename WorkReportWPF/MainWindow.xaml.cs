@@ -115,6 +115,8 @@ namespace WorkReportWPF
 
                 lblUserName.Text = user.Name;
                 lblUserLevel.Text = user.Level.ToString();
+
+                MainContent.Content = new MainScreen();
             }
             else
             {
