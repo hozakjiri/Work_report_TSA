@@ -10,29 +10,55 @@
       Title="AddModification" Loaded="Page_Loaded">
 
     <Grid Width="1300" Height="588">
-        <TextBox x:Name ="Comment_Text" TextWrapping="Wrap" Text="" Margin="16,135,399,93" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" FontSize="20" >
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="0.815"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="3.016"/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
+        <TextBox x:Name ="Comment_Text"
+                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                 TextWrapping="Wrap" 
+                 Text="" 
+                 Margin="16,135,399,93" 
+                 RenderTransformOrigin="0.519,0.505" 
+                 AcceptsReturn="True" 
+                 Foreground="White" 
+                 Background="#FF292626" 
+                 Cursor="IBeam" 
+                 FontSize="20"
+                 materialDesign:HintAssist.Hint="Comment">
+
         </TextBox>
-        <Label Content="Comment:" Margin="16,95,0,0" Foreground="white" Background="Transparent" FontSize="20" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
-        <ComboBox x:Name="ProjectBox" HorizontalAlignment="Left" Margin="16,53,0,0" VerticalAlignment="Top" Width="329" Foreground="Black" BorderBrush="#FF292626" FontSize="20" Background="#FF292626"/>
-        <Label Content="Project :" Margin="16,10,0,0" Foreground="white" Background="Transparent" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" FontSize="20" />
-        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="551,53,0,0" VerticalAlignment="Top" Width="349" Background="#FFCCD3F1" Foreground="#FF8290E4" BorderBrush="#896EA4E6" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long" Text="select date" Cursor="ArrowCD"/>
-        <StackPanel Margin="382,53,0,0" Orientation="Horizontal" Background="#FF292626" HorizontalAlignment="Left" Width="84" Height="40" VerticalAlignment="Top">
-            <TextBox x:Name="txtNum" x:FieldModifier="private" Text="5" TextChanged="txtNum_TextChanged" Margin="3,0,0,0" Foreground="White" Background="#FF292626" Width="68" Height="30" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" />
+        <ComboBox x:Name="ProjectBox" 
+                  HorizontalAlignment="Left"
+                  Margin="16,38,0,0" 
+                  VerticalAlignment="Top" 
+                  VerticalContentAlignment="Center"
+                  Width="329" 
+                  Foreground="White" 
+                  BorderBrush="#FF292626" 
+                  FontSize="20" 
+                  Background="#FF292626"
+                  materialDesign:HintAssist.Hint="Project" Height="68"
+                  />
+
+        <DatePicker x:Name="datePicker" materialDesign:HintAssist.Hint="Date" HorizontalAlignment="Left" Margin="551,38,0,0" VerticalAlignment="Top" Width="349" Background="Transparent" Foreground="#aeea00" BorderBrush="#896EA4E6" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long" Text="select date" Cursor="ArrowCD" Height="68">
+
+        </DatePicker>
+        <StackPanel Margin="377,38,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="126" Height="68" VerticalAlignment="Top">
+            <TextBox x:Name="txtNum"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     x:FieldModifier="private" 
+                     Text="" 
+                     TextChanged="txtNum_TextChanged" 
+                     Margin="3,0,0,0" 
+                     Foreground="White" 
+                     Background="#FF292626"
+                     Width="90" Height="56" 
+                     VerticalAlignment="Center" 
+                     TextAlignment="Center" 
+                     FontSize="16" 
+                     materialDesign:HintAssist.Hint="Time"/>
             <StackPanel Orientation="Vertical" Width="12" Height="40">
                 <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="10" Click="cmdUp_Click" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" />
                 <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="10" Click="cmdDown_Click" Height="20" HorizontalAlignment="Right"  VerticalAlignment="Top"/>
             </StackPanel>
         </StackPanel>
-        <Label Content="Minutes :" Margin="375,10,0,0" Foreground="white" Background="Transparent" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="165" FontSize="20" />
-        <Label Content="Date :" Margin="551,10,0,0" Foreground="white" Background="Transparent" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" FontSize="20" />
 
 
         <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}" Margin="0,0,36,47" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">

@@ -18,7 +18,6 @@
             TextWrapping="Wrap" Text="" 
             Margin="25,245,502,95" 
             RenderTransformOrigin="0.519,0.505" 
-            
             Foreground="White" 
             Background="#FF292626" 
             Cursor="IBeam" 
