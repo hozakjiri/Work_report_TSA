@@ -22,26 +22,9 @@
         </Grid.RowDefinitions>
         <Label Content="Settings for application" Grid.ColumnSpan="3" Foreground="White" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Team Members (email information)" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Content="Save" Margin="323,541,10,10" Grid.Row="1"/>
 
         <Label Content="List of users" Margin="433,0,433,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
         <Label Content="List of projekts" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="2"/>
-        <Button
-    Background="#aeea00"
-    Style="{StaticResource MaterialDesignRaisedButton}"
-    materialDesign:ButtonAssist.CornerRadius="10"
-    materialDesign:ButtonProgressAssist.Value="-1"
-    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-    Foreground="Black"
-    Content="Refresh"
-    Margin="323,433,10,118"
-    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Grid.Column="2" Grid.Row="1" />
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             Name="Refresh_0" 
@@ -58,48 +41,6 @@
             FontSize="10" 
             Cursor="IBeam"
             materialDesign:HintAssist.Hint="Name of projects" Grid.Column="2" Grid.Row="1"/>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Content="Delete" Margin="324,541,10,10" Grid.Row="1" Grid.Column="1"/>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Content="Add" Margin="10,541,324,10" Grid.Row="1" Grid.Column="1">
-        </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Content="Delete" Margin="323,541,10,10" Grid.Row="1" Grid.Column="2"/>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Content="Edit" Margin="216,541,117,10" Grid.Row="1" Grid.Column="2"/>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Content="Add" Margin="10,541,323,10" Grid.Row="1" Grid.Column="2"/>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Content="Edit" Margin="117,541,217,10" Grid.Row="1" Grid.Column="1"/>
-        <Button
-    Background="#aeea00"
-    Style="{StaticResource MaterialDesignRaisedButton}"
-    materialDesign:ButtonAssist.CornerRadius="10"
-    materialDesign:ButtonProgressAssist.Value="-1"
-    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-    Content="Refresh"
-    Foreground="Black"
-    Margin="10,541,323,10"         
-    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Grid.Row="1" />
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             Name="Name_of_projects" 
@@ -201,23 +142,140 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Content="Add" Margin="10,377,323,174" Grid.Row="1"/>
+            Margin="323,377,10,174" Grid.Row="1">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text"  Text="Delete" Width="59" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
         <Button
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Content="Delete" Margin="323,377,10,174" Grid.Row="1"/>
+            Margin="318,541,16,10" Grid.Row="1" Grid.Column="1">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text1"  Text="Delete" Width="59" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
         <Button
-            Background="#aeea00"
-            Style="{StaticResource MaterialDesignRaisedButton}"
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
-            materialDesign:ButtonProgressAssist.Value="-1"
-            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-            Content="Refresh"
-            Foreground="Black"
-            Margin="323,284,10,267"         
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Grid.Row="1" />
+            Width="100"
+            Margin="323,541,10,10" Grid.Row="1" Grid.Column="2">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text2"  Text="Delete" Width="59" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Width="100"
+            Margin="10,377,323,174" Grid.Row="1">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="PlusCircle" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text3"  Text="Add" Width="30" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Width="100"
+            Margin="10,541,324,10" Grid.Row="1" Grid.Column="1">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="PlusCircle" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text4"  Text="Add" Width="30" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Width="100"
+            Margin="10,541,323,10" Grid.Row="1" Grid.Column="2">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="PlusCircle" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text5"  Text="Add" Width="30" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Width="100"
+            Margin="115,541,219,10" Grid.Row="1" Grid.Column="1">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Pencil" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text6"  Text="Edit" Width="30" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Width="100"
+            Margin="116,541,217,10" Grid.Row="1" Grid.Column="2">
+            <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Pencil" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text7"  Text="Edit" Width="30" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Margin="10,541,323,10" Grid.Row="1">
+            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text8"  Text="Refresh" Width="50" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Margin="323,285,10,266" Grid.Row="1">
+            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text9"  Text="Refresh" Width="50" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Margin="323,441,10,110" Grid.Row="1" Grid.Column="2">
+            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text10"  Text="Refresh" Width="50" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Margin="10,541,323,10" Grid.Row="1">
+            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text11"  Text="Refresh" Width="50" Foreground="Black" Height="18"/>
+
+            </StackPanel>
+        </Button>
+        <Button
+            Style="{StaticResource MaterialDesignRaisedAccentButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            Margin="323,541,10,10" Grid.Row="1">
+            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="FloppyDisk" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text12"  Text="Save" Width="32" Foreground="Black" Height="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            </StackPanel>
+        </Button>
 
 
 
