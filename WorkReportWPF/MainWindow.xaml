@@ -38,8 +38,8 @@
             Background="#aeea00" Grid.ColumnSpan="2">
                     <Path
                 Fill="Black"
-                Height="40"
-                Width="40"
+                Height="60"
+                Width="60"
                 Stretch="Uniform"
                 Data="{StaticResource work_report_ico}"/>
                 </Grid>

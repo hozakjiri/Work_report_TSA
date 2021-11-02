@@ -24,7 +24,7 @@
         <Label Content="Team Members (email information)" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
 
         <Label Content="List of users" Margin="433,0,433,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
-        <Label Content="List of projekts" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="2"/>
+        <Label Content="List of projects" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="2"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             Name="Refresh_0" 
