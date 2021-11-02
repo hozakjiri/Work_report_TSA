@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="668" d:DesignWidth="1300"
       Title="Home">
@@ -18,12 +19,67 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="65"/>
         </Grid.RowDefinitions>
-
-        <Label Content="Last reports TOP 5" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" FontSize="22" VerticalAlignment="Top" Margin="230,10,230,0" Height="36" Grid.Row="1"/>
-        <Label Content="Last tasks TOP 5" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" FontSize="22" Margin="236,10,236,473" Grid.Column="1" Grid.Row="1"/>
         <Label Content="Dasboard for EOT TST Technician Department" Grid.ColumnSpan="2" Foreground="White" Background="Transparent" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <TextBox TextWrapping="Wrap" Text="Tady chci aby byl umístěn datum, hodiny, který je týden" Grid.Row="2" Grid.ColumnSpan="2" Foreground="White" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <GroupBox
+  Header="Last of TOP 5 reports"
+  Style="{DynamicResource MaterialDesignCardGroupBox}"
+  Margin="10,10,10,10"
+  materialDesign:ColorZoneAssist.Mode="Custom"
+  materialDesign:ColorZoneAssist.Background="#aeea00"
+  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="{StaticResource CanvasBrush}">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel
+        Orientation="Horizontal" Margin="0,0,407,0">
+                        <materialDesign:PackIcon
+          Kind="ImageArea"
+          Height="48"
+          Width="48"
+          VerticalAlignment="Center" 
+          HorizontalContentAlignment="Center"
+          HorizontalAlignment="Center"                  />
+                        <TextBlock
+          Margin="8,0,0,0"
+          VerticalAlignment="Center"
+          HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+          Text="{Binding}" />
+                    </StackPanel>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
 
+        </GroupBox>
+
+        <GroupBox
+  Header="Last of TOP 5 tasks"
+  Style="{DynamicResource MaterialDesignCardGroupBox}"
+  Margin="10,10,10,10"
+  materialDesign:ColorZoneAssist.Mode="Custom"
+  materialDesign:ColorZoneAssist.Background="#aeea00"
+  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="{StaticResource CanvasBrush}" Grid.Column="1">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel
+        Orientation="Horizontal" Margin="0,0,407,0">
+                        <materialDesign:PackIcon
+          Kind="ImageArea"
+          Height="48"
+          Width="48"
+          VerticalAlignment="Center" 
+          HorizontalContentAlignment="Center"
+          HorizontalAlignment="Center"                  />
+                        <TextBlock
+          Margin="8,0,0,0"
+          VerticalAlignment="Center"
+          HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+          Text="{Binding}" />
+                    </StackPanel>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+
+        </GroupBox>
 
 
     </Grid>

@@ -11,23 +11,49 @@
       Title="Support">
 
     <Grid>
-        <TextBox Name ="Comment_Text" TextWrapping="Wrap" Text="" Margin="25,245,462,75" RenderTransformOrigin="0.519,0.505" AcceptsReturn="True" Foreground="White" Background="#FF292626" Cursor="IBeam" FontSize="16" />
-        <Label Content="Comment:" Margin="25,189,0,0" Foreground="white" Background="Transparent" FontSize="22" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" />
-        <Button x:Name="Semd_Email_button" BorderBrush="{x:Null}" Margin="0,0,13,10" Height="60" Width="212" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            Name ="Comment_Text"
+            AcceptsReturn="True"
+            TextWrapping="Wrap" Text="" 
+            Margin="25,245,502,95" 
+            RenderTransformOrigin="0.519,0.505" 
+            
+            Foreground="White" 
+            Background="#FF292626" 
+            Cursor="IBeam" 
+            FontSize="16"
+            materialDesign:HintAssist.Hint="Comment"/>
+        <Button x:Name="Semd_Email_button" BorderBrush="{x:Null}" Margin="0,0,35,10" Height="60" Width="212" Background="#aeea00" VerticalAlignment="Bottom" materialDesign:ButtonAssist.CornerRadius="10" HorizontalAlignment="Right">
             <StackPanel Width="190" VerticalAlignment="Center" HorizontalAlignment="Left" Height="70" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="EmailBox" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email"  Text="Send Email" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
+                <materialDesign:PackIcon Kind="EmailBox" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email"  Text="Send Email" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
         </Button>
 
-        <Button x:Name="Inser_image" BorderBrush="{x:Null}" Margin="0,0,260,10" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="220" Click="Send_Mail">
+        <Button x:Name="Inser_image" BorderBrush="{x:Null}" Margin="0,0,260,10" Height="60" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="220" Click="Send_Mail" Style="{StaticResource MaterialDesignRaisedButton}">
+
             <StackPanel Width="212" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ImageAdd" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Insert_Image"  Text="Insert Image" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
+                <materialDesign:PackIcon Kind="ImageAdd" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Insert_Image"  Text="Insert Image" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
         </Button>
-        <TextBox Name="Subject_Text" Text="" Margin="25,149,0,0" Foreground="WHITE" Background="#FF292626" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="813" FontSize="16" Cursor="IBeam"/>
-        <Label Content="Subject:" Margin="25,93,0,0" Foreground="white" Background="Transparent" FontSize="22" HorizontalAlignment="Left" Width="200" Height="40" VerticalAlignment="Top" />
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            Name="Subject_Text" 
+            Text="" 
+            Margin="25,134,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="57" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="773" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Subject"/>
         <Label Content="Report a problem with the application" Margin="0,10,0,575" Foreground="white" Background="Transparent" FontSize="48" HorizontalAlignment="Center" Width="1262" HorizontalContentAlignment="Center"/>
         <TextBlock TextWrapping="Wrap" Text="Here you can describe any problem with the application, you can attach the file as an example" Foreground="White" Background="Transparent" TextAlignment="Center" Padding="25,25,25,25" Margin="0,151,0,0" FontSize="22" HorizontalAlignment="Right" Width="425" VerticalAlignment="Top"/>
         <materialDesign:PackIcon Kind="Lifebuoy" Foreground="Gainsboro" RenderTransformOrigin="0.5,0.603" ToolTip="Support" Margin="0,304,19,0" Width="406" Height="269" HorizontalAlignment="Right"/>

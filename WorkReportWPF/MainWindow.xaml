@@ -35,13 +35,13 @@
                 </Grid.RowDefinitions>
                 <!--#region Logo-->
                 <Grid
-            Background="{StaticResource PrimaryBrush}" Grid.ColumnSpan="2">
+            Background="#aeea00" Grid.ColumnSpan="2">
                     <Path
-                Fill="{StaticResource SecondaryBrush}"
+                Fill="Black"
                 Height="40"
                 Width="40"
                 Stretch="Uniform"
-                Data="{StaticResource file_chart_outline_icon}"/>
+                Data="{StaticResource work_report_ico}"/>
                 </Grid>
                 <!--endregion-->
 
@@ -423,7 +423,7 @@
                         </Button>
 
                         <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="Settings" Foreground="#FFC9A3C9" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
+                            <materialDesign:PackIcon Kind="Settings" Foreground="#aeea00" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
                         </Button>
                     </ListView>
 
