@@ -23,7 +23,7 @@
                 </StackPanel>
             </Button>
 
-        <Button x:Name="Add_button" 
+            <Button x:Name="Add_button" 
                 materialDesign:ButtonAssist.CornerRadius="10"
                 BorderBrush="{x:Null}" 
                 Height="55" Width="150"
@@ -37,11 +37,11 @@
                 Padding="1,1,1,1" 
                 HorizontalAlignment="Center"
                 Margin="10,0,0,0">
-            <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="NotebookPlus" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Add_Text"  Text="Add a report" Width="91" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
-            </StackPanel>
-        </Button>
+                <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="NotebookPlus" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="Add_Text"  Text="Add a report" Width="91" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
+                </StackPanel>
+            </Button>
 
             <Button x:Name="Send_button" BorderBrush="{x:Null}" Height="55" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Background="#aeea00" Click="Click_Send" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
                 <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
@@ -49,8 +49,10 @@
                     <TextBlock x:Name="Send_Text"  Text="Send report" Width="79" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
                 </StackPanel>
             </Button>
-            
+
         </StackPanel>
-        <Frame x:Name="frameModification" Content="Frame" Grid.Row="2" Foreground="#FFDEAEAE"/>
+        <Frame x:Name="frameModification" Content="Frame" Grid.Row="2" Foreground="White" Background="#FF292626" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="568" Width="1280" VerticalContentAlignment="Center">
+
+        </Frame>
     </Grid>
 </Page>

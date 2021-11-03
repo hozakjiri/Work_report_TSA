@@ -12,6 +12,7 @@
     <Grid Width="1300" Height="588">
         <TextBox x:Name ="Comment_Text"
                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                 materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
                  TextWrapping="Wrap" 
                  Text="" 
                  Margin="16,135,399,93" 
@@ -34,14 +35,39 @@
                   BorderBrush="#FF292626" 
                   FontSize="20" 
                   Background="#FF292626"
-                  materialDesign:HintAssist.Hint="Project" Height="68"
-                  />
+                  materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+                  materialDesign:HintAssist.Hint="Project" Height="68">
+                  <ComboBoxItem Background="#FF292626" Foreground="White">
+            </ComboBoxItem>
+        </ComboBox>
 
-        <DatePicker x:Name="datePicker" materialDesign:HintAssist.Hint="Date" HorizontalAlignment="Left" Margin="551,38,0,0" VerticalAlignment="Top" Width="349" Background="Transparent" Foreground="#aeea00" BorderBrush="#896EA4E6" FontSize="20" FirstDayOfWeek="Monday" SelectedDateFormat="Long" Text="select date" Cursor="ArrowCD" Height="68">
-
+        <DatePicker x:Name="datePicker" 
+                    materialDesign:HintAssist.Hint="Date" 
+                    HorizontalAlignment="Left" Margin="551,38,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="349" 
+                    Background="#FF292626" 
+                    BorderBrush="#FF292626" 
+                    Foreground="White"
+                    FontSize="20" 
+                    FirstDayOfWeek="Monday" 
+                    SelectedDateFormat="Long" 
+                    Text="select date"
+                    Cursor="ArrowCD" 
+                    Height="68"  
+                    Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+                    materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}">
+            <DatePicker.CalendarStyle>
+                <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF292626" />
+                    </Style.Resources>
+                </Style>
+            </DatePicker.CalendarStyle>
         </DatePicker>
         <StackPanel Margin="377,38,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="126" Height="68" VerticalAlignment="Top">
             <TextBox x:Name="txtNum"
+                     materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
                      x:FieldModifier="private" 
                      Text="" 
@@ -60,23 +86,21 @@
             </StackPanel>
         </StackPanel>
 
-
-        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}" Margin="0,0,36,47" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">
+        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,36,47" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ContentSave" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
+                <materialDesign:PackIcon Kind="ContentSave" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
         </Button>
-        <Button x:Name="Attachments_button" BorderBrush="{x:Null}" Margin="0,0,201,47" Height="60" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click">
+        <Button x:Name="Attachments_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,201,47" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click">
             <StackPanel Width="134" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="PhotoAlbum" Foreground="Gainsboro" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20"/>
+                <materialDesign:PackIcon Kind="PhotoAlbum" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
         </Button>
         <StackPanel Background="#FF292626" Margin="912,137,12,179">
-            <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.5,0.5"/>
+            <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.5,0.5" materialDesign:HintAssist.Hint="Insert Image"/>
         </StackPanel>
-        <Label Content="Image :" Margin="924,89,25,0" Foreground="white" Background="Transparent" FontSize="20" Height="35" VerticalAlignment="Top" />
         <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="white" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" />
     </Grid>
 </Page>
