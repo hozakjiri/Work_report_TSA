@@ -38,8 +38,7 @@
                   Background="#FF292626"
                   materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
                   materialDesign:HintAssist.Hint="Project" Height="68">
-                  <ComboBoxItem Background="#FF292626" Foreground="White">
-            </ComboBoxItem>
+
         </ComboBox>
 
         <DatePicker x:Name="datePicker" 
