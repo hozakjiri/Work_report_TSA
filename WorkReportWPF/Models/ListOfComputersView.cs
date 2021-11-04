@@ -1,13 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using WorkReportWPF.Enums;
+﻿using WorkReportWPF.Enums;
 
 namespace WorkReportWPF.Models
 {
-    [Table("Station")]
-    public class Station
+    public class ListOfComputersView
     {
-        [Key]
         public int StationID { get; set; }
 
         public string Line { get; set; }
@@ -31,5 +27,6 @@ namespace WorkReportWPF.Models
         public string Document { get; set; }
 
         public string Note { get; set; }
+
     }
 }

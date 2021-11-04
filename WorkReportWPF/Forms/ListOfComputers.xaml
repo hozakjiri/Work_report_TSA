@@ -6,9 +6,16 @@
       xmlns:local="clr-namespace:WorkReportWPF"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ListOfComputers">
+      Title="ListOfComputers" Loaded="Page_Loaded">
 
     <Grid>
-        
+        <DataGrid x:Name="stationGrid" AutoGenerateColumns="true" SelectedItem="selectedGrid" Background="#FF3C3333" Foreground="#DDF3F3F3" BorderBrush="#1FB05656" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D"  VerticalGridLinesBrush="#FF515862" RowBackground="#FF7891AE" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False">
+            <DataGrid.RowHeaderTemplate>
+                <DataTemplate/>
+            </DataGrid.RowHeaderTemplate>
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+        </DataGrid>
     </Grid>
 </Page>
