@@ -11,5 +11,15 @@ namespace WorkReportWPF.Forms.Remote
         {
             InitializeComponent();
         }
+
+        private void Add_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }

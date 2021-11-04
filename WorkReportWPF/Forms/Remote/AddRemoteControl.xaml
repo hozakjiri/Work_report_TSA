@@ -6,8 +6,144 @@
       xmlns:local="clr-namespace:WorkReportWPF.Forms.Remote"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.Remote.AddRemoteControl"
       mc:Ignorable="d" 
-      d:DesignHeight="621" d:DesignWidth="1300"
+      d:DesignHeight="668" d:DesignWidth="1300"
       Title="AddRemoteControl" Height="400">
 
-    <Grid Width="1300" Height="611"/>
+    <Grid Width="1300" Margin="0,10,0,0">
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="user_name_account_computer" 
+            Text="" 
+            Margin="602,204,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="58" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="350" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="User name account computer"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="password_for_vnc" 
+            Text="" 
+            Margin="602,350,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="58" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="350" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Password for VNC"
+            />
+        <Button x:Name="Add" BorderBrush="{x:Null}" Margin="0,0,154,10" Height="60" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="130" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}">
+
+            <StackPanel Width="135" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Add" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Insert_Image"  Text="Add" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Back" BorderBrush="{x:Null}" Margin="0,0,10,10" Height="60" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="139" Click="Back_Click" Style="{StaticResource MaterialDesignRaisedButton}">
+
+            <StackPanel Width="145" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="ArrowLeftCircle" Foreground="Black" Height="50" Width="63" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Insert_Image1"  Text="Back" FontSize="20" Foreground="Black" Width="55" Height="29"/>
+            </StackPanel>
+        </Button>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="name_of_station" 
+            Text="" 
+            Margin="227,205,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="57" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="350" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Name of station"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="password_for_user" 
+            Text="" 
+            Margin="602,277,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="57" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="350" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Password for User"
+            />
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="domain" 
+            Text="" 
+            Margin="227,351,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="57" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="350" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Domain"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="hostname" 
+            Text="" 
+            Margin="227,278,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="56" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="350" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Hostname"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="name_of_sline" 
+            Text="" 
+            Margin="227,129,0,0" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="57" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="725" 
+            FontSize="16" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Name of line"/>
+    </Grid>
 </Page>
