@@ -46,7 +46,7 @@
                 <DataGridTextColumn Header="Project" Binding="{Binding Path=Project}" Foreground="White" Width="150"/>
                 <DataGridTextColumn Header="Comment" Binding="{Binding Path=Comment}" Foreground="White" Width="500"/>
                 <DataGridTextColumn Header="Time" Binding="{Binding Path=Time}" Foreground="White" Width="80"/>
-                <DataGridTextColumn Header="Image" Binding="{Binding Path=Image}"  Foreground="White" Width="80"/>
+                <DataGridCheckBoxColumn Header="Image" Binding="{Binding Path=Image}" Width="80"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}" Foreground="White" Width="150"/>
             </DataGrid.Columns>
 

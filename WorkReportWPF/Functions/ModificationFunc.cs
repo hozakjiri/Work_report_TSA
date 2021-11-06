@@ -32,7 +32,7 @@ namespace WorkReportWPF.Functions
                 //Date = (DateTime)ToDate(x.Date, "M/d/yyyy h:mm:ss"),
                 Project = x.Project,
                 Comment = x.Comment,
-                Image = x.Image,
+                Image = x.Image == "yes" ? true : false,
                 Time = x.Time,
             }).ToList();
 

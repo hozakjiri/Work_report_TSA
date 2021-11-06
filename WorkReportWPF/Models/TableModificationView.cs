@@ -18,7 +18,7 @@ namespace WorkReportWPF.Models
 
         public string Time { get; set; }
 
-        public string Image { get; set; }
+        public bool Image { get; set; }
 
     }
 }
