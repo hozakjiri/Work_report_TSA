@@ -24,23 +24,29 @@
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="FontSize" Value="20"/>
                     <Setter Property="BorderThickness" Value="0,0,1,2"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="Foreground" Value="#aeea00"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                 </Style>
-
-
-
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="#FF648AF0" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
             </DataGrid.Resources>
+            
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Foreground="White" Width="20"/>
-                <DataGridTextColumn Header="Date" Binding="{Binding Path=Date}" Foreground="White" Width="100"/>
-                <DataGridTextColumn Header="User" Binding="{Binding Path=User}" Foreground="White" Width="100"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Path=Date, StringFormat=d}" Foreground="White" Width="100"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Path=Username}" Foreground="White" Width="100"/>
                 <DataGridTextColumn Header="Project" Binding="{Binding Path=Project}" Foreground="White" Width="150"/>
                 <DataGridTextColumn Header="Comment" Binding="{Binding Path=Comment}" Foreground="White" Width="500"/>
                 <DataGridTextColumn Header="Time" Binding="{Binding Path=Time}" Foreground="White" Width="80"/>
-                <DataGridTextColumn Header="Image" Binding="{Binding Path=Image}" Foreground="White" Width="80"/>
+                <DataGridTextColumn Header="Image" Binding="{Binding Path=Image}"  Foreground="White" Width="80"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}" Foreground="White" Width="150"/>
             </DataGrid.Columns>
 

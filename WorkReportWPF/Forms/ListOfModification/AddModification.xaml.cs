@@ -95,7 +95,7 @@ namespace WorkReportWPF.Forms.ListOfModification
             MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
 
             string name = System.IO.Path.GetFileName(TextPathImage.Text);
-            string fullpath = Directory.GetCurrentDirectory() + "/Image/" + Environment.UserName + DateTime.Now.ToString("yyyyMMddHHmm") + ".jpg";
+            string fullpath = !string.IsNullOrEmpty(name) ? Directory.GetCurrentDirectory() + "/Image/" + Environment.UserName + DateTime.Now.ToString("yyyyMMddHHmm") + ".jpg" : "";
 
             if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Image"))
             {

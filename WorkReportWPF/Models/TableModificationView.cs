@@ -1,4 +1,7 @@
-﻿namespace WorkReportWPF.Models
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace WorkReportWPF.Models
 {
     public class TableModificationView
     {
@@ -6,7 +9,8 @@
 
         public string Username { get; set; }
 
-        public string Date { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime Date { get; set; }
 
         public string Project { get; set; }
 

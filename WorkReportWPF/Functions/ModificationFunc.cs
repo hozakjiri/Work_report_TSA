@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using WorkReportWPF.Models;
 using WorkReportWPF.Models.DBModels;
 
@@ -26,7 +28,8 @@ namespace WorkReportWPF.Functions
             {
                 ID = x.ID,
                 Username = x.Username,
-                Date = x.Date,
+                Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
+                //Date = (DateTime)ToDate(x.Date, "M/d/yyyy h:mm:ss"),
                 Project = x.Project,
                 Comment = x.Comment,
                 Image = x.Image,
@@ -34,6 +37,20 @@ namespace WorkReportWPF.Functions
             }).ToList();
 
             return modificationData;
+        }
+
+        public static DateTime? ToDate(string dateTimeStr, params string[] dateFmt)
+        {
+            const DateTimeStyles style = DateTimeStyles.AllowWhiteSpaces;
+
+            if (dateFmt == null)
+            {
+                var dateInfo = Thread.CurrentThread.CurrentCulture.DateTimeFormat;
+                dateFmt = dateInfo.GetAllDateTimePatterns();
+            }
+            DateTime dt = default;
+            var result = DateTime.TryParseExact(dateTimeStr, dateFmt, CultureInfo.InvariantCulture, style, out dt) ? dt : (DateTime?)default;
+            return result;
         }
 
         public static void SaveModification(string project, string comment, string date, string minutes, string imagepath, string fulltime)
