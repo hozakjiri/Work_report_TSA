@@ -51,7 +51,7 @@
             </Button>
 
         </StackPanel>
-        <Frame x:Name="frameModification" Content="Frame" Grid.Row="2" Foreground="White" Background="#FF292626" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="568" Width="1280" VerticalContentAlignment="Center">
+        <Frame x:Name="frameModification" Content="Frame" Grid.Row="2" Foreground="White" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="588" Width="1300" VerticalContentAlignment="Center">
 
         </Frame>
     </Grid>

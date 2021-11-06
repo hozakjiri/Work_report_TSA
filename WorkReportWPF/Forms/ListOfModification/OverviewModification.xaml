@@ -3,20 +3,47 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:WorkReportWPF.Forms.ListOfModification"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
       Title="OverviewModification" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="true" SelectedItem="selectedGrid" Background="#FF3C3333" Foreground="#DDF3F3F3" BorderBrush="#1FB05656" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D"  VerticalGridLinesBrush="#FF515862" RowBackground="#FF7891AE" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False">
-            <DataGrid.RowHeaderTemplate>
-                <DataTemplate/>
-            </DataGrid.RowHeaderTemplate>
-            <DataGrid.CellStyle>
-                <Style/>
-            </DataGrid.CellStyle>
-        </DataGrid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <DataGrid x:Name="dataGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="White" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="Foreground" Value="#aeea00"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
 
+
+
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Foreground="White" Width="20"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Path=Date}" Foreground="White" Width="100"/>
+                <DataGridTextColumn Header="User" Binding="{Binding Path=User}" Foreground="White" Width="100"/>
+                <DataGridTextColumn Header="Project" Binding="{Binding Path=Project}" Foreground="White" Width="150"/>
+                <DataGridTextColumn Header="Comment" Binding="{Binding Path=Comment}" Foreground="White" Width="500"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding Path=Time}" Foreground="White" Width="80"/>
+                <DataGridTextColumn Header="Image" Binding="{Binding Path=Image}" Foreground="White" Width="80"/>
+                <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}" Foreground="White" Width="150"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
     </Grid>
 </Page>
