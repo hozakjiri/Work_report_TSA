@@ -21,7 +21,7 @@
         
         <DataGrid x:Name="dataGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="White" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All">
             <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="FontWeight" Value="SemiBold"/>
                     <Setter Property="FontSize" Value="20"/>
@@ -34,16 +34,13 @@
                     <Style.Triggers>
                         <Trigger Property="DataGridCell.IsSelected" Value="True">
                             <Setter Property="Background" Value="#aeea00" />
-                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
                             <Setter Property="Foreground" Value="Black"/>
                             <Setter Property="BorderBrush" Value="#aeea00"/>
+                          
                             
                         </Trigger>
                         <Trigger Property="DataGridCell.IsSelected" Value="False">
                             <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
                             <Setter Property="Foreground" Value="White"/>
                         </Trigger>
 
@@ -55,14 +52,56 @@
             </DataGrid.Resources>
             
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Foreground="White" Width="20"/>
-                <DataGridTextColumn Header="Date" Binding="{Binding Path=Date, StringFormat=d}" Foreground="White" Width="100"/>
-                <DataGridTextColumn Header="Username" Binding="{Binding Path=Username}" Foreground="White" Width="100"/>
-                <DataGridTextColumn Header="Project" Binding="{Binding Path=Project}" Foreground="White" Width="150"/>
-                <DataGridTextColumn Header="Comment" Binding="{Binding Path=Comment}" Foreground="White" Width="500"/>
-                <DataGridTextColumn Header="Time" Binding="{Binding Path=Time}" Foreground="White" Width="80"/>
+                <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Foreground="White" Width="20">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Binding="{Binding Path=Date, StringFormat=d}" Foreground="White" Width="100">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Username" Binding="{Binding Path=Username}" Foreground="White" Width="100">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Project" Binding="{Binding Path=Project}" Foreground="White" Width="150">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Comment" Binding="{Binding Path=Comment}" Foreground="White" Width="500">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Time" Binding="{Binding Path=Time}" Foreground="White" Width="80">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
                 <DataGridCheckBoxColumn Header="Image" Binding="{Binding Path=Image}" Width="80"/>
-                <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}" Foreground="White" Width="150"/>
+                <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}" Foreground="White" Width="150">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
 
         </DataGrid>
