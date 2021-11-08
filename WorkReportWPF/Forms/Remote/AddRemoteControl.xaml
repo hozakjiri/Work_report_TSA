@@ -15,27 +15,27 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="user_name_account_computer" 
             Text="" 
-            Margin="650,165,65,339" 
+            Margin="650,165,65,356" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="32" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="User name account computer" Height="100"/>
+            materialDesign:HintAssist.Hint="User name account computer"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="password_for_vnc" 
             Text="" 
-            Margin="650,433,215,81" 
+            Margin="652,455,218,68" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="32" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Password for VNC" Width="430" Height="100"
+            materialDesign:HintAssist.Hint="Password for VNC" Width="430"
             />
         <Button x:Name="Add" BorderBrush="{x:Null}" Margin="0,0,29,85" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
 
@@ -49,20 +49,20 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="name_of_station" 
             Text="" 
-            Margin="65,165,670,339" 
+            Margin="68,165,672,356" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="32" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of station" Height="100" Width="560"/>
+            materialDesign:HintAssist.Hint="Name of station" Width="560"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="password_for_user" 
             Text="" 
-            Margin="650,300,65,201" 
+            Margin="650,300,65,221" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -76,39 +76,39 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="domain" 
             Text="" 
-            Margin="65,433,670,81" 
+            Margin="68,455,672,68" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="32" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Domain" Height="100" Width="560"/>
+            materialDesign:HintAssist.Hint="Domain" Width="560"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="hostname" 
             Text="" 
-            Margin="65,294,670,201" 
+            Margin="68,297,672,221" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="32" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Hostname" Width="560" Height="100"/>
+            materialDesign:HintAssist.Hint="Hostname" Width="560"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="name_of_sline" 
             Text="" 
-            Margin="65,40,65,465" 
+            Margin="65,40,65,481" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="32" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of line" Height="100"/>
+            materialDesign:HintAssist.Hint="Name of line"/>
     </Grid>
 </Page>
