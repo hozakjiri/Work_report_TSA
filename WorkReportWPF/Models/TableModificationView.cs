@@ -20,5 +20,7 @@ namespace WorkReportWPF.Models
 
         public bool Image { get; set; }
 
+        public string Note { get; set; }
+
     }
 }

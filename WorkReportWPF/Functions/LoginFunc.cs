@@ -36,6 +36,32 @@ namespace WorkReportWPF.Functions
             List<Login> TableLogin = context.Logins.ToList();
             return TableLogin;
         }
+        public static string LoadAllMails()
+        {
+
+            using DbSettingsContext context = new();
+            var TableLogin = context.Logins.Select(x => x.Mail).ToList();
+            var stringmails = "";
+
+            if (TableLogin != null)
+            {
+                int tablecount = TableLogin.Count();
+
+                for (int i = 0; i <= tablecount; i++)
+                {
+                    if (tablecount == i)
+                    {
+                        stringmails = TableLogin[i].ToString();
+                    }
+
+                    stringmails = TableLogin[i].ToString() + ",";
+                }
+            }
+
+
+            return stringmails;
+        }
+
 
         public static Login LoadUserData(string UserLogin)
         {
@@ -64,6 +90,13 @@ namespace WorkReportWPF.Functions
             using DbSettingsContext context = new();
             LevelEnum newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Level).FirstOrDefault();
             return string.Format(newLogin.ToString());
+        }
+
+        public static string LoadUserName(string UserLogin)
+        {
+            using DbSettingsContext context = new();
+            string newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).Select(x => x.Name).FirstOrDefault();
+            return newLogin;
         }
 
         public static bool CheckPremisions(string UserLogin)

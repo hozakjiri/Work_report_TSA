@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
+using System.Text;
 using System.Threading;
+using System.Windows;
 using WorkReportWPF.Models;
 using WorkReportWPF.Models.DBModels;
 
@@ -30,6 +33,29 @@ namespace WorkReportWPF.Functions
                 Username = x.Username,
                 Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
                 //Date = (DateTime)ToDate(x.Date, "M/d/yyyy h:mm:ss"),
+                Project = x.Project,
+                Comment = x.Comment,
+                Image = x.Image == "yes" ? true : false,
+                Time = x.Time,
+            }).ToList();
+
+            return modificationData;
+        }
+
+        public static List<TableModificationView> LoadUserModificationTable()
+        {
+            using DbDataContext context = new();
+
+            var name = LoginFunc.LoadUserName(Environment.UserName);
+            var date = DateTime.Now.ToString("dd.MM.yyyy");
+
+            var projectList = context.Datas.Where(x => x.Username == name && x.Date == date).ToList();
+
+            List<TableModificationView> modificationData = projectList.Select(x => new TableModificationView()
+            {
+                ID = x.ID,
+                Username = x.Username,
+                Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
                 Project = x.Project,
                 Comment = x.Comment,
                 Image = x.Image == "yes" ? true : false,
@@ -79,6 +105,103 @@ namespace WorkReportWPF.Functions
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public static void SendMail(List<TableModificationView> data, string Shift, string mailTo)
+        {
+            try
+            {
+                MailMessage oMail = new()
+                {
+                    From = new MailAddress("WorkReport@hella.com")
+                };
+                //oMail.To.Add(mailTo);
+                oMail.To.Add("jizi.hozak@hella.com");
+
+                oMail.IsBodyHtml = true;
+
+                oMail.Subject = "WorkReport " + DateTime.Now.ToString("dd.MM.yyyy") + " - " + Shift;
+
+                //var Data = new Attachment(attachment, MediaTypeNames.Application.Octet);
+                //if (!string.IsNullOrEmpty(attachment))
+                //{
+                //    // '// Add time stamp information for the file.
+                //    ContentDisposition disposition1 = Data.ContentDisposition;
+                //    disposition1.CreationDate = File.GetCreationTime(attachment);
+                //    disposition1.ModificationDate = File.GetLastWriteTime(attachment);
+                //    disposition1.ReadDate = File.GetLastAccessTime(attachment);
+                //    // '// Add the file attachment to this e-mail message.
+                //    oMail.Attachments.Add(Data);
+                //}
+
+                StringBuilder sb = new();
+                sb.AppendLine("<p>Ahojte, </p>");
+                sb.AppendLine("<br/>");
+
+                StringBuilder sf = new();
+                sf.AppendLine("<style>");
+                sf.AppendLine("table, th, td {");
+                sf.AppendLine("border: 1px solid black;");
+                sf.AppendLine("border-collapse: collapse;");
+                sf.AppendLine("}");
+                sf.AppendLine("th, td {");
+                sf.AppendLine("padding: 5px;");
+                sf.AppendLine("Text-align: Left;");
+                sf.AppendLine("}");
+                sf.AppendLine("p {");
+                sf.AppendLine("padding: 0px;");
+                sf.AppendLine("Text-align: Left;");
+                sf.AppendLine("margin: 0px;");
+                sf.AppendLine("}");
+                sf.AppendLine("</style>");
+
+
+                var datatable = data;
+                StringBuilder MailBody = new();
+
+                MailBody.AppendLine("<table>");
+                MailBody.AppendLine("<thead>");
+                MailBody.AppendLine("<tr>");
+                MailBody.AppendLine("<th>Date</th>");
+                MailBody.AppendLine("<th>Username</th>");
+                MailBody.AppendLine("<th>Project</th>");
+                MailBody.AppendLine("<th>Comment</th>");
+                MailBody.AppendLine("<th>Time</th>");
+                MailBody.AppendLine("<th>Note</th>");
+                MailBody.AppendLine("</tr>");
+                MailBody.AppendLine("</thead>");
+                MailBody.AppendLine("<tbody>");
+
+
+                foreach (var line in data)
+                {
+                    MailBody.AppendLine("<tr>");
+                    MailBody.AppendLine("<td>" + line.Date + "</td>");
+                    MailBody.AppendLine("<td>" + line.Username + "</td>");
+                    MailBody.AppendLine("<td>" + line.Project + "</td>");
+                    MailBody.AppendLine("<td>" + line.Comment + "</td>");
+                    MailBody.AppendLine("<td>" + line.Time + "</td>");
+                    MailBody.AppendLine("<td>" + line.Note + "</td>");
+                    MailBody.AppendLine("</tr>");
+                }
+
+                MailBody.AppendLine("</tbody>");
+                MailBody.AppendLine("</table>");
+
+                oMail.Body = sf.ToString() + sb.ToString() + MailBody.ToString();
+
+
+                SmtpClient smtp = new("smtphub.dc.hella.com");
+                smtp.Port = 25;
+                MessageBox.Show("Email send", "Mail");
+                smtp.Send(oMail);
+                //Data.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
 
     }
