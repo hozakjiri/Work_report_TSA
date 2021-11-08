@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using WorkReportWPF.Models;
-
 
 namespace WorkReportWPF.Functions
 {
@@ -12,7 +12,7 @@ namespace WorkReportWPF.Functions
             List<Station> AllStations = new();
             using (DbSettingsContext data = new())
             {
-                AllStations = data.Stations.ToList();
+                AllStations = data.Stations.Where(x => x.Type == Enums.StationEnum.BlackBox).ToList();
             }
 
             if (AllStations.Count > 0)
@@ -43,6 +43,37 @@ namespace WorkReportWPF.Functions
                 return "";
             }
 
+        }
+
+        public static void SaveVNC(string line, string name, string hostname, string domain, string user, string pass, string passvnc)
+        {
+
+            try
+            {
+                using DbSettingsContext context = new();
+
+                Station stationData = new()
+                {
+                    Line = line,
+                    Name = name,
+                    HostName = hostname,
+                    Domain = domain,
+                    User = user,
+                    Password = pass,
+                    PasswordVnc = passvnc,
+                    Type = Enums.StationEnum.BlackBox,
+                    Maintence = "",
+                    Document = "",
+                    Note = "",
+                };
+
+                context.Stations.Add(stationData);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
