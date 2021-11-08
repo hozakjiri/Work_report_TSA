@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WorkReportWPF.Forms.ListOfTask;
 
 namespace WorkReportWPF
 {
@@ -23,6 +12,31 @@ namespace WorkReportWPF
         public ListOfTasks()
         {
             InitializeComponent();
+        }
+
+        private void Click_Overview(object sender, RoutedEventArgs e)
+        {
+            frameTask.Content = new OverviewTask();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            frameTask.Content = new OverviewTask();
+        }
+
+        private void Click_MyTask(object sender, RoutedEventArgs e)
+        {
+            frameTask.Content = new MyTask();
+        }
+
+        private void Click_Add(object sender, RoutedEventArgs e)
+        {
+            frameTask.Content = new AddTask();
+        }
+
+        private void Click_Edit(object sender, RoutedEventArgs e)
+        {
+            frameTask.Content = new EditTask();
         }
     }
 }
