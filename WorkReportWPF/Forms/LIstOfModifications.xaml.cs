@@ -33,5 +33,10 @@ namespace WorkReportWPF
         {
             frameModification.Content = new OverviewModification();
         }
+
+        private void Click_Edit(object sender, RoutedEventArgs e)
+        {
+            frameModification.Content = new EditModification();
+        }
     }
 }
