@@ -32,6 +32,7 @@ namespace WorkReportWPF.Forms.Remote
         public void NULLData()
         {
             cmbProject.ItemsSource = ModificationFunc.LoadProjectList();
+            txtstation.Text = "";
             txthostname.Text = "";
             txtdomain.Text = "";
             txtuser.Text = "";
