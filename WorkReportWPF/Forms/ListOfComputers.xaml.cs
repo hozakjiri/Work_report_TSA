@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using WorkReportWPF.Functions;
+using WorkReportWPF.Forms.ListOfComputers;
 
 namespace WorkReportWPF
 {
@@ -16,8 +16,22 @@ namespace WorkReportWPF
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            stationGrid.ItemsSource = ListOfComputersFunc.LoadListOfComputersTable();
-            stationGrid.Columns[0].Visibility = Visibility.Hidden;
+            frameComputers.Content = new OverviewComputers();
+        }
+
+        private void Click_Overview(object sender, RoutedEventArgs e)
+        {
+            frameComputers.Content = new OverviewComputers();
+        }
+
+        private void Click_Add(object sender, RoutedEventArgs e)
+        {
+            frameComputers.Content = new AddComputers();
+        }
+
+        private void Click_Edit(object sender, RoutedEventArgs e)
+        {
+            frameComputers.Content = new EditComputers();
         }
     }
 }

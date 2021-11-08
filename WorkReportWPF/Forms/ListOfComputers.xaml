@@ -6,137 +6,67 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:WorkReportWPF"
       mc:Ignorable="d" 
-      d:DesignHeight="588" d:DesignWidth="1800"
-      MinHeight="588" MinWidth="1800"
+      d:DesignHeight="688" d:DesignWidth="1300"
+      MinHeight="688" MinWidth="1300"
       Title="ListOfComputers" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid Margin="0,-0,-0,0" HorizontalAlignment="Stretch">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="147*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="stationGrid" AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="White" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False">
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                    <Setter Property="FontSize" Value="20"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="#aeea00"/>
-                    <Setter Property="VerticalContentAlignment" Value="Center"/>
-                </Style>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="Overview_button" BorderBrush="{x:Null}" materialDesign:ButtonAssist.CornerRadius="10" Height="55" Width="150" Background="#aeea00" Click="Click_Overview" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
+                <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="NoteSearch" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="Overview_Text"  Text="Overview" Width="81" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
+                </StackPanel>
+            </Button>
 
-                <Style TargetType="{x:Type DataGridCell}">
-                    <Style.Triggers>
-                        <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#aeea00" />
-                            <Setter Property="Foreground" Value="Black"/>
-                            <Setter Property="BorderBrush" Value="#aeea00"/>
+            <Button x:Name="Add_button" 
+                materialDesign:ButtonAssist.CornerRadius="10"
+                BorderBrush="{x:Null}" 
+                Height="55" Width="150"
+                Background="#aeea00" 
+                Click="Click_Add" 
+                RenderTransformOrigin="0.5,0.5" 
+                VerticalAlignment="Center" 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Padding="1,1,1,1" 
+                HorizontalAlignment="Center"
+                Margin="10,0,0,0">
+                <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="NotebookPlus" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="Add_Text"  Text="Add Computer" Width="91" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
+                </StackPanel>
+            </Button>
 
+            <Button x:Name="Edit_button" 
+                materialDesign:ButtonAssist.CornerRadius="10"
+                BorderBrush="{x:Null}" 
+                Height="55" Width="150"
+                Background="#aeea00" 
+                Click="Click_Edit" 
+                RenderTransformOrigin="0.5,0.5" 
+                VerticalAlignment="Center" 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                HorizontalContentAlignment="Center" 
+                VerticalContentAlignment="Center" 
+                Padding="1,1,1,1" 
+                HorizontalAlignment="Center"
+                Margin="10,0,0,0">
+                <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="NotebookPlus" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="Edit_Text"  Text="Edit Computer" Width="91" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
+                </StackPanel>
+            </Button>
 
-                        </Trigger>
-                        <Trigger Property="DataGridCell.IsSelected" Value="False">
-                            <Setter Property="Background" Value="Transparent" />
-                        </Trigger>
+        </StackPanel>
+        <Frame x:Name="frameComputers" Content="Frame" Grid.Row="2" Foreground="White" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="588" Width="1300" VerticalContentAlignment="Center">
 
-
-
-
-                    </Style.Triggers>
-                </Style>
-            </DataGrid.Resources>
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Binding="{Binding Path=id}"  Width="auto">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Line" Binding="{Binding Path=Line}"  Width="100">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"  Width="100">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Hostname" Binding="{Binding Path=Hostname}"  Width="100">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Domain" Binding="{Binding Path=Domain}"  Width="100">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="User" Binding="{Binding Path=User}"  Width="100">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Password" Binding="{Binding Path=Password}" Width="150">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Password VNC" Binding="{Binding Path=Password_VNC}"  Width="150">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Type" Binding="{Binding Path=Type}"  Width="100">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Maintenance" Binding="{Binding Path=Maintenance}"  Width="120">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-
-                <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}"  Width="200">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-
-            </DataGrid.Columns>
-        </DataGrid>
+        </Frame>
     </Grid>
 </Page>
