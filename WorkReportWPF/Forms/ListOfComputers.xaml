@@ -47,7 +47,6 @@
                         </Trigger>
                         <Trigger Property="DataGridCell.IsSelected" Value="False">
                             <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="Foreground" Value="White"/>
                         </Trigger>
 
 
@@ -58,42 +57,42 @@
             </DataGrid.Resources>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Foreground="White" Width="auto">
+                <DataGridTextColumn Header="id" Binding="{Binding Path=id}"  Width="auto">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Line" Binding="{Binding Path=Line}" Foreground="White" Width="100">
+                <DataGridTextColumn Header="Line" Binding="{Binding Path=Line}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Foreground="White" Width="100">
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Hostname" Binding="{Binding Path=Hostname}" Foreground="White" Width="100">
+                <DataGridTextColumn Header="Hostname" Binding="{Binding Path=Hostname}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Domain" Binding="{Binding Path=Domain}" Foreground="White" Width="100">
+                <DataGridTextColumn Header="Domain" Binding="{Binding Path=Domain}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="User" Binding="{Binding Path=User}" Foreground="White" Width="100">
+                <DataGridTextColumn Header="User" Binding="{Binding Path=User}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -107,21 +106,21 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Password VNC" Binding="{Binding Path=Password_VNC}" Foreground="White" Width="150">
+                <DataGridTextColumn Header="Password VNC" Binding="{Binding Path=Password_VNC}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Type" Binding="{Binding Path=Type}" Foreground="White" Width="100">
+                <DataGridTextColumn Header="Type" Binding="{Binding Path=Type}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Maintenance" Binding="{Binding Path=Maintenance}" Foreground="White" Width="120">
+                <DataGridTextColumn Header="Maintenance" Binding="{Binding Path=Maintenance}"  Width="120">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -129,7 +128,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
 
-                <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}" Foreground="White" Width="200">
+                <DataGridTextColumn Header="Note" Binding="{Binding Path=Note}"  Width="200">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
