@@ -1,4 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using WorkReportWPF.Functions;
 
 namespace WorkReportWPF.Forms.Remote
 {
@@ -14,12 +17,37 @@ namespace WorkReportWPF.Forms.Remote
 
         private void Add_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            try
+            {
+                VncFunc.SaveVNC(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text);
+                MessageBox.Show("Station was added", "Info");
+                NULLData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error with save data " + ex.Message, "ERROR");
+            }
         }
 
-        private void Back_Click(object sender, System.Windows.RoutedEventArgs e)
+        public void NULLData()
         {
+            cmbProject.ItemsSource = ModificationFunc.LoadProjectList();
+            txthostname.Text = "";
+            txtdomain.Text = "";
+            txtuser.Text = "";
+            txtpass.Text = "";
+            txtpassvnc.Text = "";
+        }
 
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                cmbProject.ItemsSource = ModificationFunc.LoadProjectList();
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ namespace WorkReportWPF.Functions
         {
 
             using DbSettingsContext context = new();
-            var TableLogin = context.Logins.Select(x => x.Mail).ToList();
+            var TableLogin = context.Members.Select(x => x.Mail).ToList();
             var stringmails = "";
 
             if (TableLogin != null)

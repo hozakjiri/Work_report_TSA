@@ -5,8 +5,6 @@ namespace WorkReportWPF.Functions
 {
     public class CustomFunc
     {
-
-
         public static string Drive = Environment.SpecialFolder.MyComputer.ToString();
 
         public static string GetFileToString()
