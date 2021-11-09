@@ -58,11 +58,84 @@ namespace WorkReportWPF.Functions
                     stringmails = TableLogin[i].ToString() + ",";
                 }
             }
-
-
             return stringmails;
         }
 
+
+
+        public static List<Login> LoadAllUsers()
+        {
+            using DbSettingsContext context = new();
+            List<Login> newLogin = new();
+            if (context != null)
+            {
+                newLogin = context.Logins.ToList();
+                return newLogin;
+            }
+            else
+            {
+                return newLogin;
+            }
+        }
+
+        public static void SaveUser(Login data)
+        {
+            try
+            {
+                using DbSettingsContext context = new();
+                if (data != null)
+                {
+                    Login UserData = new()
+                    {
+                        UserLogin = data.UserLogin,
+                        Mail = data.Mail,
+                        Level = data.Level,
+                        Name = data.Name,
+                    };
+                    context.Logins.Add(UserData);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void DeleteUser(int? id)
+        {
+            try
+            {
+                using DbSettingsContext context = new();
+
+                if (id != null)
+                {
+                    var user = context.Logins.Find(id);
+                    context.Logins.Remove(user);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static async void EditUser(Login data)
+        {
+            try
+            {
+                using (var context2 = new DbSettingsContext())
+                {
+                    context2.Update(data);
+                    await context2.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
         public static Login LoadUserData(string UserLogin)
         {

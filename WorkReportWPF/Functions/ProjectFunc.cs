@@ -65,21 +65,14 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void EditProject(Project data)
+        public static async void EditProject(Project data)
         {
             try
             {
-                using DbSettingsContext context = new();
-                var project = context.Projects.Find(data.ID);
-
-                if (project != null)
+                using (var context2 = new DbSettingsContext())
                 {
-                    Project ProjectData = new()
-                    {
-                        Name = data.Name,
-                    };
-                    context.Projects.Update(ProjectData);
-                    context.SaveChanges();
+                    context2.Update(data);
+                    await context2.SaveChangesAsync();
                 }
             }
             catch (Exception ex)

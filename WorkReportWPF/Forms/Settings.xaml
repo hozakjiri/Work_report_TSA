@@ -106,9 +106,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
         <TextBox             
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
-            Name="Mail_address" 
+            x:Name="txtMail" 
             Text="" 
-            Margin="15,481,0,0" 
+            Margin="15,469,0,0" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -123,9 +123,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
-            Name="Subject_Text" 
+            x:Name="txtName" 
             Text="" 
-            Margin="15,424,0,0" 
+            Margin="15,412,0,0" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -136,13 +136,13 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="181" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Subject" Grid.Column="1" Grid.Row="1"/>
+            materialDesign:HintAssist.Hint="Name" Grid.Column="1" Grid.Row="1"/>
         <TextBox
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
-            Name="Log_in" 
+            x:Name="txtLogin" 
             Text="" 
-            Margin="237,423,0,0"
+            Margin="237,411,0,0"
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -154,7 +154,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             FontSize="10" 
             Cursor="IBeam"
             materialDesign:HintAssist.Hint="Log in" Grid.Column="1" Grid.Row="1"/>
-        <ComboBox   Grid.Column="1" Margin="237,481,16,52" Grid.Row="1"
+        <ComboBox x:Name="cmbRights"   Grid.Column="1" Margin="237,469,16,64" Grid.Row="1"
                     Style="{StaticResource MaterialDesignOutlinedComboBox}"
                     materialDesign:HintAssist.Hint="Rights"
                     Foreground="White"
@@ -204,11 +204,11 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
 
             </StackPanel>
         </Button>
-        <Button
+        <Button x:Name="btnDUser"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="307,541,27,10" Grid.Row="1" Grid.Column="1">
+            Margin="318,541,16,10" Grid.Row="1" Grid.Column="1" Click="btnDUser_Click">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text1"  Text="Delete" Width="59" Foreground="Black" Height="18"/>
@@ -237,11 +237,11 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
 
             </StackPanel>
         </Button>
-        <Button
+        <Button x:Name="btnAUser"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="10,541,324,10" Grid.Row="1" Grid.Column="1">
+            Margin="10,541,324,10" Grid.Row="1" Grid.Column="1" Click="btnAUser_Click">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text4"  Text="Add" Width="30" Foreground="Black" Height="18"/>
@@ -259,11 +259,11 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
 
             </StackPanel>
         </Button>
-        <Button
+        <Button x:Name="btnEUser"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="115,541,219,10" Grid.Row="1" Grid.Column="1">
+            Margin="115,541,219,10" Grid.Row="1" Grid.Column="1" Click="btnEUser_Click">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Pencil" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text6"  Text="Edit" Width="30" Foreground="Black" Height="18"/>
@@ -282,7 +282,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             </StackPanel>
         </Button>
         <DataGrid x:Name="userGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="White" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
-            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" Margin="5,48,5,165" Grid.Row="1" PreviewMouseDown="userGrid_PreviewMouseDown" Grid.Column="1">
+            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Margin="5,48,5,203" Grid.Row="1" Grid.Column="1" PreviewMouseUp="userGrid_PreviewMouseUp">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
@@ -315,7 +315,28 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="100">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Login" Binding="{Binding UserLogin}"  Width="100">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
                 <DataGridTextColumn Header="Mail" Binding="{Binding Mail}"  Width="100">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Level" Binding="{Binding Level}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
