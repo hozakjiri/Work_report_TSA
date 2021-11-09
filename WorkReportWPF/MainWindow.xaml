@@ -394,7 +394,7 @@
                         </Button>
 
                         <Button x:Name="Modification_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfModifications" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Tasks"/>
+                            <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Reports"/>
                         </Button>
 
                         <Button x:Name="Calendar_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Calendar" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
@@ -414,7 +414,7 @@
                         </Button>
 
                         <Button x:Name="Tasks_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfTasks" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Changes"/>
+                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Tasks"/>
                         </Button>
 
 
