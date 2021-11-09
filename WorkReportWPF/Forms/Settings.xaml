@@ -8,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="668" d:DesignWidth="1300"
       MinHeight="668" MinWidth="1300"
-      Title="Settings">
+      Title="Settings" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -22,6 +22,50 @@
         </Grid.RowDefinitions>
         <Label Content="Settings for application" Grid.ColumnSpan="3" Foreground="White" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Team Members (email information)" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+        <DataGrid x:Name="membersGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="White" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
+HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" Margin="4,45,6,168" Grid.Row="1" SelectionChanged="membersGrid_SelectionChanged" PreviewMouseDown="membersGrid_PreviewMouseDown">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="Foreground" Value="#aeea00"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <Trigger Property="DataGridCell.IsSelected" Value="True">
+                            <Setter Property="Background" Value="#aeea00" />
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="BorderBrush" Value="#aeea00"/>
+                        </Trigger>
+                        <Trigger Property="DataGridCell.IsSelected" Value="False">
+                            <Setter Property="Background" Value="Transparent" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Path=ID}" Width="20">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Mail" Binding="{Binding Path=Mail}"  Width="100">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <Label Content="List of users" Margin="433,0,433,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
         <Label Content="List of projects" Margin="0,0,0,556" Grid.Row="1" Foreground="White" Background="Transparent" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.Column="2"/>
@@ -135,25 +179,25 @@
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
-            x:Name="New_member" 
+            x:Name="txtMembers" 
             Text="" 
-            Margin="0,322,0,0" 
+            Margin="13,441,0,0" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True"
             Height="50" 
             VerticalAlignment="Top" 
-            HorizontalAlignment="Center" 
-            Width="413" 
+            HorizontalAlignment="Left" 
+            Width="410" 
             FontSize="10" 
             Cursor="IBeam"
             materialDesign:HintAssist.Hint="New member" Grid.Row="1"/>
-        <Button
+        <Button x:Name="btnDMember"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="323,377,10,174" Grid.Row="1">
+            Margin="318,536,15,15" Grid.Row="1" Click="btnDMember_Click" Visibility="Visible">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text"  Text="Delete" Width="59" Foreground="Black" Height="18"/>
@@ -164,7 +208,7 @@
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="318,541,16,10" Grid.Row="1" Grid.Column="1">
+            Margin="307,541,27,10" Grid.Row="1" Grid.Column="1">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text1"  Text="Delete" Width="59" Foreground="Black" Height="18"/>
@@ -182,11 +226,11 @@
 
             </StackPanel>
         </Button>
-        <Button
+        <Button x:Name="BtnAMembers"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="10,377,323,174" Grid.Row="1">
+            Margin="13,539,320,12" Grid.Row="1" Click="BtnAMembers_Click">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="Black" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text3"  Text="Add" Width="30" Foreground="Black" Height="18"/>
@@ -237,26 +281,7 @@
 
             </StackPanel>
         </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Margin="10,541,323,10" Grid.Row="1">
-            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Refresh" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text8"  Text="Refresh" Width="50" Foreground="Black" Height="18"/>
 
-            </StackPanel>
-        </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Margin="323,285,10,266" Grid.Row="1">
-            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Refresh" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text9"  Text="Refresh" Width="50" Foreground="Black" Height="18"/>
-
-            </StackPanel>
-        </Button>
         <Button
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
@@ -267,29 +292,6 @@
 
             </StackPanel>
         </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Margin="10,541,323,10" Grid.Row="1">
-            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Refresh" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text11"  Text="Refresh" Width="50" Foreground="Black" Height="18"/>
-
-            </StackPanel>
-        </Button>
-        <Button
-            Style="{StaticResource MaterialDesignRaisedAccentButton}"
-            materialDesign:ButtonAssist.CornerRadius="10"
-            Margin="323,541,10,10" Grid.Row="1">
-            <StackPanel Width="95" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="FloppyDisk" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text12"  Text="Save" Width="32" Foreground="Black" Height="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-            </StackPanel>
-        </Button>
-
-
-
 
     </Grid>
 </Page>

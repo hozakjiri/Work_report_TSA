@@ -36,6 +36,7 @@ namespace WorkReportWPF.Functions
             List<Login> TableLogin = context.Logins.ToList();
             return TableLogin;
         }
+
         public static string LoadAllMails()
         {
 
