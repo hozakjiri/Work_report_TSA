@@ -5,7 +5,7 @@ using WorkReportWPF.Models.DBModels;
 
 namespace WorkReportWPF.Functions
 {
-    public class SettingsFunc
+    public class MemberFunc
     {
 
         public static List<Member> LoadMembersData()

@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using WorkReportWPF.Functions;
 using WorkReportWPF.Models.DBModels;
 
@@ -19,12 +21,16 @@ namespace WorkReportWPF
         {
             btnDMember.Visibility = Visibility.Hidden;
             RefrashMembersTable();
+            btnDProject.Visibility = Visibility.Hidden;
+            btnEProject.Visibility = Visibility.Hidden;
+            RefrashProjectsTable();
 
         }
 
         private void BtnAMembers_Click(object sender, RoutedEventArgs e)
         {
-            SettingsFunc.SaveMembers(txtMembers.Text);
+            MemberFunc.SaveMembers(txtMembers.Text);
+            txtMembers.Text = "";
             RefrashMembersTable();
         }
 
@@ -38,7 +44,8 @@ namespace WorkReportWPF
                 foreach (var obj in membersGrid.SelectedItems)
                 {
                     member = obj as Member;
-                    SettingsFunc.DeleteMember(member.ID);
+                    MemberFunc.DeleteMember(member.ID);
+                    txtMembers.Text = "";
                 }
 
                 RefrashMembersTable();
@@ -46,16 +53,77 @@ namespace WorkReportWPF
         }
         public void RefrashMembersTable()
         {
-            membersGrid.ItemsSource = SettingsFunc.LoadMembersData();
+            membersGrid.ItemsSource = MemberFunc.LoadMembersData();
             membersGrid.Columns[0].Visibility = Visibility.Hidden;
         }
 
-        private void membersGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void RefrashProjectsTable()
+        {
+            projectGrid.ItemsSource = ProjectFunc.LoadProjectsData();
+            projectGrid.Columns[0].Visibility = Visibility.Hidden;
+        }
+
+        private void btnDProject_Click(object sender, RoutedEventArgs e)
+        {
+            if (projectGrid.SelectedItems != null && projectGrid.SelectedItems.Count > 0)
+            {
+                Project project = new();
+
+                foreach (var obj in projectGrid.SelectedItems)
+                {
+                    try
+                    {
+                        project = obj as Project;
+                        ProjectFunc.DeleteProject(project.ID);
+                        txtProject.Text = "";
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+
+                RefrashProjectsTable();
+            }
+        }
+
+        private void btnEProject_Click(object sender, RoutedEventArgs e)
+        {
+            if (projectGrid.SelectedItems != null && projectGrid.SelectedItems.Count > 0)
+            {
+                Project project = new();
+
+                foreach (var obj in projectGrid.SelectedItems)
+                {
+                    project = obj as Project;
+                    project.Name = txtProject.Text;
+                    ProjectFunc.EditProject(project);
+                    txtProject.Text = "";
+                }
+
+                RefrashProjectsTable();
+            }
+        }
+
+        private void btnAProject_Click(object sender, RoutedEventArgs e)
+        {
+            ProjectFunc.SaveProject(txtProject.Text);
+            txtProject.Text = "";
+            RefrashProjectsTable();
+        }
+
+
+        private void userGrid_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void membersGrid_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
             if (membersGrid.SelectedItems.Count > 0)
             {
                 btnDMember.Visibility = Visibility.Visible;
-
+                Member rowdata = (Member)membersGrid.SelectedItems[0];
+                txtMembers.Text = rowdata.Mail;
             }
             else
             {
@@ -63,16 +131,20 @@ namespace WorkReportWPF
             }
         }
 
-        private void membersGrid_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void projectGrid_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (membersGrid.SelectedItems.Count > 0)
+            if (projectGrid.SelectedItems.Count > 0)
             {
-                btnDMember.Visibility = Visibility.Visible;
+                btnDProject.Visibility = Visibility.Visible;
+                btnEProject.Visibility = Visibility.Visible;
 
+                Project rowdata = (Project)projectGrid.SelectedItems[0];
+                txtProject.Text = rowdata.Name;
             }
             else
             {
-                btnDMember.Visibility = Visibility.Hidden;
+                btnDProject.Visibility = Visibility.Hidden;
+                btnEProject.Visibility = Visibility.Hidden;
             }
         }
     }
