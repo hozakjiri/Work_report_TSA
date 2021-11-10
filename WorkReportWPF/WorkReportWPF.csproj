@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\1200px-Hella_logo.svg.png" />
+    <None Remove="Hella_logo.png" />
     <None Remove="icon.ico" />
   </ItemGroup>
 
@@ -20,6 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Hella_logo.png" />
+    <Resource Include="assets\1200px-Hella_logo.svg.png" />
     <Resource Include="assets\icon.ico" />
   </ItemGroup>
 

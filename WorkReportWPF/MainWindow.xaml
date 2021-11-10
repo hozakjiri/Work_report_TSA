@@ -38,7 +38,7 @@
             Background="#aeea00" Grid.ColumnSpan="2">
 
                     <StackPanel>
-                        <Image Source="/1200px-Hella_logo.svg.png" HorizontalAlignment="Center" Height="79"/>
+                        <Image Source="/Hella_logo.png" HorizontalAlignment="Center" Height="79"/>
                     </StackPanel>
                     <!--<Path
                 Fill="Black"
