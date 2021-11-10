@@ -37,6 +37,8 @@ namespace WorkReportWPF.Functions
                 Comment = x.Comment,
                 Image = x.Image == "yes" ? true : false,
                 Time = x.Time,
+                Note = x.Note,
+                ImagePath = x.ImageStr
             }).ToList();
 
             return modificationData;
@@ -60,6 +62,8 @@ namespace WorkReportWPF.Functions
                 Comment = x.Comment,
                 Image = x.Image == "yes" ? true : false,
                 Time = x.Time,
+                Note = x.Note,
+                ImagePath = x.ImageStr
             }).ToList();
 
             return modificationData;
@@ -96,10 +100,43 @@ namespace WorkReportWPF.Functions
                     ImageStr = imagepath,
                     Time = minutes,
                     DateTimeStr = fulltime,
+                    Note = ""
                 };
 
                 context.Datas.Add(modificationData);
                 context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static async void EditModification(string project, string comment, string date, string minutes, string imagepath, string fulltime, string note)
+        {
+            var user = LoginFunc.LoadUserData(Environment.UserName);
+
+            try
+            {
+                Data modificationData = new()
+                {
+                    Username = user.Name,
+                    Date = date,
+                    Project = project,
+                    Comment = comment,
+                    ImageStr = imagepath,
+                    Time = minutes,
+                    DateTimeStr = fulltime,
+                    Note = note
+                };
+
+
+                using (var context2 = new DbDataContext())
+                {
+                    context2.Update(modificationData);
+                    await context2.SaveChangesAsync();
+                }
+
             }
             catch (Exception ex)
             {

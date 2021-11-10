@@ -33,5 +33,7 @@ namespace WorkReportWPF.Models.DBModels
             }
         }
 
+        public string Note { get; set; }
+
     }
 }

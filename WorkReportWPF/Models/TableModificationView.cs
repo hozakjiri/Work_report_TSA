@@ -22,5 +22,7 @@ namespace WorkReportWPF.Models
 
         public string Note { get; set; }
 
+        public string ImagePath { get; set; }
+
     }
 }
