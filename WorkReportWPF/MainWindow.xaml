@@ -36,12 +36,13 @@
                 <!--#region Logo-->
                 <Grid
             Background="#aeea00" Grid.ColumnSpan="2">
-                    <Path
+                    <Image Height="80" Width="80"/>
+                    <!--<Path
                 Fill="Black"
                 Height="60"
                 Width="60"
                 Stretch="Uniform"
-                Data="{StaticResource work_report_ico}"/>
+                Data="{StaticResource work_report_ico}"/>-->
                 </Grid>
                 <!--endregion-->
 
