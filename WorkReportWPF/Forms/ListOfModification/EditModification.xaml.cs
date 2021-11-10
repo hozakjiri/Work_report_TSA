@@ -45,6 +45,19 @@ namespace WorkReportWPF.Forms.ListOfModification
 
                 datePicker.SelectedDate = currentdata.Date;
                 TextPathImage.Text = currentdata.ImagePath;
+
+                try
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(TextPathImage.Text);
+                    bitmap.EndInit();
+                    imageBox.Source = bitmap;
+                }
+                catch (Exception)
+                {
+                }
+
             }
         }
 
@@ -143,6 +156,9 @@ namespace WorkReportWPF.Forms.ListOfModification
                 ModificationFunc.EditModification(ProjectBox.Text, Comment_Text.Text, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtNum.Text, fullpath, datePicker.DisplayDate.ToString("yyyyMMddHHmm"), Note_Text.Text);
 
                 MessageBox.Show("Data was added !", "Data");
+
+                OverviewModification p = new OverviewModification();
+                this.NavigationService.Navigate(p);
             }
         }
     }
