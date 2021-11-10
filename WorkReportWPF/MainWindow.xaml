@@ -36,7 +36,10 @@
                 <!--#region Logo-->
                 <Grid
             Background="#aeea00" Grid.ColumnSpan="2">
-                    <Image Height="80" Width="80"/>
+
+                    <StackPanel>
+                        <Image Source=".\assets\1200px-Hella_logo.svg.png" HorizontalAlignment="Center" Height="79"/>
+                    </StackPanel>
                     <!--<Path
                 Fill="Black"
                 Height="60"
