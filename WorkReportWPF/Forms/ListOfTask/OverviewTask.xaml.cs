@@ -24,5 +24,10 @@ namespace WorkReportWPF.Forms.ListOfTask
         {
             InitializeComponent();
         }
+
+        private void dataGrid_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

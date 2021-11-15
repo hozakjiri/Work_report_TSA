@@ -24,5 +24,25 @@ namespace WorkReportWPF.Forms.ListOfTask
         {
             InitializeComponent();
         }
+
+        private void Save_Task_button_1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save_Task_button_1_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save_Task_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Task_button_1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -109,7 +109,7 @@
                 <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
         </Button>
-        <StackPanel Background="#FF292626" Margin="912,137,12,179">
+        <StackPanel Background="#FF292626" Margin="912,137,12,126">
             <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.5,0.5" materialDesign:HintAssist.Hint="Insert Image"/>
         </StackPanel>
         <TextBlock x:Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="white" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" />
@@ -118,7 +118,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             TextWrapping="Wrap" 
             Text="" 
-            Margin="16,326,399,82" 
+            Margin="16,326,399,126" 
             RenderTransformOrigin="0.519,0.505" 
             AcceptsReturn="True" 
             Foreground="White" 
