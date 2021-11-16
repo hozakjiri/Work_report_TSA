@@ -27,4 +27,13 @@
     <Resource Include="assets\icon.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Database\Data.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Database\Settings.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

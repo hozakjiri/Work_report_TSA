@@ -1,11 +1,13 @@
-﻿namespace WorkReportWPF.Models
+﻿using System;
+
+namespace WorkReportWPF.Models
 {
     public class TableTaskView
     {
 
         public int ID { get; set; }
 
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         public string Subject { get; set; }
 
@@ -15,7 +17,7 @@
 
         public Enums.TaskEnum Priority { get; set; }
 
-        public string Term { get; set; }
+        public DateTime Term { get; set; }
 
         public Enums.StatusEnum Status { get; set; }
 
