@@ -40,7 +40,9 @@
             Background="#FF292626"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             materialDesign:HintAssist.Hint="Project" Height="68"
-            Style="{StaticResource MaterialDesignComboBox}"/>
+            Style="{StaticResource MaterialDesignComboBox}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Date" 
             HorizontalAlignment="Left" Margin="551,38,0,0" 

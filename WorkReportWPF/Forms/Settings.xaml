@@ -101,7 +101,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="413" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of projects" Grid.Column="2" Grid.Row="1"/>
+            materialDesign:HintAssist.Hint="Name of projects" Grid.Column="2" Grid.Row="1"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
 
         <TextBox             
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -119,7 +121,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="181" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Mail address" Grid.Column="1" Grid.Row="1"/>
+            materialDesign:HintAssist.Hint="Mail address" Grid.Column="1" Grid.Row="1"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
@@ -136,7 +140,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="181" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name" Grid.Column="1" Grid.Row="1"/>
+            materialDesign:HintAssist.Hint="Name" Grid.Column="1" Grid.Row="1"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <TextBox
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
@@ -153,7 +159,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="181" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Log in" Grid.Column="1" Grid.Row="1"/>
+            materialDesign:HintAssist.Hint="Log in" Grid.Column="1" Grid.Row="1"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <ComboBox x:Name="cmbRights"   Grid.Column="1" Margin="237,469,16,64" Grid.Row="1"
                     Style="{StaticResource MaterialDesignOutlinedComboBox}"
                     materialDesign:HintAssist.Hint="Rights"
@@ -163,7 +171,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                     materialDesign:TextFieldAssist.HasClearButton="True"
                     materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
                     materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-                    materialDesign:HintAssist.HelperText="Select one rights">
+                    materialDesign:HintAssist.HelperText="Select one rights"
+                    materialDesign:HintAssist.Background="#FF292626"
+                    materialDesign:HintAssist.Foreground="#aeea00">
             <ComboBox.SelectedItem>
                 <Binding
                 
@@ -192,7 +202,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="410" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="New member" Grid.Row="1">
+            materialDesign:HintAssist.Hint="New member" Grid.Row="1"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00">
 
         </TextBox>
         <Button x:Name="btnDMember"

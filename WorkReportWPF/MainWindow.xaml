@@ -35,7 +35,7 @@
                 </Grid.RowDefinitions>
                 <!--#region Logo-->
                 <Grid
-            Background="#aeea00" Grid.ColumnSpan="2">
+            Background="#20202C" Grid.ColumnSpan="2">
 
                     <StackPanel>
                         <Image Source="/Hella_logo.png" HorizontalAlignment="Center" Height="79"/>

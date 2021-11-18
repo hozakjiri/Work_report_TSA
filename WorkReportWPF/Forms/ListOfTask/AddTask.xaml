@@ -78,7 +78,9 @@
             Cursor="ArrowCD" 
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}">
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
 

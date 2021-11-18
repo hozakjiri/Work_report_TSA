@@ -20,9 +20,13 @@
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
-            FontSize="32" 
+            FontSize="26" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="User name account computer"/>
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="User name account computer"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
@@ -33,28 +37,34 @@
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
-            FontSize="32" 
+            FontSize="26" 
             Cursor="IBeam"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Password for VNC" Width="430"
-            />
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
 
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
                   HorizontalAlignment="Left"
                   Margin="68,40,0,0" 
                   VerticalAlignment="Top" 
-                  VerticalContentAlignment="Center"
                   Width="1167" 
                   Padding="10"
                   Foreground="White" 
                   BorderBrush="#FF292626" 
-                  FontSize="32" 
+                  FontSize="26" 
                   Background="#FF292626"
+                  VerticalContentAlignment="Center"
+                  HorizontalContentAlignment="Left"
                   materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
                   materialDesign:HintAssist.Hint="Name of line" Height="68"
-                  Style="{StaticResource MaterialDesignComboBox}">
+                  Style="{StaticResource MaterialDesignComboBox}"
+                  materialDesign:HintAssist.Background="#FF292626"
+                  materialDesign:HintAssist.Foreground="#aeea00">
 
         </ComboBox>
-        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,29,85" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
+        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,30,69" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
 
             <StackPanel Width="135" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Add" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
@@ -71,9 +81,13 @@
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
-            FontSize="32" 
+            FontSize="26" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of station" Width="560"/>
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Name of station" Width="560"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
@@ -84,10 +98,13 @@
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
-            FontSize="32" 
+            FontSize="26" 
             Cursor="IBeam"
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Center"
             materialDesign:HintAssist.Hint="Password for User"
-            />
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
@@ -98,9 +115,11 @@
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
-            FontSize="32" 
+            FontSize="26" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Domain" Width="560"/>
+            materialDesign:HintAssist.Hint="Domain" Width="560"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
@@ -111,8 +130,12 @@
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
-            FontSize="32" 
+            FontSize="26" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Hostname" Width="560"/>
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Hostname" Width="560"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
     </Grid>
 </Page>

@@ -52,7 +52,9 @@
             materialDesign:TextFieldAssist.HasClearButton="True"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-            materialDesign:HintAssist.HelperText="Select one priority" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            materialDesign:HintAssist.HelperText="Select one priority" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <ComboBox x:Name="cmbUser" Margin="1082,244,10,294"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             materialDesign:HintAssist.Hint="User"
@@ -62,7 +64,9 @@
             materialDesign:TextFieldAssist.HasClearButton="True"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-            materialDesign:HintAssist.HelperText="Select target user" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            materialDesign:HintAssist.HelperText="Select target user" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Date" 
             HorizontalAlignment="Left" Margin="1082,322,0,0" 
@@ -78,7 +82,9 @@
             Cursor="ArrowCD" 
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}">
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
 

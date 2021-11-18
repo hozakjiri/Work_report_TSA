@@ -144,7 +144,9 @@
                   Background="#FF292626"
                   materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
                   materialDesign:HintAssist.Hint="Project" Height="68"
-                  Style="{StaticResource MaterialDesignComboBox}">
+                  Style="{StaticResource MaterialDesignComboBox}"
+                  materialDesign:HintAssist.Background="#FF292626"
+                  materialDesign:HintAssist.Foreground="#aeea00">
 
         </ComboBox>
 
@@ -163,7 +165,9 @@
                     Cursor="ArrowCD" 
                     Height="68"  
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-                    materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}" Grid.Column="1">
+                    materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}" Grid.Column="1"
+                    materialDesign:HintAssist.Background="#FF292626"
+                    materialDesign:HintAssist.Foreground="#aeea00">
             <DatePicker.CalendarStyle>
                 <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
 
@@ -197,7 +201,9 @@
                      VerticalAlignment="Center" 
                      TextAlignment="Center" 
                      FontSize="16" 
-                     materialDesign:HintAssist.Hint="Time"/>
+                     materialDesign:HintAssist.Hint="Time"
+                     materialDesign:HintAssist.Background="#FF292626"
+                     materialDesign:HintAssist.Foreground="#aeea00"/>
             <StackPanel Orientation="Vertical" Width="24" Height="56" HorizontalAlignment="Center">
                 <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="#aeea00" Foreground="Black" BorderBrush="#aeea00" VerticalAlignment="Top" Margin="0,0,0,1" />
                 <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="17" Click="cmdDown_Click" Height="26" HorizontalAlignment="Center" Background="#aeea00" Foreground="Black" BorderBrush="#aeea00" Margin="0,1,0,0"/>
