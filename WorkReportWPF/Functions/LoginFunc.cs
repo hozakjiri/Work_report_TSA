@@ -78,6 +78,21 @@ namespace WorkReportWPF.Functions
             }
         }
 
+        public static List<string> LoadAllUsersList()
+        {
+            using DbSettingsContext context = new();
+            List<string> newLogin = new();
+            if (context != null)
+            {
+                newLogin = context.Logins.Select(x => x.Name).ToList();
+                return newLogin;
+            }
+            else
+            {
+                return newLogin;
+            }
+        }
+
         public static void SaveUser(Login data)
         {
             try

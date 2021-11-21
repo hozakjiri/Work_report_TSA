@@ -114,13 +114,11 @@ namespace WorkReportWPF.Functions
 
         public static async void EditModification(string project, string comment, string date, string minutes, string imagepath, string fulltime, string note)
         {
-            var user = LoginFunc.LoadUserData(Environment.UserName);
-
             try
             {
                 Data modificationData = new()
                 {
-                    Username = user.Name,
+                    Username = OtherFunc.user,
                     Date = date,
                     Project = project,
                     Comment = comment,

@@ -7,16 +7,16 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfTask.EditTask"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="EditTask">
+      Title="EditTask" Loaded="Page_Loaded">
 
     <Grid>
 
-        <TextBox x:Name ="Topic_Text"
+        <TextBox x:Name ="txtTopic"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             TextWrapping="Wrap" 
             Text="" 
-            Margin="31,87,930,443" 
+            Margin="21,30,292,500" 
             RenderTransformOrigin="0.519,0.505" 
             AcceptsReturn="True" 
             Foreground="White" 
@@ -27,12 +27,12 @@
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"
                  />
-        <TextBox x:Name ="Description_Text_Copy"
+        <TextBox x:Name ="txtDescription"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             TextWrapping="Wrap" 
             Text="" 
-            Margin="31,172,282,198" 
+            Margin="21,115,292,255" 
             RenderTransformOrigin="0.519,0.505" 
             AcceptsReturn="True" 
             Foreground="White" 
@@ -43,7 +43,7 @@
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"
                  />
-        <ComboBox x:Name="cmbPriority" Margin="1082,172,10,366"
+        <ComboBox x:Name="cmbPriority" Margin="1037,115,38,423"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             materialDesign:HintAssist.Hint="Priority"
             Foreground="White"
@@ -55,7 +55,7 @@
             materialDesign:HintAssist.HelperText="Select one priority" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"/>
-        <ComboBox x:Name="cmbUser" Margin="1082,244,10,294"
+        <ComboBox x:Name="cmbUser" Margin="1037,187,38,351"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             materialDesign:HintAssist.Hint="User"
             Foreground="White"
@@ -68,10 +68,10 @@
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"/>
         <DatePicker x:Name="datePicker" 
-            materialDesign:HintAssist.Hint="Date" 
-            HorizontalAlignment="Left" Margin="1082,322,0,0" 
+            materialDesign:HintAssist.Hint="Term" 
+            HorizontalAlignment="Left" Margin="1037,265,0,0" 
             VerticalAlignment="Top" 
-            Width="208" 
+            Width="243" 
             Background="#FF292626" 
             BorderBrush="#FF292626" 
             Foreground="White"
@@ -87,15 +87,9 @@
             materialDesign:HintAssist.Foreground="#aeea00">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
-
-
                     <Style.Resources>
                         <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF292626" />
                         <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF292626"/>
-
-
-
-
                     </Style.Resources>
                     <Style.BasedOn>
                         <StaticResource ResourceKey="MaterialDesignCalendarPortrait"/>
@@ -105,18 +99,39 @@
 
 
         </DatePicker>
-        <Button x:Name="Delete_Task_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,36,47" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Task_button_Click">
-            <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email"  Text="Delete" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
-            </StackPanel>
-        </Button>
-        <Button x:Name="Save_Task_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,206,47" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_button_Click">
+        <Button x:Name="Save_Task_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,38,43" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_button_Click">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email1"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+                <TextBlock x:Name="Send_Email1"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
         </Button>
+        <TextBox x:Name ="txtNote"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            TextWrapping="Wrap" 
+            Text="" 
+            Margin="21,350,375,33" 
+            RenderTransformOrigin="0.519,0.505" 
+            AcceptsReturn="True" 
+            Foreground="White" 
+            Background="#FF292626" 
+            Cursor="IBeam" 
+            FontSize="20"
+            materialDesign:HintAssist.Hint="Note"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"
+                 />
+        <ComboBox x:Name="cmbStatus" Margin="942,350,38,188"
+            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+            materialDesign:HintAssist.Hint="Status"
+            Foreground="White"
+            Background="#FF292626"
+            materialDesign:TextFieldAssist.HasClearButton="True"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:ColorZoneAssist.Mode="SecondaryLight"
+            materialDesign:HintAssist.HelperText="Select one status" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
 
     </Grid>
 </Page>

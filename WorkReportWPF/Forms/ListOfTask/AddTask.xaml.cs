@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WorkReportWPF.Forms.ListOfModification;
+using WorkReportWPF.Functions;
 
 namespace WorkReportWPF.Forms.ListOfTask
 {
@@ -25,24 +16,40 @@ namespace WorkReportWPF.Forms.ListOfTask
             InitializeComponent();
         }
 
-        private void Save_Task_button_1_Click(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            var user = OtherFunc.user;
+            datePicker.DisplayDate = DateTime.Now;
+            datePicker.SelectedDate = DateTime.Now;
 
+            cmbPriority.ItemsSource = Enum.GetValues(typeof(Enums.TaskEnum));
+            cmbUser.ItemsSource = LoginFunc.LoadAllUsersList();
         }
 
-        private void Save_Task_button_1_Click_1(object sender, RoutedEventArgs e)
+        private void Save_Task_Click(object sender, RoutedEventArgs e)
         {
 
+            MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
+
+            if (txtDescription.Text == "" || txtTopic.Text == "" || cmbPriority.Text == "" || cmbUser.Text == "")
+            {
+                MessageBox.Show("Please, fill all data", "Data");
+            }
+            else if (result == MessageBoxResult.OK)
+            {
+                TaskFunc.AddTaskNew(txtTopic.Text, txtDescription.Text, (int)(Enums.StatusEnum)cmbPriority.SelectedItem, OtherFunc.user, cmbUser.SelectedItem.ToString(), datePicker.DisplayDate);
+
+                MessageBox.Show("Data was added !", "Data");
+
+                OverviewModification p = new OverviewModification();
+                this.NavigationService.Navigate(p);
+            }
         }
 
-        private void Save_Task_click(object sender, RoutedEventArgs e)
+        private void Delete_Task_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Delete_Task_button_1_Click(object sender, RoutedEventArgs e)
-        {
-
+            OverviewModification p = new OverviewModification();
+            this.NavigationService.Navigate(p);
         }
     }
 }

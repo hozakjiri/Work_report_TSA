@@ -19,7 +19,6 @@ namespace WorkReportWPF.Forms.ListOfModification
         {
             dataGrid.ItemsSource = ModificationFunc.LoadModificationTable();
             dataGrid.Columns[0].Visibility = Visibility.Hidden;
-
         }
 
         private void dataGrid_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
