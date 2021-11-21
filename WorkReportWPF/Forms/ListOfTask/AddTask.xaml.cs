@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using WorkReportWPF.Forms.ListOfModification;
 using WorkReportWPF.Functions;
 
 namespace WorkReportWPF.Forms.ListOfTask
@@ -41,14 +40,14 @@ namespace WorkReportWPF.Forms.ListOfTask
 
                 MessageBox.Show("Data was added !", "Data");
 
-                OverviewModification p = new OverviewModification();
+                OverviewTask p = new OverviewTask();
                 this.NavigationService.Navigate(p);
             }
         }
 
         private void Delete_Task_Click(object sender, RoutedEventArgs e)
         {
-            OverviewModification p = new OverviewModification();
+            OverviewTask p = new OverviewTask();
             this.NavigationService.Navigate(p);
         }
     }

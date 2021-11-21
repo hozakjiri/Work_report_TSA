@@ -16,19 +16,23 @@ namespace WorkReportWPF.Functions
             using DbDataContext context = new();
             var taskList = context.Tasks.ToList();
 
-            List<TableTaskView> taskData = taskList.Select(x => new TableTaskView()
+            List<TableTaskView> taskData = new();
+            if (taskList != null)
             {
-                ID = x.ID,
-                Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
-                Subject = x.Subject,
-                Description = x.Description,
-                Note = x.Note,
-                Priority = x.Priority,
-                Term = (DateTime)ToDate(x.Term, "dd.MM.yyyy"),
-                Status = x.Status,
-                Sender = x.Sender,
-                Recipient = x.Recipient,
-            }).ToList();
+                taskData = taskList.Select(x => new TableTaskView()
+                {
+                    ID = x.ID,
+                    Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
+                    Subject = x.Subject,
+                    Description = x.Description,
+                    Note = x.Note,
+                    Priority = x.Priority,
+                    Term = (DateTime)ToDate(x.Term, "dd.MM.yyyy"),
+                    Status = x.Status,
+                    Sender = x.Sender,
+                    Recipient = x.Recipient,
+                }).ToList();
+            }
 
             return taskData;
         }
@@ -101,7 +105,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void EditTask(int ID, string subject, string description, int priority, int status, string sender, string recipient, DateTime term, string note)
+        public static void EditTask(int ID, DateTime date, string subject, string description, int priority, int status, string sender, string recipient, DateTime term, string note)
         {
             try
             {
@@ -110,6 +114,7 @@ namespace WorkReportWPF.Functions
                 Task modificationData = new()
                 {
                     ID = ID,
+                    Date = date.ToString("dd.MM.yyyy"),
                     Subject = subject,
                     Description = description,
                     Note = note,

@@ -129,7 +129,8 @@
             materialDesign:TextFieldAssist.HasClearButton="True"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-            materialDesign:HintAssist.HelperText="Select one status" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            materialDesign:HintAssist.HelperText="Select one status" SelectedItem="{Binding SelectedValidationOutlined, Mode
+            =TwoWay, UpdateSourceTrigger=PropertyChanged}"
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"/>
 

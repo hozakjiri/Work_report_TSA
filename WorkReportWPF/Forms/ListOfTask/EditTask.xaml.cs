@@ -36,11 +36,11 @@ namespace WorkReportWPF.Forms.ListOfTask
             }
             else if (result == MessageBoxResult.OK)
             {
-                TaskFunc.EditTask(currentdata.ID, txtTopic.Text, txtDescription.Text, (int)(Enums.TaskEnum)cmbPriority.SelectedItem, (int)(Enums.StatusEnum)cmbStatus.SelectedItem, OtherFunc.user, cmbUser.SelectedItem.ToString(), datePicker.DisplayDate, txtNote.Text);
+                TaskFunc.EditTask(currentdata.ID, currentdata.Date, txtTopic.Text, txtDescription.Text, (int)(Enums.TaskEnum)cmbPriority.SelectedItem, (int)(Enums.StatusEnum)cmbStatus.SelectedItem, OtherFunc.user, cmbUser.SelectedItem.ToString(), datePicker.DisplayDate, txtNote.Text);
 
                 MessageBox.Show("Task was added !", "Data");
 
-                ListOfTasks p = new ListOfTasks();
+                OverviewTask p = new OverviewTask();
                 this.NavigationService.Navigate(p);
             }
         }
@@ -60,6 +60,8 @@ namespace WorkReportWPF.Forms.ListOfTask
                 txtDescription.Text = currentdata.Description;
                 txtNote.Text = currentdata.Note;
 
+
+
                 if (cmbUser.Items.Contains(currentdata.Recipient))
                 {
                     cmbUser.SelectedItem = currentdata.Recipient;
@@ -68,6 +70,7 @@ namespace WorkReportWPF.Forms.ListOfTask
                 if (cmbStatus.Items.Contains(currentdata.Status))
                 {
                     cmbStatus.SelectedItem = currentdata.Status;
+
                 }
 
                 if (cmbPriority.Items.Contains(currentdata.Priority))
