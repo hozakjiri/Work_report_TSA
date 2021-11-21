@@ -44,6 +44,28 @@ namespace WorkReportWPF.Functions
             return modificationData;
         }
 
+        public static List<TableModificationView> LoadModificationTableTOP()
+        {
+            using DbDataContext context = new();
+            var projectList = context.Datas.OrderByDescending(o => o.ID).ToList();
+
+            List<TableModificationView> modificationData = projectList.Select(x => new TableModificationView()
+            {
+                ID = x.ID,
+                Username = x.Username,
+                Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
+                //Date = (DateTime)ToDate(x.Date, "M/d/yyyy h:mm:ss"),
+                Project = x.Project,
+                Comment = x.Comment,
+                Image = x.Image == "yes" ? true : false,
+                Time = x.Time,
+                Note = x.Note,
+                ImagePath = x.ImageStr
+            }).OrderByDescending(o => o.ID).Take(5).ToList();
+
+            return modificationData;
+        }
+
         public static List<TableModificationView> LoadUserModificationTable()
         {
             using DbDataContext context = new();

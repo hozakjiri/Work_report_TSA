@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using WorkReportWPF.Functions;
 
 namespace WorkReportWPF
 {
@@ -48,5 +50,27 @@ namespace WorkReportWPF
             return weeknum;
         }
 
+        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+            Date_Text.Text = DateTime.Now.ToShortDateString();
+            Day_Text.Text = DateTime.Now.DayOfWeek.ToString();
+            Time_Text.Text = DateTime.Now.ToShortTimeString();
+            Week_Text.Text = GetWeekNumber(DateTime.Now).ToString();
+
+            try
+            {
+                TaskGrid.ItemsSource = TaskFunc.LoadTaskTableTOP();
+                TaskGrid.Columns[0].Visibility = Visibility.Hidden;
+
+                ModificationGrid.ItemsSource = ModificationFunc.LoadModificationTableTOP();
+                ModificationGrid.Columns[0].Visibility = Visibility.Hidden;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
     }
 }

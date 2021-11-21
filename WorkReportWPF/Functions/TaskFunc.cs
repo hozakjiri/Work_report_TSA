@@ -37,6 +37,32 @@ namespace WorkReportWPF.Functions
             return taskData;
         }
 
+        public static List<TableTaskView> LoadTaskTableTOP()
+        {
+            using DbDataContext context = new();
+            var taskList = context.Tasks.ToList();
+
+            List<TableTaskView> taskData = new();
+            if (taskList != null)
+            {
+                taskData = taskList.Select(x => new TableTaskView()
+                {
+                    ID = x.ID,
+                    Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
+                    Subject = x.Subject,
+                    Description = x.Description,
+                    Note = x.Note,
+                    Priority = x.Priority,
+                    Term = (DateTime)ToDate(x.Term, "dd.MM.yyyy"),
+                    Status = x.Status,
+                    Sender = x.Sender,
+                    Recipient = x.Recipient,
+                }).OrderByDescending(o => o.Date).Take(5).ToList();
+            }
+
+            return taskData;
+        }
+
         public static List<TableTaskView> LoadMyTaskTable()
         {
             using DbDataContext context = new();
