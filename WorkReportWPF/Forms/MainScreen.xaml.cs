@@ -24,10 +24,7 @@ namespace WorkReportWPF
 
         void timer_Tick(object sender, EventArgs e)
         {
-            Date_Text.Text = DateTime.Now.ToShortDateString();
-            Day_Text.Text = DateTime.Now.DayOfWeek.ToString();
-            Time_Text.Text = DateTime.Now.ToShortTimeString();
-            Week_Text.Text = GetWeekNumber(DateTime.Now).ToString();
+            GetData();
         }
 
         static int GetWeekNumberOfMonth(DateTime date)
@@ -50,13 +47,17 @@ namespace WorkReportWPF
             return weeknum;
         }
 
-        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private void GetData()
         {
-
             Date_Text.Text = DateTime.Now.ToShortDateString();
             Day_Text.Text = DateTime.Now.DayOfWeek.ToString();
             Time_Text.Text = DateTime.Now.ToShortTimeString();
             Week_Text.Text = GetWeekNumber(DateTime.Now).ToString();
+        }
+
+        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            GetData();
 
             try
             {
