@@ -1,14 +1,211 @@
-﻿<Page x:Class="WorkReportWPF.Forms.ListOfComputers.AddComputers"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WorkReportWPF.Forms.ListOfComputers"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfComputers.AddComputers"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
       Title="AddComputers">
 
     <Grid>
-        
+
+        <TextBox 
+        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+        materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+        x:Name="txtuser" 
+        Text="" 
+        Margin="623,115,92,393" 
+        Foreground="WHITE" 
+        Background="#FF292626"
+        TextWrapping="Wrap"
+        AcceptsReturn="True" 
+        FontSize="26" 
+        Cursor="IBeam"
+        VerticalContentAlignment="Center"
+        HorizontalContentAlignment="Left"
+        materialDesign:HintAssist.Hint="User name account computer"
+        materialDesign:HintAssist.Background="#FF292626"
+        materialDesign:HintAssist.Foreground="#aeea00"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="txtpassvnc" 
+            Text="" 
+            Margin="625,337,400,173" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Password for VNC"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
+            HorizontalAlignment="Left"
+            Margin="41,27,0,0" 
+            VerticalAlignment="Top" 
+            Width="1167" 
+            Padding="10"
+            Foreground="White" 
+            BorderBrush="#FF292626" 
+            FontSize="26" 
+            Background="#FF292626"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:HintAssist.Hint="Name of line" Height="68"
+            Style="{StaticResource MaterialDesignComboBox}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,10,10" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
+
+            <StackPanel Width="135" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Add" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Insert_Image"  Text="Add" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+            </StackPanel>
+        </Button>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="txtstation" 
+            Text="" 
+            Margin="41,115,699,393" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Name of station" Width="560"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="txtpass" 
+            Text="" 
+            Margin="623,219,92,289" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Center"
+            materialDesign:HintAssist.Hint="Password for User"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="txtdomain" 
+            Text="" 
+            Margin="41,337,699,173" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Domain" Width="560"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="txthostname" 
+            Text="" 
+            Margin="41,219,699,286" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Hostname" Width="560"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbType" 
+            HorizontalAlignment="Left"
+            Margin="916,342,0,0" 
+            VerticalAlignment="Top" 
+            Width="292" 
+            Padding="10"
+            Foreground="White" 
+            BorderBrush="#FF292626" 
+            FontSize="26" 
+            Background="#FF292626"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:HintAssist.Hint="Type of station" Height="68"
+            Style="{StaticResource MaterialDesignComboBox}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            x:Name="txtnote" 
+            Text="" 
+            Margin="41,437,515,28" 
+            Foreground="WHITE" 
+            Background="#FF292626"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Note"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00"/>
+        <DatePicker x:Name="datePicker" 
+            materialDesign:HintAssist.Hint="Maintence" 
+            HorizontalAlignment="Left" Margin="812,437,0,0" 
+            Width="303" 
+            Background="#FF292626" 
+            BorderBrush="#FF292626" 
+            Foreground="White"
+            FontSize="20" 
+            FirstDayOfWeek="Monday" 
+            SelectedDateFormat="Long" 
+            Text="Maintence"
+            Cursor="ArrowCD" 
+            Height="68"  
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:HintAssist.Background="#FF292626"
+            materialDesign:HintAssist.Foreground="#aeea00" VerticalAlignment="Top">
+            <DatePicker.CalendarStyle>
+                <Style TargetType="{x:Type Calendar}">
+
+
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF292626" />
+                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF292626"/>
+
+
+
+
+                    </Style.Resources>
+                    <Style.BasedOn>
+                        <StaticResource ResourceKey="MaterialDesignCalendarPortrait"/>
+                    </Style.BasedOn>
+                </Style>
+            </DatePicker.CalendarStyle>
+
+
+        </DatePicker>
+
     </Grid>
 </Page>

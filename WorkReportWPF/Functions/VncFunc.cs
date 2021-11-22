@@ -63,7 +63,6 @@ namespace WorkReportWPF.Functions
                     PasswordVnc = passvnc,
                     Type = Enums.StationEnum.BlackBox,
                     Maintence = "",
-                    Document = "",
                     Note = "",
                 };
 

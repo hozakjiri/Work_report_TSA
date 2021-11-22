@@ -28,8 +28,6 @@ namespace WorkReportWPF.Models
 
         public string Maintence { get; set; }
 
-        public string Document { get; set; }
-
         public string Note { get; set; }
     }
 }
