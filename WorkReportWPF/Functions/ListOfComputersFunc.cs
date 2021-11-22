@@ -95,5 +95,25 @@ namespace WorkReportWPF.Functions
             }
         }
 
+        public static void DeleteComputers(int? id)
+        {
+            try
+            {
+                using DbSettingsContext context = new();
+
+                if (id != null)
+                {
+                    var customer = context.Stations.Find(id);
+                    context.Stations.Remove(customer);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
     }
 }

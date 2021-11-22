@@ -27,9 +27,9 @@ namespace WorkReportWPF.Forms.ListOfComputers
             }
             else if (result == MessageBoxResult.OK)
             {
-                ListOfComputersFunc.AddComputers(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.DisplayDate.ToString("dd.MM.yyyy"), cmbProject.SelectedItem.ToString());
+                ListOfComputersFunc.AddComputers(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtnote.Text);
 
-                MessageBox.Show("Data was modified !", "Data");
+                MessageBox.Show("Data was added !", "Data");
 
                 OverviewComputers p = new OverviewComputers();
                 this.NavigationService.Navigate(p);

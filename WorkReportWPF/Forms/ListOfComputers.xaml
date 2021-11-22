@@ -43,7 +43,6 @@
                     <TextBlock x:Name="Add_Text"  Text="Add Computer" Width="96" VerticalAlignment="Center"  Margin="5,0,0,0" Foreground="Black"/>
                 </StackPanel>
             </Button>
-
         </StackPanel>
         <Frame x:Name="frameComputers" Content="Frame" Grid.Row="2" Foreground="White" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="588" Width="1300" VerticalContentAlignment="Center">
 

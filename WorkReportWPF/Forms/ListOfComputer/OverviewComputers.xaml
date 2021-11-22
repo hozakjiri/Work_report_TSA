@@ -63,7 +63,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Hostname" Binding="{Binding Path=Hostname}"  Width="100">
+                <DataGridTextColumn Header="Hostname" Binding="{Binding Path=HostName}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>

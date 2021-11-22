@@ -75,5 +75,24 @@ namespace WorkReportWPF.Forms.ListOfComputers
                 this.NavigationService.Navigate(p);
             }
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (currentdata != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Can you Delete?", "Data", MessageBoxButton.OKCancel);
+
+                if (result == MessageBoxResult.OK)
+                {
+                    ListOfComputersFunc.DeleteComputers(currentdata.StationID);
+
+                    OverviewComputers p = new OverviewComputers();
+                    this.NavigationService.Navigate(p);
+                }
+            }
+        }
+
     }
 }
+
