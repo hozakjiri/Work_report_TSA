@@ -118,6 +118,7 @@ namespace WorkReportWPF.Functions
         public static void AddTaskNew(string subject, string description, int priority, string sender, string recipient, DateTime term)
         {
             Task modificationData = new();
+
             try
             {
                 using DbDataContext context = new();
@@ -187,7 +188,7 @@ namespace WorkReportWPF.Functions
 
         }
 
-        public static void SendMail(TableTaskView data)
+        public static void SendMail(Task data)
         {
             try
             {
