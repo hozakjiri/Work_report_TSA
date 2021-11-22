@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
+using System.Text;
 using System.Threading;
 using WorkReportWPF.Enums;
 using WorkReportWPF.Models;
@@ -115,12 +117,12 @@ namespace WorkReportWPF.Functions
 
         public static void AddTaskNew(string subject, string description, int priority, string sender, string recipient, DateTime term)
         {
-
+            Task modificationData = new();
             try
             {
                 using DbDataContext context = new();
 
-                Task modificationData = new()
+                modificationData = new()
                 {
                     Date = DateTime.Now.ToString("dd.MM.yyyy"),
                     Subject = subject,
@@ -135,6 +137,15 @@ namespace WorkReportWPF.Functions
 
                 context.Tasks.Add(modificationData);
                 context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            try
+            {
+                SendMail(modificationData);
             }
             catch (Exception ex)
             {
@@ -176,6 +187,92 @@ namespace WorkReportWPF.Functions
 
         }
 
+        public static void SendMail(TableTaskView data)
+        {
+            try
+            {
+                MailMessage oMail = new()
+                {
+                    From = new MailAddress("WorkReport@hella.com")
+                };
 
+                string mailstring = "";
+
+                try
+                {
+                    mailstring = LoginFunc.LoadUserMail(data.Sender);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                oMail.To.Add(mailstring);
+
+                oMail.IsBodyHtml = true;
+
+                oMail.Subject = "WorkReport_TaskManager " + DateTime.Now.ToString("dd.MM.yyyy");
+
+                StringBuilder sb = new();
+                sb.AppendLine("<p>You get new job, </p>");
+                sb.AppendLine("<br/>");
+
+                StringBuilder sf = new();
+                sf.AppendLine("<style>");
+                sf.AppendLine("table, th, td {");
+                sf.AppendLine("border: 1px solid black;");
+                sf.AppendLine("border-collapse: collapse;");
+                sf.AppendLine("}");
+                sf.AppendLine("th, td {");
+                sf.AppendLine("padding: 5px;");
+                sf.AppendLine("Text-align: Left;");
+                sf.AppendLine("}");
+                sf.AppendLine("p {");
+                sf.AppendLine("padding: 0px;");
+                sf.AppendLine("Text-align: Left;");
+                sf.AppendLine("margin: 0px;");
+                sf.AppendLine("}");
+                sf.AppendLine("</style>");
+
+
+                var datatable = data;
+                StringBuilder MailBody = new();
+
+                MailBody.AppendLine("<table>");
+                MailBody.AppendLine("<thead>");
+                MailBody.AppendLine("<tr>");
+                MailBody.AppendLine("<th>Sender</th>");
+                MailBody.AppendLine("<th>Subject</th>");
+                MailBody.AppendLine("<th>Description</th>");
+                MailBody.AppendLine("<th>Priority</th>");
+                MailBody.AppendLine("</tr>");
+                MailBody.AppendLine("</thead>");
+                MailBody.AppendLine("<tbody>");
+
+                MailBody.AppendLine("<tr>");
+                MailBody.AppendLine("<td>" + data.Sender + "</td>");
+                MailBody.AppendLine("<td>" + data.Subject + "</td>");
+                MailBody.AppendLine("<td>" + data.Description + "</td>");
+                MailBody.AppendLine("<td>" + data.Priority + "</td>");
+                MailBody.AppendLine("<td>" + data.Term + "</td>");
+                MailBody.AppendLine("</tr>");
+
+                MailBody.AppendLine("</tbody>");
+                MailBody.AppendLine("</table>");
+
+                oMail.Body = sf.ToString() + sb.ToString() + MailBody.ToString();
+
+
+                SmtpClient smtp = new("smtphub.dc.hella.com");
+                smtp.Port = 25;
+                smtp.Send(oMail);
+                //Data.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
     }
 }

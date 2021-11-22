@@ -93,6 +93,21 @@ namespace WorkReportWPF.Functions
             }
         }
 
+        public static string LoadUserMail(string name)
+        {
+            using DbSettingsContext context = new();
+            string mail = "";
+            if (context != null)
+            {
+                mail = context.Logins.Where(x => x.Name == name).Select(t => t.Mail).FirstOrDefault();
+                return mail;
+            }
+            else
+            {
+                return mail;
+            }
+        }
+
         public static void SaveUser(Login data)
         {
             try

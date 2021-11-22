@@ -38,6 +38,8 @@ namespace WorkReportWPF.Forms.ListOfTask
             {
                 TaskFunc.AddTaskNew(txtTopic.Text, txtDescription.Text, (int)(Enums.StatusEnum)cmbPriority.SelectedItem, OtherFunc.user, cmbUser.SelectedItem.ToString(), datePicker.DisplayDate);
 
+
+
                 MessageBox.Show("Data was added !", "Data");
 
                 OverviewTask p = new OverviewTask();

@@ -114,6 +114,5 @@ namespace WorkReportWPF.Functions
             }
         }
 
-
     }
 }
