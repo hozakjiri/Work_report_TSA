@@ -345,7 +345,7 @@
                     <!--Menu Buttons-->
                     <ListView
                         Background="Transparent"
-                        BorderThickness="0" Margin="0,0,0,0">
+                        BorderThickness="0">
                         <ListView.Resources>
                             <Style TargetType="{x:Type ListBoxItem}">
                                 <Setter Property="Height" Value="80"/>
@@ -401,9 +401,9 @@
                             <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Reports"/>
                         </Button>
 
-                        <Button x:Name="Calendar_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Calendar" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                        <!--<Button x:Name="Calendar_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Calendar" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
                             <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Calendar"/>
-                        </Button>
+                        </Button>-->
 
                         <Button x:Name="MasterSamples_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfMasterSamples" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
                             <materialDesign:PackIcon Kind="CarLightAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Master Samples"/>
@@ -426,7 +426,7 @@
                             <materialDesign:PackIcon Kind="EmoticonAgent" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Support"/>
                         </Button>
 
-                        <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Visibility="Hidden">
+                        <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Visibility="Hidden" >
                             <materialDesign:PackIcon Kind="Settings" Foreground="#aeea00" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
                         </Button>
                     </ListView>
