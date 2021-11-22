@@ -87,6 +87,17 @@ namespace WorkReportWPF.Functions
             return taskData;
         }
 
+        public static int LoadMyTask()
+        {
+            using DbDataContext context = new();
+            var taskList = context.Tasks.ToList();
+            var loginname = LoginFunc.LoadUserName(Environment.UserName);
+
+            var countTask = 0;
+            countTask = taskList.Where(x => x.Recipient == loginname && x.Status != (StatusEnum)StatusEnum.Started).Count();
+
+            return countTask;
+        }
 
         public static DateTime? ToDate(string dateTimeStr, params string[] dateFmt)
         {

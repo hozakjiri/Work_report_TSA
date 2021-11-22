@@ -1,4 +1,5 @@
-﻿using WorkReportWPF.Enums;
+﻿using System;
+using WorkReportWPF.Enums;
 
 namespace WorkReportWPF.Models
 {
@@ -22,7 +23,7 @@ namespace WorkReportWPF.Models
 
         public StationEnum Type { get; set; }
 
-        public string Maintence { get; set; }
+        public DateTime? Maintenance { get; set; }
 
         public string Document { get; set; }
 

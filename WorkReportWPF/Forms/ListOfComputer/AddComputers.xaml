@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfComputers.AddComputers"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="AddComputers">
+      Title="AddComputers" Loaded="Page_Loaded">
 
     <Grid>
 
@@ -62,7 +62,7 @@
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"/>
-        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,10,10" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
+        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,8,10" Background="#aeea00" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
 
             <StackPanel Width="135" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Add" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
@@ -172,7 +172,7 @@
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Maintence" 
             HorizontalAlignment="Left" Margin="812,437,0,0" 
-            Width="303" 
+            Width="453" 
             Background="#FF292626" 
             BorderBrush="#FF292626" 
             Foreground="White"
@@ -181,7 +181,7 @@
             SelectedDateFormat="Long" 
             Text="Maintence"
             Cursor="ArrowCD" 
-            Height="68"  
+            Height="61"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             materialDesign:HintAssist.Background="#FF292626"

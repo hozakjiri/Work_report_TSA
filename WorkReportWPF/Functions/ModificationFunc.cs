@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
-using System.Threading;
 using System.Windows;
 using WorkReportWPF.Models;
 using WorkReportWPF.Models.DBModels;
@@ -31,7 +29,7 @@ namespace WorkReportWPF.Functions
             {
                 ID = x.ID,
                 Username = x.Username,
-                Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
+                Date = (DateTime)OtherFunc.ToDate(x.Date, "dd.MM.yyyy"),
                 //Date = (DateTime)ToDate(x.Date, "M/d/yyyy h:mm:ss"),
                 Project = x.Project,
                 Comment = x.Comment,
@@ -53,7 +51,7 @@ namespace WorkReportWPF.Functions
             {
                 ID = x.ID,
                 Username = x.Username,
-                Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
+                Date = (DateTime)OtherFunc.ToDate(x.Date, "dd.MM.yyyy"),
                 //Date = (DateTime)ToDate(x.Date, "M/d/yyyy h:mm:ss"),
                 Project = x.Project,
                 Comment = x.Comment,
@@ -79,7 +77,7 @@ namespace WorkReportWPF.Functions
             {
                 ID = x.ID,
                 Username = x.Username,
-                Date = (DateTime)ToDate(x.Date, "dd.MM.yyyy"),
+                Date = (DateTime)OtherFunc.ToDate(x.Date, "dd.MM.yyyy"),
                 Project = x.Project,
                 Comment = x.Comment,
                 Image = x.Image == "yes" ? true : false,
@@ -91,19 +89,7 @@ namespace WorkReportWPF.Functions
             return modificationData;
         }
 
-        public static DateTime? ToDate(string dateTimeStr, params string[] dateFmt)
-        {
-            const DateTimeStyles style = DateTimeStyles.AllowWhiteSpaces;
 
-            if (dateFmt == null)
-            {
-                var dateInfo = Thread.CurrentThread.CurrentCulture.DateTimeFormat;
-                dateFmt = dateInfo.GetAllDateTimePatterns();
-            }
-            DateTime dt = default;
-            var result = DateTime.TryParseExact(dateTimeStr, dateFmt, CultureInfo.InvariantCulture, style, out dt) ? dt : (DateTime?)default;
-            return result;
-        }
 
         public static void SaveModification(string project, string comment, string date, string minutes, string imagepath, string fulltime)
         {
@@ -134,7 +120,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static async void EditModification(string project, string comment, string date, string minutes, string imagepath, string fulltime, string note)
+        public static void EditModification(string project, string comment, string date, string minutes, string imagepath, string fulltime, string note)
         {
             try
             {
@@ -154,7 +140,7 @@ namespace WorkReportWPF.Functions
                 using (var context2 = new DbDataContext())
                 {
                     context2.Update(modificationData);
-                    await context2.SaveChangesAsync();
+                    context2.SaveChanges();
                 }
 
             }

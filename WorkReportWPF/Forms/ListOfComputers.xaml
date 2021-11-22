@@ -44,26 +44,6 @@
                 </StackPanel>
             </Button>
 
-            <Button x:Name="Edit_button" 
-                materialDesign:ButtonAssist.CornerRadius="10"
-                BorderBrush="{x:Null}" 
-                Height="55" Width="150"
-                Background="#aeea00" 
-                Click="Click_Edit" 
-                RenderTransformOrigin="0.5,0.5" 
-                VerticalAlignment="Center" 
-                ScrollViewer.VerticalScrollBarVisibility="Disabled" 
-                HorizontalContentAlignment="Center" 
-                VerticalContentAlignment="Center" 
-                Padding="1,1,1,1" 
-                HorizontalAlignment="Center"
-                Margin="10,0,0,0">
-                <StackPanel Width="148" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Pencil" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" HorizontalAlignment="Left" Margin="10,0,0,0"/>
-                    <TextBlock x:Name="Edit_Text"  Text="Edit Computer" Width="94" VerticalAlignment="Center"  Margin="5,0,0,0" Foreground="Black"/>
-                </StackPanel>
-            </Button>
-
         </StackPanel>
         <Frame x:Name="frameComputers" Content="Frame" Grid.Row="2" Foreground="White" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="588" Width="1300" VerticalContentAlignment="Center">
 

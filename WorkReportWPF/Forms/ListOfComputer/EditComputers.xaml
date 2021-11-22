@@ -16,7 +16,7 @@
         materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
         x:Name="txtuser" 
         Text="" 
-        Margin="623,115,92,393" 
+        Margin="639,115,76,393" 
         Foreground="WHITE" 
         Background="#FF292626"
         TextWrapping="Wrap"
@@ -33,7 +33,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="txtpassvnc" 
             Text="" 
-            Margin="625,337,400,173" 
+            Margin="641,337,384,173" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -47,7 +47,7 @@
             materialDesign:HintAssist.Foreground="#aeea00"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
             HorizontalAlignment="Left"
-            Margin="41,27,0,0" 
+            Margin="57,27,0,0" 
             VerticalAlignment="Top" 
             Width="1167" 
             Padding="10"
@@ -67,7 +67,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="txtstation" 
             Text="" 
-            Margin="41,115,699,393" 
+            Margin="57,115,683,393" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -84,7 +84,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="txtpass" 
             Text="" 
-            Margin="623,219,92,289" 
+            Margin="639,219,76,289" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -101,7 +101,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="txtdomain" 
             Text="" 
-            Margin="41,337,699,173" 
+            Margin="57,337,683,173" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -116,7 +116,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="txthostname" 
             Text="" 
-            Margin="41,219,699,286" 
+            Margin="57,219,683,286" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -130,7 +130,7 @@
             materialDesign:HintAssist.Foreground="#aeea00"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbType" 
             HorizontalAlignment="Left"
-            Margin="916,342,0,0" 
+            Margin="932,342,0,0" 
             VerticalAlignment="Top" 
             Width="292" 
             Padding="10"
@@ -150,7 +150,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
             x:Name="txtnote" 
             Text="" 
-            Margin="41,437,515,28" 
+            Margin="57,437,499,28" 
             Foreground="WHITE" 
             Background="#FF292626"
             TextWrapping="Wrap"
@@ -164,8 +164,8 @@
             materialDesign:HintAssist.Foreground="#aeea00"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Maintence" 
-            HorizontalAlignment="Left" Margin="812,437,0,0" 
-            Width="303" 
+            HorizontalAlignment="Left" Margin="828,437,0,0" 
+            Width="396" 
             Background="#FF292626" 
             BorderBrush="#FF292626" 
             Foreground="White"
@@ -199,8 +199,8 @@
 
 
         </DatePicker>
-        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,38,43" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" >
-            <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
+        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,84,10" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" >
+            <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email1"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>

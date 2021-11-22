@@ -24,14 +24,14 @@ namespace WorkReportWPF.Functions
                 Password = x.Password,
                 PasswordVnc = x.PasswordVnc,
                 Type = x.Type,
-                Maintence = x.Maintence,
+                Maintenance = OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") != null ? OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") : DateTime.MinValue,
                 Note = x.Note
             }).ToList();
 
             return modificationData;
         }
 
-        public static void AddComputers(string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintence, string note)
+        public static void AddComputers(string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note)
         {
 
             try
@@ -48,7 +48,7 @@ namespace WorkReportWPF.Functions
                     Password = pass,
                     PasswordVnc = passvnc,
                     Type = (type >= 0 && type <= 1) ? (StationEnum)type : 0,
-                    Maintence = maintence,
+                    Maintence = maintenance,
                     Note = note,
                 };
 
@@ -61,10 +61,38 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void EditComputers(int ID, string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintence, string note)
+        public static void EditComputers(int ID, string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note)
         {
 
+            try
+            {
+                Station stationData = new()
+                {
+                    StationID = ID,
+                    Line = line,
+                    Name = name,
+                    HostName = hostname,
+                    Domain = domain,
+                    User = user,
+                    Password = pass,
+                    PasswordVnc = passvnc,
+                    Type = (type >= 0 && type <= 1) ? (StationEnum)type : 0,
+                    Maintence = maintenance,
+                    Note = note,
+                };
 
+
+                using (var context2 = new DbSettingsContext())
+                {
+                    context2.Update(stationData);
+                    context2.SaveChanges();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }

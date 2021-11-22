@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using WorkReportWPF.Functions;
+using WorkReportWPF.Models;
 
 namespace WorkReportWPF.Forms.ListOfComputers
 {
@@ -18,6 +19,16 @@ namespace WorkReportWPF.Forms.ListOfComputers
         {
             stationGrid.ItemsSource = ListOfComputersFunc.LoadListOfComputersTable();
             stationGrid.Columns[0].Visibility = Visibility.Hidden;
+        }
+
+        private void stationGrid_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (stationGrid.SelectedItems.Count > 0)
+            {
+                ListOfComputersView data = (ListOfComputersView)stationGrid.SelectedItems[0];
+                EditComputers p = new EditComputers(data);
+                this.NavigationService.Navigate(p);
+            }
         }
     }
 }

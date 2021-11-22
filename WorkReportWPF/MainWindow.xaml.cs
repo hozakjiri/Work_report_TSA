@@ -105,6 +105,19 @@ namespace WorkReportWPF
         {
             var username = Environment.UserName;
             bool HasPremisions = LoginFunc.CheckPremisions(username);
+            var countTasks = TaskFunc.LoadMyTask();
+
+            txtMyTask.Text = countTasks.ToString();
+
+            if (countTasks > 0)
+            {
+                ElipseMyTask.Fill = System.Windows.Media.Brushes.Red;
+            }
+            else
+            {
+                ElipseMyTask.Fill = System.Windows.Media.Brushes.Green;
+
+            }
 
             if (HasPremisions)
             {

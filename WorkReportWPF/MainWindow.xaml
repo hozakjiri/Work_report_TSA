@@ -312,7 +312,7 @@
                                 <Grid
                                     VerticalAlignment="Top"
                                     Margin="-8,0,0,15">
-                                    <Ellipse
+                                    <Ellipse x:Name="ElipseMyTask"
                                         Fill="{StaticResource TertiaryBrush}"
                                         StrokeThickness="1"
                                         Stroke="{StaticResource CanvasBrush}"
@@ -320,7 +320,7 @@
                                         Width="15"/>
 
                                     <!--Count-->
-                                    <TextBlock
+                                    <TextBlock x:Name="txtMyTask"
                                         FontSize="8"
                                         Foreground="{StaticResource SecondaryBrush}"
                                         Margin="0,0,0,.5"
