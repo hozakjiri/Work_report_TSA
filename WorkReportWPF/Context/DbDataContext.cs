@@ -11,5 +11,6 @@ namespace WorkReportWPF
         }
         public DbSet<Data> Datas { get; set; }
         public DbSet<Task> Tasks { get; set; }
+        public DbSet<Sample> Samples { get; set; }
     }
 }

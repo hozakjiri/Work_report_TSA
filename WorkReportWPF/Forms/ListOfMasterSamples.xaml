@@ -12,7 +12,7 @@
 
     <Grid>
         <StackPanel Orientation="Horizontal" Margin="490,14,0,0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Button x:Name="Overview_button" BorderBrush="{x:Null}" materialDesign:ButtonAssist.CornerRadius="10" Height="55" Width="150" Background="#aeea00" Click="Click_Overview" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
+            <Button x:Name="Overview_button" BorderBrush="{x:Null}" materialDesign:ButtonAssist.CornerRadius="10" Height="55" Width="150" Background="#aeea00" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" HorizontalAlignment="Center" Margin="10,0,0,0">
                 <StackPanel Width="128" VerticalAlignment="Center" HorizontalAlignment="Center" Height="51" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Laptop" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                     <TextBlock x:Name="Overview_Text"  Text="Overview" Width="81" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
@@ -24,8 +24,7 @@
                 BorderBrush="{x:Null}" 
                 Height="55" Width="150"
                 Background="#aeea00" 
-                Click="Click_Add" 
-                RenderTransformOrigin="0.5,0.5" 
+                    RenderTransformOrigin="0.5,0.5" 
                 VerticalAlignment="Center" 
                 ScrollViewer.VerticalScrollBarVisibility="Disabled" 
                 HorizontalContentAlignment="Center" 
