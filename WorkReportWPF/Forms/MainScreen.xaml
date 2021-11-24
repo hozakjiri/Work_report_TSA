@@ -26,8 +26,8 @@
   Style="{DynamicResource MaterialDesignCardGroupBox}"
   Margin="2,2,5,2"
   materialDesign:ColorZoneAssist.Mode="Custom"
-  materialDesign:ColorZoneAssist.Background="Transparent"
-  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="Transparent">
+  materialDesign:ColorZoneAssist.Background="#0078D7"
+  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="#0078d7">
             <GroupBox.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel
@@ -48,10 +48,10 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="Transparent" Foreground="Black" BorderBrush="#062e69" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All">
+            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="#0078d7" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Background" Value="#0078d7"/>
                         <Setter Property="FontWeight" Value="SemiBold"/>
                         <Setter Property="FontSize" Value="20"/>
                         <Setter Property="BorderThickness" Value="0,0,1,2"/>
@@ -141,7 +141,7 @@
   Margin="5,2,10,2"
   materialDesign:ColorZoneAssist.Mode="Custom"
   materialDesign:ColorZoneAssist.Background="Transparent"
-  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="Transparent" Grid.Column="1">
+  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="#0078D7" Grid.Column="1">
             <GroupBox.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel
@@ -162,10 +162,10 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="Transparent" Foreground="Black" BorderBrush="#062e69" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="620" Margin="0,0,0,2">
+            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="620" Margin="0,0,0,2">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Background" Value="#0078d7"/>
                         <Setter Property="FontWeight" Value="SemiBold"/>
                         <Setter Property="FontSize" Value="20"/>
                         <Setter Property="BorderThickness" Value="0,0,1,2"/>

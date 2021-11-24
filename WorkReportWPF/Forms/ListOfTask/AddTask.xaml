@@ -7,9 +7,10 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="AddTask" Loaded="Page_Loaded">
+      Title="AddTask" Loaded="Page_Loaded"
+      Background="Transparent">
 
-    <Grid Background="#FF3399FF">
+    <Grid>
 
         <TextBox x:Name ="txtTopic"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -81,7 +82,7 @@
             SelectedDateFormat="Long" 
             Text="select date"
             Cursor="ArrowCD" 
-            Height="68" VerticalAlignment="Top" BorderBrush="Black">
+            Height="68" VerticalAlignment="Top" BorderBrush="#062e69">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
                     <Style.Resources>

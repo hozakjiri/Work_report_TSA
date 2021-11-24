@@ -7,13 +7,14 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfTask.EditTask"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="EditTask" Loaded="Page_Loaded">
+      Title="EditTask" Loaded="Page_Loaded"
+      Background="Transparent">
 
     <Grid>
 
         <TextBox x:Name ="txtTopic"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:TextFieldAssist.UnderlineBrush="#FF3a85D1"
             TextWrapping="Wrap" 
             Text="" 
             Margin="21,30,292,500" 
@@ -25,7 +26,7 @@
             FontSize="20"
             materialDesign:HintAssist.Hint="Topic"
             materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="#aeea00"
+            materialDesign:HintAssist.Foreground="Black"
                  />
         <TextBox x:Name ="txtDescription"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -62,7 +63,7 @@
             Background="#FF3A85D1"
 
             materialDesign:TextFieldAssist.HasClearButton="True"
-            materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
             materialDesign:ColorZoneAssist.Mode="SecondaryLight"
             materialDesign:HintAssist.HelperText="Select target user" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             materialDesign:HintAssist.Background="#FF3A85D1"
@@ -73,7 +74,7 @@
             VerticalAlignment="Top" 
             Width="243" 
             Background="#FF3A85D1" 
-            BorderBrush="#FF292626" 
+            BorderBrush="#FF3A85D1" 
             Foreground="Black"
             FontSize="20" 
             FirstDayOfWeek="Monday" 
@@ -88,8 +89,8 @@
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
                     <Style.Resources>
-                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF292626" />
-                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF292626"/>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF3A85D1" />
+                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF3A85D1"/>
                     </Style.Resources>
                     <Style.BasedOn>
                         <StaticResource ResourceKey="MaterialDesignCalendarPortrait"/>

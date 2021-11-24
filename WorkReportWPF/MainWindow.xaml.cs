@@ -96,6 +96,11 @@ namespace WorkReportWPF
             MainContent.Content = new ListOfTasks();
         }
 
+        private void MainContent_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
+
         private void Click_Support(object sender, RoutedEventArgs e)
         {
             MainContent.Content = new Support();
