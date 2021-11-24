@@ -26,7 +26,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             samplesGrid.ItemsSource = SamplesFunc.LoadSamplesTable();
             samplesGrid.Columns[0].Visibility = Visibility.Hidden;

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using WorkReportWPF.Functions;
 using WorkReportWPF.Models;
@@ -25,6 +26,47 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         }
 
+        private int _numValue = 0;
+
+        public int NumValue
+        {
+            get { return _numValue; }
+            set
+            {
+                _numValue = value;
+                txtNum.Text = value.ToString();
+            }
+        }
+
+        public void NumberUpDown()
+        {
+            InitializeComponent();
+            txtNum.Text = _numValue.ToString();
+        }
+
+        private void cmdUp_Click(object sender, RoutedEventArgs e)
+        {
+            NumValue += 5;
+        }
+
+        private void cmdDown_Click(object sender, RoutedEventArgs e)
+        {
+            NumValue -= 5;
+        }
+
+        public DateTime DisplayDate { get; set; }
+
+        private void txtNum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtNum == null)
+            {
+                return;
+            }
+
+            if (!int.TryParse(txtNum.Text, out _numValue))
+                txtNum.Text = _numValue.ToString();
+        }
+
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Can you edit data?", "Data", MessageBoxButton.OKCancel);
@@ -46,7 +88,29 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void btnPrint_click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                var mylabel = new bpac.Document();
+                if (mylabel.Open("Template/Label.lbx"))
+                {
+                    mylabel.GetObject("JmenoPrijmeni").Text = cmbResponsible.SelectedItem.ToString();
+                    mylabel.GetObject("DatumRevize").Text = datePickerRevisionDate.DisplayDate.ToString("dd.MM.yyyy");
+                    mylabel.GetObject("PlatnostRevize").Text = datePickerRevisionValidity.DisplayDate.ToString("dd.MM.yyyy");
+                    mylabel.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
+                    mylabel.PrintOut(Convert.ToInt32(txtNum.Text), bpac.PrintOptionConstants.bpoDefault);
+                    mylabel.EndPrint();
+                    mylabel.Close();
+                    MessageBox.Show("Data was printed !", "Data");
+                }
+                else
+                {
+                    MessageBox.Show("Data wasnt printed - file lost !", "Data");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -91,5 +155,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 this.NavigationService.Navigate(p);
             }
         }
+
+
     }
 }
