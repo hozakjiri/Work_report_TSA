@@ -10,7 +10,7 @@
       MinHeight="668" MinWidth="1300"
       Title="Settings" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
