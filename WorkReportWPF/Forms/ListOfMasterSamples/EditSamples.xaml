@@ -174,6 +174,30 @@
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"/>
+
+        <StackPanel Margin="500,508,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
+            <TextBox x:Name="txtNum"
+                     materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource SecondaryHueMidBrush}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                     x:FieldModifier="private" 
+                     Text="" 
+                     TextChanged="txtNum_TextChanged" 
+                     Margin="3,0,0,0" 
+                     Foreground="White" 
+                     Background="#FF292626"
+                     Width="103" Height="56" 
+                     VerticalAlignment="Center" 
+                     TextAlignment="Center" 
+                     FontSize="16" 
+                     materialDesign:HintAssist.Hint="Copies"
+                     materialDesign:HintAssist.Background="#FF292626"
+                     materialDesign:HintAssist.Foreground="#aeea00"/>
+            <StackPanel Orientation="Vertical" Width="24" Height="56" HorizontalAlignment="Center">
+                <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="#aeea00" Foreground="Black" BorderBrush="#aeea00" VerticalAlignment="Top" Margin="0,0,0,1" />
+                <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="17" Click="cmdDown_Click" Height="26" HorizontalAlignment="Center" Background="#aeea00" Foreground="Black" BorderBrush="#aeea00" Margin="0,1,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
         <Button x:Name="btnPrint" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,480,15" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnPrint_click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Printer" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Print" VerticalAlignment="Center"/>
