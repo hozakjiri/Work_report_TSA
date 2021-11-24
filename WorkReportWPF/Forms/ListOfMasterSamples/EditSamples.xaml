@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfMasterSamples.EditSamples"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="EditSamples">
+      Title="EditSamples" Loaded="Page_Loaded">
 
     <Grid>
 
@@ -98,7 +98,7 @@
 
 
         </DatePicker>
-        <Button x:Name="btnEdit" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,84,10" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnEdit_Click" >
+        <Button x:Name="btnEdit" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,289,15" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnEdit_Click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Edit" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Edit" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txtEdit"  Text="Edit" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
@@ -174,10 +174,16 @@
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"/>
-        <Button x:Name="btnPrint" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,275,10" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnPrint_click" >
+        <Button x:Name="btnPrint" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,480,15" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnPrint_click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Printer" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Print" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txtPrint"  Text="Print" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,98,15" Height="60" Background="#aeea00" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Click" >
+            <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email"  Text="Delete" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
         </Button>
 

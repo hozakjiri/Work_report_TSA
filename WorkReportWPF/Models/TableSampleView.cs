@@ -16,9 +16,9 @@ namespace WorkReportWPF.Models
 
         public string Responsible { get; set; }
 
-        public DateTime RevisionValidity { get; set; }
+        public DateTime? RevisionValidity { get; set; }
 
-        public DateTime RevisionDate { get; set; }
+        public DateTime? RevisionDate { get; set; }
     }
 }
 

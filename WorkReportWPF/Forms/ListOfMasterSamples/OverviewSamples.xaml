@@ -9,7 +9,7 @@
       Title="OverviewSamples">
 
     <Grid>
-        <DataGrid x:Name="stationGrid" AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="White" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False">
+        <DataGrid x:Name="samplesGrid" AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="White" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" PreviewMouseDoubleClick="samplesGrid_PreviewMouseDoubleClick">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>

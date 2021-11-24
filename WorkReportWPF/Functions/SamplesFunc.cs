@@ -8,7 +8,7 @@ namespace WorkReportWPF.Functions
 {
     public class SamplesFunc
     {
-        public static List<TableSampleView> LoadModificationTable()
+        public static List<TableSampleView> LoadSamplesTable()
         {
             using DbDataContext context = new();
             var sampleList = context.Samples.OrderByDescending(o => o.ID).ToList();
