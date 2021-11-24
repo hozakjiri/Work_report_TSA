@@ -64,7 +64,7 @@
                     <!--To get the perfect corners on both end we will use triangles on left & right of the row & rectangle in center to fill the gap-->
                     <!--left corner-->
                     <Polygon
-                Fill="{StaticResource DimBrush}"
+                Fill="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"
                 HorizontalAlignment="Left"
                 Margin="40,0,100,0"
                 Stretch="Uniform"
@@ -91,7 +91,7 @@
                 MouseDown="Polygon_MouseDown"/>
                     <!--right corner-->
                     <Polygon
-                Fill="{StaticResource DimBrush}"
+                Fill="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}"
                 HorizontalAlignment="Right"
                 Margin="0,0,102,0"
                 Stretch="Uniform"
@@ -287,12 +287,13 @@
 
                                 <TextBlock x:Name="lblUserName"
                                     FontWeight="SemiBold"
-                                    Foreground="{StaticResource SecondaryBrush}"
+                                    Foreground="Black"
                                     Text="Hozák Jiří"/>
                                 <TextBlock x:Name="lblUserLevel"
                                     Grid.Row="1"
                                     FontWeight="SemiBold"
-                                    Foreground="#aeea00"
+                                    Foreground="#062e69
+"
                                     Text="Level 1"/>
                             </Grid>
 
@@ -303,7 +304,7 @@
                                 Margin="0,0,20,0">
                                 <Path
                                 Data="{StaticResource notification_icon}"
-                                Fill="#aeea00"
+                                Fill="#062e69"
                                 VerticalAlignment="Bottom"
                                     Stretch="Uniform"
                                     Width="16"/>
@@ -392,41 +393,41 @@
                             </Style>
                         </ListView.Resources>
 
-                        <Button x:Name="Home_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_Home" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="home" Foreground="Gainsboro" Height="35" Width="35" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Home"/>
+                        <Button x:Name="Home_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Home" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="home" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Home"/>
                         </Button>
 
-                        <Button x:Name="Modification_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_ListOfModifications" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Reports"/>
+                        <Button x:Name="Modification_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfModifications" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Reports"/>
                         </Button>
 
                         <!--<Button x:Name="Calendar_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Calendar" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
                             <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Calendar"/>
                         </Button>-->
 
-                        <Button x:Name="MasterSamples_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_ListOfMasterSamples" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="CarLightAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Master Samples"/>
+                        <Button x:Name="MasterSamples_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfMasterSamples" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                            <materialDesign:PackIcon Kind="CarLightAlert" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Master Samples"/>
                         </Button>
 
-                        <Button x:Name="RemoreDesktop_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_RemoteDesktop" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                        <Button x:Name="RemoreDesktop_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_RemoteDesktop" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
                             <materialDesign:PackIcon Kind="RemoteDesktop" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Remote Desktop"/>
                         </Button>
 
-                        <Button x:Name="Computers_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_ListOfComputers" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                        <Button x:Name="Computers_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfComputers" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
                             <materialDesign:PackIcon Kind="DesktopClassic" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="List of Computers"/>
                         </Button>
 
-                        <Button x:Name="Tasks_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_ListOfTasks" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                        <Button x:Name="Tasks_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfTasks" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
                             <materialDesign:PackIcon Kind="CalendarAlert" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Tasks"/>
                         </Button>
 
 
-                        <Button x:Name="Support_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_Support" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
+                        <Button x:Name="Support_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Support" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
                             <materialDesign:PackIcon Kind="EmoticonAgent" Foreground="Gainsboro" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Support"/>
                         </Button>
 
-                        <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="#FF4195EA" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Visibility="Hidden" >
-                            <materialDesign:PackIcon Kind="Settings" Foreground="#aeea00" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
+                        <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Visibility="Hidden" >
+                            <materialDesign:PackIcon Kind="Settings" Foreground="#062e69" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
                         </Button>
                     </ListView>
 

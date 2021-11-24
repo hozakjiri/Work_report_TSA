@@ -11,7 +11,7 @@
       Title="Remote Desktop" Loaded="Page_Loaded">
 
     <Grid Margin="0,10,0,-10">
-        <TextBlock Text="Remote Desktop" VerticalAlignment="Top" HorizontalAlignment="Center" RenderTransformOrigin="0.487,0.521" FontSize="36" Foreground="White" Margin="0,-1,0,0">
+        <TextBlock Text="Remote Desktop" VerticalAlignment="Top" HorizontalAlignment="Center" RenderTransformOrigin="0.487,0.521" FontSize="36" Foreground="Black" Margin="0,-1,0,0">
             <TextBlock.Style>
                 <Style/>
             </TextBlock.Style>

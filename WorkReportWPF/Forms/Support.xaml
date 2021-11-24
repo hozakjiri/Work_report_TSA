@@ -19,7 +19,7 @@
             TextWrapping="Wrap" Text="" 
             Margin="25,245,502,95" 
             RenderTransformOrigin="0.519,0.505" 
-            Foreground="White" 
+            Foreground="Black" 
             Background="#FF292626" 
             Cursor="IBeam" 
             FontSize="16"
@@ -46,7 +46,7 @@
             Name="Subject_Text" 
             Text="" 
             Margin="25,134,0,0" 
-            Foreground="WHITE" 
+            Foreground="Black" 
             Background="#FF292626"
             TextWrapping="Wrap"
             AcceptsReturn="True"
@@ -60,7 +60,7 @@
             materialDesign:HintAssist.Background="#FF292626"
             materialDesign:HintAssist.Foreground="#aeea00"/>
         <Label Content="Report a problem with the application" Margin="0,10,0,575" Foreground="#aeea00" Background="Transparent" FontSize="48" HorizontalAlignment="Center" Width="1262" HorizontalContentAlignment="Center"/>
-        <TextBlock TextWrapping="Wrap" Text="Here you can describe any problem with the application, you can attach the file as an example" Foreground="White" Background="Transparent" TextAlignment="Center" Padding="25,25,25,25" Margin="0,151,0,0" FontSize="22" HorizontalAlignment="Right" Width="425" VerticalAlignment="Top"/>
+        <TextBlock TextWrapping="Wrap" Text="Here you can describe any problem with the application, you can attach the file as an example" Foreground="Black" Background="Transparent" TextAlignment="Center" Padding="25,25,25,25" Margin="0,151,0,0" FontSize="22" HorizontalAlignment="Right" Width="425" VerticalAlignment="Top"/>
         <materialDesign:PackIcon Kind="HelpNetwork" Foreground="Gainsboro" RenderTransformOrigin="0.5,0.603" ToolTip="Support" Margin="0,276,27,0" Width="406" Height="269" HorizontalAlignment="Right"/>
 
     </Grid>

@@ -122,7 +122,7 @@
                  Margin="16,135,399,93" 
                  RenderTransformOrigin="0.519,0.505" 
                  AcceptsReturn="True" 
-                 Foreground="White" 
+                 Foreground="Black" 
                  Background="#FF292626" 
                  Cursor="IBeam" 
                  FontSize="20"
@@ -138,7 +138,7 @@
                   VerticalContentAlignment="Center"
                   Width="329" 
                   Padding="10"
-                  Foreground="White" 
+                  Foreground="Black" 
                   BorderBrush="#FF292626" 
                   FontSize="20" 
                   Background="#FF292626"
@@ -157,7 +157,7 @@
                     Width="349" 
                     Background="#FF292626" 
                     BorderBrush="#FF292626" 
-                    Foreground="White"
+                    Foreground="Black"
                     FontSize="20" 
                     FirstDayOfWeek="Monday" 
                     SelectedDateFormat="Long" 
@@ -195,7 +195,7 @@
                      Text="" 
                      TextChanged="txtNum_TextChanged" 
                      Margin="3,0,0,0" 
-                     Foreground="White" 
+                     Foreground="Black" 
                      Background="#FF292626"
                      Width="103" Height="56" 
                      VerticalAlignment="Center" 
@@ -225,6 +225,6 @@
         <StackPanel Background="#FF292626" Margin="491,137,12,179" Grid.Column="1">
             <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.5,0.5" materialDesign:HintAssist.Hint="Insert Image"/>
         </StackPanel>
-        <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="white" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+        <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="Black" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
     </Grid>
 </Page>
