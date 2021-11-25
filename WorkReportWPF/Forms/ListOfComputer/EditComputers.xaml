@@ -13,12 +13,13 @@
 
         <TextBox 
         Style="{StaticResource MaterialDesignOutlinedTextBox}"
-        materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+        materialDesign:TextFieldAssist.UnderlineBrush="#383838"
         x:Name="txtuser" 
         Text="" 
         Margin="639,115,76,393" 
-        Foreground="Black" 
-        Background="#FF3A85D1"
+        Foreground="#383838" 
+        Background="Transparent"
+        BorderBrush="#383838"
         TextWrapping="Wrap"
         AcceptsReturn="True" 
         FontSize="26" 
@@ -26,16 +27,17 @@
         VerticalContentAlignment="Center"
         HorizontalContentAlignment="Left"
         materialDesign:HintAssist.Hint="User name account computer"
-        materialDesign:HintAssist.Background="#FF3A85D1"
-        materialDesign:HintAssist.Foreground="Black"/>
+        materialDesign:HintAssist.Background="Transparent"
+        materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpassvnc" 
             Text="" 
             Margin="641,337,384,173" 
-            Foreground="Black" 
-            Background="#FF3A85D1"
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -43,33 +45,34 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Password for VNC"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
             HorizontalAlignment="Left"
             Margin="57,27,0,0" 
             VerticalAlignment="Top" 
             Width="1167" 
             Padding="10"
-            Foreground="Black" 
-            BorderBrush="#FF292626" 
+            Foreground="#383838" 
+            BorderBrush="#383838" 
             FontSize="26" 
-            Background="#FF3A85D1"
+            Background="Transparent"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Name of line" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtstation" 
             Text="" 
             Margin="57,115,683,393" 
-            Foreground="Black" 
-            Background="#FF3A85D1"
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -77,16 +80,17 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Name of station" Width="560"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpass" 
             Text="" 
             Margin="639,219,76,289" 
-            Foreground="Black" 
-            Background="#FF3A85D1"
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -94,31 +98,33 @@
             HorizontalContentAlignment="Left"
             VerticalContentAlignment="Center"
             materialDesign:HintAssist.Hint="Password for User"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtdomain" 
             Text="" 
             Margin="57,337,683,173" 
-            Foreground="Black" 
-            Background="#FF3A85D1"
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
             Cursor="IBeam"
             materialDesign:HintAssist.Hint="Domain" Width="560"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txthostname" 
             Text="" 
             Margin="57,219,683,286" 
-            Foreground="Black" 
-            Background="#FF3A85D1"
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -126,33 +132,34 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Hostname" Width="560"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbType" 
             HorizontalAlignment="Left"
             Margin="932,342,0,0" 
             VerticalAlignment="Top" 
             Width="292" 
             Padding="10"
-            Foreground="Black" 
-            BorderBrush="#FF292626" 
+            Foreground="#383838" 
+            BorderBrush="#383838" 
             FontSize="26" 
-            Background="#FF3A85D1"
+            Background="Transparent"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Type of station" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtnote" 
             Text="" 
             Margin="57,437,499,28" 
-            Foreground="Black" 
-            Background="#FF3A85D1"
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -160,15 +167,15 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Note"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black"/>
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Maintence" 
             HorizontalAlignment="Left" Margin="828,437,0,0" 
             Width="396" 
-            Background="#FF3A85D1" 
-            BorderBrush="#FF3A85D1" 
-            Foreground="Black"
+            Background="Transparent" 
+            BorderBrush="#383838" 
+            Foreground="#383838"
             FontSize="20" 
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
@@ -176,16 +183,16 @@
             Cursor="ArrowCD" 
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
-            materialDesign:HintAssist.Background="#FF3A85D1"
-            materialDesign:HintAssist.Foreground="Black" VerticalAlignment="Top">
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
 
 
                     <Style.Resources>
-                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF3A85D1" />
-                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF3A85D1"/>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#383838" />
+                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#383838"/>
 
 
 
@@ -200,16 +207,16 @@
 
         </DatePicker>
 
-        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,84,10" Height="60" Background="#FF3A85D1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" >
+        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,84,10" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ContentSave" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Save" VerticalAlignment="Center"/>
-                <TextBlock x:Name="txtSend"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+                <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Save" VerticalAlignment="Center"/>
+                <TextBlock x:Name="txtSend"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnDelete" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,274,10" Height="60" Background="#FF3A85D1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnDelete_Click" >
+        <Button x:Name="btnDelete" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,274,10" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnDelete_Click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Trash" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Delete" VerticalAlignment="Center"/>
-                <TextBlock x:Name="txtDelete"  Text="Delete" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+                <materialDesign:PackIcon Kind="Trash" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Delete" VerticalAlignment="Center"/>
+                <TextBlock x:Name="txtDelete"  Text="Delete" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
 

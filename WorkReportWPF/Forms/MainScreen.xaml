@@ -19,16 +19,16 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="65"/>
         </Grid.RowDefinitions>
-        <Label Content="Dasboard for EOT TST Technician Department" Grid.ColumnSpan="2" Foreground="Black" Background="Transparent" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Dasboard for EOT TST Technician Department" Grid.ColumnSpan="2" Foreground="#383838" Background="Transparent" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <GroupBox
   Header="Last of TOP 5 reports"
   Style="{DynamicResource MaterialDesignCardGroupBox}"
   Margin="2,2,5,2"
   materialDesign:ColorZoneAssist.Mode="Custom"
-  materialDesign:ColorZoneAssist.Background="#0078D7"
-  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="#0078d7">
-            <GroupBox.HeaderTemplate>
+  materialDesign:ColorZoneAssist.Background="#525252"
+  materialDesign:ColorZoneAssist.Foreground="White" Grid.Row="1" Background="#525252">
+        <GroupBox.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel
         Orientation="Horizontal" Margin="0,0,407,0">
@@ -48,10 +48,10 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="#0078d7" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All">
+            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="#0078d7"/>
+                        <Setter Property="Background" Value="White"/>
                         <Setter Property="FontWeight" Value="SemiBold"/>
                         <Setter Property="FontSize" Value="20"/>
                         <Setter Property="BorderThickness" Value="0,0,1,2"/>
@@ -62,9 +62,9 @@
                     <Style TargetType="{x:Type DataGridCell}">
                         <Style.Triggers>
                             <Trigger Property="DataGridCell.IsSelected" Value="True">
-                                <Setter Property="Background" Value="#062e69" />
+                                <Setter Property="Background" Value="#383838" />
                                 <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="BorderBrush" Value="#062e69"/>
+                                <Setter Property="BorderBrush" Value="#383838"/>
 
 
                             </Trigger>
@@ -141,7 +141,7 @@
   Margin="5,2,10,2"
   materialDesign:ColorZoneAssist.Mode="Custom"
   materialDesign:ColorZoneAssist.Background="Transparent"
-  materialDesign:ColorZoneAssist.Foreground="Black" Grid.Row="1" Background="#0078D7" Grid.Column="1">
+  materialDesign:ColorZoneAssist.Foreground="White" Grid.Row="1" Background="#525252" Grid.Column="1">
             <GroupBox.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel
@@ -162,10 +162,10 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="620" Margin="0,0,0,2">
+            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="620" Margin="0,0,0,2">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="#0078d7"/>
+                        <Setter Property="Background" Value="White"/>
                         <Setter Property="FontWeight" Value="SemiBold"/>
                         <Setter Property="FontSize" Value="20"/>
                         <Setter Property="BorderThickness" Value="0,0,1,2"/>
@@ -176,9 +176,9 @@
                     <Style TargetType="{x:Type DataGridCell}">
                         <Style.Triggers>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Background" Value="#062e69" />
+                                <Setter Property="Background" Value="#383838" />
                                 <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="BorderBrush" Value="#062e69"/>
+                                <Setter Property="BorderBrush" Value="#383838"/>
 
 
                             </Trigger>
@@ -240,23 +240,23 @@
         </GroupBox>
         <TextBlock TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Grid.Row="2" Padding="0,0,0,0" Margin="320,5,160,6">
             <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Clock" Foreground="Black" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Time_Text"  Text="Time" Width="92" Foreground="Black" Height="20" VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PackIcon Kind="Clock" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Time_Text"  Text="Time" Width="92" Foreground="#383838" Height="20" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>
             
             <StackPanel Width="180" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ClipboardTextClockOutline" Foreground="Black" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Date_Text"  Text="Date" Width="104" Foreground="Black" Height="20" VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PackIcon Kind="ClipboardTextClockOutline" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Date_Text"  Text="Date" Width="104" Foreground="#383838" Height="20" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>
             
             <StackPanel Width="175" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ViewDay" Foreground="Black" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Day_Text"  Text="Day" Width="95" Foreground="Black" Height="23" VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PackIcon Kind="ViewDay" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Day_Text"  Text="Day" Width="95" Foreground="#383838" Height="23" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>
             
             <StackPanel Width="257" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="CalendarWeek" Foreground="Black" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Week_Text"  Text="Number of week" Width="180" Foreground="Black" Height="20" VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PackIcon Kind="CalendarWeek" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Week_Text"  Text="Number of week" Width="180" Foreground="#383838" Height="20" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>   
         
         </TextBlock>
