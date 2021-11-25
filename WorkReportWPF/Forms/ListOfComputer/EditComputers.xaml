@@ -27,7 +27,7 @@
         VerticalContentAlignment="Center"
         HorizontalContentAlignment="Left"
         materialDesign:HintAssist.Hint="User name account computer"
-        materialDesign:HintAssist.Background="Transparent"
+        materialDesign:HintAssist.Background="White"
         materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -45,7 +45,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Password for VNC"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
             HorizontalAlignment="Left"
@@ -62,7 +62,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Name of line" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -80,7 +80,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Name of station" Width="560"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -98,7 +98,7 @@
             HorizontalContentAlignment="Left"
             VerticalContentAlignment="Center"
             materialDesign:HintAssist.Hint="Password for User"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -114,7 +114,7 @@
             FontSize="26" 
             Cursor="IBeam"
             materialDesign:HintAssist.Hint="Domain" Width="560"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -132,7 +132,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Hostname" Width="560"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbType" 
             HorizontalAlignment="Left"
@@ -149,7 +149,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Type of station" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -167,7 +167,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Note"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Maintence" 
@@ -184,7 +184,7 @@
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">

@@ -9,106 +9,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
       Title="AddModification" Loaded="Page_Loaded">
-    <Page.Resources>
-        <Style x:Key="FocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Background" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHover.Border" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Background" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelected.Border" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Background" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedHover.Border" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Background" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewSelectedNoFocus.Border" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewFocus.Border" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Background" Color="#FF292626"/>
-        <SolidColorBrush x:Key="ComboBoxItem.ItemsviewHoverFocus.Border" Color="#FF292626"/>
-        <Style x:Key="ComboBoxItemContainerStyle1" TargetType="{x:Type ComboBoxItem}">
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
-            <Setter Property="Padding" Value="4,1"/>
-            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-            <Setter Property="Background" Value="#FF3A85D1"/>
-            <Setter Property="BorderBrush" Value="#FF3A85D1"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Template">
-
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                            </Trigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="False"/>
-                                    <Condition Property="IsMouseOver" Value="True"/>
-                                    <Condition Property="IsKeyboardFocused" Value="False"/>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHover.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHover.Border}"/>
-                            </MultiTrigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="True"/>
-                                    <Condition Property="IsMouseOver" Value="False"/>
-                                    <Condition Property="IsKeyboardFocused" Value="True"/>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelected.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelected.Border}"/>
-                            </MultiTrigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="True"/>
-                                    <Condition Property="IsMouseOver" Value="True"/>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedHover.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedHover.Border}"/>
-                            </MultiTrigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="True"/>
-                                    <Condition Property="IsMouseOver" Value="False"/>
-                                    <Condition Property="IsKeyboardFocused" Value="False"/>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedNoFocus.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewSelectedNoFocus.Border}"/>
-                            </MultiTrigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="False"/>
-                                    <Condition Property="IsMouseOver" Value="False"/>
-                                    <Condition Property="IsKeyboardFocused" Value="True"/>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewFocus.Border}"/>
-                            </MultiTrigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="False"/>
-                                    <Condition Property="IsMouseOver" Value="True"/>
-                                    <Condition Property="IsKeyboardFocused" Value="True"/>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHoverFocus.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource ComboBoxItem.ItemsviewHoverFocus.Border}"/>
-                            </MultiTrigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
-
     <Grid Width="1300" Height="588">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="421*"/>
@@ -116,19 +16,20 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name ="Comment_Text"
                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                 materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+                 materialDesign:TextFieldAssist.UnderlineBrush="#383838"
                  TextWrapping="Wrap" 
                  Text="" 
                  Margin="16,135,399,93" 
                  RenderTransformOrigin="0.519,0.505" 
                  AcceptsReturn="True" 
-                 Foreground="Black" 
-                 Background="#FF3A85D1" 
+                 Foreground="#383838" 
+                 Background="Transparent" 
+                 BorderBrush="#383838"
                  Cursor="IBeam" 
                  FontSize="20"
                  materialDesign:HintAssist.Hint="Comment" Grid.ColumnSpan="2"
-                 materialDesign:HintAssist.Background="#FF3A85D1"
-                 materialDesign:HintAssist.Foreground="Black"
+                 materialDesign:HintAssist.Background="White"
+                 materialDesign:HintAssist.Foreground="#383838"
                  >
         </TextBox>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="ProjectBox" 
@@ -136,17 +37,17 @@
                   Margin="16,38,0,0" 
                   VerticalAlignment="Top" 
                   VerticalContentAlignment="Center"
-                  Width="329" 
+                  Width="329"
                   Padding="10"
-                  Foreground="Black" 
-                  BorderBrush="#FF3A85D1" 
+                  Foreground="#383838" 
+                  BorderBrush="#383838" 
                   FontSize="20" 
-                  Background="#FF3A85D1"
-                  materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+                  Background="Transparent"
+                  materialDesign:TextFieldAssist.UnderlineBrush="#383838"
                   materialDesign:HintAssist.Hint="Project" Height="68"
                   Style="{StaticResource MaterialDesignComboBox}"
-                  materialDesign:HintAssist.Background="#FF3A85D1"
-                  materialDesign:HintAssist.Foreground="Black">
+                  materialDesign:HintAssist.Background="White"
+                  materialDesign:HintAssist.Foreground="#383838">
 
         </ComboBox>
 
@@ -155,9 +56,9 @@
                     HorizontalAlignment="Left" Margin="130,38,0,0" 
                     VerticalAlignment="Top" 
                     Width="349" 
-                    Background="#FF3A85D1" 
-                    BorderBrush="#FF3A85D1" 
-                    Foreground="Black"
+                    Background="Transparent" 
+                    BorderBrush="#383838" 
+                    Foreground="#383838"
                     FontSize="20" 
                     FirstDayOfWeek="Monday" 
                     SelectedDateFormat="Long" 
@@ -165,9 +66,9 @@
                     Cursor="ArrowCD" 
                     Height="68"  
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1" Grid.Column="1"
-                    materialDesign:HintAssist.Background="#FF3A85D1"
-                    materialDesign:HintAssist.Foreground="Black">
+                    materialDesign:TextFieldAssist.UnderlineBrush="#383838" Grid.Column="1"
+                    materialDesign:HintAssist.Background="White"
+                    materialDesign:HintAssist.Foreground="#383838">
             <DatePicker.CalendarStyle>
                 <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
 
@@ -189,42 +90,43 @@
 
         <StackPanel Margin="377,38,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <TextBox x:Name="txtNum"
-                     materialDesign:TextFieldAssist.UnderlineBrush="#FF3A85D1"
+                     materialDesign:TextFieldAssist.UnderlineBrush="#383838"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
                      x:FieldModifier="private" 
                      Text="" 
                      TextChanged="txtNum_TextChanged" 
                      Margin="3,0,0,0" 
-                     Foreground="Black" 
-                     Background="#FF3A85D1"
+                     Foreground="#383838" 
+                     Background="Transparent"
+                     BorderBrush="#383838"
                      Width="103" Height="56" 
                      VerticalAlignment="Center" 
                      TextAlignment="Center" 
                      FontSize="16" 
                      materialDesign:HintAssist.Hint="Time"
-                     materialDesign:HintAssist.Background="#FF3A85D1"
-                     materialDesign:HintAssist.Foreground="Black"/>
+                     materialDesign:HintAssist.Background="White"
+                     materialDesign:HintAssist.Foreground="#383838"/>
             <StackPanel Orientation="Vertical" Width="24" Height="56" HorizontalAlignment="Center">
-                <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="#FF3A85D1" Foreground="Black" BorderBrush="#FF3A85D1" VerticalAlignment="Top" Margin="0,0,0,1" />
-                <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="17" Click="cmdDown_Click" Height="26" HorizontalAlignment="Center" Background="#FF3A85D1" Foreground="Black" BorderBrush="#FF3A85D1" Margin="0,1,0,0"/>
+                <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="#525252" Foreground="White" BorderBrush="#525252" VerticalAlignment="Top" Margin="0,0,0,1" />
+                <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="17" Click="cmdDown_Click" Height="26" HorizontalAlignment="Center" Background="#525252" Foreground="White" BorderBrush="#525252" Margin="0,1,0,0"/>
             </StackPanel>
         </StackPanel>
 
-        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,36,47" Height="60" Background="#FF3A85D1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click" Grid.Column="1">
+        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,36,47" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click" Grid.Column="1">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="ContentSave" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+                <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="Attachments_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,201,47" Height="60" Background="#FF3A85D1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click" Grid.Column="1">
+        <Button x:Name="Attachments_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,201,47" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click" Grid.Column="1">
             <StackPanel Width="134" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="PhotoAlbum" Foreground="Black" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
+                <materialDesign:PackIcon Kind="PhotoAlbum" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
+                <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
         <StackPanel Background="#FF292626" Margin="491,137,12,179" Grid.Column="1">
             <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.5,0.5" materialDesign:HintAssist.Hint="Insert Image"/>
         </StackPanel>
-        <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="Black" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+        <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="#383838" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
     </Grid>
 </Page>

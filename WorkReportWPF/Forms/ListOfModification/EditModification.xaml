@@ -25,7 +25,7 @@
                  Cursor="IBeam" 
         FontSize="20"
         materialDesign:HintAssist.Hint="Comment"
-        materialDesign:HintAssist.Background="Transparent"
+        materialDesign:HintAssist.Background="White"
         materialDesign:HintAssist.Foreground="#383838"
                  />
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="ProjectBox" 
@@ -42,7 +42,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Project" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Date" 
@@ -131,7 +131,7 @@
             Cursor="IBeam" 
             FontSize="20"
             materialDesign:HintAssist.Hint="Note"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"
                  />
 

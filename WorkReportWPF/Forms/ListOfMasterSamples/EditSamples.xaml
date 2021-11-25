@@ -19,6 +19,7 @@
         Margin="639,115,76,393" 
         Foreground="#383838" 
         Background="Transparent"
+            BorderBrush="#383838"
         TextWrapping="Wrap"
         AcceptsReturn="True" 
         FontSize="26" 
@@ -26,7 +27,7 @@
         VerticalContentAlignment="Center"
         HorizontalContentAlignment="Left"
         materialDesign:HintAssist.Hint="Description"
-        materialDesign:HintAssist.Background="Transparent"
+        materialDesign:HintAssist.Background="White"
         materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
             HorizontalAlignment="Left"
@@ -43,7 +44,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Name of line" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -53,6 +54,7 @@
             Margin="57,115,683,393" 
             Foreground="#383838" 
             Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -60,23 +62,23 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Name of sample" Width="560"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <DatePicker x:Name="datePickerRevisionDate" 
             materialDesign:HintAssist.Hint="Revision Date" 
             HorizontalAlignment="Left" Margin="650,220,0,0" 
             Width="396" 
             Background="Transparent" 
-            BorderBrush="Transparent" 
+            BorderBrush="#383838" 
             Foreground="#383838"
-            FontSize="20" 
+                                FontSize="20" 
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
             Cursor="ArrowCD" 
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
@@ -109,7 +111,7 @@
             HorizontalAlignment="Left" Margin="650,322,0,0" 
             Width="396" 
             Background="Transparent" 
-            BorderBrush="Transparent" 
+            BorderBrush="#383838" 
             Foreground="#383838"
             FontSize="20" 
             FirstDayOfWeek="Monday" 
@@ -118,7 +120,7 @@
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
@@ -148,6 +150,7 @@
             Margin="57,214,683,294" 
             Foreground="#383838" 
             Background="Transparent"
+            BorderBrush="#383838"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -155,7 +158,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Placement"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbResponsible" 
             HorizontalAlignment="Left"
@@ -172,7 +175,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Responsible" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
 
         <StackPanel Margin="500,508,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
@@ -185,12 +188,13 @@
                      Margin="3,0,0,0" 
                      Foreground="#383838" 
                      Background="Transparent"
+                     BorderBrush="#383838"
                      Width="103" Height="56" 
                      VerticalAlignment="Center" 
                      TextAlignment="Center" 
                      FontSize="16" 
                      materialDesign:HintAssist.Hint="Copies"
-                     materialDesign:HintAssist.Background="Transparent"
+                     materialDesign:HintAssist.Background="White"
                      materialDesign:HintAssist.Foreground="#383838"/>
             <StackPanel Orientation="Vertical" Width="24" Height="56" HorizontalAlignment="Center">
                 <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="#525252" Foreground="White" BorderBrush="#525252" VerticalAlignment="Top" Margin="0,0,0,1" />

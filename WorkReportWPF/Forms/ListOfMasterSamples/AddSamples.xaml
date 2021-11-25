@@ -27,7 +27,7 @@
         VerticalContentAlignment="Center"
         HorizontalContentAlignment="Left"
         materialDesign:HintAssist.Hint="Description"
-        materialDesign:HintAssist.Background="Transparent"
+        materialDesign:HintAssist.Background="White"
         materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
             HorizontalAlignment="Left"
@@ -44,7 +44,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Name of line" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -62,7 +62,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Name of sample" Width="560"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <DatePicker x:Name="datePickerRevisionDate" 
             materialDesign:HintAssist.Hint="Revision Date" 
@@ -78,7 +78,7 @@
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
@@ -120,7 +120,7 @@
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
@@ -158,7 +158,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Placement"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbResponsible" 
             HorizontalAlignment="Left"
@@ -175,7 +175,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Hint="Responsible" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
-            materialDesign:HintAssist.Background="Transparent"
+            materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
 
     </Grid>

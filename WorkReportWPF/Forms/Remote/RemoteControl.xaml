@@ -18,7 +18,7 @@
             HorizontalAlignment="Left" 
             Margin="10,0,0,0"  
             FontSize="18"   
-            Foreground="Black"
+            Foreground="#383838"
             FontWeight="Bold"/>
 
         <Button x:Name="ConnectButton" IsEnabled="false" 
@@ -27,18 +27,18 @@
         Cursor="Hand"
         FontWeight="Bold"
         FontStyle="Italic" RenderTransformOrigin="1.338,4.511" Click="ConnectButton_Click"
-        Background="#aeea00"
-        Foreground="Black" Height="57" VerticalAlignment="Bottom">
+        Background="#525252"
+        Foreground="White" Height="57" VerticalAlignment="Bottom">
             <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Center" Height="36" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="remote" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text"  Text="Connect" Width="139" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
+                <materialDesign:PackIcon Kind="remote" Foreground="White" Height="35" Width="35" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text"  Text="Connect" Width="139" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="White"/>
             </StackPanel>
 
         </Button>
         <TreeView 
         x:Name="stationView" 
         Margin="0,24,0,64" 
-        Foreground="Black" 
+        Foreground="#383838" 
         TreeViewItem.Selected="OnItemSelected"/>
 
 
