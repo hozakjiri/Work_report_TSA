@@ -69,41 +69,6 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
 
         <Label Content="List of users" Margin="433,0,433,543" Grid.Row="1" Foreground="#383838" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3" FontSize="18" FontWeight="Bold"/>
         <Label Content="List of projects" Margin="0,0,0,543" Grid.Row="1" Foreground="#383838" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" FontSize="18" FontWeight="Bold"/>
-        <TextBox 
-            Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            Name="Refresh_0" 
-            Text="" 
-            Margin="0,481,0,0" 
-            Foreground="Black" 
-            Background="Transparent"
-            TextWrapping="Wrap"
-            AcceptsReturn="True"
-            Height="50" 
-            VerticalAlignment="Top" 
-            HorizontalAlignment="Center" 
-            Width="413" 
-            FontSize="10" 
-            Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of projects" Grid.Column="2" Grid.Row="1"/>
-        <TextBox 
-            Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            x:Name="txtProject" 
-            Text="" 
-            Margin="0,481,0,0" 
-            Foreground="#383838" 
-            Background="Transparent"
-            TextWrapping="Wrap"
-            AcceptsReturn="True"
-            Height="50" 
-            VerticalAlignment="Top" 
-            HorizontalAlignment="Center" 
-            Width="413" 
-            FontSize="10" 
-            Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of projects" Grid.Column="2" Grid.Row="1"
-            materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
 
         <TextBox             
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -418,6 +383,25 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox             
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            x:Name="txtProject" 
+            Text="" 
+            Margin="23,481,0,0" 
+            Foreground="#383838" 
+            Background="Transparent"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            Height="50" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left" 
+            Width="400" 
+            FontSize="10" 
+            Cursor="IBeam"
+            materialDesign:HintAssist.Hint="Name of Project" Grid.Column="2" Grid.Row="1"
+            materialDesign:HintAssist.Background="White"
+            materialDesign:HintAssist.Foreground="#383838"/>
 
     </Grid>
 </Page>

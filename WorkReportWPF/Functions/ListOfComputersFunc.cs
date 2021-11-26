@@ -84,7 +84,7 @@ namespace WorkReportWPF.Functions
 
                 using (var context2 = new DbSettingsContext())
                 {
-                    context2.Update(stationData);
+                    context2.Stations.Update(stationData);
                     context2.SaveChanges();
                 }
 

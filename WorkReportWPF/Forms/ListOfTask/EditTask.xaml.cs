@@ -60,25 +60,31 @@ namespace WorkReportWPF.Forms.ListOfTask
                 txtDescription.Text = currentdata.Description;
                 txtNote.Text = currentdata.Note;
 
+                //txtTopic.IsEnabled = false;
+                //txtDescription.IsEnabled = false;
+
+                //cmbUser.IsEnabled = false;
+                //cmbPriority.IsEnabled = false;
+                //datePicker.IsEnabled = false;
 
 
                 if (cmbUser.Items.Contains(currentdata.Recipient))
                 {
-                    cmbUser.SelectedItem = currentdata.Recipient;
+                    cmbUser.Text = currentdata.Recipient;
                 }
 
                 if (cmbStatus.Items.Contains(currentdata.Status))
                 {
-                    cmbStatus.SelectedItem = currentdata.Status;
+                    cmbStatus.Text = currentdata.Status.ToString();
 
                 }
 
                 if (cmbPriority.Items.Contains(currentdata.Priority))
                 {
-                    cmbPriority.SelectedItem = currentdata.Priority;
+                    cmbPriority.Text = currentdata.Priority.ToString();
                 }
 
-                datePicker.SelectedDate = currentdata.Term;
+                datePicker.DisplayDate = currentdata.Term;
 
 
             }

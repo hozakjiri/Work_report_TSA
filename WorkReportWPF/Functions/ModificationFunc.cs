@@ -120,12 +120,13 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void EditModification(string project, string comment, string date, string minutes, string imagepath, string fulltime, string note)
+        public static void EditModification(int id, string project, string comment, string date, string minutes, string imagepath, string fulltime, string note)
         {
             try
             {
                 Data modificationData = new()
                 {
+                    ID = id,
                     Username = OtherFunc.user,
                     Date = date,
                     Project = project,
@@ -139,7 +140,7 @@ namespace WorkReportWPF.Functions
 
                 using (var context2 = new DbDataContext())
                 {
-                    context2.Update(modificationData);
+                    context2.Datas.Update(modificationData);
                     context2.SaveChanges();
                 }
 

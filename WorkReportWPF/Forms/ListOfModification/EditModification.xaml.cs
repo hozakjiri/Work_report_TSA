@@ -153,7 +153,7 @@ namespace WorkReportWPF.Forms.ListOfModification
             }
             else if (result == MessageBoxResult.OK)
             {
-                ModificationFunc.EditModification(ProjectBox.Text, Comment_Text.Text, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtNum.Text, fullpath, datePicker.DisplayDate.ToString("yyyyMMddHHmm"), Note_Text.Text);
+                ModificationFunc.EditModification(currentdata.ID, ProjectBox.Text, Comment_Text.Text, datePicker.SelectedDate.Value.ToString("dd.MM.yyyy"), txtNum.Text, fullpath, datePicker.DisplayDate.ToString("yyyyMMddHHmm"), Note_Text.Text);
 
                 MessageBox.Show("Data was added !", "Data");
 

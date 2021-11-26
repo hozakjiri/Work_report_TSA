@@ -46,19 +46,28 @@
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"
                  />
-        <ComboBox x:Name="cmbPriority" Margin="1037,115,38,423"
-            Style="{StaticResource MaterialDesignOutlinedComboBox}"
-            materialDesign:HintAssist.Hint="Priority"
-            Foreground="#383838"
-            Background="Transparent"
-                  BorderBrush="#383838"
+        <ComboBox x:Name="cmbPriority" Margin="1037,115,38,418"
+                    Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                    materialDesign:HintAssist.Hint="Priority"
+                    Foreground="#383838"
+                    Background="Transparent"
+                    materialDesign:TextFieldAssist.HasClearButton="True"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+                    materialDesign:ColorZoneAssist.Mode="SecondaryLight"
+                    materialDesign:HintAssist.HelperText="Select one priority"
+                    materialDesign:HintAssist.Background="White"
+                    materialDesign:HintAssist.Foreground="#383838">
+            <ComboBox.SelectedItem>
+                <Binding              
+                Path="SelectedValidationOutlined"
+                Mode="TwoWay"
+                UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
 
-            materialDesign:TextFieldAssist.HasClearButton="True"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-            materialDesign:HintAssist.HelperText="Select one priority" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-            materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedItem>
+        </ComboBox>
         <ComboBox x:Name="cmbUser" Margin="1037,187,38,351"
             Style="{StaticResource MaterialDesignOutlinedComboBox}"
             materialDesign:HintAssist.Hint="User"
@@ -71,7 +80,7 @@
             materialDesign:ColorZoneAssist.Mode="SecondaryLight"
             materialDesign:HintAssist.HelperText="Select target user" SelectedItem="{Binding SelectedValidationOutlined, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/> 
+            materialDesign:HintAssist.Foreground="#383838"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Term" 
             HorizontalAlignment="Left" Margin="1037,265,0,0" 

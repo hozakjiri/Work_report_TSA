@@ -75,7 +75,7 @@ namespace WorkReportWPF.Functions
 
                 using (var context2 = new DbDataContext())
                 {
-                    context2.Update(sampleData);
+                    context2.Samples.Update(sampleData);
                     context2.SaveChanges();
                 }
 

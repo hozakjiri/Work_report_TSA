@@ -160,7 +160,7 @@ namespace WorkReportWPF.Functions
             {
                 using DbDataContext context = new();
 
-                Task modificationData = new()
+                Task taskData = new()
                 {
                     ID = ID,
                     Date = date.ToString("dd.MM.yyyy"),
@@ -176,7 +176,7 @@ namespace WorkReportWPF.Functions
 
                 using (var context2 = new DbDataContext())
                 {
-                    context2.Update(modificationData);
+                    context2.Tasks.Update(taskData);
                     context2.SaveChanges();
                 }
 

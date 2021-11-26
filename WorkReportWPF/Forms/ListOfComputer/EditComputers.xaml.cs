@@ -61,13 +61,13 @@ namespace WorkReportWPF.Forms.ListOfComputers
         {
             MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
 
-            if (txtdomain.Text == "" || txthostname.Text == "" || txtnote.Text == "" || txtpass.Text == "" || txtpassvnc.Text == "" || txtstation.Text == "" || txtuser.Text == "" || cmbType.Text == "")
+            if (txtdomain.Text == "" || txthostname.Text == "" || txtpass.Text == "" || txtpassvnc.Text == "" || txtstation.Text == "" || txtuser.Text == "" || cmbType.Text == "")
             {
                 MessageBox.Show("Please, fill all data", "Data");
             }
             else if (result == MessageBoxResult.OK)
             {
-                ListOfComputersFunc.EditComputers(currentdata.StationID, cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtnote.Text);
+                ListOfComputersFunc.EditComputers(currentdata.StationID, cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.SelectedDate.Value.ToString("dd.MM.yyyy"), txtnote.Text);
 
                 MessageBox.Show("Data was modified !", "Data");
 
