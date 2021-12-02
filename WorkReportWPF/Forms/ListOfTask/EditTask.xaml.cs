@@ -84,7 +84,7 @@ namespace WorkReportWPF.Forms.ListOfTask
                     cmbPriority.Text = currentdata.Priority.ToString();
                 }
 
-                datePicker.DisplayDate = currentdata.Term;
+                datePicker.SelectedDate = currentdata.Term;
 
 
             }
