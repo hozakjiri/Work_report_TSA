@@ -46,12 +46,12 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void cmdUp_Click(object sender, RoutedEventArgs e)
         {
-            NumValue += 5;
+            NumValue += 1;
         }
 
         private void cmdDown_Click(object sender, RoutedEventArgs e)
         {
-            NumValue -= 5;
+            NumValue -= 1;
         }
 
         public DateTime DisplayDate { get; set; }
