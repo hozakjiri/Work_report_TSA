@@ -304,12 +304,11 @@
                                 Orientation="Horizontal"
                                 VerticalAlignment="Bottom"
                                 Margin="0,0,20,0">
-                                <Path
-                                Data="{StaticResource notification_icon}"
-                                Fill="#525252"
-                                VerticalAlignment="Bottom"
-                                    Stretch="Uniform"
-                                    Width="16"/>
+                                <Button Background="Transparent" Foreground="#525252" BorderBrush="Transparent" Width="24" Margin="0,0,0,0" Padding="0,0,0,0">
+                                    <materialDesign:PackIcon x:Name="Task_Bell" Kind="Bell" Foreground="#525252" Background="Transparent" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="20"/>
+
+
+                                </Button>
 
                                 <!--Count-->
                                 <Grid
