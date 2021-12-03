@@ -304,7 +304,7 @@
                                 Orientation="Horizontal"
                                 VerticalAlignment="Bottom"
                                 Margin="0,0,20,0">
-                                <Button Background="Transparent" Foreground="#525252" BorderBrush="Transparent" Width="24" Margin="0,0,0,0" Padding="0,0,0,0">
+                                <Button x:Name="TaskBell" Background="Transparent" Foreground="#525252" BorderBrush="Transparent" Width="24" Margin="0,0,0,0" Padding="0,0,0,0" Click="TaskBell_Click">
                                     <materialDesign:PackIcon x:Name="Task_Bell" Kind="Bell" Foreground="#525252" Background="Transparent" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="20"/>
 
 
@@ -433,7 +433,7 @@
                     </ListView>
 
                 </Grid>
-                <Frame x:Name="MainContent" Grid.Row="1" NavigationUIVisibility="Hidden" BorderBrush="Transparent" Grid.Column="2" Background="White" Navigated="MainContent_Navigated"/>
+                <Frame x:Name="MainContent" Grid.Row="1" NavigationUIVisibility="Hidden" BorderBrush="Transparent" Grid.Column="2" Background="White"/>
                 <!--#endregion-->
 
             </Grid>

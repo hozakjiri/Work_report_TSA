@@ -48,7 +48,7 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All">
+            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="ModificationGrid_PreviewMouseDoubleClick">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="White"/>
@@ -162,7 +162,7 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="620" Margin="0,0,0,2">
+            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="620" Margin="0,0,0,2" PreviewMouseDoubleClick="TaskGrid_PreviewMouseDoubleClick">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="White"/>

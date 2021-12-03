@@ -3,7 +3,10 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using WorkReportWPF.Forms.ListOfModification;
+using WorkReportWPF.Forms.ListOfTask;
 using WorkReportWPF.Functions;
+using WorkReportWPF.Models;
 
 namespace WorkReportWPF
 {
@@ -72,6 +75,26 @@ namespace WorkReportWPF
                 Console.WriteLine(ex.Message);
             }
 
+        }
+
+        private void ModificationGrid_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (ModificationGrid.SelectedItems.Count > 0)
+            {
+                TableModificationView data = (TableModificationView)ModificationGrid.SelectedItems[0];
+                EditModification p = new EditModification(data);
+                this.NavigationService.Navigate(p);
+            }
+        }
+
+        private void TaskGrid_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (TaskGrid.SelectedItems.Count > 0)
+            {
+                TableTaskView data = (TableTaskView)TaskGrid.SelectedItems[0];
+                EditTask p = new EditTask(data);
+                this.NavigationService.Navigate(p);
+            }
         }
     }
 }

@@ -112,6 +112,11 @@ namespace WorkReportWPF
             MainContent.Content = new Support();
         }
 
+        private void TaskBell_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new ListOfTasks();
+        }
+
         public void CheckTask()
         {
             var countTasks = TaskFunc.LoadMyTask();
