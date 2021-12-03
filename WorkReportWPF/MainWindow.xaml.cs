@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 using WorkReportWPF.Functions;
 
 namespace WorkReportWPF
@@ -13,6 +14,16 @@ namespace WorkReportWPF
         public MainWindow()
         {
             InitializeComponent();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(3);
+            timer.Tick += timer_Tick;
+            timer.Start();
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            CheckTask();
         }
 
         private void Polygon_MouseDown(object sender, MouseButtonEventArgs e)
@@ -96,22 +107,14 @@ namespace WorkReportWPF
             MainContent.Content = new ListOfTasks();
         }
 
-        private void MainContent_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
-        {
-
-        }
-
         private void Click_Support(object sender, RoutedEventArgs e)
         {
             MainContent.Content = new Support();
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        public void CheckTask()
         {
-            var username = Environment.UserName;
-            bool HasPremisions = LoginFunc.CheckPremisions(username);
             var countTasks = TaskFunc.LoadMyTask();
-
             txtMyTask.Text = countTasks.ToString();
 
             if (countTasks > 0)
@@ -123,6 +126,14 @@ namespace WorkReportWPF
                 ElipseMyTask.Fill = System.Windows.Media.Brushes.Green;
 
             }
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var username = Environment.UserName;
+            bool HasPremisions = LoginFunc.CheckPremisions(username);
+
+            CheckTask();
 
             if (HasPremisions)
             {
