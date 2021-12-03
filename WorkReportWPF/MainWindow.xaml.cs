@@ -114,7 +114,8 @@ namespace WorkReportWPF
 
         private void TaskBell_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Content = new ListOfTasks();
+            int MyTask = 1;
+            MainContent.Content = new ListOfTasks(MyTask);
         }
 
         public void CheckTask()

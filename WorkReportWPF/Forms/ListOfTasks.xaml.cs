@@ -9,9 +9,17 @@ namespace WorkReportWPF
     /// </summary>
     public partial class ListOfTasks : Page
     {
+        public int choosemytask = 0;
+
         public ListOfTasks()
         {
             InitializeComponent();
+        }
+
+        public ListOfTasks(int choose) : this()
+        {
+            choosemytask = choose;
+            this.Loaded += new RoutedEventHandler(Page_Loaded);
         }
 
         private void Click_Overview(object sender, RoutedEventArgs e)
@@ -21,7 +29,14 @@ namespace WorkReportWPF
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            frameTask.Content = new OverviewTask();
+            if (choosemytask == 1)
+            {
+                frameTask.Content = new MyTask();
+            }
+            else
+            {
+                frameTask.Content = new OverviewTask();
+            }
         }
 
         private void Click_MyTask(object sender, RoutedEventArgs e)
