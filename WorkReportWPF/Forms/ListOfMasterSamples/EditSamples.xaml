@@ -16,7 +16,7 @@
         materialDesign:TextFieldAssist.UnderlineBrush="#383838"
         x:Name="txtDescription" 
         Text="" 
-        Margin="639,115,76,393" 
+        Margin="639,115,0,0" 
         Foreground="#383838" 
         Background="Transparent"
             BorderBrush="#383838"
@@ -28,13 +28,13 @@
         HorizontalContentAlignment="Left"
         materialDesign:HintAssist.Hint="Description"
         materialDesign:HintAssist.Background="White"
-        materialDesign:HintAssist.Foreground="#383838"/>
+        materialDesign:HintAssist.Foreground="#383838" HorizontalAlignment="Left" Width="585" Height="80" VerticalAlignment="Top"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtName" 
             Text="" 
-            Margin="57,115,683,393" 
+            Margin="57,115,0,0" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -46,7 +46,7 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Name of sample" Width="560"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <DatePicker x:Name="datePickerRevisionDate" 
             materialDesign:HintAssist.Hint="Revision Date" 
             HorizontalAlignment="Left" Margin="785,243,0,0" 
@@ -130,7 +130,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtPlacement" 
             Text="" 
-            Margin="57,237,683,271" 
+            Margin="57,237,0,0" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -142,7 +142,7 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Placement"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="560"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbResponsible" 
             HorizontalAlignment="Left"
             Margin="57,345,0,0" 
@@ -161,7 +161,7 @@
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
 
-        <StackPanel Margin="500,508,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
+        <StackPanel Margin="0,0,668,12" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Right" Width="132" Height="68" VerticalAlignment="Bottom">
             <TextBox x:Name="txtNum"
                      materialDesign:TextFieldAssist.UnderlineBrush="#383838"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
