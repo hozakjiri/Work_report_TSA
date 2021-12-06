@@ -38,7 +38,17 @@ namespace WorkReportWPF.Forms.ListOfTask
             {
                 TaskFunc.AddTaskNew(txtTopic.Text, txtDescription.Text, (int)(Enums.StatusEnum)cmbPriority.SelectedItem, OtherFunc.user, cmbUser.SelectedItem.ToString(), datePicker.DisplayDate);
 
-
+                try
+                {
+                    var username = cmbUser.SelectedItem.ToString();
+                    var userMail = LoginFunc.LoadUserMail(username);
+                    var therm = datePicker.DisplayDate;
+                    TaskFunc.CreateTask(userMail, DateTime.Now, therm, txtTopic.Text, txtDescription.Text);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
 
                 MessageBox.Show("Data was added !", "Data");
 

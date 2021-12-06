@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using WorkReportWPF.Enums;
@@ -274,6 +275,57 @@ namespace WorkReportWPF.Functions
                 Console.WriteLine(ex.Message);
             }
 
+        }
+
+        public static void CreateTask(string Mail, DateTime FromDate, DateTime ToDate, string Subject, string Body)
+        {
+            var oApp = new Microsoft.Office.Interop.Outlook.Application();
+            Microsoft.Office.Interop.Outlook.NameSpace oNS = oApp.GetNamespace("mapi");
+            oNS.Logon("Outlook", Missing.Value, false, true);
+            Microsoft.Office.Interop.Outlook.TaskItem OTask = (Microsoft.Office.Interop.Outlook.TaskItem)oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olTaskItem);
+
+            // Or us the name instead of the number
+
+            try
+            {
+                OTask.Assign();
+                // Add recipients to the task
+                OTask.StatusReport();
+                OTask.Recipients.Add(Mail);
+                // Add the subject to the task
+                OTask.Subject = Subject;
+                // Add the body to the task
+                OTask.Body = Body;
+                // Add the Task duedate
+                OTask.DueDate = ToDate;
+                // Set the reminder to the task
+                OTask.ReminderSet = true;
+                // Set the reminder time
+
+                OTask.ReminderTime = OTask.DueDate;
+                // If you want to display the task uncomment the next line
+                OTask.PercentComplete = 0;
+                OTask.StartDate = FromDate;
+                // Save the task to outlook
+                OTask.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceHigh;
+                OTask.ReminderTime.AddDays(-2);
+
+                // Send the task
+                // OTask.Display(True)
+                OTask.Save();
+            }
+            // OTask.Send()
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                oNS.Logoff();
+                oApp = default;
+                oNS = default;
+            }
         }
     }
 }
