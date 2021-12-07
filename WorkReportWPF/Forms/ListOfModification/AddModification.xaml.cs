@@ -19,7 +19,6 @@ namespace WorkReportWPF.Forms.ListOfModification
             InitializeComponent();
         }
 
-
         private int _numValue = 0;
 
         public int NumValue

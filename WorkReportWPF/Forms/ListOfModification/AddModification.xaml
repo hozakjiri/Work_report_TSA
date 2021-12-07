@@ -11,8 +11,6 @@
       Title="AddModification" Loaded="Page_Loaded">
     <Grid Width="1300" Height="588">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="421*"/>
-            <ColumnDefinition Width="879*"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name ="Comment_Text"
                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -124,9 +122,30 @@
                 <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
-        <StackPanel Background="#FF292626" Margin="491,137,12,179" Grid.Column="1">
-            <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.5,0.5" materialDesign:HintAssist.Hint="Insert Image"/>
-        </StackPanel>
+        <Image Name="imageBox"  OpacityMask="#FF8290E4" Height="266" Width="365" RenderTransformOrigin="0.532,0.477" materialDesign:HintAssist.Hint="Insert Image"
+            Stretch="Uniform" Margin="916,137,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image.ToolTip>
+                <ToolTip DataContext="{Binding PlacementTarget, RelativeSource={RelativeSource Self}}">
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="5,7,5,5">
+                        <Image Source="{Binding Source}" Stretch="None" />
+                    </Border>
+                </ToolTip>
+            </Image.ToolTip>
+        </Image>
         <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="#383838" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+        <Popup x:Name="InfoPopup" AllowsTransparency="True">
+            <Border CornerRadius="5" Background="White" BorderBrush="LightGray" BorderThickness="1" Width="200" Height="100" Panel.ZIndex="10">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10" Direction="270" ShadowDepth="7" Opacity="0.5" />
+                </Border.Effect>
+                <Image x:Name="SmallImage" Grid.ColumnSpan="2" Margin="0,0,576,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <Popup.Style>
+                <Style TargetType="Popup">
+
+                </Style>
+            </Popup.Style>
+        </Popup>
     </Grid>
+
 </Page>

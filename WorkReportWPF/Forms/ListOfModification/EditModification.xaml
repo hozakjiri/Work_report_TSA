@@ -113,9 +113,16 @@
                 <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
-        <StackPanel Background="#383838" Margin="912,137,0,0" HorizontalAlignment="Left" Width="376" Height="325" VerticalAlignment="Top" >
-            <Image x:Name="imageBox"  OpacityMask="#FF8290E4" Height="316" Width="364" RenderTransformOrigin="0.5,0.5" materialDesign:HintAssist.Hint="Insert Image"/>
-        </StackPanel>
+        <Image Name="imageBox"  OpacityMask="#FF8290E4" RenderTransformOrigin="0.532,0.477" materialDesign:HintAssist.Hint="Insert Image"
+            Stretch="Uniform" Margin="917,137,0,0" Height="266" VerticalAlignment="Top" HorizontalAlignment="Left" Width="365">
+            <Image.ToolTip>
+                <ToolTip DataContext="{Binding PlacementTarget, RelativeSource={RelativeSource Self}}">
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="5,7,5,5">
+                        <Image Source="{Binding Source}" Stretch="None" />
+                    </Border>
+                </ToolTip>
+            </Image.ToolTip>
+        </Image>
         <TextBlock x:Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="#383838" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" />
         <TextBox x:Name ="Note_Text"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
