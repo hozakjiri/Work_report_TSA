@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfMasterSamples.AddSamples"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="AddSamples" Loaded="Page_Loaded">
+      Title="AddSamples" Loaded="Page_Loaded" Background="White">
 
     <Grid>
 
@@ -83,7 +83,7 @@
 
 
         </DatePicker>
-        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,84,10" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" >
+        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,23,10" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Save" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txtSend"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
@@ -176,6 +176,47 @@
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            x:Name="txtLabel" 
+            Text="" 
+            Margin="745,428,0,0" 
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Label"
+            materialDesign:HintAssist.Background="White"
+            materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="471"/>
+        <TextBox 
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            x:Name="txtFolder" 
+            Text="" 
+            Margin="57,428,0,0" 
+            Foreground="#383838" 
+            Background="Transparent"
+            BorderBrush="#383838"
+            TextWrapping="Wrap"
+            AcceptsReturn="True" 
+            FontSize="26" 
+            Cursor="IBeam"
+            VerticalContentAlignment="Center"
+            HorizontalContentAlignment="Left"
+            materialDesign:HintAssist.Hint="Folder"
+            materialDesign:HintAssist.Background="White"
+            materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="560"/>
+        <Button x:Name="btnFolder" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,575,80" Height="80" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" Click="btnFolder_Click" >
+            <StackPanel Width="57" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Folder" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Edit" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Page>

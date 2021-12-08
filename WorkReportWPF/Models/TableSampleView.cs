@@ -19,6 +19,10 @@ namespace WorkReportWPF.Models
         public DateTime? RevisionValidity { get; set; }
 
         public DateTime? RevisionDate { get; set; }
+
+        public string Label { get; set; }
+
+        public string Folder { get; set; }
     }
 }
 

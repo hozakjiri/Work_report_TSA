@@ -77,7 +77,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
             else if (result == MessageBoxResult.OK)
             {
-                SamplesFunc.EditSample(currentdata.ID, cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate);
+                SamplesFunc.EditSample(currentdata.ID, cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate, txtLabel.Text, txtFolder.Text);
 
                 MessageBox.Show("Data was edited !", "Data");
 
@@ -124,6 +124,8 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 txtDescription.Text = currentdata.Description;
                 txtName.Text = currentdata.Name;
                 txtPlacement.Text = currentdata.Placement;
+                txtFolder.Text = currentdata.Folder;
+                txtLabel.Text = currentdata.Label;
 
                 if (cmbProject.Items.Contains(currentdata.Project))
                 {
@@ -156,6 +158,9 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
         }
 
-
+        private void btnFolder_Click(object sender, RoutedEventArgs e)
+        {
+            txtFolder.Text = OtherFunc.getFolderPath();
+        }
     }
 }

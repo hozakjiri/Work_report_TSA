@@ -25,7 +25,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
             else if (result == MessageBoxResult.OK)
             {
-                SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate);
+                SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate, txtLabel.Text, txtFolder.Text);
 
                 MessageBox.Show("Data was added !", "Data");
 
@@ -38,6 +38,11 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
         {
             cmbProject.ItemsSource = ModificationFunc.LoadProjectList();
             cmbResponsible.ItemsSource = LoginFunc.LoadAllUsersList();
+        }
+
+        private void btnFolder_Click(object sender, RoutedEventArgs e)
+        {
+            txtFolder.Text = OtherFunc.getFolderPath();
         }
     }
 }

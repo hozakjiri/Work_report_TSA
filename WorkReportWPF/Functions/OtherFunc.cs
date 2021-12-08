@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Threading;
 
+
 namespace WorkReportWPF.Functions
 {
     public class OtherFunc
@@ -22,5 +23,17 @@ namespace WorkReportWPF.Functions
             return result;
         }
 
+        public static string getFolderPath()
+        {
+            var dlg = new FolderBrowserForWPF.Dialog();
+            dlg.Title = "Choose Sample Folder";
+
+            if (dlg.ShowDialog() == true)
+            {
+                return dlg.FileName;
+            }
+
+            return string.Empty;
+        }
     }
 }

@@ -24,5 +24,8 @@ namespace WorkReportWPF.Models.DBModels
 
         public string RevisionDate { get; set; }
 
+        public string Label { get; set; }
+
+        public string Folder { get; set; }
     }
 }

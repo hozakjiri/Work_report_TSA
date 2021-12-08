@@ -28,7 +28,7 @@ namespace WorkReportWPF.Functions
             return sampleData;
         }
 
-        public static void AddSample(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity)
+        public static void AddSample(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder)
         {
 
             try
@@ -44,6 +44,8 @@ namespace WorkReportWPF.Functions
                     Responsible = responsible,
                     RevisionDate = revisionDate.ToString("dd.MM.yyyy"),
                     RevisionValidity = revisionValidity.ToString("dd.MM.yyyy"),
+                    Label = label,
+                    Folder = folder
                 };
 
                 context.Samples.Add(sampleData);
@@ -55,7 +57,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void EditSample(int ID, string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity)
+        public static void EditSample(int ID, string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder)
         {
 
             try
@@ -70,6 +72,8 @@ namespace WorkReportWPF.Functions
                     Responsible = responsible,
                     RevisionDate = revisionDate.ToString("dd.MM.yyyy"),
                     RevisionValidity = revisionValidity.ToString("dd.MM.yyyy"),
+                    Label = label,
+                    Folder = folder
                 };
 
 
