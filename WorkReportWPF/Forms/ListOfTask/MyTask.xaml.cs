@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using WorkReportWPF.Enums;
 using WorkReportWPF.Functions;
 using WorkReportWPF.Models;
 
@@ -30,6 +32,33 @@ namespace WorkReportWPF.Forms.ListOfTask
         {
             dataGrid.ItemsSource = TaskFunc.LoadMyTaskTable();
             dataGrid.Columns[0].Visibility = Visibility.Hidden;
+        }
+
+        private void dataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var row = e.Row;
+            var tasks = row.DataContext as TableTaskView;
+            int status = (int)tasks.Status;
+
+            if (sender == dataGrid)
+            {
+                if (status == (int)StatusEnum.Completed)
+                {
+                    row.Background = new SolidColorBrush(Colors.Green);
+                }
+                else if (status == (int)StatusEnum.Unstarted)
+                {
+                    row.Background = new SolidColorBrush(Colors.Yellow);
+                }
+                else if (status == (int)StatusEnum.Started)
+                {
+                    row.Background = new SolidColorBrush(Colors.Red);
+                }
+                else
+                {
+                    row.Background = new SolidColorBrush(Colors.Gray);
+                }
+            }
         }
     }
 }
