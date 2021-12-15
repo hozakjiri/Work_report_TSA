@@ -50,14 +50,14 @@
                 <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Width="20">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Topic" Binding="{Binding Path=Subject}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>

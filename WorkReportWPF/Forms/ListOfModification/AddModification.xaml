@@ -35,7 +35,7 @@
                   Margin="16,38,0,0" 
                   VerticalAlignment="Top" 
                   VerticalContentAlignment="Center"
-                  Width="704"
+                  Width="748"
                   Padding="10"
                   Foreground="#383838" 
                   BorderBrush="#383838" 
@@ -45,15 +45,13 @@
                   materialDesign:HintAssist.Hint="Project" Height="68"
                   Style="{StaticResource MaterialDesignComboBox}"
                   materialDesign:HintAssist.Background="White"
-                  materialDesign:HintAssist.Foreground="#383838" Grid.ColumnSpan="2">
-
-        </ComboBox>
+                  materialDesign:HintAssist.Foreground="#383838"/>
 
         <DatePicker x:Name="datePicker" 
                     materialDesign:HintAssist.Hint="Date" 
-                    HorizontalAlignment="Left" Margin="503,41,0,0" 
+                    HorizontalAlignment="Left" Margin="947,38,0,0" 
                     VerticalAlignment="Top" 
-                    Width="350" 
+                    Width="317" 
                     Background="Transparent" 
                     BorderBrush="#383838" 
                     Foreground="#383838"
@@ -64,7 +62,7 @@
                     Cursor="ArrowCD" 
                     Height="68"  
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#383838" Grid.Column="1"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#383838"
                     materialDesign:HintAssist.Background="White"
                     materialDesign:HintAssist.Foreground="#383838">
             <DatePicker.CalendarStyle>
@@ -86,7 +84,7 @@
         </DatePicker>
 
 
-        <StackPanel Margin="329,41,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top" Grid.Column="1">
+        <StackPanel Margin="769,38,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
             <TextBox x:Name="txtNum"
                      materialDesign:TextFieldAssist.UnderlineBrush="#383838"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
