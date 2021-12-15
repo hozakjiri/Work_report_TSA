@@ -47,31 +47,34 @@
             </DataGrid.Resources>
             
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Width="20">
+                <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Width="0">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Margin" Value="0,0,0,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Topic" Binding="{Binding Path=Subject}"  Width="100">
+                <DataGridTextColumn Header="Topic" Binding="{Binding Path=Subject}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Margin" Value="0,0,5,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="User" Binding="{Binding Path=Recipient}"  Width="150">
+                <DataGridTextColumn Header="User" Binding="{Binding Path=Recipient}"  Width="125">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Description" Binding="{Binding Path=Description}"  Width="500">
+                <DataGridTextColumn Header="Description" Binding="{Binding Path=Description}"  Width="800">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Margin" Value="5,0,5,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -83,7 +86,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
 
-                <DataGridTextColumn Header="Term" Binding="{Binding Path=Term, StringFormat=d}"  Width="150">
+                <DataGridTextColumn Header="Term" Binding="{Binding Path=Term, StringFormat=d}"  Width="100">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
