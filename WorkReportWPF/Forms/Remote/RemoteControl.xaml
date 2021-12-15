@@ -24,6 +24,7 @@
         <Button x:Name="ConnectButton" IsEnabled="false" 
         materialDesign:ButtonAssist.CornerRadius="10"
         Margin="190,0,153,2" FontSize="30"
+        BorderBrush="#525252"
         Cursor="Hand"
         FontWeight="Bold"
         FontStyle="Italic" RenderTransformOrigin="1.338,4.511" Click="ConnectButton_Click"

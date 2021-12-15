@@ -191,7 +191,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="100"
             Margin="318,541,16,10" Grid.Row="1" Grid.Column="1" Click="btnDUser_Click"
             Background="#525252"
-                BorderBrush="#FF3A85D1">
+                BorderBrush="#525252">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text1"  Text="Delete" Width="59" Foreground="White" Height="18"/>
@@ -217,7 +217,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="100"
             Margin="13,539,320,12" Grid.Row="1" Click="BtnAMembers_Click"
             Background="#525252"
-                BorderBrush="#FF3A85D1">
+                BorderBrush="#525252">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal" >
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text3"  Text="Add" Width="30" Foreground="White" Height="18"/>
@@ -243,7 +243,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="100"
             Margin="10,541,323,10" Grid.Row="1" Grid.Column="2" Click="btnAProject_Click"
             Background="#525252"
-                BorderBrush="#FF3A85D1">
+                BorderBrush="#525252">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="white" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text5"  Text="Add" Width="30" Foreground="White" Height="18"/>
@@ -256,7 +256,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="100"
             Margin="115,541,219,10" Grid.Row="1" Grid.Column="1" Click="btnEUser_Click"
                 Background="#525252"
-                BorderBrush="#FF3A85D1">
+                BorderBrush="#525252">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Pencil" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text6"  Text="Edit" Width="30" Foreground="White" Height="18"/>
@@ -269,7 +269,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="100"
             Margin="116,541,217,10" Grid.Row="1" Grid.Column="2" Click="btnEProject_Click"
                 Background="#525252"
-                BorderBrush="#FF3A85D1">
+                BorderBrush="#525252">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Pencil" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text7"  Text="Edit" Width="30" Foreground="White" Height="18"/>
