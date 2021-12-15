@@ -10,6 +10,7 @@ using WorkReportWPF.Enums;
 using WorkReportWPF.Models;
 using WorkReportWPF.Models.DBModels;
 
+
 namespace WorkReportWPF.Functions
 {
     public class TaskFunc
@@ -140,7 +141,7 @@ namespace WorkReportWPF.Functions
                 context.Tasks.Add(modificationData);
                 context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -279,15 +280,13 @@ namespace WorkReportWPF.Functions
 
         public static void CreateTask(string Mail, DateTime FromDate, DateTime ToDate, string Subject, string Body)
         {
-            var oApp = new Microsoft.Office.Interop.Outlook.Application();
-            Microsoft.Office.Interop.Outlook.NameSpace oNS = oApp.GetNamespace("mapi");
-            oNS.Logon("Outlook", Missing.Value, false, true);
-            Microsoft.Office.Interop.Outlook.TaskItem OTask = (Microsoft.Office.Interop.Outlook.TaskItem)oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olTaskItem);
-
-            // Or us the name instead of the number
-
             try
             {
+                var oApp = new Microsoft.Office.Interop.Outlook.Application();
+                Microsoft.Office.Interop.Outlook.NameSpace oNS = oApp.GetNamespace("mapi");
+                oNS.Logon("Outlook", Missing.Value, false, true);
+                Microsoft.Office.Interop.Outlook.TaskItem OTask = oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olTaskItem);
+
                 OTask.Assign();
                 // Add recipients to the task
                 OTask.StatusReport();
@@ -313,18 +312,16 @@ namespace WorkReportWPF.Functions
                 // Send the task
                 // OTask.Display(True)
                 OTask.Save();
+
+                oNS.Logoff();
+                oApp = default;
+                oNS = default;
             }
             // OTask.Send()
 
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                oNS.Logoff();
-                oApp = default;
-                oNS = default;
             }
         }
     }
