@@ -9,6 +9,7 @@ using System.Threading;
 using WorkReportWPF.Enums;
 using WorkReportWPF.Models;
 using WorkReportWPF.Models.DBModels;
+using Outlook = Microsoft.Office.Interop.Outlook;
 
 
 namespace WorkReportWPF.Functions
@@ -282,10 +283,10 @@ namespace WorkReportWPF.Functions
         {
             try
             {
-                var oApp = new Microsoft.Office.Interop.Outlook.Application();
-                Microsoft.Office.Interop.Outlook.NameSpace oNS = oApp.GetNamespace("mapi");
+                Outlook.Application oApp = new();
+                Outlook.NameSpace oNS = oApp.GetNamespace("mapi");
                 oNS.Logon("Outlook", Missing.Value, false, true);
-                Microsoft.Office.Interop.Outlook.TaskItem OTask = oApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olTaskItem);
+                Outlook.TaskItem OTask = oApp.CreateItem(Outlook.OlItemType.olTaskItem);
 
                 OTask.Assign();
                 // Add recipients to the task
@@ -306,7 +307,7 @@ namespace WorkReportWPF.Functions
                 OTask.PercentComplete = 0;
                 OTask.StartDate = FromDate;
                 // Save the task to outlook
-                OTask.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceHigh;
+                OTask.Importance = Outlook.OlImportance.olImportanceHigh;
                 OTask.ReminderTime.AddDays(-2);
 
                 // Send the task

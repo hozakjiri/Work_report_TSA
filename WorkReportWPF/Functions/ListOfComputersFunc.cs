@@ -25,13 +25,14 @@ namespace WorkReportWPF.Functions
                 PasswordVnc = x.PasswordVnc,
                 Type = x.Type,
                 Maintenance = OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") != null ? OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") : DateTime.MinValue,
-                Note = x.Note
+                Note = x.Note,
+                isVNC = x.isVNC
             }).ToList();
 
             return modificationData;
         }
 
-        public static void AddComputers(string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note)
+        public static void AddComputers(string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note, bool isvnc)
         {
 
             try
@@ -50,6 +51,7 @@ namespace WorkReportWPF.Functions
                     Type = (type >= 0 && type <= 1) ? (StationEnum)type : 0,
                     Maintence = maintenance,
                     Note = note,
+                    isVNC = isvnc
                 };
 
                 context.Stations.Add(stationData);
@@ -61,7 +63,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void EditComputers(int ID, string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note)
+        public static void EditComputers(int ID, string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note, bool isvnc)
         {
 
             try
@@ -79,6 +81,7 @@ namespace WorkReportWPF.Functions
                     Type = (type >= 0 && type <= 1) ? (StationEnum)type : 0,
                     Maintence = maintenance,
                     Note = note,
+                    isVNC = isvnc
                 };
 
 

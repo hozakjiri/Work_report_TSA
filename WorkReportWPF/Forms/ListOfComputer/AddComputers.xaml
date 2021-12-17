@@ -201,7 +201,7 @@
             Margin="41,27,0,0" 
             VerticalAlignment="Top" 
             VerticalContentAlignment="Center"
-            Width="1167"
+            Width="734"
             Padding="10"
             Foreground="#383838" 
             BorderBrush="#383838" 
@@ -212,6 +212,7 @@
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
+        <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" Margin="841,36,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFAEA4A4" Background="#FF856262" ClickMode="Press"/>
 
     </Grid>
 </Page>

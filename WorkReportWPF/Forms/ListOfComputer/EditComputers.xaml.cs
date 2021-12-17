@@ -41,6 +41,14 @@ namespace WorkReportWPF.Forms.ListOfComputers
                 txtstation.Text = currentdata.Name;
                 txtuser.Text = currentdata.User;
 
+                if (currentdata.isVNC == true)
+                {
+                    cbisVNC.IsChecked = true;
+                }
+                else
+                {
+                    cbisVNC.IsChecked = false;
+                }
 
                 if (cmbProject.Items.Contains(currentdata.Line))
                 {
@@ -67,7 +75,7 @@ namespace WorkReportWPF.Forms.ListOfComputers
             }
             else if (result == MessageBoxResult.OK)
             {
-                ListOfComputersFunc.EditComputers(currentdata.StationID, cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.SelectedDate.Value.ToString("dd.MM.yyyy"), txtnote.Text);
+                ListOfComputersFunc.EditComputers(currentdata.StationID, cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.SelectedDate.Value.ToString("dd.MM.yyyy"), txtnote.Text, cbisVNC.IsChecked.Value);
 
                 MessageBox.Show("Data was modified !", "Data");
 

@@ -29,5 +29,7 @@ namespace WorkReportWPF.Models
         public string Maintence { get; set; }
 
         public string Note { get; set; }
+
+        public bool isVNC { get; set; }
     }
 }

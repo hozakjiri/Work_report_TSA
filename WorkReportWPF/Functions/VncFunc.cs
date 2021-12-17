@@ -12,7 +12,7 @@ namespace WorkReportWPF.Functions
             List<Station> AllStations = new();
             using (DbSettingsContext data = new())
             {
-                AllStations = data.Stations.Where(x => x.Type == Enums.StationEnum.BlackBox).ToList();
+                AllStations = data.Stations.Where(x => x.isVNC == true && x.HostName != null).ToList();
             }
 
             if (AllStations.Count > 0)
@@ -64,6 +64,7 @@ namespace WorkReportWPF.Functions
                     Type = Enums.StationEnum.BlackBox,
                     Maintence = "",
                     Note = "",
+                    isVNC = true
                 };
 
                 context.Stations.Add(stationData);
