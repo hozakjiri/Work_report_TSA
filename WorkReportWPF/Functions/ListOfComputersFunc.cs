@@ -6,7 +6,7 @@ using WorkReportWPF.Models;
 
 namespace WorkReportWPF.Functions
 {
-    public class ListOfComputersFunc
+    public static class ListOfComputersFunc
     {
         public static List<ListOfComputersView> LoadListOfComputersTable()
         {

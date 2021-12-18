@@ -21,16 +21,18 @@ namespace WorkReportWPF.Functions
                 oMail.To.Add(mailTo);
 
                 oMail.Subject = "Support for WorkReport";
-                var Data = new Attachment(attachment, MediaTypeNames.Application.Octet);
-                if (!string.IsNullOrEmpty(attachment))
+
+                if (!string.IsNullOrEmpty(attachment) && attachment != "")
                 {
+                    Attachment Data = new Attachment(attachment, MediaTypeNames.Application.Octet);
                     // '// Add time stamp information for the file.
                     ContentDisposition disposition1 = Data.ContentDisposition;
                     disposition1.CreationDate = File.GetCreationTime(attachment);
                     disposition1.ModificationDate = File.GetLastWriteTime(attachment);
                     disposition1.ReadDate = File.GetLastAccessTime(attachment);
                     // '// Add the file attachment to this e-mail message.
-                    oMail.Attachments.Add(Data);
+                    oMail.Attachments.Add(new Attachment(attachment, MediaTypeNames.Application.Octet));
+                    Data.Dispose();
                 }
 
                 StringBuilder sb = new();
@@ -48,7 +50,7 @@ namespace WorkReportWPF.Functions
                 smtp.Port = 25;
                 MessageBox.Show("Email send", "Mail");
                 smtp.Send(oMail);
-                Data.Dispose();
+                
             }
             catch (Exception ex)
             {

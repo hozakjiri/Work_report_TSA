@@ -23,6 +23,7 @@ namespace WorkReportWPF.Functions
                 Responsible = x.Responsible,
                 RevisionDate = (DateTime)OtherFunc.ToDate(x.RevisionDate, "dd.MM.yyyy"),
                 RevisionValidity = (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy"),
+                Folder = x.Folder
             }).ToList();
 
             return sampleData;

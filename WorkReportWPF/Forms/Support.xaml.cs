@@ -19,6 +19,7 @@ namespace WorkReportWPF
         private void Send_Mail(object sender, RoutedEventArgs e)
         {
             File = SupportFunc.GetFileToString();
+
             SupportFunc.SendSupportMail(Subject_Text.Text, Comment_Text.Text, File, "peter.hajduch@hella.com, jiri.hozak@hella.com");
         }
     }

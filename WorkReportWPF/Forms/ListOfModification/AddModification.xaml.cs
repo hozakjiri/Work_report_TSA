@@ -123,6 +123,9 @@ namespace WorkReportWPF.Forms.ListOfModification
                 ModificationFunc.SaveModification(ProjectBox.Text, Comment_Text.Text, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtNum.Text, fullpath, datePicker.DisplayDate.ToString("yyyyMMddHHmm"));
 
                 MessageBox.Show("Data was added !", "Data");
+
+                OverviewModification p = new OverviewModification();
+                this.NavigationService.Navigate(p);
             }
         }
     }

@@ -308,7 +308,7 @@ namespace WorkReportWPF.Functions
                 OTask.StartDate = FromDate;
                 // Save the task to outlook
                 OTask.Importance = Outlook.OlImportance.olImportanceHigh;
-                OTask.ReminderTime.AddDays(-2);
+                OTask.ReminderTime.AddDays(-3);
 
                 // Send the task
                 // OTask.Display(True)

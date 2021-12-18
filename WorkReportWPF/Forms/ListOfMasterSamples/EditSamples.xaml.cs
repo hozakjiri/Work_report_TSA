@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using WorkReportWPF.Functions;
@@ -160,7 +161,73 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void btnFolder_Click(object sender, RoutedEventArgs e)
         {
-            txtFolder.Text = OtherFunc.getFolderPath();
+            if (!string.IsNullOrEmpty(cmbProject.Text))
+            {
+                if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples"))
+                {
+                    Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples");
+                }
+
+                if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text))
+                {
+                    Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text);
+                }
+
+                if (!string.IsNullOrEmpty(txtName.Text))
+                {
+                    if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text))
+                    {
+                        Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text);
+                    }
+                }
+
+                txtFolder.Text = Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text + "/";
+
+                Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
+                openFileDlg.Multiselect = true;
+                openFileDlg.Filter = "All files (*.*)|*.*";
+                openFileDlg.InitialDirectory = @"C:\";
+
+                Nullable<bool> result = openFileDlg.ShowDialog();
+
+
+                if (result == true)
+                {
+                    foreach (var item in openFileDlg.FileNames)
+                    {
+                        string[] filename = item.Split("\\");
+                        if (filename.Length > 0)
+                        {
+                            File.Copy(item, Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text + "/" + filename[filename.Length - 1], true);
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+
+        private void btnFolder_Open_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var path = txtFolder.Text;
+
+                if (!Directory.Exists(path) && path == "")
+                    path = "C:\\";
+
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = path,
+                    UseShellExecute = true,
+                    Verb = "open"
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
