@@ -144,7 +144,7 @@ namespace WorkReportWPF.Forms.ListOfModification
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Image not found", "Alert");
             }
 
             if (ProjectBox.Text == "" || Comment_Text.Text == "" || txtNum.Text == "" || datePicker.Text == "")
