@@ -31,6 +31,18 @@ namespace WorkReportWPF.Forms.ListOfComputers
 
                 MessageBox.Show("Data was added !", "Data");
 
+                try
+                {
+                    var userMail = LoginFunc.LoadUserMailByUserName(Environment.UserName);
+                    var therm = datePicker.DisplayDate;
+                    ListOfComputersFunc.CreateTask(userMail, DateTime.Now, therm, txtstation.Text + " " + txthostname.Text, "Computer maintenance is required : " + txtstation.Text );
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("An error occurred while creating the task !", "Alert");
+                }
+                
+
                 OverviewComputers p = new OverviewComputers();
                 this.NavigationService.Navigate(p);
             }

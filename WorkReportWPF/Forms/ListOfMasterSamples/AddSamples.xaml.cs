@@ -32,6 +32,17 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
                 MessageBox.Show("Data was added !", "Data");
 
+                try
+                {
+                    var userMail = LoginFunc.LoadUserMail(cmbProject.SelectedItem.ToString());
+                    var therm = datePickerRevisionValidity.DisplayDate;
+                    SamplesFunc.CreateTask(userMail, datePickerRevisionDate.DisplayDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on:" + datePickerRevisionValidity.DisplayDate);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("An error occurred while creating the task !", "Alert");
+                }
+
                 OverviewSamples p = new OverviewSamples();
                 this.NavigationService.Navigate(p);
             }
@@ -92,6 +103,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
 
         }
+
 
         private void btnFolder_Open_Click(object sender, RoutedEventArgs e)
         {

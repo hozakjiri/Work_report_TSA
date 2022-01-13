@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using WorkReportWPF.Models;
 using WorkReportWPF.Models.DBModels;
+using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace WorkReportWPF.Functions
 {
-    public class SamplesFunc
+    public static class SamplesFunc
     {
         public static List<TableSampleView> LoadSamplesTable()
         {
@@ -91,6 +93,52 @@ namespace WorkReportWPF.Functions
             }
         }
 
+        public static void CreateTask(string Mail, DateTime FromDate, DateTime ToDate, string Subject, string Body)
+        {
+            try
+            {
+                Outlook.Application oApp = new();
+                Outlook.NameSpace oNS = oApp.GetNamespace("mapi");
+                oNS.Logon("Outlook", Missing.Value, false, true);
+                Outlook.TaskItem OTask = oApp.CreateItem(Outlook.OlItemType.olTaskItem);
+
+                OTask.Assign();
+                // Add recipients to the task
+                OTask.StatusReport();
+                OTask.Recipients.Add(Mail);
+                // Add the subject to the task
+                OTask.Subject = Subject;
+                // Add the body to the task
+                OTask.Body = Body;
+                // Add the Task duedate
+                OTask.DueDate = ToDate;
+                // Set the reminder to the task
+                OTask.ReminderSet = true;
+                // Set the reminder time
+
+                OTask.ReminderTime = OTask.DueDate;
+                // If you want to display the task uncomment the next line
+                OTask.PercentComplete = 0;
+                OTask.StartDate = FromDate;
+                // Save the task to outlook
+                OTask.Importance = Outlook.OlImportance.olImportanceHigh;
+                OTask.ReminderTime.AddDays(-3);
+
+                // Send the task
+                // OTask.Display(True)
+                OTask.Save();
+
+                oNS.Logoff();
+                oApp = default;
+                oNS = default;
+            }
+            // OTask.Send()
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         public static void DeleteSample(int? id)
         {
             try

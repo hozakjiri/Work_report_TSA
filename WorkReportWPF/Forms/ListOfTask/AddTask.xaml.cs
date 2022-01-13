@@ -47,7 +47,7 @@ namespace WorkReportWPF.Forms.ListOfTask
                 }
                 catch (Exception)
                 {
-                    throw;
+                    MessageBox.Show("An error occurred while creating the task !", "Alert");
                 }
 
                 MessageBox.Show("Data was added !", "Data");
