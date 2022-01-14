@@ -69,6 +69,9 @@ namespace WorkReportWPF
 
                 ModificationGrid.ItemsSource = ModificationFunc.LoadModificationTableTOP();
                 ModificationGrid.Columns[0].Visibility = Visibility.Hidden;
+
+                //SamplesGrid.ItemsSource = SamplesFunc.LoadSamplesTable();
+                //SamplesGrid.Column[0].Visibility = Visibility.Hidden;            
             }
             catch (Exception ex)
             {

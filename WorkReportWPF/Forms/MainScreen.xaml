@@ -11,31 +11,32 @@
 
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="650"/>
-            <ColumnDefinition Width="650"/>
+            <ColumnDefinition Width="650*"/>
+            <ColumnDefinition Width="650*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="85"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="271"/>
+            <RowDefinition Height="247"/>
             <RowDefinition Height="65"/>
         </Grid.RowDefinitions>
         <Label Content="Dasboard for EOT TST Technician Department" Grid.ColumnSpan="2" Foreground="#383838" Background="Transparent" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
         <GroupBox
-  Header="Last of TOP 5 reports"
+  Header="Last of TOP reports"
   Style="{DynamicResource MaterialDesignCardGroupBox}"
-  Margin="2,2,5,2"
+  Margin="10,0,0,0"
   materialDesign:ColorZoneAssist.Mode="Custom"
   materialDesign:ColorZoneAssist.Background="#525252"
-  materialDesign:ColorZoneAssist.Foreground="White" Grid.Row="1" Background="#525252">
-        <GroupBox.HeaderTemplate>
+  materialDesign:ColorZoneAssist.Foreground="White" Grid.Row="1" Background="#525252" Height="262" VerticalAlignment="Center" HorizontalAlignment="Left" Width="635">
+            <GroupBox.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel
         Orientation="Horizontal" Margin="0,0,407,0">
                         <materialDesign:PackIcon
-          Kind="ImageArea"
-          Height="48"
-          Width="48"
+          Kind="CLipBoardTextSearch"
+          Height="32"
+          Width="32"
           VerticalAlignment="Center" 
           HorizontalContentAlignment="Center"
           HorizontalAlignment="Center"                  />
@@ -48,7 +49,7 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="ModificationGrid_PreviewMouseDoubleClick" Width="633">
+            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="ModificationGrid_PreviewMouseDoubleClick" Width="633" Margin="0,-17,0,-5">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="White"/>
@@ -136,24 +137,24 @@
                     </DataGridTextColumn>-->
                 </DataGrid.Columns>
             </DataGrid>
-                
+
         </GroupBox>
 
         <GroupBox
-  Header="Last of TOP 5 tasks"
+  Header="Last of TOP tasks"
   Style="{DynamicResource MaterialDesignCardGroupBox}"
-  Margin="5,2,10,2"
+  Margin="5,0,10,0"
   materialDesign:ColorZoneAssist.Mode="Custom"
   materialDesign:ColorZoneAssist.Background="Transparent"
-  materialDesign:ColorZoneAssist.Foreground="White" Grid.Row="1" Background="#525252" Grid.Column="1">
+  materialDesign:ColorZoneAssist.Foreground="White" Grid.Row="1" Background="#525252" Grid.Column="1" Height="262" VerticalAlignment="Center">
             <GroupBox.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel
         Orientation="Horizontal" Margin="0,0,407,0">
                         <materialDesign:PackIcon
-          Kind="ImageArea"
-          Height="48"
-          Width="48"
+          Kind="CalendarAlert"
+          Height="32"
+          Width="32"
           VerticalAlignment="Center" 
           HorizontalContentAlignment="Center"
           HorizontalAlignment="Center"                  />
@@ -166,7 +167,7 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="625" Margin="0,0,0,2" PreviewMouseDoubleClick="TaskGrid_PreviewMouseDoubleClick">
+            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="625" Margin="0,-16,0,-4" PreviewMouseDoubleClick="TaskGrid_PreviewMouseDoubleClick">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="White"/>
@@ -245,7 +246,7 @@
             </DataGrid>
 
         </GroupBox>
-        <TextBlock TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Grid.Row="2" Padding="0,0,0,0" Margin="320,5,160,6">
+        <TextBlock TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Grid.Row="3" Padding="0,0,0,0" Margin="320,5,160,6">
             <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Clock" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Time_Text"  Text="Time" Width="92" Foreground="#383838" Height="20" VerticalAlignment="Center" FontSize="16"/>
@@ -267,6 +268,141 @@
             </StackPanel>   
         
         </TextBlock>
+        <GroupBox HorizontalAlignment="Left" Header="Upcoming Maintenance"  VerticalAlignment="Center" Width="1280"
+            Style="{DynamicResource MaterialDesignCardGroupBox}"
+            materialDesign:ColorZoneAssist.Mode="Custom"
+            materialDesign:ColorZoneAssist.Background="#525252"
+            materialDesign:ColorZoneAssist.Foreground="White" Background="#525252" Height="247" RenderTransformOrigin="0.508,0.499" Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,0,0">
+            <GroupBox.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel
+        Orientation="Horizontal" Margin="0,0,407,0">
+                        <materialDesign:PackIcon
+          Kind="CarLightAlert"
+          Height="32"
+          Width="32"
+          VerticalAlignment="Center" 
+          HorizontalContentAlignment="Center"
+          HorizontalAlignment="Center"                  />
+                        <TextBlock
+          Margin="8,0,0,0"
+          VerticalAlignment="Center"
+          HorizontalAlignment="Center"
+          Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+          Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GroupBox.HeaderTemplate>
+            <DataGrid x:Name="samplesGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="ModificationGrid_PreviewMouseDoubleClick" Width="1282" Margin="0,-18,0,-5">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="Foreground" Value="Black"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="0,0,0,0"/>
+                    </Style>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                <Setter Property="Background" Value="#383838" />
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderBrush" Value="#383838"/>
+
+
+                            </Trigger>
+                            <Trigger Property="DataGridCell.IsSelected" Value="False">
+                                <Setter Property="Background" Value="Transparent" />
+                            </Trigger>
+
+
+
+
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="id" Binding="{Binding id}"  Width="0">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Line" Binding="{Binding Project}"  Width="150">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="Margin" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="200">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}"  Width="250">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                <Setter Property="Margin" Value="5,0,5,0"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Placement" Binding="{Binding Placement}"  Width="150">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Responsible" Binding="{Binding Responsible}"  Width="150">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Revision Date" Binding="{Binding RevisionDate, StringFormat=d}" Width="150">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Revision Validity" Binding="{Binding RevisionValidity, StringFormat=d}"  Width="150">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <!--<DataGridTextColumn Header="Label" Binding="{Binding Label}"  Width="auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>-->
+                    <!--<DataGridTextColumn Header="Folder" Binding="{Binding Folder}"  Width="auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>-->
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </GroupBox>
 
     </Grid>
 </Page>
