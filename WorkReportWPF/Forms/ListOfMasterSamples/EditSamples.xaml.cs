@@ -226,7 +226,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Error with directory ! " + ex.Message, "Alert");
             }
         }
     }

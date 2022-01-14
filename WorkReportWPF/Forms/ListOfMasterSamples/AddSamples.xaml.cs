@@ -34,7 +34,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
                 try
                 {
-                    var userMail = LoginFunc.LoadUserMail(cmbProject.SelectedItem.ToString());
+                    var userMail = LoginFunc.LoadUserMail(cmbResponsible.SelectedItem.ToString());
                     var therm = datePickerRevisionValidity.DisplayDate;
                     SamplesFunc.CreateTask(userMail, datePickerRevisionDate.DisplayDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on:" + datePickerRevisionValidity.DisplayDate);
                 }
