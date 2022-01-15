@@ -31,6 +31,48 @@ namespace WorkReportWPF.Functions
             return sampleData;
         }
 
+        public static List<TableUpcomming> LoadSamplesTableWithComputers()
+        {
+            using DbDataContext contextData = new();
+            using DbSettingsContext contextSettings = new();
+
+            var sampleList = contextData.Samples.ToList();
+
+
+            List<TableUpcomming> sampleList2 = sampleList.Select(x => new TableUpcomming()
+            {
+                ID = x.ID,
+                Project = x.Project,
+                Name = x.Name,
+                Responsible = x.Responsible,
+                RevisionDate = x.RevisionValidity != null ? (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy") : DateTime.MinValue,
+            }).ToList();
+
+            var ComputersList = contextSettings.Stations.ToList();
+
+            List <TableUpcomming> ComputersList2 = ComputersList.Select(x => new TableUpcomming()
+            {
+                ID = x.StationID,
+                Project = x.Line,
+                Name = x.Name,
+                Responsible = "Team",
+                RevisionDate = x.Maintence != null ? (DateTime)OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") : DateTime.MinValue,
+            }).ToList();
+
+            List<TableUpcomming> unionlist = sampleList2.Union(ComputersList2).ToList();
+
+            List<TableUpcomming> result = unionlist.Where(x => x.RevisionDate >= DateTime.Now.AddMonths(-3)).Select(x => new TableUpcomming()
+            {
+                ID = x.ID,
+                Project = x.Project,
+                Name = x.Name,
+                Responsible = x.Responsible,
+                RevisionDate = x.RevisionDate
+            }).OrderByDescending(o => o.RevisionDate).ThenBy(z => z.Name).ToList();
+
+            return result;
+        }
+
         public static void AddSample(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder)
         {
 
