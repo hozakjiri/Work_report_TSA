@@ -333,7 +333,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Line" Binding="{Binding Project}"  Width="150">
+                    <DataGridTextColumn Header="Line" Binding="{Binding Project}"  Width="350">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -341,21 +341,21 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="200">
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="300">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Responsible" Binding="{Binding Responsible}"  Width="150">
+                    <DataGridTextColumn Header="Responsible" Binding="{Binding Responsible}"  Width="250">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Revision/Maintence" Binding="{Binding RevisionDate, StringFormat=d}"  Width="150">
+                    <DataGridTextColumn Header="Revision/Maintence" Binding="{Binding RevisionDate, StringFormat=d}"  Width="300">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
