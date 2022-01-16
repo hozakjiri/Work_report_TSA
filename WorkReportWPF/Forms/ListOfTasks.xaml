@@ -51,7 +51,7 @@
             </Button>
 
         </StackPanel>
-        <Frame x:Name="frameTask" Content="Frame" Grid.Row="2" Foreground="Black" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="588" Width="1300" VerticalContentAlignment="Center">
+        <Frame x:Name="frameTask" Grid.Row="2" Foreground="Black" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="588" Width="1300" VerticalContentAlignment="Center">
 
         </Frame>
     </Grid>

@@ -38,6 +38,6 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <Frame x:Name="frameSamples" Content="Frame" Foreground="Black" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="605" Width="1300" VerticalContentAlignment="Center" Margin="0,74,0,0"/>
+        <Frame x:Name="frameSamples" Foreground="Black" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="605" Width="1300" VerticalContentAlignment="Center" Margin="0,74,0,0"/>
     </Grid>
 </Page>

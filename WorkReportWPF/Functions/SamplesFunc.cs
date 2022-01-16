@@ -25,7 +25,7 @@ namespace WorkReportWPF.Functions
                 Responsible = x.Responsible,
                 RevisionDate = (DateTime)OtherFunc.ToDate(x.RevisionDate, "dd.MM.yyyy"),
                 RevisionValidity = (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy"),
-                Folder = x.Folder
+                Folder = x.Folder,
             }).ToList();
 
             return sampleData;
@@ -46,6 +46,7 @@ namespace WorkReportWPF.Functions
                 Name = x.Name,
                 Responsible = x.Responsible,
                 RevisionDate = x.RevisionValidity != null ? (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy") : DateTime.MinValue,
+                Type = "Headlamp",
             }).ToList();
 
             var ComputersList = contextSettings.Stations.ToList();
@@ -57,17 +58,19 @@ namespace WorkReportWPF.Functions
                 Name = x.Name,
                 Responsible = "Team",
                 RevisionDate = x.Maintence != null ? (DateTime)OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") : DateTime.MinValue,
+                Type = "Machine",
             }).ToList();
 
             List<TableUpcomming> unionlist = sampleList2.Union(ComputersList2).ToList();
 
-            List<TableUpcomming> result = unionlist.Where(x => x.RevisionDate >= DateTime.Now.AddMonths(-3)).Select(x => new TableUpcomming()
+            List<TableUpcomming> result = unionlist.Where(x => x.RevisionDate >= DateTime.Now.AddMonths(-1)).Select(x => new TableUpcomming()
             {
                 ID = x.ID,
                 Project = x.Project,
                 Name = x.Name,
                 Responsible = x.Responsible,
-                RevisionDate = x.RevisionDate
+                RevisionDate = x.RevisionDate,
+                Type = x.Type,
             }).OrderByDescending(o => o.RevisionDate).ThenBy(z => z.Name).ToList();
 
             return result;

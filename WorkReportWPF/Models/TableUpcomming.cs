@@ -14,5 +14,7 @@ namespace WorkReportWPF.Models
 
         public DateTime? RevisionDate { get; set; }
 
-    }
+        public string Type { get; set; } 
+
+}
 }
