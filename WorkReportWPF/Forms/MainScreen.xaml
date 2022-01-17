@@ -341,7 +341,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Line" Binding="{Binding Project}"  Width="350">
+                    <DataGridTextColumn Header="Line" Binding="{Binding Project}"  Width="300">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Left"/>
