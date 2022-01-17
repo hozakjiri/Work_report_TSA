@@ -142,7 +142,7 @@ namespace WorkReportWPF.Functions
                 OTask.ReminderSet = true;
                 // Set the reminder time
                 OTask.Importance = Outlook.OlImportance.olImportanceHigh;
-
+                OTask.DateCompleted = ToDate;
                 OTask.ReminderTime = OTask.DueDate;
                 // If you want to display the task uncomment the next line
                 OTask.PercentComplete = 0;
