@@ -28,15 +28,15 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             else if (result == MessageBoxResult.OK)
             {
 
-                SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate, txtLabel.Text, txtFolder.Text);
+                SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
 
                 MessageBox.Show("Data was added !", "Data");
 
                 try
                 {
                     var userMail = LoginFunc.LoadUserMail(cmbResponsible.SelectedItem.ToString());
-                    var therm = datePickerRevisionValidity.DisplayDate;
-                    SamplesFunc.CreateTask(userMail, datePickerRevisionDate.DisplayDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on:" + datePickerRevisionValidity.DisplayDate);
+                    var therm = (DateTime)datePickerRevisionValidity.SelectedDate;
+                    SamplesFunc.CreateTask(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
                 }
                 catch (Exception)
                 {

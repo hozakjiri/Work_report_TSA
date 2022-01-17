@@ -52,7 +52,14 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void cmdDown_Click(object sender, RoutedEventArgs e)
         {
-            NumValue -= 1;
+            if (_numValue == 0)
+            {
+                NumValue = 0;
+            }
+            else
+            {
+                NumValue -= 1;
+            }
         }
 
         public DateTime DisplayDate { get; set; }
@@ -89,32 +96,35 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void btnPrint_click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                var mylabel = new bpac.Document();
-                if (mylabel.Open("Template/Label.lbx"))
+            if (txtNum.Text != "0")
+            { 
+                try
                 {
-                    mylabel.GetObject("JmenoPrijmeni").Text = cmbResponsible.SelectedItem.ToString();
-                    mylabel.GetObject("DatumRevize").Text = datePickerRevisionDate.DisplayDate.ToString("dd.MM.yyyy");
-                    mylabel.GetObject("PlatnostRevize").Text = datePickerRevisionValidity.DisplayDate.ToString("dd.MM.yyyy");
-                    mylabel.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
-                    mylabel.PrintOut(Convert.ToInt32(txtNum.Text), bpac.PrintOptionConstants.bpoDefault);
-                    mylabel.EndPrint();
-                    mylabel.Close();
-                    MessageBox.Show("Data was printed !", "Data");
+                    var mylabel = new bpac.Document();
+                    if (mylabel.Open("Template/Label.lbx"))
+                    {
+                        mylabel.GetObject("JmenoPrijmeni").Text = cmbResponsible.SelectedItem.ToString();
+                        mylabel.GetObject("DatumRevize").Text = datePickerRevisionDate.DisplayDate.ToString("dd.MM.yyyy");
+                        mylabel.GetObject("PlatnostRevize").Text = datePickerRevisionValidity.DisplayDate.ToString("dd.MM.yyyy");
+                        mylabel.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
+                        mylabel.PrintOut(Convert.ToInt32(txtNum.Text), bpac.PrintOptionConstants.bpoDefault);
+                        mylabel.EndPrint();
+                        mylabel.Close();
+                        MessageBox.Show("Data was printed !", "Data");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data wasnt printed - file lost !", "Data");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Data wasnt printed - file lost !", "Data");
-                }
+                catch (Exception)
+                    {
+                        throw;
+                    }
             }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        }
+                private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             cmbProject.ItemsSource = ModificationFunc.LoadProjectList();
             cmbResponsible.ItemsSource = LoginFunc.LoadAllUsersList();

@@ -26,14 +26,14 @@
             materialDesign:HintAssist.Hint="Comment"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
-        <Button x:Name="Send_Email_button" BorderBrush="{x:Null}" Margin="0,0,35,10" Height="60" Width="212" Background="#525252" VerticalAlignment="Bottom" materialDesign:ButtonAssist.CornerRadius="10" HorizontalAlignment="Right">
+        <Button x:Name="Send_Email_button" BorderBrush="{x:Null}" Margin="0,0,35,10" Height="60" Width="212" Background="#525252" VerticalAlignment="Bottom" materialDesign:ButtonAssist.CornerRadius="10" HorizontalAlignment="Right" Click="Send_Email_button_Click">
             <StackPanel Width="190" VerticalAlignment="Center" HorizontalAlignment="Left" Height="70" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="EmailBox" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email"  Text="Send Email" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
 
-        <Button x:Name="Inser_image" BorderBrush="{x:Null}" Margin="0,0,260,10" Height="60" Background="#525252" materialDesign:ButtonAssist.CornerRadius="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="220" Click="Send_Mail" Style="{StaticResource MaterialDesignRaisedButton}">
+        <Button x:Name="Inser_image" BorderBrush="{x:Null}" Margin="0,0,260,10" Height="60" Background="#525252" materialDesign:ButtonAssist.CornerRadius="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="220" Click="Insert_Image_Click" Style="{StaticResource MaterialDesignRaisedButton}">
 
             <StackPanel Width="212" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ImageAdd" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>

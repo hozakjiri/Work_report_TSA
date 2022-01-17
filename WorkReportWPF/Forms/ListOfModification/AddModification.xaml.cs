@@ -27,8 +27,17 @@ namespace WorkReportWPF.Forms.ListOfModification
             get { return _numValue; }
             set
             {
-                _numValue = value;
-                txtNum.Text = value.ToString();
+                if (value <= 0)
+                {
+                    _numValue = 0;
+                    txtNum.Text = _numValue.ToString();
+                }
+                else 
+                {
+                    _numValue = value;
+                    txtNum.Text = value.ToString();
+                }
+
             }
         }
 
@@ -45,7 +54,14 @@ namespace WorkReportWPF.Forms.ListOfModification
 
         private void cmdDown_Click(object sender, RoutedEventArgs e)
         {
-            NumValue -= 5;
+            if (_numValue > 0)
+            {
+                NumValue -= 5;
+            }
+            else
+            {
+                NumValue = 0;
+            }
         }
 
         private void txtNum_TextChanged(object sender, TextChangedEventArgs e)
@@ -120,7 +136,7 @@ namespace WorkReportWPF.Forms.ListOfModification
             }
             else if (result == MessageBoxResult.OK)
             {
-                ModificationFunc.SaveModification(ProjectBox.Text, Comment_Text.Text, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtNum.Text, fullpath, datePicker.DisplayDate.ToString("yyyyMMddHHmm"));
+                ModificationFunc.SaveModification(ProjectBox.Text, Comment_Text.Text, ((DateTime)datePicker.SelectedDate).ToString("dd.MM.yyyy"), txtNum.Text, fullpath, ((DateTime)datePicker.SelectedDate).ToString("yyyyMMddHHmm"));
 
                 MessageBox.Show("Data was added !", "Data");
 

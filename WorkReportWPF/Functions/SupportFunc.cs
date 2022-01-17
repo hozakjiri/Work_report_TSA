@@ -48,14 +48,15 @@ namespace WorkReportWPF.Functions
                 oMail.Body = sb.ToString();
                 SmtpClient smtp = new("smtphub.dc.hella.com");
                 smtp.Port = 25;
-                MessageBox.Show("Email send", "Mail");
-                smtp.Send(oMail);
                 
+                smtp.Send(oMail);
+                MessageBox.Show("Email send", "Mail");
             }
-            catch (Exception ex)
+            catch (SmtpException ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("You don't connect to Hella SMTP server: " + ex.Message, "Alert");
             }
+
 
         }
 

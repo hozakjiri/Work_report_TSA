@@ -27,14 +27,14 @@ namespace WorkReportWPF.Forms.ListOfComputers
             }
             else if (result == MessageBoxResult.OK)
             {
-                ListOfComputersFunc.AddComputers(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.DisplayDate.ToString("dd.MM.yyyy"), txtnote.Text, cbisVNC.IsChecked.Value);
+                ListOfComputersFunc.AddComputers(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, ((DateTime)datePicker.SelectedDate).ToString("dd.MM.yyyy"), txtnote.Text, cbisVNC.IsChecked.Value);
 
                 MessageBox.Show("Data was added !", "Data");
 
                 try
                 {
                     var userMail = LoginFunc.LoadUserMailByUserName(Environment.UserName);
-                    var therm = datePicker.DisplayDate;
+                    var therm = (DateTime)datePicker.SelectedDate;
                     ListOfComputersFunc.CreateTask(userMail, DateTime.Now, therm, txtstation.Text + " " + txthostname.Text, "Computer maintenance is required : " + txtstation.Text );
                 }
                 catch (Exception)

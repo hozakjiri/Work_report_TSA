@@ -36,7 +36,7 @@ namespace WorkReportWPF.Forms.ListOfTask
             }
             else if (result == MessageBoxResult.OK)
             {
-                TaskFunc.AddTaskNew(txtTopic.Text, txtDescription.Text, (int)(Enums.StatusEnum)cmbPriority.SelectedItem, OtherFunc.user, cmbUser.SelectedItem.ToString(), datePicker.DisplayDate);
+                TaskFunc.AddTaskNew(txtTopic.Text, txtDescription.Text, (int)(Enums.StatusEnum)cmbPriority.SelectedItem, OtherFunc.user, cmbUser.SelectedItem.ToString(), (DateTime)datePicker.SelectedDate);
 
                 try
                 {
