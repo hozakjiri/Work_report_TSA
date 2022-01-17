@@ -42,7 +42,7 @@ namespace WorkReportWPF.Forms.ListOfTask
                 {
                     var username = cmbUser.SelectedItem.ToString();
                     var userMail = LoginFunc.LoadUserMail(username);
-                    var therm = datePicker.DisplayDate;
+                    var therm = (DateTime)datePicker.SelectedDate;
                     TaskFunc.CreateTask(userMail, DateTime.Now, therm, txtTopic.Text, txtDescription.Text);
                 }
                 catch (Exception)
