@@ -125,7 +125,7 @@
             <Image.ToolTip>
                 <ToolTip DataContext="{Binding PlacementTarget, RelativeSource={RelativeSource Self}}">
                     <Border BorderBrush="Black" BorderThickness="1" Margin="5,7,5,5">
-                        <Image Source="{Binding Source}" Stretch="None" />
+                        <Image Source="{Binding Source}" Stretch="Fill"  MaxHeight="720" MaxWidth="1280"/>
                     </Border>
                 </ToolTip>
             </Image.ToolTip>
