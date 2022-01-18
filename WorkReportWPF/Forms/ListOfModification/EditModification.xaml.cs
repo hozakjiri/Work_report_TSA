@@ -68,8 +68,16 @@ namespace WorkReportWPF.Forms.ListOfModification
             get { return _numValue; }
             set
             {
-                _numValue = value;
-                txtNum.Text = value.ToString();
+                if (value <= 0)
+                {
+                    _numValue = 0;
+                    txtNum.Text = _numValue.ToString();
+                }
+                else
+                {
+                    _numValue = value;
+                    txtNum.Text = value.ToString();
+                }
             }
         }
 
@@ -86,7 +94,14 @@ namespace WorkReportWPF.Forms.ListOfModification
 
         private void cmdDown_Click(object sender, RoutedEventArgs e)
         {
-            NumValue -= 5;
+            if (_numValue > 0)
+            {
+                NumValue -= 5;
+            }
+            else
+            {
+                NumValue = 0;
+            }
         }
 
         public DateTime DisplayDate { get; set; }
