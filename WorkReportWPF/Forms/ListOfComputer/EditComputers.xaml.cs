@@ -60,7 +60,9 @@ namespace WorkReportWPF.Forms.ListOfComputers
                     cmbType.SelectedItem = currentdata.Type;
                 }
 
-                datePicker.SelectedDate = currentdata.Maintenance;
+                //datePicker.SelectedDate = currentdata.Maintenance;
+                datePickerRevisionDate.SelectedDate = currentdata.RevisionDate;
+                datePickerRevisionValidity.SelectedDate = currentdata.RevisionValidity;
 
             }
         }
@@ -75,8 +77,9 @@ namespace WorkReportWPF.Forms.ListOfComputers
             }
             else if (result == MessageBoxResult.OK)
             {
-                ListOfComputersFunc.EditComputers(currentdata.StationID, cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.SelectedDate.Value.ToString("dd.MM.yyyy"), txtnote.Text, cbisVNC.IsChecked.Value);
-
+                //ListOfComputersFunc.EditComputers(currentdata.StationID, cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, datePicker.SelectedDate.Value.ToString("dd.MM.yyyy"), txtnote.Text, cbisVNC.IsChecked.Value);
+                ListOfComputersFunc.EditComputers(currentdata.StationID, cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StationEnum)cmbType.SelectedItem, (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtnote.Text, cbisVNC.IsChecked.Value);
+               
                 MessageBox.Show("Data was modified !", "Data");
 
                 OverviewComputers p = new OverviewComputers();
