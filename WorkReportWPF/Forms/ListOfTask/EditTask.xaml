@@ -46,7 +46,7 @@
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" Height="218" VerticalAlignment="Top" HorizontalAlignment="Left" Width="904"
                  />
-        <Button x:Name="Save_Task_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_button_Click" Cursor="Hand">
+        <Button x:Name="Save_Task_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,176,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_button_Click" Cursor="Hand">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email1"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
@@ -157,6 +157,12 @@
 
 
         </DatePicker>
+        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Task_Click" >
+            <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center" Cursor="Hand"/>
+                <TextBlock x:Name="Send_Email"  Text="Delete" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Page>
