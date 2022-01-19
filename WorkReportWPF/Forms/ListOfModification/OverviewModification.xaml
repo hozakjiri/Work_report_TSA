@@ -9,7 +9,7 @@
       d:DesignHeight="588" d:DesignWidth="1300"
       Title="OverviewModification" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>

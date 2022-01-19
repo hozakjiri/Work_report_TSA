@@ -11,7 +11,7 @@
       d:DesignHeight="628" d:DesignWidth="1300"
       Title="RemoteControl" Loaded="Page_Loaded" Height="628">
 
-    <Grid Height="611">
+    <Grid Height="611" HorizontalAlignment="Center" VerticalAlignment="Top" >
 
         <TextBlock Text="Device" 
             VerticalAlignment="Top" 
@@ -38,9 +38,10 @@
         </Button>
         <TreeView 
         x:Name="stationView" 
-        Margin="0,24,0,64" 
+        Margin="0,24,0,90" 
         Foreground="#383838" 
-        TreeViewItem.Selected="OnItemSelected"/>
+        TreeViewItem.Selected="OnItemSelected"
+            />
 
 
     </Grid>
