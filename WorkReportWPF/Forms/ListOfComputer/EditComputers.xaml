@@ -16,7 +16,7 @@
         materialDesign:TextFieldAssist.UnderlineBrush="#383838"
         x:Name="txtuser" 
         Text="" 
-        Margin="639,115,76,393" 
+        Margin="639,115,76,408" 
         Foreground="#383838" 
         Background="Transparent"
         BorderBrush="#383838"
@@ -28,13 +28,22 @@
         HorizontalContentAlignment="Left"
         materialDesign:HintAssist.Hint="User name account computer"
         materialDesign:HintAssist.Background="White"
-        materialDesign:HintAssist.Foreground="#383838"/>
+        materialDesign:HintAssist.Foreground="#383838" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.844"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.589"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpassvnc" 
             Text="" 
-            Margin="641,337,384,173" 
+            Margin="641,285,384,238" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -52,7 +61,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtstation" 
             Text="" 
-            Margin="57,115,683,393" 
+            Margin="57,115,683,408" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -70,7 +79,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpass" 
             Text="" 
-            Margin="639,219,76,289" 
+            Margin="639,197,76,328" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -88,7 +97,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtdomain" 
             Text="" 
-            Margin="57,337,683,173" 
+            Margin="57,285,683,238" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -104,7 +113,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txthostname" 
             Text="" 
-            Margin="57,219,683,286" 
+            Margin="57,197,683,326" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -119,7 +128,7 @@
             materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbType" 
             HorizontalAlignment="Left"
-            Margin="932,342,0,0" 
+            Margin="932,289,0,0" 
             VerticalAlignment="Top" 
             Width="292" 
             Padding="10"
@@ -130,7 +139,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Hint="Type of station" Height="68"
+            materialDesign:HintAssist.Hint="Type of station" Height="57"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
@@ -139,7 +148,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtnote" 
             Text="" 
-            Margin="57,437,499,28" 
+            Margin="57,367,683,16" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -152,43 +161,6 @@
             materialDesign:HintAssist.Hint="Note"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
-        <DatePicker x:Name="datePicker" 
-            materialDesign:HintAssist.Hint="Maintence" 
-            HorizontalAlignment="Left" Margin="828,437,0,0" 
-            Width="396" 
-            Background="Transparent" 
-            BorderBrush="#383838" 
-            Foreground="#383838"
-            FontSize="20" 
-            FirstDayOfWeek="Monday" 
-            SelectedDateFormat="Long" 
-            Text="Maintence"
-            Cursor="ArrowCD" 
-            Height="68"  
-            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
-            <DatePicker.CalendarStyle>
-                <Style TargetType="{x:Type Calendar}">
-
-
-                    <Style.Resources>
-                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#383838" />
-                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#383838"/>
-
-
-
-
-                    </Style.Resources>
-                    <Style.BasedOn>
-                        <StaticResource ResourceKey="MaterialDesignCalendarPortrait"/>
-                    </Style.BasedOn>
-                </Style>
-            </DatePicker.CalendarStyle>
-
-
-        </DatePicker>
 
         <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,16" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" Cursor="Hand" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
@@ -219,6 +191,78 @@
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="866,45,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#383838" Background="Transparent" Width="375"/>
+        <DatePicker x:Name="datePickerRevisionDate" 
+            materialDesign:HintAssist.Hint="Revision Date" 
+            HorizontalAlignment="Left" Margin="644,367,0,0" 
+            Width="288" 
+            Background="Transparent" 
+            BorderBrush="#383838" 
+            Foreground="#383838"
+            FontSize="20" 
+            FirstDayOfWeek="Monday" 
+            SelectedDateFormat="Long" 
+            Cursor="ArrowCD" 
+            Height="60"  
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:HintAssist.Background="White"
+            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
+            <DatePicker.CalendarStyle>
+                <Style TargetType="{x:Type Calendar}">
+
+
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF292626" />
+                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF292626"/>
+
+
+
+
+                    </Style.Resources>
+                    <Style.BasedOn>
+                        <StaticResource ResourceKey="MaterialDesignCalendarPortrait"/>
+                    </Style.BasedOn>
+                </Style>
+            </DatePicker.CalendarStyle>
+
+
+        </DatePicker>
+        <DatePicker x:Name="datePickerRevisionValidity" 
+            materialDesign:HintAssist.Hint="RevisionValidity" 
+            HorizontalAlignment="Left" Margin="944,367,0,0" 
+            Width="280" 
+            Background="Transparent" 
+            BorderBrush="#383838" 
+            Foreground="#383838"
+            FontSize="20" 
+            FirstDayOfWeek="Monday" 
+            SelectedDateFormat="Long" 
+            Cursor="ArrowCD" 
+            Height="60"  
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:HintAssist.Background="White"
+            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
+            <DatePicker.CalendarStyle>
+                <Style TargetType="{x:Type Calendar}">
+
+
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF292626" />
+                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF292626"/>
+
+
+
+
+                    </Style.Resources>
+                    <Style.BasedOn>
+                        <StaticResource ResourceKey="MaterialDesignCalendarPortrait"/>
+                    </Style.BasedOn>
+                </Style>
+            </DatePicker.CalendarStyle>
+
+
+        </DatePicker>
 
     </Grid>
 </Page>

@@ -16,7 +16,7 @@
         materialDesign:TextFieldAssist.UnderlineBrush="#383838"
         x:Name="txtuser" 
         Text="" 
-        Margin="623,115,92,393" 
+        Margin="623,115,92,408" 
         Foreground="#383838" 
         Background="Transparent"
             BorderBrush="#383838"
@@ -34,7 +34,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpassvnc" 
             Text="" 
-            Margin="625,337,346,173" 
+            Margin="626,281,346,242" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -59,7 +59,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtstation" 
             Text="" 
-            Margin="41,115,699,393" 
+            Margin="41,115,699,408" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -77,7 +77,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpass" 
             Text="" 
-            Margin="623,219,92,289" 
+            Margin="623,197,92,326" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -95,7 +95,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtdomain" 
             Text="" 
-            Margin="41,337,699,173" 
+            Margin="42,281,698,242" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -111,7 +111,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txthostname" 
             Text="" 
-            Margin="41,219,699,286" 
+            Margin="41,197,699,326" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -126,9 +126,9 @@
             materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbType" 
             HorizontalAlignment="Left"
-            Margin="984,342,0,0" 
+            Margin="960,281,0,0" 
             VerticalAlignment="Top" 
-            Width="292" 
+            Width="248" 
             Padding="10"
             Foreground="#383838" 
             BorderBrush="#383838" 
@@ -137,7 +137,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Hint="Type of station" Height="68"
+            materialDesign:HintAssist.Hint="Type of station" Height="65"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" SelectionChanged="cmbType_SelectionChanged"/>
@@ -146,7 +146,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtnote" 
             Text="" 
-            Margin="41,437,515,28" 
+            Margin="42,361,698,16" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -159,19 +159,35 @@
             materialDesign:HintAssist.Hint="Note"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
-        <DatePicker x:Name="datePicker" 
-            materialDesign:HintAssist.Hint="Maintence" 
-            HorizontalAlignment="Left" Margin="812,437,0,0" 
-            Width="472" 
+        <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
+            HorizontalAlignment="Left"
+            Margin="41,27,0,0" 
+            VerticalAlignment="Top" 
+            VerticalContentAlignment="Center"
+            Width="859"
+            Padding="10"
+            Foreground="#383838" 
+            BorderBrush="#383838" 
+            FontSize="20" 
+            Background="Transparent"
+            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:HintAssist.Hint="Project" Height="68"
+            Style="{StaticResource MaterialDesignComboBox}"
+            materialDesign:HintAssist.Background="White"
+            materialDesign:HintAssist.Foreground="#383838"/>
+        <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" Margin="909,36,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFAEA4A4" Background="#FF856262" ClickMode="Press"/>
+        <DatePicker x:Name="datePickerRevisionDate" 
+            materialDesign:HintAssist.Hint="Revision Date" 
+            HorizontalAlignment="Left" Margin="628,361,0,0" 
+            Width="288" 
             Background="Transparent" 
             BorderBrush="#383838" 
             Foreground="#383838"
             FontSize="20" 
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
-            Text="Maintence"
             Cursor="ArrowCD" 
-            Height="61"  
+            Height="60"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Background="White"
@@ -196,23 +212,42 @@
 
 
         </DatePicker>
-        <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
-            HorizontalAlignment="Left"
-            Margin="41,27,0,0" 
-            VerticalAlignment="Top" 
-            VerticalContentAlignment="Center"
-            Width="859"
-            Padding="10"
-            Foreground="#383838" 
+        <DatePicker x:Name="datePickerRevisionValidity" 
+            materialDesign:HintAssist.Hint="RevisionValidity" 
+            HorizontalAlignment="Left" Margin="928,361,0,0" 
+            Width="280" 
+            Background="Transparent" 
             BorderBrush="#383838" 
+            Foreground="#383838"
             FontSize="20" 
-            Background="Transparent"
+            FirstDayOfWeek="Monday" 
+            SelectedDateFormat="Long" 
+            Cursor="ArrowCD" 
+            Height="60"  
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
-            materialDesign:HintAssist.Hint="Project" Height="68"
-            Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
-        <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" Margin="909,36,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFAEA4A4" Background="#FF856262" ClickMode="Press"/>
+            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
+            <DatePicker.CalendarStyle>
+                <Style TargetType="{x:Type Calendar}">
+
+
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF292626" />
+                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF292626"/>
+
+
+
+
+                    </Style.Resources>
+                    <Style.BasedOn>
+                        <StaticResource ResourceKey="MaterialDesignCalendarPortrait"/>
+                    </Style.BasedOn>
+                </Style>
+            </DatePicker.CalendarStyle>
+
+
+        </DatePicker>
 
     </Grid>
 </Page>
