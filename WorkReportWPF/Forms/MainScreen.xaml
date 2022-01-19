@@ -167,7 +167,7 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="625" Margin="0,-16,0,0" PreviewMouseDoubleClick="TaskGrid_PreviewMouseDoubleClick" Height="214" VerticalAlignment="Top">
+            <DataGrid x:Name="TaskGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Width="614" Margin="0,-16,0,0" PreviewMouseDoubleClick="TaskGrid_PreviewMouseDoubleClick" Height="214" VerticalAlignment="Top">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="White"/>
