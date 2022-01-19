@@ -160,7 +160,7 @@ namespace WorkReportWPF.Functions
                     From = new MailAddress("WorkReport@hella.com")
                 };
                 //oMail.To.Add(mailTo);
-                oMail.To.Add("jizi.hozak@hella.com");
+                oMail.To.Add("jiri.hozak@hella.com");
 
                 oMail.IsBodyHtml = true;
 
@@ -179,7 +179,7 @@ namespace WorkReportWPF.Functions
                 //}
 
                 StringBuilder sb = new();
-                sb.AppendLine("<p>Ahojte, </p>");
+                sb.AppendLine("<p>Ahoj, </p>");
                 sb.AppendLine("<br/>");
 
                 StringBuilder sf = new();
