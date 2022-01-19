@@ -131,7 +131,8 @@
             </Image.ToolTip>
         </Image>
         <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="#383838" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
-        <Popup x:Name="InfoPopup" AllowsTransparency="True">
+        <Popup x:Name="InfoPopup" AllowsTransparency="True" Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+   Width="{x:Static SystemParameters.PrimaryScreenWidth}">
             <Border CornerRadius="5" Background="White" BorderBrush="LightGray" BorderThickness="1" Width="200" Height="100" Panel.ZIndex="10">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" Direction="270" ShadowDepth="7" Opacity="0.5" />
