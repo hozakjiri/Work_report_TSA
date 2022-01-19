@@ -121,7 +121,7 @@
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
         <DatePicker x:Name="datePicker" 
-            materialDesign:HintAssist.Hint="Therm" 
+            materialDesign:HintAssist.Hint="Date" 
             HorizontalAlignment="Left" Margin="940,432,0,0" 
             Width="350" 
             Background="Transparent" 

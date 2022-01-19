@@ -246,7 +246,7 @@
             </DataGrid>
 
         </GroupBox>
-        <TextBlock TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Grid.Row="3" Padding="0,0,0,0" Margin="320,5,0,6" HorizontalAlignment="Left" Width="820">
+        <TextBlock TextWrapping="Wrap" Text="" Grid.ColumnSpan="2" Grid.Row="3" Padding="0,0,0,0" HorizontalAlignment="Center" Width="672" VerticalAlignment="Center">
             <StackPanel Width="170" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Clock" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Time_Text"  Text="Time" Width="92" Foreground="#383838" Height="20" VerticalAlignment="Center" FontSize="16"/>
@@ -259,12 +259,12 @@
             
             <StackPanel Width="175" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ViewDay" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Day_Text"  Text="Day" Width="95" Foreground="#383838" Height="23" VerticalAlignment="Center" FontSize="16"/>
+                <TextBlock x:Name="Day_Text"  Text="Day" Width="102" Foreground="#383838" Height="22" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>
             
-            <StackPanel Width="257" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
+            <StackPanel Width="136" VerticalAlignment="Center" HorizontalAlignment="Left" Height="54" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="CalendarWeek" Foreground="#383838" Height="46" Width="58" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Week_Text"  Text="Number of week" Width="180" Foreground="#383838" Height="20" VerticalAlignment="Center" FontSize="16"/>
+                <TextBlock x:Name="Week_Text"  Text="Number of week" Width="56" Foreground="#383838" Height="20" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>   
         
         </TextBlock>

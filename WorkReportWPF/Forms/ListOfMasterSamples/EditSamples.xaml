@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WorkReportWPF.Forms.ListOfMasterSamples.EditSamples"
       mc:Ignorable="d" 
       d:DesignHeight="588" d:DesignWidth="1300"
-      Title="EditSamples" Loaded="Page_Loaded" Background="White">
+      Title="EditSamples" Loaded="Page_Loaded" Background="Transparent">
 
     <Grid>
 
