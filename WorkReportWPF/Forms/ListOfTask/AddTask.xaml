@@ -23,7 +23,7 @@
             Foreground="#383838"
             Background="Transparent" 
             Cursor="IBeam" 
-            FontSize="20"
+            FontSize="18"
             materialDesign:HintAssist.Hint="Topic"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838" SelectionTextBrush="{x:Null}" SelectionBrush="{x:Null}" CaretBrush="{x:Null}" BorderBrush="#383838"
@@ -99,13 +99,13 @@
 
 
         </DatePicker>
-        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,30,47" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Task_Click" >
+        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Task_Click" >
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center" Cursor="Hand"/>
                 <TextBlock x:Name="Send_Email"  Text="Delete" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="Save_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,206,47" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_Click">
+        <Button x:Name="Save_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,176,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_Click">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email1"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>

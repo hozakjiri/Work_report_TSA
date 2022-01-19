@@ -49,7 +49,7 @@
                     </StackPanel>
                 </DataTemplate>
             </GroupBox.HeaderTemplate>
-            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="ModificationGrid_PreviewMouseDoubleClick" Width="633" Margin="0,-17,0,-5">
+            <DataGrid x:Name="ModificationGrid"  AutoGenerateColumns="False" Background="White" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="ModificationGrid_PreviewMouseDoubleClick" Width="633" Margin="0,-19,0,-3">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="White"/>

@@ -49,8 +49,8 @@
             materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <DatePicker x:Name="datePickerRevisionDate" 
             materialDesign:HintAssist.Hint="Revision Date" 
-            HorizontalAlignment="Left" Margin="785,243,0,0" 
-            Width="439" 
+            HorizontalAlignment="Left" Margin="640,214,0,0" 
+            Width="584" 
             Background="Transparent" 
             BorderBrush="#383838" 
             Foreground="#383838"
@@ -58,7 +58,7 @@
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
             Cursor="ArrowCD" 
-            Height="68"  
+            Height="80"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Background="White"
@@ -83,7 +83,7 @@
 
 
         </DatePicker>
-        <Button x:Name="btnEdit" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,214,11" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnEdit_Click" >
+        <Button x:Name="btnEdit" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,176,15" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnEdit_Click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Edit" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Edit" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txtEdit"  Text="Edit" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
@@ -91,8 +91,8 @@
         </Button>
         <DatePicker x:Name="datePickerRevisionValidity" 
             materialDesign:HintAssist.Hint="RevisionValidity" 
-            HorizontalAlignment="Left" Margin="785,345,0,0" 
-            Width="439" 
+            HorizontalAlignment="Left" Margin="640,317,0,0" 
+            Width="584" 
             Background="Transparent" 
             BorderBrush="#383838" 
             Foreground="#383838"
@@ -100,7 +100,7 @@
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
             Cursor="ArrowCD" 
-            Height="68"  
+            Height="80"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             materialDesign:HintAssist.Background="White"
@@ -130,7 +130,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtPlacement" 
             Text="" 
-            Margin="57,237,0,0" 
+            Margin="57,214,0,0" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -145,7 +145,7 @@
             materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="560"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbResponsible" 
             HorizontalAlignment="Left"
-            Margin="57,345,0,0" 
+            Margin="57,321,0,0" 
             VerticalAlignment="Top" 
             Width="560" 
             Padding="10"
@@ -161,7 +161,7 @@
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
 
-        <StackPanel Margin="0,0,593,8" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Right" Width="132" Height="68" VerticalAlignment="Bottom">
+        <StackPanel Margin="676,510,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
             <TextBox x:Name="txtNum"
                      materialDesign:TextFieldAssist.UnderlineBrush="#383838"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -185,13 +185,13 @@
             </StackPanel>
         </StackPanel>
 
-        <Button x:Name="btnPrint" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,405,11" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnPrint_click" >
+        <Button x:Name="btnPrint" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,335,15" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnPrint_click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Printer" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Print" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txtPrint"  Text="Print" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="white"/>
             </StackPanel>
         </Button>
-        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,23,11" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Click" >
+        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,15" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Click" >
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email"  Text="Delete" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
@@ -218,7 +218,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtLabel" 
             Text="" 
-            Margin="785,428,0,0" 
+            Margin="640,417,0,0" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -230,8 +230,8 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Label"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="439"/>
-        <StackPanel Margin="61,430,683,78" Orientation="Horizontal">
+            materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584"/>
+        <StackPanel Margin="61,416,683,92" Orientation="Horizontal">
             <TextBox 
                 Style="{StaticResource MaterialDesignOutlinedTextBox}"
                 materialDesign:TextFieldAssist.UnderlineBrush="#383838"
@@ -252,12 +252,12 @@
                 materialDesign:HintAssist.Foreground="#383838" Height="80" Width="362"/>
             <Button x:Name="btnFolder_Open" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="#525252" Width="86" Click="btnFolder_Open_Click" RenderTransformOrigin="0.5,0.5" Margin="5,0,0,0" >
                 <StackPanel Width="57" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Folder" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Edit" VerticalAlignment="Center"/>
+                    <materialDesign:PackIcon Kind="Folder" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="View Files" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnFolder" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="#525252" Width="86" Click="btnFolder_Click" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,0,0" >
+            <Button x:Name="btnFolder" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="#525252" Width="86" Click="btnFolder_Click" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,0,0,0" Cursor="Hand" >
                 <StackPanel Width="57" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="PlusBoxMultiple" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Edit" VerticalAlignment="Center"/>
+                    <materialDesign:PackIcon Kind="PlusBoxMultiple" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Insert Files" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </StackPanel>

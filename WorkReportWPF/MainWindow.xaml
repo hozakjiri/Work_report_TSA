@@ -272,9 +272,7 @@
                         <!--#region Profile Name, notification & online coleagues-->
                         <StackPanel
                         Orientation="Horizontal"
-                        HorizontalAlignment="Left"
-                        Height="40"
-                        Margin="471,15,0,15" Grid.Column="1">
+                        Margin="471,15,32,15" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
 
                             <!--profile Name & Level-->
                             <Grid

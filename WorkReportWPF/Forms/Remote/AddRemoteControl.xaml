@@ -33,7 +33,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpassvnc" 
             Text="" 
-            Margin="652,455,218,68" 
+            Margin="652,391,65,132" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -43,7 +43,7 @@
             Cursor="IBeam"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:HintAssist.Hint="Password for VNC" Width="430"
+            materialDesign:HintAssist.Hint="Password for VNC"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
 
@@ -66,7 +66,7 @@
                   materialDesign:HintAssist.Foreground="#383838">
 
         </ComboBox>
-        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,30,69" Background="#FF525252" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
+        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,18,17" Background="#FF525252" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162" Cursor="Hand">
 
             <StackPanel Width="135" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Add" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
@@ -96,7 +96,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpass" 
             Text="" 
-            Margin="650,300,65,221" 
+            Margin="650,278,65,243" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -114,7 +114,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtdomain" 
             Text="" 
-            Margin="68,455,672,68" 
+            Margin="68,393,672,130" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -130,7 +130,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txthostname" 
             Text="" 
-            Margin="68,297,672,221" 
+            Margin="68,278,672,240" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"

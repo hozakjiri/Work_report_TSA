@@ -53,5 +53,10 @@ namespace WorkReportWPF.Forms.ListOfComputers
             cmbType.ItemsSource = Enum.GetValues(typeof(Enums.StationEnum));
             cmbProject.ItemsSource = ModificationFunc.LoadProjectList();
         }
+
+        private void cmbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

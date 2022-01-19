@@ -108,13 +108,13 @@
             </StackPanel>
         </StackPanel>
 
-        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,36,47" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click" Grid.Column="1">
+        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="Attachments_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,201,47" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click" Grid.Column="1">
+        <Button x:Name="Attachments_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,175,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click">
             <StackPanel Width="134" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PhotoAlbum" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>

@@ -34,7 +34,7 @@
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
             x:Name="txtpassvnc" 
             Text="" 
-            Margin="625,337,400,173" 
+            Margin="625,337,346,173" 
             Foreground="#383838" 
             Background="Transparent"
             BorderBrush="#383838"
@@ -47,7 +47,7 @@
             materialDesign:HintAssist.Hint="Password for VNC"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
-        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,8,10" Background="#525252" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162">
+        <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,16,16" Background="#525252" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="60" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Cursor="Hand">
 
             <StackPanel Width="135" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Add" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Insert Image" HorizontalAlignment="Left" Margin="10,0,0,0"/>
@@ -126,7 +126,7 @@
             materialDesign:HintAssist.Foreground="#383838"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbType" 
             HorizontalAlignment="Left"
-            Margin="916,342,0,0" 
+            Margin="984,342,0,0" 
             VerticalAlignment="Top" 
             Width="292" 
             Padding="10"
@@ -140,7 +140,7 @@
             materialDesign:HintAssist.Hint="Type of station" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="#383838" SelectionChanged="cmbType_SelectionChanged"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"
@@ -162,7 +162,7 @@
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Maintence" 
             HorizontalAlignment="Left" Margin="812,437,0,0" 
-            Width="453" 
+            Width="472" 
             Background="Transparent" 
             BorderBrush="#383838" 
             Foreground="#383838"
@@ -201,7 +201,7 @@
             Margin="41,27,0,0" 
             VerticalAlignment="Top" 
             VerticalContentAlignment="Center"
-            Width="734"
+            Width="859"
             Padding="10"
             Foreground="#383838" 
             BorderBrush="#383838" 
@@ -212,7 +212,7 @@
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
-        <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" Margin="841,36,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFAEA4A4" Background="#FF856262" ClickMode="Press"/>
+        <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" Margin="909,36,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFAEA4A4" Background="#FF856262" ClickMode="Press"/>
 
     </Grid>
 </Page>
