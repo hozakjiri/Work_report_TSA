@@ -89,5 +89,11 @@ namespace WorkReportWPF.Forms.ListOfTask
 
             }
         }
+
+        private void Delete_Task_Click(object sender, RoutedEventArgs e)
+        {
+            OverviewTask p = new OverviewTask();
+            this.NavigationService.Navigate(p);
+        }
     }
 }
