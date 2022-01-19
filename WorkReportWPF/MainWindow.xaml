@@ -172,12 +172,12 @@
                             Content="{StaticResource minimize_icon}"
                             Click="minimizeButton_Click"
                             />
-                        <Button
+                        <!--<Button
                             x:Name="maximizeButton"
                             FontSize="12"
                             Style="{StaticResource MaximizeButtonStyle}"
                             Content="{StaticResource maximize_icon}"
-                            Click="maximizeButton_Click"/>
+                            Click="maximizeButton_Click"/>-->
                         <Button
                             x:Name="closeButton"
                             FontSize="12"
