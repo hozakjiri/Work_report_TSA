@@ -108,7 +108,14 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Maintenance" Binding="{Binding Path=Maintenance, StringFormat=d}"  Width="120">
+                <DataGridTextColumn Header="Revision Date" Binding="{Binding RevisionDate, StringFormat=d}" Width="150">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Revision Validity" Binding="{Binding RevisionValidity, StringFormat=d}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>

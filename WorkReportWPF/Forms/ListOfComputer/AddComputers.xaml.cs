@@ -28,7 +28,7 @@ namespace WorkReportWPF.Forms.ListOfComputers
             else if (result == MessageBoxResult.OK)
             {
                 //ListOfComputersFunc.AddComputers(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StatusEnum)cmbType.SelectedItem, ((DateTime)datePicker.SelectedDate).ToString("dd.MM.yyyy"), txtnote.Text, cbisVNC.IsChecked.Value);
-                ListOfComputersFunc.AddComputers(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StationEnum)cmbType.SelectedItem, (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtnote.Text, cbisVNC.IsChecked.Value);
+                ListOfComputersFunc.AddComputers(cmbProject.Text, txtstation.Text, txthostname.Text, txtdomain.Text, txtuser.Text, txtpass.Text, txtpassvnc.Text, (int)(Enums.StationEnum)cmbType.SelectedItem, txtnote.Text, cbisVNC.IsChecked.Value, ((DateTime)datePickerRevisionDate.SelectedDate).ToString("dd.MM.yyyy"), ((DateTime)datePickerRevisionValidity.SelectedDate).ToString("dd.MM.yyyy"));
 
                 MessageBox.Show("Data was added !", "Data");
 

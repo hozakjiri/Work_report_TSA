@@ -62,7 +62,8 @@ namespace WorkReportWPF.Functions
                     Password = pass,
                     PasswordVnc = passvnc,
                     Type = Enums.StationEnum.BlackBox,
-                    Maintence = "",
+                    RevisionDate = DateTime.Now.ToString("dd.MM.yyyy"),
+                    RevisionValidity = DateTime.Now.ToString("dd.MM.yyyy"),
                     Note = "",
                     isVNC = true
                 };

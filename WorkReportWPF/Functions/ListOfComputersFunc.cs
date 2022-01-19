@@ -26,7 +26,8 @@ namespace WorkReportWPF.Functions
                 Password = x.Password,
                 PasswordVnc = x.PasswordVnc,
                 Type = x.Type,
-                Maintenance = OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") != null ? OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") : DateTime.MinValue,
+                RevisionDate = OtherFunc.ToDate(x.RevisionDate, "dd.MM.yyyy") != null ? OtherFunc.ToDate(x.RevisionDate, "dd.MM.yyyy") : DateTime.MinValue,
+                RevisionValidity = OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy") != null ? OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy") : DateTime.MinValue,
                 Note = x.Note,
                 isVNC = x.isVNC
             }).ToList();
@@ -34,7 +35,7 @@ namespace WorkReportWPF.Functions
             return modificationData;
         }
 
-        public static void AddComputers(string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note, bool isvnc)
+        public static void AddComputers(string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string note, bool isvnc, string revisiondate, string revisionvalidity)
         {
 
             try
@@ -51,7 +52,8 @@ namespace WorkReportWPF.Functions
                     Password = pass,
                     PasswordVnc = passvnc,
                     Type = (type >= 0 && type <= 1) ? (StationEnum)type : 0,
-                    Maintence = maintenance,
+                    RevisionDate = revisiondate,
+                    RevisionValidity = revisionvalidity,
                     Note = note,
                     isVNC = isvnc
                 };
@@ -65,7 +67,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void EditComputers(int ID, string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string maintenance, string note, bool isvnc)
+        public static void EditComputers(int ID, string line, string name, string hostname, string domain, string user, string pass, string passvnc, int type, string note, bool isvnc, string revisiondate, string revisionvalidity)
         {
 
             try
@@ -81,7 +83,8 @@ namespace WorkReportWPF.Functions
                     Password = pass,
                     PasswordVnc = passvnc,
                     Type = (type >= 0 && type <= 1) ? (StationEnum)type : 0,
-                    Maintence = maintenance,
+                    RevisionDate = revisiondate,
+                    RevisionValidity = revisionvalidity,
                     Note = note,
                     isVNC = isvnc
                 };

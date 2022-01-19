@@ -23,7 +23,9 @@ namespace WorkReportWPF.Models
 
         public StationEnum Type { get; set; }
 
-        public DateTime? Maintenance { get; set; }
+        public DateTime? RevisionDate { get; set; }
+ 
+        public DateTime? RevisionValidity { get; set; }
 
         public string Document { get; set; }
 

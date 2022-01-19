@@ -57,7 +57,7 @@ namespace WorkReportWPF.Functions
                 Project = x.Line,
                 Name = x.Name,
                 Responsible = "Team",
-                RevisionDate = x.Maintence != null ? (DateTime)OtherFunc.ToDate(x.Maintence, "dd.MM.yyyy") : DateTime.MinValue,
+                RevisionDate = x.RevisionValidity != null ? (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy") : DateTime.MinValue,
                 Type = "Machine",
             }).ToList();
 
