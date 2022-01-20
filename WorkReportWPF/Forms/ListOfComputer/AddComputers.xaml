@@ -154,7 +154,7 @@
             AcceptsReturn="True" 
             FontSize="26" 
             Cursor="IBeam"
-            VerticalContentAlignment="Center"
+            VerticalContentAlignment="Top"
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Note"
             materialDesign:HintAssist.Background="White"
@@ -175,7 +175,7 @@
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="#383838"/>
-        <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" Margin="909,36,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFAEA4A4" Background="#FF856262" ClickMode="Press"/>
+        <CheckBox x:Name="cbisVNC" Content="VNC Remote Desktop" HorizontalAlignment="Left" Margin="909,36,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#383838" Background="#383838" ClickMode="Press"/>
         <DatePicker x:Name="datePickerRevisionDate" 
             materialDesign:HintAssist.Hint="Revision Date" 
             HorizontalAlignment="Left" Margin="628,361,0,0" 
