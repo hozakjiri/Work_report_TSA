@@ -142,7 +142,7 @@
             materialDesign:HintAssist.Hint="Type of station" Height="57"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="#383838" SelectionChanged="cmbType_SelectionChanged"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             materialDesign:TextFieldAssist.UnderlineBrush="#383838"

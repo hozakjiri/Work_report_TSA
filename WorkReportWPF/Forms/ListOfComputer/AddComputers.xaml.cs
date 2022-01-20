@@ -21,7 +21,7 @@ namespace WorkReportWPF.Forms.ListOfComputers
         {
             MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
 
-            if (txtdomain.Text == "" || txthostname.Text == "" || txtnote.Text == "" || txtpass.Text == "" || txtpassvnc.Text == "" || txtstation.Text == "" || txtuser.Text == "")
+            if (txtdomain.Text == "" || txthostname.Text == "" || txtnote.Text == "" || txtpass.Text == "" || txtpassvnc.Text == "" || txtstation.Text == "" || txtuser.Text == "" || cmbType.SelectedItem == null || cmbProject.SelectedItem == null)
             {
                 MessageBox.Show("Please, fill all data", "Data");
             }
