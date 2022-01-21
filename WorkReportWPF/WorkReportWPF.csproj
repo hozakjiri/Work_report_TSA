@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net5.0-windows10.0.22000.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <StartupObject></StartupObject>
     <ApplicationIcon>WorkReport.ico</ApplicationIcon>
@@ -42,7 +42,7 @@
 
   <ItemGroup>
     <PackageReference Include="FolderBrowserForWPF" Version="1.2.0" />
-    <PackageReference Include="MaterialDesignColors" Version="2.0.3" />
+    <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
