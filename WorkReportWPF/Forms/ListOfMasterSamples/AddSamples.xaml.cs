@@ -113,30 +113,30 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             {
                 MessageBox.Show("Please fill all data", "Alert");
             }
-
+        }
 
 
         private void btnFolder_Open_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                try
-                {
-                    var path = txtFolder.Text;
+                var path = txtFolder.Text;
 
-                    if (!Directory.Exists(path) && path == "")
-                        path = "C:\\";
+                if (!Directory.Exists(path) && path == "")
+                    path = "C:\\";
 
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
-                    {
-                        FileName = path,
-                        UseShellExecute = true,
-                        Verb = "open"
-                    });
-                }
-                catch (Exception ex)
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
                 {
-                    Console.WriteLine(ex.Message);
-                }
+                    FileName = path,
+                    UseShellExecute = true,
+                    Verb = "open"
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }
 }
+
