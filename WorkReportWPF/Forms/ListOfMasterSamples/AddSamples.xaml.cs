@@ -56,27 +56,35 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void btnFolder_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbProject.Text))
+            if (!string.IsNullOrEmpty(cmbProject.Text) && !string.IsNullOrEmpty(txtName.Text))
             {
+                var name = OtherFunc.getReplaceString(txtName.Text, "/", "-", "\\", ".");
+
+                var project = OtherFunc.getReplaceString(cmbProject.Text, "/", "-", "\\", ".");
+
                 if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples"))
                 {
                     Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples");
                 }
 
-                if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text))
+                if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples/" + project))
                 {
-                    Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text);
+                    Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples/" + project);
                 }
 
                 if (!string.IsNullOrEmpty(txtName.Text))
                 {
-                    if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text))
+                    if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Samples/" + project + "/" + name))
                     {
-                        Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text);
+                        Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Samples/" + project + "/" + name);
                     }
                 }
 
-                txtFolder.Text = Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text + "/";
+
+
+
+
+                txtFolder.Text = Directory.GetCurrentDirectory() + "/Samples/" + project + "/" + name + "/";
 
                 Microsoft.Win32.OpenFileDialog openFileDlg = new Microsoft.Win32.OpenFileDialog();
                 openFileDlg.Multiselect = true;
@@ -93,37 +101,41 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                         string[] filename = item.Split("\\");
                         if (filename.Length > 0)
                         {
-                            File.Copy(item, Directory.GetCurrentDirectory() + "/Samples/" + cmbProject.Text + "/" + txtName.Text + "/" + filename[filename.Length - 1], true);
+                            File.Copy(item, Directory.GetCurrentDirectory() + "/Samples/" + project + "/" + name + "/" + filename[filename.Length - 1], true);
                         }
-                        
+
                     }
-                    
+
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Please fill all data", "Alert");
+            }
 
-        }
 
 
         private void btnFolder_Open_Click(object sender, RoutedEventArgs e)
-        {
-            try
             {
-                var path = txtFolder.Text;
-
-                if (!Directory.Exists(path) && path == "")
-                    path = "C:\\";
-
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                try
                 {
-                    FileName = path,
-                    UseShellExecute = true,
-                    Verb = "open"
-                });
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                    var path = txtFolder.Text;
+
+                    if (!Directory.Exists(path) && path == "")
+                        path = "C:\\";
+
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                    {
+                        FileName = path,
+                        UseShellExecute = true,
+                        Verb = "open"
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
     }
