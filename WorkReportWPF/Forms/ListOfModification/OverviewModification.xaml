@@ -10,6 +10,10 @@
       Title="OverviewModification" Loaded="Page_Loaded">
 
     <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="56*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -19,9 +23,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dataGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="#383838" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="dataGrid_PreviewMouseDoubleClick" VerticalScrollBarVisibility="Auto">
+        <DataGrid x:Name="dataGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="#383838" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" PreviewMouseDoubleClick="dataGrid_PreviewMouseDoubleClick" VerticalScrollBarVisibility="Auto" Margin="0,0,0,-766" Grid.RowSpan="6" Grid.ColumnSpan="2">
             <DataGrid.Resources>
-                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="FontWeight" Value="SemiBold"/>
                     <Setter Property="FontSize" Value="20"/>
@@ -36,20 +40,20 @@
                             <Setter Property="Background" Value="#383838" />
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="BorderBrush" Value="#383838"/>
-                          
-                            
+
+
                         </Trigger>
                         <Trigger Property="DataGridCell.IsSelected" Value="False">
                             <Setter Property="Background" Value="Transparent" />
                         </Trigger>
 
 
-                     
+
 
                     </Style.Triggers>
                 </Style>
             </DataGrid.Resources>
-            
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="id" Binding="{Binding Path=id}" Width="0">
                     <DataGridTextColumn.ElementStyle>
