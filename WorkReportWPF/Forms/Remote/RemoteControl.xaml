@@ -11,7 +11,7 @@
       d:DesignHeight="628" d:DesignWidth="1300"
       Title="RemoteControl" Loaded="Page_Loaded" Height="628">
 
-    <Grid Height="611" HorizontalAlignment="Center" VerticalAlignment="Top" >
+    <Grid Height="611" HorizontalAlignment="Center" VerticalAlignment="Top">
 
         <TextBlock Text="Device" 
             VerticalAlignment="Top" 
