@@ -74,6 +74,8 @@ namespace WorkReportWPF.Forms.Remote
                 // Handle expanding
                 subItem.Expanded += HostName_Expanded;
 
+                subItem.ToolTip = currentLine;
+
                 // Add this item to the parent
                 item.Items.Add(subItem);
             });
@@ -88,7 +90,7 @@ namespace WorkReportWPF.Forms.Remote
 
             // Get full path
             var currentName = (string)item.Tag;
-
+            var lineName = (string)item.ToolTip;
             var hostname = new List<string>();
 
             // Try and get files from the folder
@@ -98,7 +100,7 @@ namespace WorkReportWPF.Forms.Remote
                 List<Station> ListStations = new List<Station>();
                 ListStations = VncFunc.GetAllStations();
 
-                var nodeStation = ListStations.Where(a => a.Name.Contains((string)item.Tag)).Select(a => new { HostName = (string)a.HostName }).ToList();
+                var nodeStation = ListStations.Where(a => a.Name.Contains((string)item.Tag) && a.Line.Contains(lineName)).Select(a => new { HostName = (string)a.HostName }).ToList();
 
                 foreach (string name in nodeStation.Select(a => a.HostName))
                 {
