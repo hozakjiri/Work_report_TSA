@@ -38,7 +38,7 @@
             Background="White" Grid.ColumnSpan="2">
 
                     <StackPanel>
-                        <Image Source="/Forvia_Logo_Blanc.png" HorizontalAlignment="Center" Height="75" Width="75"  />
+                        <Image Source="/Forvia_Logo_Blanc.png" HorizontalAlignment="Center" Height="70" Width="70"  />
                     </StackPanel>
                     <!--<Path
                 Fill="Black"
