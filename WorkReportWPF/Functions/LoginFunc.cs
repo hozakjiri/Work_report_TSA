@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using WorkReportWPF.Enums;
 using WorkReportWPF.Models;
 
@@ -221,12 +222,19 @@ namespace WorkReportWPF.Functions
         public static bool CheckPremisions(string UserLogin)
         {
             using DbSettingsContext context = new();
-            var newLogi = context.Logins.ToList();
-            //Login newLogins = context.Logins.Single(x => x.UserLogin == UserLogin);
 
-            var newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).ToList();
+            try
+            {
+                //Login newLogins = context.Logins.Single(x => x.UserLogin == UserLogin);
+                var newLogin = context.Logins.Where(x => x.UserLogin == UserLogin).ToList();
+                return newLogin.Count > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
 
-            return newLogin.Count > 0;
         }
 
         public static int IntFromLevel(LevelEnum level)
