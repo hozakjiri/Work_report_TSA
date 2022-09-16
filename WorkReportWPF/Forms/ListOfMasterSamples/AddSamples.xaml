@@ -13,13 +13,13 @@
 
         <TextBox 
         Style="{StaticResource MaterialDesignOutlinedTextBox}"
-        materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+        materialDesign:TextFieldAssist.UnderlineBrush="Black"
         x:Name="txtDescription" 
         Text="" 
         Margin="639,115,76,393" 
-        Foreground="#383838" 
+        Foreground="Black" 
         Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
         TextWrapping="Wrap"
         AcceptsReturn="True" 
         FontSize="26" 
@@ -28,16 +28,16 @@
         HorizontalContentAlignment="Left"
         materialDesign:HintAssist.Hint="Description"
         materialDesign:HintAssist.Background="White"
-        materialDesign:HintAssist.Foreground="#383838"/>
+        materialDesign:HintAssist.Foreground="Black"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtName" 
             Text="" 
             Margin="57,115,683,393" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -46,23 +46,23 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Name of sample" Width="560"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <DatePicker x:Name="datePickerRevisionDate" 
             materialDesign:HintAssist.Hint="Revision Date" 
             HorizontalAlignment="Left" Margin="639,218,0,0" 
             Width="585" 
             Background="Transparent" 
-            BorderBrush="#383838" 
-            Foreground="#383838"
+            BorderBrush="Black" 
+            Foreground="Black"
             FontSize="20" 
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
             Cursor="ArrowCD" 
             Height="80"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
+            materialDesign:HintAssist.Foreground="Black" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
 
@@ -83,7 +83,7 @@
 
 
         </DatePicker>
-        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,18" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" Cursor="Hand" >
+        <Button x:Name="btnSave" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,18" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnSave_Click" Cursor="Hand" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Save" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txtSend"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
@@ -94,17 +94,17 @@
             HorizontalAlignment="Left" Margin="639,312,0,0" 
             Width="585" 
             Background="Transparent" 
-            BorderBrush="#383838" 
-            Foreground="#383838"
+            BorderBrush="Black" 
+            Foreground="Black"
             FontSize="20" 
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
             Cursor="ArrowCD" 
             Height="80"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
+            materialDesign:HintAssist.Foreground="Black" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
 
@@ -127,13 +127,13 @@
         </DatePicker>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtPlacement" 
             Text="" 
             Margin="57,216,683,292" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -142,24 +142,24 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Placement"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbResponsible" 
             HorizontalAlignment="Left"
             Margin="57,316,0,0" 
             VerticalAlignment="Top" 
             Width="560" 
             Padding="10"
-            Foreground="#383838" 
-            BorderBrush="#383838" 
+            Foreground="Black" 
+            BorderBrush="Black" 
             FontSize="26" 
             Background="Transparent"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Hint="Responsible" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
             HorizontalAlignment="Left"
             Margin="57,25,0,0" 
@@ -167,24 +167,24 @@
             VerticalContentAlignment="Center"
             Width="1167"
             Padding="10"
-            Foreground="#383838" 
-            BorderBrush="#383838" 
+            Foreground="Black" 
+            BorderBrush="Black" 
             FontSize="20" 
             Background="Transparent"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Hint="Project" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtLabel" 
             Text="" 
             Margin="639,408,0,0" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -193,17 +193,17 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Label"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="585"/>
+            materialDesign:HintAssist.Foreground="Black" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="585"/>
         <StackPanel Margin="61,406,683,102" Orientation="Horizontal">
             <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtFolder" 
             Text="" 
             IsReadOnly="true"
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="15" 
@@ -212,13 +212,13 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Folder"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="80" Width="362"/>
-            <Button x:Name="btnFolder_Opens" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="#525252" Width="86" Click="btnFolder_Open_Click" RenderTransformOrigin="0.5,0.5" Margin="5,0,0,0" >
+            materialDesign:HintAssist.Foreground="Black" Height="80" Width="362"/>
+            <Button x:Name="btnFolder_Opens" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="Black" Width="86" Click="btnFolder_Open_Click" RenderTransformOrigin="0.5,0.5" Margin="5,0,0,0" >
                 <StackPanel Width="57" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Folder" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="View Files" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button x:Name="btnFolder" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="#525252" Width="86" Click="btnFolder_Click" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Margin="5,0,0,0" materialDesign:HintAssist.Hint="Insert Files" Cursor="Hand">
+            <Button x:Name="btnFolder" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="Black" Width="86" Click="btnFolder_Click" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Margin="5,0,0,0" materialDesign:HintAssist.Hint="Insert Files" Cursor="Hand">
                 <StackPanel Width="57" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="PlusBoxMultiple" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Insert Files" VerticalAlignment="Center"/>
                 </StackPanel>

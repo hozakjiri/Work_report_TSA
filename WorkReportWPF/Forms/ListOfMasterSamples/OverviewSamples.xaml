@@ -9,7 +9,7 @@
       Title="OverviewSamples" Loaded="Page_Loaded">
 
     <Grid>
-        <DataGrid x:Name="samplesGrid" AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="#383838" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" PreviewMouseDoubleClick="samplesGrid_PreviewMouseDoubleClick" LoadingRow="samplesGrid_LoadingRow" HorizontalAlignment="Center" Width="1280" Height="568" VerticalAlignment="Center" VerticalScrollBarVisibility="Auto">
+        <DataGrid x:Name="samplesGrid" AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="#FF47505D"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" PreviewMouseDoubleClick="samplesGrid_PreviewMouseDoubleClick" LoadingRow="samplesGrid_LoadingRow" HorizontalAlignment="Center" Width="1280" Height="568" VerticalAlignment="Center" VerticalScrollBarVisibility="Auto">
             
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -18,16 +18,16 @@
                     <Setter Property="FontSize" Value="20"/>
                     <Setter Property="BorderThickness" Value="0,0,1,2"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="#383838"/>
+                    <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                 </Style>
 
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#383838" />
+                            <Setter Property="Background" Value="Black" />
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderBrush" Value="#383838"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
 
 
                         </Trigger>

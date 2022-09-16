@@ -14,20 +14,20 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name ="Comment_Text"
                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                 materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+                 materialDesign:TextFieldAssist.UnderlineBrush="Black"
                  TextWrapping="Wrap" 
                  Text="" 
                  Margin="16,135,399,93" 
                  RenderTransformOrigin="0.519,0.505" 
                  AcceptsReturn="True" 
-                 Foreground="#383838" 
+                 Foreground="Black" 
                  Background="Transparent" 
-                 BorderBrush="#383838"
+                 BorderBrush="Black"
                  Cursor="IBeam" 
                  FontSize="20"
                  materialDesign:HintAssist.Hint="Comment" Grid.ColumnSpan="2"
                  materialDesign:HintAssist.Background="White"
-                 materialDesign:HintAssist.Foreground="#383838"
+                 materialDesign:HintAssist.Foreground="Black"
                  >
         </TextBox>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="ProjectBox" 
@@ -37,15 +37,15 @@
                   VerticalContentAlignment="Center"
                   Width="748"
                   Padding="10"
-                  Foreground="#383838" 
-                  BorderBrush="#383838" 
+                  Foreground="Black" 
+                  BorderBrush="Black" 
                   FontSize="20" 
                   Background="Transparent"
-                  materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+                  materialDesign:TextFieldAssist.UnderlineBrush="Black"
                   materialDesign:HintAssist.Hint="Project" Height="68"
                   Style="{StaticResource MaterialDesignComboBox}"
                   materialDesign:HintAssist.Background="White"
-                  materialDesign:HintAssist.Foreground="#383838"/>
+                  materialDesign:HintAssist.Foreground="Black"/>
 
         <DatePicker x:Name="datePicker" 
                     materialDesign:HintAssist.Hint="Date" 
@@ -53,8 +53,8 @@
                     VerticalAlignment="Top" 
                     Width="317" 
                     Background="Transparent" 
-                    BorderBrush="#383838" 
-                    Foreground="#383838"
+                    BorderBrush="Black" 
+                    Foreground="Black"
                     FontSize="20" 
                     FirstDayOfWeek="Monday" 
                     SelectedDateFormat="Long" 
@@ -62,9 +62,9 @@
                     Cursor="ArrowCD" 
                     Height="68"  
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+                    materialDesign:TextFieldAssist.UnderlineBrush="Black"
                     materialDesign:HintAssist.Background="White"
-                    materialDesign:HintAssist.Foreground="#383838">
+                    materialDesign:HintAssist.Foreground="Black">
             <DatePicker.CalendarStyle>
                 <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
 
@@ -86,35 +86,35 @@
 
         <StackPanel Margin="769,38,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
             <TextBox x:Name="txtNum"
-                     materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+                     materialDesign:TextFieldAssist.UnderlineBrush="Black"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
                      x:FieldModifier="private" 
                      Text="" 
                      TextChanged="txtNum_TextChanged" 
                      Margin="3,0,0,0" 
-                     Foreground="#383838" 
+                     Foreground="Black" 
                      Background="Transparent"
-                     BorderBrush="#383838"
+                     BorderBrush="Black"
                      Width="103" Height="56" 
                      VerticalAlignment="Center" 
                      TextAlignment="Center" 
                      FontSize="16" 
                      materialDesign:HintAssist.Hint="Time"
                      materialDesign:HintAssist.Background="White"
-                     materialDesign:HintAssist.Foreground="#383838"/>
+                     materialDesign:HintAssist.Foreground="Black"/>
             <StackPanel Orientation="Vertical" Width="24" Height="56" HorizontalAlignment="Center">
-                <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="#525252" Foreground="White" BorderBrush="#525252" VerticalAlignment="Top" Margin="0,0,0,1" />
-                <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="17" Click="cmdDown_Click" Height="26" HorizontalAlignment="Center" Background="#525252" Foreground="White" BorderBrush="#525252" Margin="0,1,0,0"/>
+                <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="Black" Foreground="White" BorderBrush="Black" VerticalAlignment="Top" Margin="0,0,0,1" />
+                <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="17" Click="cmdDown_Click" Height="26" HorizontalAlignment="Center" Background="Black" Foreground="White" BorderBrush="Black" Margin="0,1,0,0"/>
             </StackPanel>
         </StackPanel>
 
-        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">
+        <Button x:Name="Save_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,17" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Modification_click">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email"  Text="Save" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
-        <Button x:Name="Attachments_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,175,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click">
+        <Button x:Name="Attachments_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,175,17" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Attachments_button_Click">
             <StackPanel Width="134" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PhotoAlbum" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.603" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email1"  Text="Image" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
@@ -130,7 +130,7 @@
                 </ToolTip>
             </Image.ToolTip>
         </Image>
-        <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="#383838" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+        <TextBlock Name="TextPathImage"  TextWrapping="Wrap" Margin="16,0,370,14" Foreground="Black" Background="Transparent" FontSize="15" Height="63" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
         <Popup x:Name="InfoPopup" AllowsTransparency="True" Height="{x:Static SystemParameters.PrimaryScreenHeight}"
    Width="{x:Static SystemParameters.PrimaryScreenWidth}">
             <Border CornerRadius="5" Background="White" BorderBrush="LightGray" BorderThickness="1" Width="200" Height="100" Panel.ZIndex="10">

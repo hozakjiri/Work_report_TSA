@@ -11,7 +11,7 @@
     <Grid Background="Transparent">
 
 
-        <DataGrid x:Name="sendGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="#383838" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Margin="0,0,0,63" VerticalScrollBarVisibility="Auto">
+        <DataGrid x:Name="sendGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow" HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Margin="0,0,0,63" VerticalScrollBarVisibility="Auto">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
@@ -19,15 +19,15 @@
                     <Setter Property="FontSize" Value="20"/>
                     <Setter Property="BorderThickness" Value="0,0,1,2"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="#383838"/>
+                    <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                 </Style>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#383838" />
+                            <Setter Property="Background" Value="Black" />
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderBrush" Value="#383838"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
 
                         </Trigger>
                         <Trigger Property="DataGridCell.IsSelected" Value="False">
@@ -101,7 +101,7 @@
 
         </DataGrid>
 
-        <Button x:Name="Send_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Send_Modification_click" Cursor="Hand">
+        <Button x:Name="Send_Modification_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,17" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Send_Modification_click" Cursor="Hand">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="EmailSend" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email"  Text="Send" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>

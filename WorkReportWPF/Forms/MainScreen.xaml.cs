@@ -64,11 +64,11 @@ namespace WorkReportWPF
 
             try
             {
-                TaskGrid.ItemsSource = TaskFunc.LoadTaskTableTOP();
-                TaskGrid.Columns[0].Visibility = Visibility.Hidden;
+                //TaskGrid.ItemsSource = TaskFunc.LoadTaskTableTOP();
+                //TaskGrid.Columns[0].Visibility = Visibility.Hidden;
 
-                ModificationGrid.ItemsSource = ModificationFunc.LoadModificationTableTOP();
-                ModificationGrid.Columns[0].Visibility = Visibility.Hidden;
+                //ModificationGrid.ItemsSource = ModificationFunc.LoadModificationTableTOP();
+                //ModificationGrid.Columns[0].Visibility = Visibility.Hidden;
 
                 SamplesGrid.ItemsSource = SamplesFunc.LoadSamplesTableWithComputers();
                 SamplesGrid.Columns[0].Visibility = Visibility.Hidden;
@@ -83,22 +83,22 @@ namespace WorkReportWPF
 
         private void ModificationGrid_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if (ModificationGrid.SelectedItems.Count > 0)
-            {
-                TableModificationView data = (TableModificationView)ModificationGrid.SelectedItems[0];
-                EditModification p = new EditModification(data);
-                this.NavigationService.Navigate(p);
-            }
+            //if (ModificationGrid.SelectedItems.Count > 0)
+            //{
+            //    TableModificationView data = (TableModificationView)ModificationGrid.SelectedItems[0];
+            //    EditModification p = new EditModification(data);
+            //    this.NavigationService.Navigate(p);
+            //}
         }
 
         private void TaskGrid_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if (TaskGrid.SelectedItems.Count > 0)
-            {
-                TableTaskView data = (TableTaskView)TaskGrid.SelectedItems[0];
-                EditTask p = new EditTask(data);
-                this.NavigationService.Navigate(p);
-            }
+            //if (TaskGrid.SelectedItems.Count > 0)
+            //{
+            //    TableTaskView data = (TableTaskView)TaskGrid.SelectedItems[0];
+            //    EditTask p = new EditTask(data);
+            //    this.NavigationService.Navigate(p);
+            //}
         }
     }
 }

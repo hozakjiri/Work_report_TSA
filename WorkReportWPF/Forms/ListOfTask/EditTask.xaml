@@ -22,16 +22,16 @@
             AcceptsReturn="True" 
             Foreground="Black" 
             Background="Transparent" 
-                 BorderBrush="#383838"
+                 BorderBrush="Black"
             Cursor="IBeam" 
             FontSize="20"
             materialDesign:HintAssist.Hint="Topic"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="58" VerticalAlignment="Top" HorizontalAlignment="Left" Width="904"
+            materialDesign:HintAssist.Foreground="Black" Height="58" VerticalAlignment="Top" HorizontalAlignment="Left" Width="904"
                  />
         <TextBox x:Name ="txtDescription"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             TextWrapping="Wrap" 
             Text="" 
             Margin="21,115,0,0" 
@@ -39,14 +39,14 @@
             AcceptsReturn="True" 
             Foreground="Black" 
             Background="Transparent" 
-                 BorderBrush="#383838"
+                 BorderBrush="Black"
             Cursor="IBeam" 
             FontSize="20"
             materialDesign:HintAssist.Hint="Description"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="218" VerticalAlignment="Top" HorizontalAlignment="Left" Width="904"
+            materialDesign:HintAssist.Foreground="Black" Height="218" VerticalAlignment="Top" HorizontalAlignment="Left" Width="904"
                  />
-        <Button x:Name="Save_Task_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,176,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_button_Click" Cursor="Hand">
+        <Button x:Name="Save_Task_button" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,176,17" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Save_Task_button_Click" Cursor="Hand">
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="ContentSave" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
                 <TextBlock x:Name="Send_Email1"  Text="Save" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
@@ -54,20 +54,20 @@
         </Button>
         <TextBox x:Name ="txtNote"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             TextWrapping="Wrap" 
             Text="" 
             Margin="21,350,0,0" 
             RenderTransformOrigin="0.519,0.505" 
             AcceptsReturn="True" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent" 
-                 BorderBrush="#383838"
+                 BorderBrush="Black"
             Cursor="IBeam" 
             FontSize="20"
             materialDesign:HintAssist.Hint="Note"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="205" VerticalAlignment="Top" HorizontalAlignment="Left" Width="904"
+            materialDesign:HintAssist.Foreground="Black" Height="205" VerticalAlignment="Top" HorizontalAlignment="Left" Width="904"
                  />
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbPriority" 
             HorizontalAlignment="Left"
@@ -75,58 +75,58 @@
             VerticalAlignment="Top" 
             Width="350" 
             Padding="10"
-            Foreground="#383838" 
-            BorderBrush="#383838" 
+            Foreground="Black" 
+            BorderBrush="Black" 
             FontSize="26" 
             Background="Transparent"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Hint="Priority" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbStatus" 
             HorizontalAlignment="Left"
             Margin="940,350,0,0" 
             VerticalAlignment="Top" 
             Width="350" 
             Padding="10"
-            Foreground="#383838" 
-            BorderBrush="#383838" 
+            Foreground="Black" 
+            BorderBrush="Black" 
             FontSize="26" 
             Background="Transparent"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Hint="Status task" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbUser" 
             HorizontalAlignment="Left"
             Margin="940,250,0,0" 
             VerticalAlignment="Top" 
             Width="350" 
             Padding="10"
-            Foreground="#383838" 
-            BorderBrush="#383838" 
+            Foreground="Black" 
+            BorderBrush="Black" 
             FontSize="26" 
             Background="Transparent"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Hint="Recipient" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <DatePicker x:Name="datePicker" 
             materialDesign:HintAssist.Hint="Date" 
             HorizontalAlignment="Left" Margin="940,432,0,0" 
             Width="350" 
             Background="Transparent" 
-            BorderBrush="#383838" 
-            Foreground="#383838"
+            BorderBrush="Black" 
+            Foreground="Black"
             FontSize="20" 
             FirstDayOfWeek="Monday" 
             SelectedDateFormat="Long" 
@@ -134,16 +134,16 @@
             Cursor="ArrowCD" 
             Height="68"  
             Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" VerticalAlignment="Top">
+            materialDesign:HintAssist.Foreground="Black" VerticalAlignment="Top">
             <DatePicker.CalendarStyle>
                 <Style TargetType="{x:Type Calendar}">
 
 
                     <Style.Resources>
-                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#383838" />
-                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#383838"/>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Black" />
+                        <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="Black"/>
 
 
 
@@ -157,7 +157,7 @@
 
 
         </DatePicker>
-        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,17" Height="60" Background="#525252" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Task_Click" Cursor="Hand" >
+        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,18,17" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Task_Click" Cursor="Hand" >
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center" Cursor="Hand"/>
                 <TextBlock x:Name="Send_Email"  Text="Delete" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>

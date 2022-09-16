@@ -64,7 +64,7 @@
                     <!--To get the perfect corners on both end we will use triangles on left & right of the row & rectangle in center to fill the gap-->
                     <!--left corner-->
                     <Polygon
-                Fill="#383838"
+                Fill="Black"
                 HorizontalAlignment="Left"
                 Margin="40,0,100,0"
                 Stretch="Uniform"
@@ -86,12 +86,12 @@
 
                     <!--Center rectangle-->
                     <Rectangle
-                Fill="#383838"
+                Fill="Black"
                 Margin="50,0,112,0"
                 MouseDown="Polygon_MouseDown"/>
                     <!--right corner-->
                     <Polygon
-                Fill="#383838"
+                Fill="Black"
                 HorizontalAlignment="Right"
                 Margin="0,0,102,0"
                 Stretch="Uniform"
@@ -138,7 +138,7 @@
                                                 <!--Respective Icon-->
                                                 <Path
                                                     Data="{Binding Content, RelativeSource={RelativeSource AncestorType={x:Type Button}, Mode=FindAncestor}}"
-                                                    Fill="#383838"
+                                                    Fill="#0024d4"
                                                     Height="{TemplateBinding FontSize}"
                                                     Width="{TemplateBinding FontSize}"
                                                     Stretch="Uniform"/>
@@ -287,28 +287,28 @@
 
                                 <TextBlock x:Name="lblUserName"
                                     FontWeight="SemiBold"
-                                    Foreground="#383838"
+                                    Foreground="Black"
                                     Text="Hozák Jiří" Margin="0,0,-15,20" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                 <TextBlock x:Name="lblUserLevel"
                                     Grid.Row="1"
                                     FontWeight="SemiBold"
-                                    Foreground="#525252"
+                                    Foreground="Black"
 
                                     Text="Level 1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                             </Grid>
 
                             <!--Notification Icon With Count-->
-                            <StackPanel
+                            <!--<StackPanel
                                 Orientation="Horizontal"
                                 VerticalAlignment="Center"
                                 Margin="0,0,20,0" HorizontalAlignment="Right">
-                                <Button x:Name="TaskBell" Background="Transparent" Foreground="#525252" BorderBrush="Transparent" Width="24" Margin="0,0,0,0" Padding="0,0,0,0" Click="TaskBell_Click">
-                                    <materialDesign:PackIcon x:Name="Task_Bell" Kind="Bell" Foreground="#525252" Background="Transparent" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="20"/>
+                                <Button x:Name="TaskBell" Background="Transparent" Foreground="#0024d4" BorderBrush="Transparent" Width="24" Margin="0,0,0,0" Padding="0,0,0,0" Click="TaskBell_Click">
+                                    <materialDesign:PackIcon x:Name="Task_Bell" Kind="Bell" Foreground="#0024d4" Background="Transparent" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="20"/>
 
 
                                 </Button>
 
-                                <!--Count-->
+                                --><!--Count--><!--
                                 <Grid
                                     VerticalAlignment="Top"
                                     Margin="-8,0,0,15">
@@ -319,7 +319,7 @@
                                         Height="15"
                                         Width="15"/>
 
-                                    <!--Count-->
+                                    --><!--Count--><!--
                                     <TextBlock x:Name="txtMyTask"
                                         FontSize="8"
                                         Foreground="White"
@@ -328,7 +328,7 @@
                                         Text="2"
                                         VerticalAlignment="Center"/>
                                 </Grid>
-                            </StackPanel>
+                            </StackPanel>-->
 
                             <!--#endregion-->
                         </StackPanel>
@@ -392,12 +392,16 @@
                             </Style>
                         </ListView.Resources>
 
-                        <Button x:Name="Home_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Home" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="home" Foreground="#525252" Height="35" Width="35" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Home"/>
+                        <Button x:Name="Home_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Home" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="1,1,1,1" Cursor="Hand">
+                            <materialDesign:PackIcon Kind="home" Foreground="Black" Height="35" Width="35" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                            
+                                
+       
+
                         </Button>
 
                         <!--<Button x:Name="Modification_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfModifications" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="#525252" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Reports"/>
+                            <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" Foreground="#0024d4" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Reports"/>
                         </Button>-->
 
                         <!--<Button x:Name="Calendar_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Calendar" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
@@ -405,34 +409,36 @@
                         </Button>-->
 
                         <Button x:Name="MasterSamples_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfMasterSamples" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="CarLightAlert" Foreground="#525252" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Master Samples"/>
+                            <materialDesign:PackIcon Kind="CarLightAlert" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Master Samples"/>
                         </Button>
 
                         <!--<Button x:Name="RemoreDesktop_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_RemoteDesktop" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Cursor="Hand">
-                            <materialDesign:PackIcon Kind="RemoteDesktop" Foreground="#525252" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Remote Desktop"/>
+                            <materialDesign:PackIcon Kind="RemoteDesktop" Foreground="#0024d4" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Remote Desktop"/>
                         </Button>-->
 
                         <!--<Button x:Name="Computers_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfComputers" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="DesktopClassic" Foreground="#525252" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="List of Computers"/>
+                            <materialDesign:PackIcon Kind="DesktopClassic" Foreground="#0024d4" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="List of Computers"/>
                         </Button>-->
 
                         <!--<Button x:Name="Tasks_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_ListOfTasks" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="#525252" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Tasks"/>
+                            <materialDesign:PackIcon Kind="CalendarAlert" Foreground="#0024d4" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Tasks"/>
                         </Button>-->
 
 
                         <Button x:Name="Support_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Support" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1">
-                            <materialDesign:PackIcon Kind="EmoticonAgent" Foreground="#525252" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Support"/>
+                            <materialDesign:PackIcon Kind="EmoticonAgent" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Support"/>
                         </Button>
 
                         <Button x:Name="Settings_button"  BorderBrush="{x:Null}" Height="55" Width="55" Background="Transparent" Click="Click_Settings" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="1,1,1,1" Visibility="Hidden" >
-                            <materialDesign:PackIcon Kind="Settings" Foreground="#383838" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
+                            <materialDesign:PackIcon Kind="Settings" Foreground="Black" Height="25" Width="25" RenderTransformOrigin="0.579,0.719" VerticalAlignment="Stretch" HorizontalAlignment="Center" ToolTip="Setting"/>
                         </Button>
                     </ListView>
 
                 </Grid>
                 <Frame x:Name="MainContent" Grid.Row="1" NavigationUIVisibility="Hidden" BorderBrush="Transparent" Grid.Column="2" Background="White"/>
                 <!--#endregion-->
+                
+                
 
             </Grid>
         </materialDesign:Card>

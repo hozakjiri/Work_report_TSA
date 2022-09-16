@@ -12,13 +12,13 @@
     <Grid Width="1300" Margin="0,10,0,0">
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtuser" 
             Text="" 
             Margin="650,165,65,356" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -27,16 +27,16 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="User name account computer"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtpassvnc" 
             Text="" 
             Margin="652,391,65,132" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -45,7 +45,7 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Password for VNC"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
 
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
                   HorizontalAlignment="Left"
@@ -53,17 +53,17 @@
                   VerticalAlignment="Top" 
                   Width="1167" 
                   Padding="10"
-                  Foreground="#383838" 
-                  BorderBrush="#383838" 
+                  Foreground="Black" 
+                  BorderBrush="Black" 
                   FontSize="26" 
                   Background="Transparent"
                   VerticalContentAlignment="Center"
                   HorizontalContentAlignment="Left"
-                  materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+                  materialDesign:TextFieldAssist.UnderlineBrush="Black"
                   materialDesign:HintAssist.Hint="Name of line" Height="68"
                   Style="{StaticResource MaterialDesignComboBox}"
                   materialDesign:HintAssist.Background="White"
-                  materialDesign:HintAssist.Foreground="#383838">
+                  materialDesign:HintAssist.Foreground="Black">
 
         </ComboBox>
         <Button x:Name="btnAdd" BorderBrush="{x:Null}" Margin="0,0,18,17" Background="#FF525252" materialDesign:ButtonAssist.CornerRadius="10" Click="Add_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="76" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="162" Cursor="Hand">
@@ -75,13 +75,13 @@
         </Button>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtstation" 
             Text="" 
             Margin="68,165,672,356" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -90,16 +90,16 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Name of station" Width="560"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtpass" 
             Text="" 
             Margin="650,278,65,243" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -108,32 +108,32 @@
             VerticalContentAlignment="Center"
             materialDesign:HintAssist.Hint="Password for User"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtdomain" 
             Text="" 
             Margin="68,393,672,130" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
             Cursor="IBeam"
             materialDesign:HintAssist.Hint="Domain" Width="560"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txthostname" 
             Text="" 
             Margin="68,278,672,240" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
-            BorderBrush="#383838"
+            BorderBrush="Black"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="26" 
@@ -142,6 +142,6 @@
             HorizontalContentAlignment="Left"
             materialDesign:HintAssist.Hint="Hostname" Width="560"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838"/>
+            materialDesign:HintAssist.Foreground="Black"/>
     </Grid>
 </Page>

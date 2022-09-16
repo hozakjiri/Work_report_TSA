@@ -20,7 +20,7 @@ namespace WorkReportWPF
 
         private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            btnDMember.Visibility = Visibility.Hidden;
+            //btnDMember.Visibility = Visibility.Hidden;
             RefrashMembersTable();
             btnDProject.Visibility = Visibility.Hidden;
             btnEProject.Visibility = Visibility.Hidden;
@@ -33,33 +33,33 @@ namespace WorkReportWPF
 
         private void BtnAMembers_Click(object sender, RoutedEventArgs e)
         {
-            MemberFunc.SaveMembers(txtMembers.Text);
-            txtMembers.Text = "";
-            RefrashMembersTable();
+            //MemberFunc.SaveMembers(txtMembers.Text);
+            //txtMembers.Text = "";
+            //RefrashMembersTable();
         }
 
         private void btnDMember_Click(object sender, RoutedEventArgs e)
         {
 
-            if (membersGrid.SelectedItems != null && membersGrid.SelectedItems.Count > 0)
-            {
-                Member member = new();
+            //if (membersGrid.SelectedItems != null && membersGrid.SelectedItems.Count > 0)
+            //{
+            //    Member member = new();
 
-                foreach (var obj in membersGrid.SelectedItems)
-                {
-                    member = obj as Member;
-                    MemberFunc.DeleteMember(member.ID);
-                    txtMembers.Text = "";
-                }
+            //    foreach (var obj in membersGrid.SelectedItems)
+            //    {
+            //        member = obj as Member;
+            //        MemberFunc.DeleteMember(member.ID);
+            //        txtMembers.Text = "";
+            //    }
 
-                RefrashMembersTable();
-            }
+            //    RefrashMembersTable();
+            //}
         }
 
         public void RefrashMembersTable()
         {
-            membersGrid.ItemsSource = MemberFunc.LoadMembersData();
-            membersGrid.Columns[0].Visibility = Visibility.Hidden;
+            //membersGrid.ItemsSource = MemberFunc.LoadMembersData();
+            //membersGrid.Columns[0].Visibility = Visibility.Hidden;
         }
 
         public void RefrashProjectsTable()
@@ -124,16 +124,16 @@ namespace WorkReportWPF
 
         private void membersGrid_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (membersGrid.SelectedItems.Count > 0)
-            {
-                btnDMember.Visibility = Visibility.Visible;
-                Member rowdata = (Member)membersGrid.SelectedItems[0];
-                txtMembers.Text = rowdata.Mail;
-            }
-            else
-            {
-                btnDMember.Visibility = Visibility.Hidden;
-            }
+            //if (membersGrid.SelectedItems.Count > 0)
+            //{
+            //    btnDMember.Visibility = Visibility.Visible;
+            //    Member rowdata = (Member)membersGrid.SelectedItems[0];
+            //    txtMembers.Text = rowdata.Mail;
+            //}
+            //else
+            //{
+            //    btnDMember.Visibility = Visibility.Hidden;
+            //}
         }
 
         private void projectGrid_PreviewMouseUp(object sender, MouseButtonEventArgs e)
@@ -236,6 +236,11 @@ namespace WorkReportWPF
                 btnDUser.Visibility = Visibility.Hidden;
                 btnEUser.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void userGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

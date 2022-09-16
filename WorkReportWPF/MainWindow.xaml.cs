@@ -120,18 +120,18 @@ namespace WorkReportWPF
 
         public void CheckTask()
         {
-            var countTasks = TaskFunc.LoadMyTask();
-            txtMyTask.Text = countTasks.ToString();
+            //var countTasks = TaskFunc.LoadMyTask();
+            //txtMyTask.Text = countTasks.ToString();
 
-            if (countTasks > 0)
-            {
-                ElipseMyTask.Fill = System.Windows.Media.Brushes.Red;
-            }
-            else
-            {
-                ElipseMyTask.Fill = System.Windows.Media.Brushes.Green;
+            //if (countTasks > 0)
+            //{
+            //    ElipseMyTask.Fill = System.Windows.Media.Brushes.Red;
+            //}
+            //else
+            //{
+            //    ElipseMyTask.Fill = System.Windows.Media.Brushes.Green;
 
-            }
+            //}
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)

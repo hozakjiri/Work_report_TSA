@@ -12,7 +12,7 @@
 
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <!--<ColumnDefinition Width="*"/>-->
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -20,10 +20,10 @@
             <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Content="Settings for application" Foreground="#383838" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Height="85" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="1300" Grid.Column="1"/>
-        <Label Content="Team Members (email information)" Grid.Row="1" Foreground="#383838" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
+        <Label Content="Settings for application" Foreground="Black" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Height="85" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380" Grid.ColumnSpan="2" Margin="460,-2,0,0" />
+        <!--<Label Content="Team Members (email information)" Grid.Row="1" Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>-->
 
-        <DataGrid x:Name="membersGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="#383838" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
+        <!--<DataGrid x:Name="membersGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
 HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" Margin="4,45,0,122" Grid.Row="1" PreviewMouseUp="membersGrid_PreviewMouseUp" HorizontalAlignment="Left" Width="423">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -32,15 +32,15 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                     <Setter Property="FontSize" Value="20"/>
                     <Setter Property="BorderThickness" Value="0,0,1,2"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="#383838"/>
+                    <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                 </Style>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#383838"/>
+                            <Setter Property="Background" Value="Black"/>
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderBrush" Value="#383838"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
                         </Trigger>
                         <Trigger Property="DataGridCell.IsSelected" Value="False">
                             <Setter Property="Background" Value="Transparent" />
@@ -65,18 +65,18 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>-->
 
-        <Label Content="List of users" Margin="433,0,433,0" Grid.Row="1" Foreground="#383838" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
-        <Label Content="List of projects" Grid.Row="1" Foreground="#383838" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
+        <Label Content="List of users" Margin="108,0,108,0" Grid.Row="1" Grid.Column="0"  Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
+        <Label Content="List of projects" Grid.Row="1" Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
 
         <TextBox             
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtMail" 
             Text="" 
-            Margin="15,0,0,64" 
-            Foreground="#383838" 
+            Margin="10,0,0,52" 
+            Foreground="Black" 
             Background="Transparent"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
@@ -84,51 +84,51 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="181" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Mail address" Grid.Column="1" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Mail address" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="50" VerticalAlignment="Bottom"/>
+            materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Bottom"/>
         <TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtName" 
             Text="" 
-            Margin="15,0,0,121" 
-            Foreground="#383838" 
+            Margin="10,0,0,107" 
+            Foreground="Black" 
             Background="Transparent"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name" Grid.Column="1" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Name" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="181"/>
+            materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="181" RenderTransformOrigin="0.522,-0.37"/>
         <TextBox
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtLogin" 
             Text="" 
-            Margin="237,0,0,122"
-            Foreground="#383838" 
+            Margin="216,426,0,0"
+            Foreground="Black" 
             Background="Transparent"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Log in" Grid.Column="1" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Log in" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="181"/>
-        <ComboBox x:Name="cmbRights"   Grid.Column="1" Margin="237,0,0,64" Grid.Row="1"
+            materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="182"/>
+        <ComboBox x:Name="cmbRights" Margin="216,481,0,0" Grid.Row="1"
                     Style="{StaticResource MaterialDesignOutlinedComboBox}"
                     materialDesign:HintAssist.Hint="Rights"
-                    Foreground="#383838"
+                    Foreground="Black"
                     Background="Transparent"
 
                     materialDesign:TextFieldAssist.HasClearButton="True"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+                    materialDesign:TextFieldAssist.UnderlineBrush="Black"
                     materialDesign:ColorZoneAssist.Mode="SecondaryLight"
                     materialDesign:HintAssist.HelperText="Select one rights"
                     materialDesign:HintAssist.Background="White"
-                    materialDesign:HintAssist.Foreground="#383838" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="181">
+                    materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="182">
             <ComboBox.SelectedItem>
                 <Binding
                 
@@ -141,13 +141,13 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                 </Binding>
             </ComboBox.SelectedItem>
         </ComboBox>
-        <TextBox 
+        <!--<TextBox 
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtMembers" 
             Text="" 
             Margin="13,0,0,52" 
-            Foreground="#383838" 
+            Foreground="Black" 
             Background="Transparent"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
@@ -157,27 +157,27 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Cursor="IBeam"
             materialDesign:HintAssist.Hint="New member" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="50" VerticalAlignment="Bottom"/>
-        <Button x:Name="btnDMember"
+            materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Bottom"/>-->
+        <!--<Button x:Name="btnDMember"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
             Margin="323,0,0,10" Grid.Row="1" Click="btnDMember_Click" Visibility="Visible"
-            Background="#525252"
-            BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Background="Black"
+            BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text"  Text="Delete" Width="59" Foreground="White" Height="18"/>
 
             </StackPanel>
-        </Button>
+        </Button>-->
         <Button x:Name="btnDUser"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="318,0,0,10" Grid.Row="1" Grid.Column="1" Click="btnDUser_Click"
-            Background="#525252"
-                BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Margin="540,0,0,10" Grid.Row="1" Click="btnDUser_Click"
+            Background="Black"
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text1"  Text="Delete" Width="59" Foreground="White" Height="18"/>
@@ -188,35 +188,35 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="323,0,0,10" Grid.Row="1" Grid.Column="2" Click="btnDProject_Click"
-            Background="#525252"
-                BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Margin="540,0,0,10" Grid.Row="1" Click="btnDProject_Click"
+            Background="Black"
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text2"  Text="Delete" Width="59" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
-        <Button x:Name="BtnAMembers"
+        <!--<Button x:Name="BtnAMembers"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
             Margin="13,0,0,12" Grid.Row="1" Click="BtnAMembers_Click"
-            Background="#525252"
-                BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Background="Black"
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal" >
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text3"  Text="Add" Width="30" Foreground="White" Height="18"/>
 
             </StackPanel>
-        </Button>
+        </Button>-->
         <Button x:Name="btnAUser"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
             Margin="10,0,0,10" Grid.Row="1" Grid.Column="1" Click="btnAUser_Click"
-            Background="#525252"
-                BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Background="Black"
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text4"  Text="Add" Width="30" Foreground="White" Height="18"/>
@@ -227,9 +227,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="10,0,0,10" Grid.Row="1" Grid.Column="2" Click="btnAProject_Click"
-            Background="#525252"
-                BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Margin="10,0,0,10" Grid.Row="1" Click="btnAProject_Click"
+            Background="Black"
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="white" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text5"  Text="Add" Width="30" Foreground="White" Height="18"/>
@@ -240,9 +240,9 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="115,0,0,10" Grid.Row="1" Grid.Column="1" Click="btnEUser_Click"
-                Background="#525252"
-                BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Margin="422,0,0,10" Grid.Row="1" Click="btnEUser_Click"
+                Background="Black"
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Pencil" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text6"  Text="Edit" Width="30" Foreground="White" Height="18"/>
@@ -253,17 +253,17 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="116,0,0,10" Grid.Row="1" Grid.Column="2" Click="btnEProject_Click"
-                Background="#525252"
-                BorderBrush="#525252" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            Margin="422,0,0,10" Grid.Row="1" Click="btnEProject_Click"
+                Background="Black"
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Pencil" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text7"  Text="Edit" Width="30" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
-        <DataGrid x:Name="userGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="#525252" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
-            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Margin="0,48,0,203" Grid.Row="1" Grid.Column="1" PreviewMouseUp="userGrid_PreviewMouseUp" HorizontalAlignment="Center" Width="424">
+        <DataGrid x:Name="userGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
+            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="All" Margin="0,45,0,184" PreviewMouseUp="userGrid_PreviewMouseUp" HorizontalAlignment="Center" Width="630" Grid.Row="1" SelectionChanged="userGrid_SelectionChanged">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
@@ -271,15 +271,15 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                     <Setter Property="FontSize" Value="16"/>
                     <Setter Property="BorderThickness" Value="0,0,1,2"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="#383838"/>
+                    <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                 </Style>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#383838" />
+                            <Setter Property="Background" Value="Black" />
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderBrush" Value="#383838"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="False">
                             <Setter Property="Background" Value="Transparent" />
@@ -296,21 +296,21 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="90">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="HorizontalAlignment" Value="Left"/>
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Login" Binding="{Binding UserLogin}"  Width="80">
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Mail" Binding="{Binding Mail}"  Width="180">
+                <DataGridTextColumn Header="Login" Binding="{Binding UserLogin}"  Width="120">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Mail" Binding="{Binding Mail}"  Width="220">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -326,8 +326,8 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="projectGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="#383838" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
-            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" Margin="8,45,0,121" Grid.Row="1" Grid.Column="2" PreviewMouseUp="projectGrid_PreviewMouseUp" HorizontalAlignment="Left" Width="423">
+        <DataGrid x:Name="projectGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
+            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" Margin="0,45,0,132" Grid.Row="1" PreviewMouseUp="projectGrid_PreviewMouseUp" HorizontalAlignment="Center" Width="630" Grid.Column="1">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
@@ -335,15 +335,16 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                     <Setter Property="FontSize" Value="16"/>
                     <Setter Property="BorderThickness" Value="0,0,1,2"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="#383838"/>
+                    <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                 </Style>
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="#383838" />
+                            <Setter Property="Background" Value="Black" />
                             <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderBrush" Value="#383838"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="VerticalAlignment" Value="Center" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="False">
                             <Setter Property="Background" Value="Transparent" />
@@ -371,21 +372,21 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
         </DataGrid>
         <TextBox             
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            materialDesign:TextFieldAssist.UnderlineBrush="#383838"
+            materialDesign:TextFieldAssist.UnderlineBrush="Black"
             x:Name="txtProject" 
             Text="" 
-            Margin="23,0,0,52" 
-            Foreground="#383838" 
+            Margin="0,481,0,0" 
+            Foreground="Black" 
             Background="Transparent"
             TextWrapping="Wrap"
             AcceptsReturn="True" 
-            HorizontalAlignment="Left" 
-            Width="400" 
+            HorizontalAlignment="Center" 
+            Width="630" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of Project" Grid.Column="2" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Name of Project" Grid.Column="1" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
-            materialDesign:HintAssist.Foreground="#383838" Height="50" VerticalAlignment="Bottom"/>
+            materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>
