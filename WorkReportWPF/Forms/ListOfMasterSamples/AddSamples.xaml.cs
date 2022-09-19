@@ -40,7 +40,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             {
 
                 SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
-                SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
+                //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
                 SamplesFunc.Test();
                 MessageBox.Show("Data was added !", "Data");
 

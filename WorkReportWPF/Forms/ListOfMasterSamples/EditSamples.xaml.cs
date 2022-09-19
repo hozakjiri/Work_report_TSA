@@ -93,7 +93,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             else if (result == MessageBoxResult.OK)
             {
                 SamplesFunc.EditSample(currentdata.ID, cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate, txtLabel.Text, txtFolder.Text);
-                SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
+                //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
                 MessageBox.Show("Data was edited !", "Data");
 
                 OverviewSamples p = new OverviewSamples();
