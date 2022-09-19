@@ -161,7 +161,7 @@
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black"/>
 
-        <StackPanel Margin="676,510,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
+        <!--<StackPanel Margin="676,510,0,0" Orientation="Horizontal" Background="Transparent" HorizontalAlignment="Left" Width="132" Height="68" VerticalAlignment="Top">
             <TextBox x:Name="txtNum"
                      materialDesign:TextFieldAssist.UnderlineBrush="Black"
                      Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -183,14 +183,14 @@
                 <Button x:Name="cmdUp" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▲" Width="17" Click="cmdUp_Click" Height="26" HorizontalAlignment="Center" Background="Black" Foreground="White" BorderBrush="Black" VerticalAlignment="Top" Margin="0,0,0,1" />
                 <Button x:Name="cmdDown" x:FieldModifier="private" FontSize="10" Padding="0,0,0,0" Content="▼" Width="17" Click="cmdDown_Click" Height="26" HorizontalAlignment="Center" Background="Black" Foreground="White" BorderBrush="Black" Margin="0,1,0,0"/>
             </StackPanel>
-        </StackPanel>
+        </StackPanel>-->
 
-        <Button x:Name="btnPrint" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,335,15" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnPrint_click" >
+        <!--<Button x:Name="btnPrint" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,335,15" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnPrint_click" >
             <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Printer" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Print" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txtPrint"  Text="Print" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="white"/>
             </StackPanel>
-        </Button>
+        </Button>-->
         <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,15" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Click" >
             <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
