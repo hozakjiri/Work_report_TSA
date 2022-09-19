@@ -2,7 +2,11 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Windows.ApplicationModel.Appointments;
 using WorkReportWPF.Functions;
+using System.Net.Mail;
+using DDay.iCal;
+using DDay.iCal.Serialization.iCalendar;
 
 namespace WorkReportWPF.Forms.ListOfMasterSamples
 {
@@ -21,6 +25,13 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
             MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
 
+
+            if ((DateTime)datePickerRevisionValidity.SelectedDate < (DateTime)datePickerRevisionDate.SelectedDate)
+            {
+                MessageBox.Show("Bad data, the verification date cannot be in the past", "Data");
+                return;
+            }
+
             if (txtDescription.Text == "" || txtName.Text == "" || txtPlacement.Text == "" || cmbProject.Text == "" || cmbResponsible.Text == "" || datePickerRevisionDate.Text == "" || datePickerRevisionValidity.Text == "")
             {
                 MessageBox.Show("Please, fill all data", "Data");
@@ -29,7 +40,8 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             {
 
                 SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
-
+                SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
+                SamplesFunc.Test();
                 MessageBox.Show("Data was added !", "Data");
 
                 try
@@ -46,6 +58,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 OverviewSamples p = new OverviewSamples();
                 this.NavigationService.Navigate(p);
             }
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

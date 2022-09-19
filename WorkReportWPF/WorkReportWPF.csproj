@@ -51,6 +51,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="antlr.runtime">
+      <HintPath>..\..\..\..\..\Downloads\antlr.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DDay.Collections">
+      <HintPath>..\..\..\..\..\Downloads\DDay.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="DDay.iCal">
+      <HintPath>..\..\..\..\..\Downloads\DDay.iCal.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.bpac">
       <HintPath>dll\Interop.bpac.dll</HintPath>
     </Reference>
