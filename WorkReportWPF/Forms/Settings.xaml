@@ -214,7 +214,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
             Width="100"
-            Margin="10,0,0,10" Grid.Row="1" Grid.Column="1" Click="btnAUser_Click"
+            Margin="10,0,0,10" Grid.Row="1" Click="btnAUser_Click"
             Background="Black"
                 BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
@@ -229,7 +229,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="100"
             Margin="10,0,0,10" Grid.Row="1" Click="btnAProject_Click"
             Background="Black"
-                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="white" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
                 <TextBlock x:Name="Overview_Text5"  Text="Add" Width="30" Foreground="White" Height="18"/>
@@ -327,7 +327,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="projectGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
-            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" Margin="0,45,0,132" Grid.Row="1" PreviewMouseUp="projectGrid_PreviewMouseUp" HorizontalAlignment="Center" Width="630" Grid.Column="1">
+            HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" RowBackground="Transparent" AreRowDetailsFrozen="True" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HeadersVisibility="None" Margin="0,45,0,132" Grid.Row="1" PreviewMouseUp="projectGrid_PreviewMouseUp" HorizontalAlignment="Center" Width="630" Grid.Column="1" SelectionChanged="projectGrid_SelectionChanged">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="Transparent"/>
@@ -361,7 +361,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="420">
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="630">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>

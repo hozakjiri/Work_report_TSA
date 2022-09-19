@@ -242,5 +242,10 @@ namespace WorkReportWPF
         {
 
         }
+
+        private void projectGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
