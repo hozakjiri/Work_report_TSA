@@ -80,7 +80,6 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
 
-            Guid guid = Guid.Parse(lblGuid);
 
             MessageBoxResult result = MessageBox.Show("Can you edit data?", "Data", MessageBoxButton.OKCancel);
             
@@ -92,11 +91,24 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             {
                 SamplesFunc.EditSample(currentdata.ID, cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate, txtLabel.Text, txtFolder.Text);
                 //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
-                SamplesFunc.AddAppointment(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
                 MessageBox.Show("Data was edited !", "Data");
 
                 OverviewSamples p = new OverviewSamples();
                 this.NavigationService.Navigate(p);
+
+                try
+                {
+                    var userMail = LoginFunc.LoadUserMail(cmbResponsible.SelectedItem.ToString());
+                    var therm = (DateTime)datePickerRevisionValidity.SelectedDate;
+                    SamplesFunc.AddAppointment(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
+
+                    //SamplesFunc.Test(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text, guid);
+                    //SamplesFunc.CreateTask(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("An error occurred while creating the task !", "Alert");
+                }
             }
         }
 
