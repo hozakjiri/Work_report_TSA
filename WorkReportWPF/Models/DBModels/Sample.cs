@@ -27,5 +27,7 @@ namespace WorkReportWPF.Models.DBModels
         public string Label { get; set; }
 
         public string Folder { get; set; }
+
+        public string Guid { get; set; }
     }
 }

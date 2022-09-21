@@ -19,6 +19,11 @@ using DDay.iCal;
 using System.IO;
 using System.Windows;
 using Trigger = DDay.iCal.Trigger;
+using antlr.collections;
+using MaterialDesignThemes.Wpf;
+using System.ComponentModel;
+using System.Runtime.Intrinsics.X86;
+using Windows.UI.Composition;
 
 namespace WorkReportWPF.Functions
 {
@@ -40,126 +45,53 @@ namespace WorkReportWPF.Functions
                 RevisionDate = (DateTime)OtherFunc.ToDate(x.RevisionDate, "dd.MM.yyyy"),
                 RevisionValidity = (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy"),
                 Folder = x.Folder,
+                Guid = x.Guid,
             }).ToList();
 
             return sampleData;
         }
 
-        //public static void SendMail(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder)
-        //{
-        //    Sample sampleData = new()
-        //    {
-        //        Project = project,
-        //        Name = name,
-        //        Description = description,
-        //        Placement = placement,
-        //        Responsible = responsible,
-        //        RevisionDate = revisionDate.ToString("dd.MM.yyyy"),
-        //        RevisionValidity = revisionValidity.ToString("dd.MM.yyyy"),
-        //        Label = label,
-        //        Folder = folder
-        //    };
-
-        //    try
-        //    {
-        //        MailMessage oMail = new()
-        //        {
-        //            From = new MailAddress("WorkReport@hella.com")
-        //        };
-
-        //        string mailstring = "";
-
-        //        try
-        //        {
-        //            mailstring = LoginFunc.LoadUserMail(sampleData.Responsible);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Console.WriteLine(ex.Message);
-        //        }
-
-        //        oMail.To.Add(mailstring);
-
-        //        oMail.IsBodyHtml = true;
-
-        //        oMail.Subject = "WorkReport_TaskManager " + DateTime.Now.ToString("dd.MM.yyyy");
-
-        //        oMail.Priority = MailPriority.High;
-
-        //        StringBuilder sb = new();
-        //        sb.AppendLine("<p>You get new sample, </p>");
-        //        sb.AppendLine("<br/>");
-
-        //        StringBuilder sf = new();
-        //        sf.AppendLine("<style>");
-        //        sf.AppendLine("table, th, td {");
-        //        sf.AppendLine("border: 1px solid black;");
-        //        sf.AppendLine("border-collapse: collapse;");
-        //        sf.AppendLine("}");
-        //        sf.AppendLine("th, td {");
-        //        sf.AppendLine("padding: 5px;");
-        //        sf.AppendLine("Text-align: Left;");
-        //        sf.AppendLine("}");
-        //        sf.AppendLine("p {");
-        //        sf.AppendLine("padding: 0px;");
-        //        sf.AppendLine("Text-align: Left;");
-        //        sf.AppendLine("margin: 0px;");
-        //        sf.AppendLine("}");
-        //        sf.AppendLine("</style>");
 
 
-        //        var datatable = sampleData;
-        //        StringBuilder MailBody = new();
-
-        //        MailBody.AppendLine("<table>");
-        //        MailBody.AppendLine("<thead>");
-        //        MailBody.AppendLine("<tr>");
-        //        MailBody.AppendLine("<th>Project</th>");
-        //        MailBody.AppendLine("<th>Name</th>");
-        //        MailBody.AppendLine("<th>Description</th>");
-        //        MailBody.AppendLine("<th>RevisionDate</th>");
-        //        MailBody.AppendLine("<th>RevisionValidity</th>");
-        //        MailBody.AppendLine("</tr>");
-        //        MailBody.AppendLine("</thead>");
-        //        MailBody.AppendLine("<tbody>");
-
-        //        MailBody.AppendLine("<tr>");
-        //        MailBody.AppendLine("<td>" + sampleData.Project + "</td>");
-        //        MailBody.AppendLine("<td>" + sampleData.Name + "</td>");
-        //        MailBody.AppendLine("<td>" + sampleData.Description + "</td>");
-        //        MailBody.AppendLine("<td>" + sampleData.Placement + "</td>");
-        //        MailBody.AppendLine("<td>" + sampleData.RevisionDate + "</td>");
-        //        MailBody.AppendLine("<td>" + sampleData.RevisionValidity + "</td>");
-        //        MailBody.AppendLine("</tr>");
-
-        //        MailBody.AppendLine("</tbody>");
-        //        MailBody.AppendLine("</table>");
-
-        //        oMail.Body = sf.ToString() + sb.ToString() + MailBody.ToString();
 
 
-        //        SmtpClient smtp = new("smtphub.dc.hella.com");
-        //        smtp.Port = 25;
-        //        smtp.Send(oMail);
-        //        //Data.Dispose();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //}
+public static void AddAppointment(string responsible, DateTime RevisionDate, DateTime RevisionValidity, string project, string subjectmessage)
+        {
+            try
+            {
+                Microsoft.Office.Interop.Outlook.Application otApp = new Microsoft.Office.Interop.Outlook.Application();
+                Microsoft.Office.Interop.Outlook.AppointmentItem oAppointment = (Microsoft.Office.Interop.Outlook.AppointmentItem)otApp.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olAppointmentItem);
+                oAppointment.Subject = project;
+                oAppointment.Body = subjectmessage;
+                oAppointment.Start = RevisionValidity.AddHours(9);
+                oAppointment.End = RevisionValidity.AddHours(10);
+                oAppointment.ReminderSet = true; // Set the reminder
+                oAppointment.ReminderMinutesBeforeStart = 15; // reminder time
+                oAppointment.Recipients.Add(responsible);
+                oAppointment.Location = "TSA";
 
-        //private static byte[] ReadBinary(string fileName)
-        //{
-        //    byte[] binaryData = null;
-        //    using (FileStream reader = new FileStream(fileName,
-        //      FileMode.Open, FileAccess.Read))
-        //    {
-        //        binaryData = new byte[reader.Length];
-        //        reader.Read(binaryData, 0, (int)reader.Length);
-        //    }
-        //    return binaryData;
-        //}
+                // Pridanie dobrovolne
+                //Microsoft.Office.Interop.Outlook.Recipient recipOptional = oAppointment.Recipients.Add("jiri.hozak@hella.com");
+                //recipOptional.Type = (int)Microsoft.Office.Interop.Outlook.OlMeetingRecipientType.olOptional;
+
+                // Pridanie povinne
+                Microsoft.Office.Interop.Outlook.Recipient recipConf = oAppointment.Recipients.Add(responsible);
+                recipConf.Type = (int)Microsoft.Office.Interop.Outlook.OlMeetingRecipientType.olResource;
+
+
+                oAppointment.Importance = Microsoft.Office.Interop.Outlook.OlImportance.olImportanceHigh; // appointment importance
+                oAppointment.BusyStatus = Microsoft.Office.Interop.Outlook.OlBusyStatus.olBusy;
+                oAppointment.MeetingStatus = Microsoft.Office.Interop.Outlook.OlMeetingStatus.olMeeting;
+                oAppointment.Recipients.ResolveAll();
+                oAppointment.Save();
+                oAppointment.Send();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
         public static void Test()
         {
             try
@@ -301,7 +233,7 @@ namespace WorkReportWPF.Functions
             }
         }
 
-        public static void AddSample(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder)
+        public static void AddSample(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder, Guid guid)
         {
 
             try
@@ -318,7 +250,8 @@ namespace WorkReportWPF.Functions
                     RevisionDate = revisionDate.ToString("dd.MM.yyyy"),
                     RevisionValidity = revisionValidity.ToString("dd.MM.yyyy"),
                     Label = label,
-                    Folder = folder
+                    Folder = folder,
+                    Guid = guid.ToString(),
                 };
 
                 context.Samples.Add(sampleData);
@@ -328,6 +261,295 @@ namespace WorkReportWPF.Functions
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private static byte[] ReadBinary(string fileName)
+        {
+            byte[] binaryData = null;
+            using (FileStream reader = new FileStream(fileName,
+              FileMode.Open, FileAccess.Read))
+            {
+                binaryData = new byte[reader.Length];
+                reader.Read(binaryData, 0, (int)reader.Length);
+            }
+            return binaryData;
+        }
+        public static void Test(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder, Guid guid)
+        {
+            try
+            {
+
+                Sample sampleData = new()
+                {
+                    Project = project,
+                    Name = name,
+                    Description = description,
+                    Placement = placement,
+                    Responsible = responsible,
+                    RevisionDate = revisionDate.ToString("dd.MM.yyyy"),
+                    RevisionValidity = revisionValidity.ToString("dd.MM.yyyy"),
+                    Label = label,
+                    Folder = folder
+                };
+
+                string mailstring = "";
+
+                try
+                {
+                    mailstring = LoginFunc.LoadUserMail(sampleData.Responsible);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                // The line below will create a text file, my_file.txt, in 
+                // the Text_Files folder in D:\ drive.
+                // The CreateText method that returns a StreamWriter object
+
+                var directory = Directory.GetCurrentDirectory();
+                string filepath = directory + @"\" + guid.ToString() + @".ics";
+                using (StreamWriter sw = File.CreateText(filepath));
+
+
+                // use PUBLISH for appointments
+                // use REQUEST for meeting requests
+                const string METHOD = "REQUEST";
+
+                // Properties of the meeting request
+                // keep guid in sending program to modify or cancel the request later
+                Guid uid = guid;
+                string Subject = sampleData.Project;
+                string Responsible = mailstring;
+                string bodyPlainText = sampleData.Description;
+                string bodyHtml = sampleData.Description;
+                string location = "TSA";
+                // 1: High
+                // 5: Normal
+                // 9: low
+                int priority = 1;
+                //=====================================
+                MailMessage message = new MailMessage();
+
+                message.From = new MailAddress("WorkReportTSA@hella.com");
+                message.To.Add(new MailAddress(Responsible));
+                message.Subject = Subject;
+
+                // Plain Text Version
+                message.Body = bodyPlainText;
+
+                // HTML Version
+                string htmlBody = bodyHtml;
+                AlternateView HTMLV = AlternateView.CreateAlternateViewFromString(htmlBody,
+                  new System.Net.Mime.ContentType("text/html"));
+
+                // iCal
+                IICalendar iCal = new iCalendar();
+                iCal.Method = METHOD;
+                iCal.ProductID = "Samples";
+
+                // Create an event and attach it to the iCalendar.
+                Event evt = iCal.Create<Event>();
+                evt.UID = uid.ToString();
+
+                evt.Class = "PUBLIC";
+                // Needed by Outlook
+                evt.Created = new iCalDateTime(DateTime.Now);
+
+                evt.DTStamp = new iCalDateTime(DateTime.Now);
+                evt.Transparency = TransparencyType.Transparent;
+
+                // Set the event start / end times
+                evt.Start = new iCalDateTime(revisionValidity.Year, revisionValidity.Month, revisionValidity.Day, 9, 30, 0);
+                evt.End = new iCalDateTime(revisionValidity.Year, revisionValidity.Month, revisionValidity.Day, 10, 00, 0);
+                evt.Location = location;
+
+                //var organizer = new Organizer("the.organizer@myCompany.com");
+                //evt.Organizer = organizer;
+
+                // Set the longer description of the event, plain text
+                evt.Description = bodyPlainText;
+
+                // Event description HTML text
+                // X-ALT-DESC;FMTTYPE=text/html
+                var prop = new CalendarProperty("X-ALT-DESC");
+                prop.AddParameter("FMTTYPE", "text/html");
+                prop.AddValue(bodyHtml);
+                evt.AddProperty(prop);
+
+                // Set the one-line summary of the event
+                evt.Summary = Responsible;
+                evt.Priority = priority;
+
+                //--- attendes are optional
+                IAttendee at = new Attendee("mailto:WorkReportTSA@hella.com");
+                at.ParticipationStatus = "NEEDS-ACTION";
+                at.RSVP = true;
+                at.Role = "REQ-PARTICIPANT";
+                evt.Attendees.Add(at);
+
+                // Let’s also add an alarm on this event so we can be reminded of it later.
+                Alarm alarm = new Alarm();
+
+                // Display the alarm somewhere on the screen.
+                alarm.Action = AlarmAction.Display;
+
+                // This is the text that will be displayed for the alarm.
+                alarm.Summary = "Upcoming meeting: " + Responsible;
+
+                // The alarm is set to occur 30 minutes before the event
+                alarm.Trigger = new DDay.iCal.Trigger(TimeSpan.FromMinutes(-30));
+
+                //--- Attachments
+                //string filename = "Test.docx";
+
+                // Add an attachment to this event
+                //IAttachment attachment = new DDay.iCal.Attachment();
+                //attachment.Data = ReadBinary(@"C:\temp\Test.docx");
+                //attachment.Parameters.Add("X-FILENAME", filename);
+                //evt.Attachments.Add(attachment);
+
+                iCalendarSerializer serializer = new iCalendarSerializer();
+                serializer.Serialize(iCal, filepath);
+
+                // the .ics File as a string
+                string iCalStr = serializer.SerializeToString(iCal);
+
+                // .ics as AlternateView (used by Outlook)
+                // text/calendar part: method=REQUEST
+                System.Net.Mime.ContentType calendarType =
+                  new System.Net.Mime.ContentType("text/calendar");
+                calendarType.Parameters.Add("method", METHOD);
+                AlternateView ICSview =
+                  AlternateView.CreateAlternateViewFromString(iCalStr, calendarType);
+
+                // Compose
+                message.AlternateViews.Add(HTMLV);
+                message.AlternateViews.Add(ICSview); // must be the last part
+
+                // .ics as Attachment (used by mail clients other than Outlook)
+                Byte[] bytes = System.Text.Encoding.ASCII.GetBytes(iCalStr);
+                var ms = new System.IO.MemoryStream(bytes);
+                var a = new System.Net.Mail.Attachment(ms,
+                  "VIS-Termin.ics", "text/calendar");
+                message.Attachments.Add(a);
+
+                // Send Mail
+                SmtpClient smtp = new("smtphub.dc.hella.com");
+                smtp.Port = 25;
+                smtp.Send(message);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void SendMail(string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder)
+        {
+            Sample sampleData = new()
+            {
+                Project = project,
+                Name = name,
+                Description = description,
+                Placement = placement,
+                Responsible = responsible,
+                RevisionDate = revisionDate.ToString("dd.MM.yyyy"),
+                RevisionValidity = revisionValidity.ToString("dd.MM.yyyy"),
+                Label = label,
+                Folder = folder
+            };
+
+            try
+            {
+                MailMessage oMail = new()
+                {
+                    From = new MailAddress("WorkReport@hella.com")
+                };
+
+                string mailstring = "";
+
+                try
+                {
+                    mailstring = LoginFunc.LoadUserMail(sampleData.Responsible);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                oMail.To.Add(mailstring);
+
+                oMail.IsBodyHtml = true;
+
+                oMail.Subject = "WorkReport_TaskManager " + DateTime.Now.ToString("dd.MM.yyyy");
+
+                oMail.Priority = MailPriority.High;
+
+                StringBuilder sb = new();
+                sb.AppendLine("<p>You get new sample, </p>");
+                sb.AppendLine("<br/>");
+
+                StringBuilder sf = new();
+                sf.AppendLine("<style>");
+                sf.AppendLine("table, th, td {");
+                sf.AppendLine("border: 1px solid black;");
+                sf.AppendLine("border-collapse: collapse;");
+                sf.AppendLine("}");
+                sf.AppendLine("th, td {");
+                sf.AppendLine("padding: 5px;");
+                sf.AppendLine("Text-align: Left;");
+                sf.AppendLine("}");
+                sf.AppendLine("p {");
+                sf.AppendLine("padding: 0px;");
+                sf.AppendLine("Text-align: Left;");
+                sf.AppendLine("margin: 0px;");
+                sf.AppendLine("}");
+                sf.AppendLine("</style>");
+
+
+                var datatable = sampleData;
+                StringBuilder MailBody = new();
+
+                MailBody.AppendLine("<table>");
+                MailBody.AppendLine("<thead>");
+                MailBody.AppendLine("<tr>");
+                MailBody.AppendLine("<th>Project</th>");
+                MailBody.AppendLine("<th>Name</th>");
+                MailBody.AppendLine("<th>Description</th>");
+                MailBody.AppendLine("<th>RevisionDate</th>");
+                MailBody.AppendLine("<th>RevisionValidity</th>");
+                MailBody.AppendLine("</tr>");
+                MailBody.AppendLine("</thead>");
+                MailBody.AppendLine("<tbody>");
+
+                MailBody.AppendLine("<tr>");
+                MailBody.AppendLine("<td>" + sampleData.Project + "</td>");
+                MailBody.AppendLine("<td>" + sampleData.Name + "</td>");
+                MailBody.AppendLine("<td>" + sampleData.Description + "</td>");
+                MailBody.AppendLine("<td>" + sampleData.Placement + "</td>");
+                MailBody.AppendLine("<td>" + sampleData.RevisionDate + "</td>");
+                MailBody.AppendLine("<td>" + sampleData.RevisionValidity + "</td>");
+                MailBody.AppendLine("</tr>");
+
+                MailBody.AppendLine("</tbody>");
+                MailBody.AppendLine("</table>");
+
+                oMail.Body = sf.ToString() + sb.ToString() + MailBody.ToString();
+
+
+                SmtpClient smtp = new("smtphub.dc.hella.com");
+                smtp.Port = 25;
+                smtp.Send(oMail);
+                //Data.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
         }
 
         public static void EditSample(int ID, string project, string name, string description, string placement, string responsible, DateTime revisionDate, DateTime revisionValidity, string label, string folder)

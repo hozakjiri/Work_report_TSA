@@ -7,6 +7,7 @@ using WorkReportWPF.Functions;
 using System.Net.Mail;
 using DDay.iCal;
 using DDay.iCal.Serialization.iCalendar;
+using MaterialDesignThemes.Wpf;
 
 namespace WorkReportWPF.Forms.ListOfMasterSamples
 {
@@ -22,15 +23,16 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            Guid guid = Guid.NewGuid();
 
             MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
-
 
             if ((DateTime)datePickerRevisionValidity.SelectedDate < (DateTime)datePickerRevisionDate.SelectedDate)
             {
                 MessageBox.Show("Bad data, the verification date cannot be in the past", "Data");
                 return;
             }
+
 
             if (txtDescription.Text == "" || txtName.Text == "" || txtPlacement.Text == "" || cmbProject.Text == "" || cmbResponsible.Text == "" || datePickerRevisionDate.Text == "" || datePickerRevisionValidity.Text == "")
             {
@@ -39,16 +41,19 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             else if (result == MessageBoxResult.OK)
             {
 
-                SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
-                //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
-                SamplesFunc.Test();
+                SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text, guid);
+                //SamplesFunc.AddAppointment(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
+                //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text, guid);              
                 MessageBox.Show("Data was added !", "Data");
 
                 try
                 {
                     var userMail = LoginFunc.LoadUserMail(cmbResponsible.SelectedItem.ToString());
                     var therm = (DateTime)datePickerRevisionValidity.SelectedDate;
-                    SamplesFunc.CreateTask(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
+                    SamplesFunc.AddAppointment(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
+
+                    //SamplesFunc.Test(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text, guid);
+                    //SamplesFunc.CreateTask(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
                 }
                 catch (Exception)
                 {
@@ -58,7 +63,6 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 OverviewSamples p = new OverviewSamples();
                 this.NavigationService.Navigate(p);
             }
-
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

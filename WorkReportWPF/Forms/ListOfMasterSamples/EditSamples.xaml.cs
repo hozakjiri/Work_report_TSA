@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
     public partial class EditSamples : Page
     {
         public TableSampleView currentdata = new TableSampleView();
+        public string lblGuid = "";
 
         public EditSamples()
         {
@@ -77,16 +79,12 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
+
+            Guid guid = Guid.Parse(lblGuid);
+
             MessageBoxResult result = MessageBox.Show("Can you edit data?", "Data", MessageBoxButton.OKCancel);
-
-
-            if ((DateTime)datePickerRevisionValidity.SelectedDate < (DateTime)datePickerRevisionDate.SelectedDate)
-            {
-                MessageBox.Show("Bad data, the verification date cannot be in the past", "Data");
-                return;
-            }
-
-            if (txtDescription.Text == "" || txtName.Text == "" || txtPlacement.Text == "" || cmbProject.Text == "" || cmbResponsible.Text == "" || datePickerRevisionDate.Text == "" || datePickerRevisionValidity.Text == "")
+            
+            if (txtDescription.Text == ""  && txtName.Text == ""  && txtPlacement.Text == "" &&  cmbProject.Text == "" && cmbResponsible.Text == "" && datePickerRevisionDate.Text == "" && datePickerRevisionValidity.Text == "")
             {
                 MessageBox.Show("Please, fill all data", "Data");
             }
@@ -94,6 +92,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             {
                 SamplesFunc.EditSample(currentdata.ID, cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate, txtLabel.Text, txtFolder.Text);
                 //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
+                SamplesFunc.AddAppointment(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
                 MessageBox.Show("Data was edited !", "Data");
 
                 OverviewSamples p = new OverviewSamples();
@@ -101,37 +100,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
         }
 
-        //private void btnPrint_click(object sender, RoutedEventArgs e)
-        //{
-        //    if (txtNum.Text != "0")
-        //    { 
-        //        try
-        //        {
-        //            var mylabel = new bpac.Document();
-        //            if (mylabel.Open("Template/Label.lbx"))
-        //            {
-        //                mylabel.GetObject("JmenoPrijmeni").Text = cmbResponsible.SelectedItem.ToString();
-        //                mylabel.GetObject("DatumRevize").Text = datePickerRevisionDate.DisplayDate.ToString("dd.MM.yyyy");
-        //                mylabel.GetObject("PlatnostRevize").Text = datePickerRevisionValidity.DisplayDate.ToString("dd.MM.yyyy");
-        //                mylabel.StartPrint("", bpac.PrintOptionConstants.bpoDefault);
-        //                mylabel.PrintOut(Convert.ToInt32(txtNum.Text), bpac.PrintOptionConstants.bpoDefault);
-        //                mylabel.EndPrint();
-        //                mylabel.Close();
-        //                MessageBox.Show("Data was printed !", "Data");
-        //            }
-        //            else
-        //            {
-        //                MessageBox.Show("Data wasnt printed - file lost !", "Data");
-        //            }
-        //        }
-        //        catch (Exception)
-        //            {
-        //                throw;
-        //            }
-        //    }
-
-        //}
-                private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             cmbProject.ItemsSource = ModificationFunc.LoadProjectList();
             cmbResponsible.ItemsSource = LoginFunc.LoadAllUsersList();
@@ -144,6 +113,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 txtPlacement.Text = currentdata.Placement;
                 txtFolder.Text = currentdata.Folder;
                 txtLabel.Text = currentdata.Label;
+                lblGuid = currentdata.Guid;
 
                 if (cmbProject.Items.Contains(currentdata.Project))
                 {
