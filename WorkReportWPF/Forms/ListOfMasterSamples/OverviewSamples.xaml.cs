@@ -63,7 +63,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
                 else
                 {
-                    row.Background = new SolidColorBrush(Colors.Gray);
+                    row.Background = new SolidColorBrush(Colors.Transparent);
                 }
 
             }

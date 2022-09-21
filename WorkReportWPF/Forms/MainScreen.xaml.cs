@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
@@ -70,7 +72,7 @@ namespace WorkReportWPF
                 //ModificationGrid.ItemsSource = ModificationFunc.LoadModificationTableTOP();
                 //ModificationGrid.Columns[0].Visibility = Visibility.Hidden;
 
-                //SamplesGrid.ItemsSource = SamplesFunc.LoadSamplesTableWithComputers();
+                SamplesGrid.ItemsSource = SamplesFunc.LoadSamplesTableWithComputers();
                 SamplesGrid.Columns[0].Visibility = Visibility.Hidden;
                 
             }
@@ -80,7 +82,6 @@ namespace WorkReportWPF
             }
 
         }
-
         private void ModificationGrid_PreviewMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             //if (ModificationGrid.SelectedItems.Count > 0)

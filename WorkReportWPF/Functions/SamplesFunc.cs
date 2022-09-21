@@ -1,29 +1,17 @@
-﻿using System;
+﻿using DDay.iCal;
+using DDay.iCal.Serialization.iCalendar;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
-using System.Net;
 using System.Reflection;
-using System.Security.Policy;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using System.Windows.Media;
-using System.Xml.Linq;
-using Windows.System;
+using System.Windows;
 using WorkReportWPF.Models;
 using WorkReportWPF.Models.DBModels;
 using Outlook = Microsoft.Office.Interop.Outlook;
-using DDay.iCal.Serialization.iCalendar;
-using DDay.iCal;
-using System.IO;
-using System.Windows;
 using Trigger = DDay.iCal.Trigger;
-using antlr.collections;
-using MaterialDesignThemes.Wpf;
-using System.ComponentModel;
-using System.Runtime.Intrinsics.X86;
-using Windows.UI.Composition;
 
 namespace WorkReportWPF.Functions
 {
@@ -51,11 +39,56 @@ namespace WorkReportWPF.Functions
             return sampleData;
         }
 
+        public static List<TableUpcomming> LoadSamplesTableWithComputers()
+        {
+            using DbDataContext contextData = new();
+            using DbSettingsContext contextSettings = new();
+
+            var sampleList = contextData.Samples.ToList();
+
+
+            List<TableUpcomming> sampleList2 = sampleList.Select(x => new TableUpcomming()
+            {
+                ID = x.ID,
+                Project = x.Project,
+                Name = x.Name,
+                Responsible = x.Responsible,
+                RevisionDate = x.RevisionValidity != null ? (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy") : DateTime.MinValue,
+                Type = "Headlamp",
+            }).ToList();
+
+            var ComputersList = contextSettings.Stations.ToList();
+
+            List<TableUpcomming> ComputersList2 = ComputersList.Select(x => new TableUpcomming()
+            {
+                ID = x.StationID,
+                Project = x.Line,
+                Name = x.Name,
+                Responsible = "Team",
+                RevisionDate = x.RevisionValidity != null ? (DateTime)OtherFunc.ToDate(x.RevisionValidity, "dd.MM.yyyy") : DateTime.MinValue,
+                Type = "Machine",
+            }).ToList();
+
+            List<TableUpcomming> unionlist = sampleList2.Union(ComputersList2).ToList();
+
+            List<TableUpcomming> result = unionlist.Where(x => x.RevisionDate >= DateTime.Now.AddMonths(-1)).Select(x => new TableUpcomming()
+            {
+                ID = x.ID,
+                Project = x.Project,
+                Name = x.Name,
+                Responsible = x.Responsible,
+                RevisionDate = x.RevisionDate,
+                Type = x.Type,
+            }).OrderByDescending(o => o.RevisionDate).ThenBy(z => z.Name).ToList();
+
+            return result;
+        }
 
 
 
 
-public static void AddAppointment(string responsible, DateTime RevisionDate, DateTime RevisionValidity, string project, string subjectmessage)
+
+        public static void AddAppointment(string responsible, DateTime RevisionDate, DateTime RevisionValidity, string project, string subjectmessage)
         {
             try
             {
@@ -309,7 +342,7 @@ public static void AddAppointment(string responsible, DateTime RevisionDate, Dat
 
                 var directory = Directory.GetCurrentDirectory();
                 string filepath = directory + @"\" + guid.ToString() + @".ics";
-                using (StreamWriter sw = File.CreateText(filepath));
+                using (StreamWriter sw = File.CreateText(filepath)) ;
 
 
                 // use PUBLISH for appointments
