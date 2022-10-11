@@ -364,7 +364,7 @@ namespace WorkReportWPF.Functions
                 //=====================================
                 MailMessage message = new MailMessage();
 
-                message.From = new MailAddress("WorkReportTSA@hella.com");
+                message.From = new MailAddress("WorkReportTSP@hella.com");
                 message.To.Add(new MailAddress(Responsible));
                 message.Subject = Subject;
 
@@ -379,7 +379,7 @@ namespace WorkReportWPF.Functions
                 // iCal
                 IICalendar iCal = new iCalendar();
                 iCal.Method = METHOD;
-                iCal.ProductID = "Samples";
+                iCal.ProductID = "Vzorky";
 
                 // Create an event and attach it to the iCalendar.
                 Event evt = iCal.Create<Event>();
@@ -521,7 +521,7 @@ namespace WorkReportWPF.Functions
                 oMail.Priority = MailPriority.High;
 
                 StringBuilder sb = new();
-                sb.AppendLine("<p>You get new sample, </p>");
+                sb.AppendLine("<p>Dostali jste nový vzorek, </p>");
                 sb.AppendLine("<br/>");
 
                 StringBuilder sf = new();

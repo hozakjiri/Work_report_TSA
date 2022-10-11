@@ -20,7 +20,7 @@
             <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Content="Settings for application" Foreground="Black" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Height="85" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380" Grid.ColumnSpan="2" Margin="460,-2,0,0" />
+        <Label Content="Nastavení aplikace" Foreground="Black" Background="Transparent" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Height="85" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380" Grid.ColumnSpan="2" Margin="460,-2,0,0" />
         <!--<Label Content="Team Members (email information)" Grid.Row="1" Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>-->
 
         <!--<DataGrid x:Name="membersGrid"  AutoGenerateColumns="False" SelectedItem="selectedGrid" Background="Transparent" Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" CurrentItem="currentItem" SelectionMode="Single" SelectionUnit="FullRow"
@@ -67,8 +67,8 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             </DataGrid.Columns>
         </DataGrid>-->
 
-        <Label Content="List of users" Margin="108,0,108,0" Grid.Row="1" Grid.Column="0"  Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
-        <Label Content="List of projects" Grid.Row="1" Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
+        <Label Content="Seznam uživatelů" Margin="108,0,108,0" Grid.Row="1" Grid.Column="0"  Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
+        <Label Content="Seznam projektů" Grid.Row="1" Foreground="Black" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" FontSize="18" FontWeight="Bold" Height="40" VerticalAlignment="Top"/>
 
         <TextBox             
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
@@ -84,7 +84,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="181" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Mail address" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Emailová adresa" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Bottom"/>
         <TextBox 
@@ -99,7 +99,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             AcceptsReturn="True" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Jméno" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="181" RenderTransformOrigin="0.522,-0.37"/>
         <TextBox
@@ -114,19 +114,19 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             AcceptsReturn="True" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Log in" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Uživatelské jméno" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="182"/>
         <ComboBox x:Name="cmbRights" Margin="216,481,0,0" Grid.Row="1"
                     Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                    materialDesign:HintAssist.Hint="Rights"
+                    materialDesign:HintAssist.Hint=""
                     Foreground="Black"
                     Background="Transparent"
 
                     materialDesign:TextFieldAssist.HasClearButton="True"
                     materialDesign:TextFieldAssist.UnderlineBrush="Black"
                     materialDesign:ColorZoneAssist.Mode="SecondaryLight"
-                    materialDesign:HintAssist.HelperText="Select one rights"
+                    materialDesign:HintAssist.HelperText="Uživatelská práva"
                     materialDesign:HintAssist.Background="White"
                     materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="182">
             <ComboBox.SelectedItem>
@@ -174,26 +174,26 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
         <Button x:Name="btnDUser"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Margin="540,0,0,10" Grid.Row="1" Click="btnDUser_Click"
+            Width="105"
+            Margin="535,0,0,10" Grid.Row="1" Click="btnDUser_Click"
             Background="Black"
                 BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text1"  Text="Delete" Width="59" Foreground="White" Height="18"/>
+                <TextBlock x:Name="Overview_Text1"  Text="Smazat" Width="59" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
         <Button x:Name="btnDProject"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Margin="540,0,0,10" Grid.Row="1" Click="btnDProject_Click"
+            Width="105"
+            Margin="535,0,0,10" Grid.Row="1" Click="btnDProject_Click"
             Background="Black"
                 BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="43" Width="30" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text2"  Text="Delete" Width="59" Foreground="White" Height="18"/>
+                <TextBlock x:Name="Overview_Text2"  Text="Smazat" Width="59" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
@@ -219,7 +219,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                 BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text4"  Text="Add" Width="30" Foreground="White" Height="18"/>
+                <TextBlock x:Name="Overview_Text4"  Text="Přidat" Width="41" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
@@ -232,33 +232,33 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                 BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="PlusCircle" Foreground="white" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text5"  Text="Add" Width="30" Foreground="White" Height="18"/>
+                <TextBlock x:Name="Overview_Text5"  Text="Přidat" Width="41" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
         <Button x:Name="btnEUser"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Margin="422,0,0,10" Grid.Row="1" Click="btnEUser_Click"
+            Width="120"
+            Margin="402,0,0,10" Grid.Row="1" Click="btnEUser_Click"
                 Background="Black"
                 BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Pencil" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text6"  Text="Edit" Width="30" Foreground="White" Height="18"/>
+                <materialDesign:PackIcon Kind="Pencil" Foreground="White" Height="28" Width="36" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
+                <TextBlock x:Name="Overview_Text6"  Text="Upravit" Width="48" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
         <Button x:Name="btnEProject"
             Style="{StaticResource MaterialDesignRaisedAccentButton}"
             materialDesign:ButtonAssist.CornerRadius="10"
-            Width="100"
-            Margin="422,0,0,10" Grid.Row="1" Click="btnEProject_Click"
+            Width="120"
+            Margin="402,0,0,10" Grid.Row="1" Click="btnEProject_Click"
                 Background="Black"
                 BorderBrush="Black" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="1">
             <StackPanel Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Height="32" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Pencil" Foreground="White" Height="28" Width="37" RenderTransformOrigin="0.5,0.603" VerticalAlignment="Center" ToolTip="Home" Margin="10,0,0,0"/>
-                <TextBlock x:Name="Overview_Text7"  Text="Edit" Width="30" Foreground="White" Height="18"/>
+                <TextBlock x:Name="Overview_Text7"  Text="Upravit" Width="50" Foreground="White" Height="18"/>
 
             </StackPanel>
         </Button>
@@ -296,28 +296,28 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="150">
+                <DataGridTextColumn Header="Jméno" Binding="{Binding Name}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Login" Binding="{Binding UserLogin}"  Width="120">
+                <DataGridTextColumn Header="Uživ. jméno " Binding="{Binding UserLogin}"  Width="120">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Mail" Binding="{Binding Mail}"  Width="220">
+                <DataGridTextColumn Header="Email" Binding="{Binding Mail}"  Width="220">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Level" Binding="{Binding Level}"  Width="40">
+                <DataGridTextColumn Header="Práva" Binding="{Binding Level}"  Width="40">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Right"/>
@@ -384,7 +384,7 @@ HorizontalGridLinesBrush="Transparent"  VerticalGridLinesBrush="Transparent" Row
             Width="630" 
             FontSize="10" 
             Cursor="IBeam"
-            materialDesign:HintAssist.Hint="Name of Project" Grid.Column="1" Grid.Row="1"
+            materialDesign:HintAssist.Hint="Název projektu" Grid.Column="1" Grid.Row="1"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black" Height="50" VerticalAlignment="Top"/>
 

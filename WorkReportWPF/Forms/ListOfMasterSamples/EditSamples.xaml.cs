@@ -81,17 +81,17 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
         {
 
 
-            MessageBoxResult result = MessageBox.Show("Can you edit data?", "Data", MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show("Opravdu chcete upravit data?", "Data", MessageBoxButton.OKCancel);
             
             if (txtDescription.Text == ""  && txtName.Text == ""  && txtPlacement.Text == "" &&  cmbProject.Text == "" && cmbResponsible.Text == "" && datePickerRevisionDate.Text == "" && datePickerRevisionValidity.Text == "")
             {
-                MessageBox.Show("Please, fill all data", "Data");
+                MessageBox.Show("Prosím, vyplňte všechna data", "Data");
             }
             else if (result == MessageBoxResult.OK)
             {
                 SamplesFunc.EditSample(currentdata.ID, cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), datePickerRevisionDate.DisplayDate, datePickerRevisionValidity.DisplayDate, txtLabel.Text, txtFolder.Text);
                 //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text);
-                MessageBox.Show("Data was edited !", "Data");
+                MessageBox.Show("Data byla upravena !", "Data");
 
                 OverviewSamples p = new OverviewSamples();
                 this.NavigationService.Navigate(p);
@@ -107,7 +107,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("An error occurred while creating the task !", "Alert");
+                    MessageBox.Show("Při vytváření úlohy došlo k chybě !", "Alert");
                 }
             }
         }
@@ -145,13 +145,13 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Can you edit data?", "Data", MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show("Opravdu chcete odstranit data ?", "Data", MessageBoxButton.OKCancel);
 
             if (result == MessageBoxResult.OK)
             {
                 SamplesFunc.DeleteSample(currentdata.ID);
 
-                MessageBox.Show("Data was deleted !", "Data");
+                MessageBox.Show("Data byla smazána !", "Data");
 
                 OverviewSamples p = new OverviewSamples();
                 this.NavigationService.Navigate(p);
@@ -225,7 +225,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error with directory ! " + ex.Message, "Alert");
+                MessageBox.Show("Chyba adresáře ! " + ex.Message, "Alert");
             }
         }
     }

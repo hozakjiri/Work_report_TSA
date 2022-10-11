@@ -20,7 +20,7 @@
             <RowDefinition Height="247"/>
             <RowDefinition Height="65"/>
         </Grid.RowDefinitions>
-        <Label Content="Dasboard for TSA Technician Department" Grid.Row="0"  Grid.ColumnSpan="2" Foreground="Black" Background="Transparent" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="85" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1300"/>
+        <Label Content="Přehled vzorků pro oddělení TSP" Grid.Row="0"  Grid.ColumnSpan="2" Foreground="Black" Background="Transparent" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="85" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1300"/>
 
         <!--<GroupBox
   Header="Last of TOP reports"
@@ -274,7 +274,7 @@
             </StackPanel>   
         
         </TextBlock>
-        <GroupBox Header="Samples Overview"
+        <GroupBox Header="Tabulka vzorků"
             Style="{DynamicResource MaterialDesignCardGroupBox}"
             materialDesign:ColorZoneAssist.Mode="Custom"
             materialDesign:ColorZoneAssist.Background="Black"
@@ -339,7 +339,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Type" Binding="{Binding Type}"  Width="80">
+                    <DataGridTextColumn Header="Druh" Binding="{Binding Type}"  Width="80">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -347,7 +347,7 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Line" Binding="{Binding Project}"  Width="250">
+                    <DataGridTextColumn Header="Linka" Binding="{Binding Project}"  Width="250">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -355,21 +355,21 @@
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="300">
+                    <DataGridTextColumn Header="Jméno" Binding="{Binding Name}"  Width="300">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Responsible" Binding="{Binding Responsible}"  Width="250">
+                    <DataGridTextColumn Header="Odpovědnost" Binding="{Binding Responsible}"  Width="250">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                             </Style>
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="Revision/Maintence" Binding="{Binding RevisionDate, StringFormat=d}"  Width="300">
+                    <DataGridTextColumn Header="Platnost revize" Binding="{Binding RevisionDate, StringFormat=d}"  Width="300">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="HorizontalAlignment" Value="Center"/>

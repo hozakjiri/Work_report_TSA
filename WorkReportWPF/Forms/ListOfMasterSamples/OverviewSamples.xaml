@@ -50,7 +50,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Line" Binding="{Binding Project}"  Width="150">
+                <DataGridTextColumn Header="Linka" Binding="{Binding Project}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -58,14 +58,14 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"  Width="200">
+                <DataGridTextColumn Header="Jméno" Binding="{Binding Name}"  Width="200">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Description" Binding="{Binding Description}"  Width="250">
+                <DataGridTextColumn Header="Popis" Binding="{Binding Description}"  Width="250">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -73,28 +73,28 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Placement" Binding="{Binding Placement}"  Width="150">
+                <DataGridTextColumn Header="Umístění" Binding="{Binding Placement}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Responsible" Binding="{Binding Responsible}"  Width="150">
+                <DataGridTextColumn Header="Odpovědnost" Binding="{Binding Responsible}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Revision Date" Binding="{Binding RevisionDate, StringFormat=d}" Width="150">
+                <DataGridTextColumn Header="Datum revize" Binding="{Binding RevisionDate, StringFormat=d}" Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Revision Validity" Binding="{Binding RevisionValidity, StringFormat=d}"  Width="150">
+                <DataGridTextColumn Header="Platnost revize" Binding="{Binding RevisionValidity, StringFormat=d}"  Width="150">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="HorizontalAlignment" Value="Center"/>

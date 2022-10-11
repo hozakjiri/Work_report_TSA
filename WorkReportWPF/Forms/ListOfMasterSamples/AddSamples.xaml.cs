@@ -25,18 +25,18 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
         {
             Guid guid = Guid.NewGuid();
 
-            MessageBoxResult result = MessageBox.Show("Can you save data?", "Data", MessageBoxButton.OKCancel);
+            MessageBoxResult result = MessageBox.Show("Chcete uložit data?", "Data", MessageBoxButton.OKCancel);
 
             if ((DateTime)datePickerRevisionValidity.SelectedDate < (DateTime)datePickerRevisionDate.SelectedDate)
             {
-                MessageBox.Show("Bad data, the verification date cannot be in the past", "Data");
+                MessageBox.Show("Špatná data, vložte prosím všechna data", "Data");
                 return;
             }
 
 
             if (txtDescription.Text == "" || txtName.Text == "" || txtPlacement.Text == "" || cmbProject.Text == "" || cmbResponsible.Text == "" || datePickerRevisionDate.Text == "" || datePickerRevisionValidity.Text == "")
             {
-                MessageBox.Show("Please, fill all data", "Data");
+                MessageBox.Show("Prosím, vyplňte všechna pole", "Data");
             }
             else if (result == MessageBoxResult.OK)
             {
@@ -44,7 +44,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 SamplesFunc.AddSample(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text, guid);
                 //SamplesFunc.AddAppointment(userMail, (DateTime)datePickerRevisionDate.SelectedDate, therm, cmbProject.Text + " " + txtName.Text, "The sample " + txtName + " expires on: " + therm);
                 //SamplesFunc.SendMail(cmbProject.SelectedItem.ToString(), txtName.Text, txtDescription.Text, txtPlacement.Text, cmbResponsible.SelectedItem.ToString(), (DateTime)datePickerRevisionDate.SelectedDate, (DateTime)datePickerRevisionValidity.SelectedDate, txtLabel.Text, txtFolder.Text, guid);              
-                MessageBox.Show("Data was added !", "Data");
+                MessageBox.Show("Data byla přidána !", "Data");
 
                 try
                 {
@@ -57,7 +57,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("An error occurred while creating the task !", "Alert");
+                    MessageBox.Show("Při vytvoření úlohy došlo k chybě !", "Alert");
                 }
 
                 OverviewSamples p = new OverviewSamples();
@@ -128,7 +128,7 @@ namespace WorkReportWPF.Forms.ListOfMasterSamples
             }
             else
             {
-                MessageBox.Show("Please fill all data", "Alert");
+                MessageBox.Show("Prosím vyplňte všechna pole", "Alert");
             }
         }
 

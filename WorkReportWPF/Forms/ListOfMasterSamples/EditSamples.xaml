@@ -26,7 +26,7 @@
         Cursor="IBeam"
         VerticalContentAlignment="Center"
         HorizontalContentAlignment="Left"
-        materialDesign:HintAssist.Hint="Description"
+        materialDesign:HintAssist.Hint="Popis"
         materialDesign:HintAssist.Background="White"
         materialDesign:HintAssist.Foreground="Black" HorizontalAlignment="Left" Width="585" Height="80" VerticalAlignment="Top"/>
         <TextBox 
@@ -44,11 +44,11 @@
             Cursor="IBeam"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:HintAssist.Hint="Name of sample" Width="560"
+            materialDesign:HintAssist.Hint="Název vzorku" Width="560"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <DatePicker x:Name="datePickerRevisionDate" 
-            materialDesign:HintAssist.Hint="Revision Date" 
+            materialDesign:HintAssist.Hint="Datum revize" 
             HorizontalAlignment="Left" Margin="640,214,0,0" 
             Width="584" 
             Background="Transparent" 
@@ -83,14 +83,14 @@
 
 
         </DatePicker>
-        <Button x:Name="btnEdit" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,176,15" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="btnEdit_Click" >
-            <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
+        <Button x:Name="btnEdit" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,187,15" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="160" Click="btnEdit_Click" >
+            <StackPanel Width="140" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="Edit" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Edit" VerticalAlignment="Center"/>
-                <TextBlock x:Name="txtEdit"  Text="Edit" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
+                <TextBlock x:Name="txtEdit"  Text="Upravit" Width="71" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
         <DatePicker x:Name="datePickerRevisionValidity" 
-            materialDesign:HintAssist.Hint="RevisionValidity" 
+            materialDesign:HintAssist.Hint="Platnost revize" 
             HorizontalAlignment="Left" Margin="640,317,0,0" 
             Width="584" 
             Background="Transparent" 
@@ -140,7 +140,7 @@
             Cursor="IBeam"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:HintAssist.Hint="Placement"
+            materialDesign:HintAssist.Hint="Umístění"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="560"/>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbResponsible" 
@@ -156,7 +156,7 @@
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
             materialDesign:TextFieldAssist.UnderlineBrush="Black"
-            materialDesign:HintAssist.Hint="Responsible" Height="68"
+            materialDesign:HintAssist.Hint="Odpovědnost" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black"/>
@@ -191,10 +191,10 @@
                 <TextBlock x:Name="txtPrint"  Text="Print" Width="64" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="white"/>
             </StackPanel>
         </Button>-->
-        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,15" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="152" Click="Delete_Click" >
-            <StackPanel Width="150" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50" Orientation="Horizontal">
+        <Button x:Name="Delete_Task" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Margin="0,0,17,15" Height="60" Background="Black" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="159" Click="Delete_Click" >
+            <StackPanel Width="140" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Orientation="Horizontal">
                 <materialDesign:PackIcon Kind="DeleteEmpty" Foreground="White" Height="50" Width="50" RenderTransformOrigin="0.5,0.5" ToolTip="Send Email" VerticalAlignment="Center"/>
-                <TextBlock x:Name="Send_Email"  Text="Delete" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
+                <TextBlock x:Name="Send_Email"  Text="Smazat" Width="88" VerticalAlignment="Center"  Margin="10,0,0,0" FontSize="20" Foreground="White"/>
             </StackPanel>
         </Button>
         <ComboBox ItemContainerStyle="{DynamicResource ComboBoxItemContainerStyle1}" x:Name="cmbProject" 
@@ -209,7 +209,7 @@
             FontSize="20" 
             Background="Transparent"
             materialDesign:TextFieldAssist.UnderlineBrush="Black"
-            materialDesign:HintAssist.Hint="Project" Height="68"
+            materialDesign:HintAssist.Hint="Projekt" Height="68"
             Style="{StaticResource MaterialDesignComboBox}"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black"/>
@@ -228,7 +228,7 @@
             Cursor="IBeam"
             VerticalContentAlignment="Center"
             HorizontalContentAlignment="Left"
-            materialDesign:HintAssist.Hint="Label"
+            materialDesign:HintAssist.Hint="Štítek"
             materialDesign:HintAssist.Background="White"
             materialDesign:HintAssist.Foreground="Black" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584"/>
         <StackPanel Margin="61,416,683,92" Orientation="Horizontal">
@@ -247,7 +247,7 @@
                 Cursor="IBeam"
                 VerticalContentAlignment="Stretch"
                 HorizontalContentAlignment="Left"
-                materialDesign:HintAssist.Hint="Folder"
+                materialDesign:HintAssist.Hint="Umístění souboru"
                 materialDesign:HintAssist.Background="White"
                 materialDesign:HintAssist.Foreground="Black" Height="80" Width="362"/>
             <Button x:Name="btnFolder_Open" BorderBrush="{x:Null}"  materialDesign:ButtonAssist.CornerRadius="10" Height="80" Background="Black" Width="86" Click="btnFolder_Open_Click" RenderTransformOrigin="0.5,0.5" Margin="5,0,0,0" >
